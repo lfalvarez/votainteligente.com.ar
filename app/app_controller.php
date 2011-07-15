@@ -1,0 +1,54 @@
+<?php
+class AppController extends Controller {
+	/**
+	*	Code taken from http://bakery.cakephp.org/articles/fsiebler/2010/08/23/integrating-facebook-connect
+	*/
+	var $FACEBOOK_APP_ID = '121469607944328';
+	var $FACEBOOK_API_ID = '121469607944328';
+   var $FACEBOOK_SECRET = '0f4d85f5f4c861216a6cf0ff711504e8';
+   var $FACEBOOK_COOKIE = '';
+	/**
+	 * Callback
+	 */
+	function beforeFilter() {
+		// if an admin route is requested and not logged in
+		$user = $this->Session->read('User');
+		if(isset($this->params['admin']) && $this->params['admin'] && is_null($user)) {
+			// set Flash and redirect to login page
+			$this->Session->setFlash('You need to be logged for that action.','default',array('class'=>'flash_bad'));
+			$this->redirect(array('controller'=>'users','action'=>'login','admin'=>FALSE));
+		}
+	}
+	function connectToFacebookOrLogin(){
+		App::import('Vendor', 'facebook/facebook');
+		$facebook = new Facebook(array(
+		  'appId'  => '121469607944328',
+  		  'secret' => '0f4d85f5f4c861216a6cf0ff711504e8',
+		));
+		$user = $facebook->getUser();
+		//debug($facebook);
+		if($user){
+			try {
+    			// Proceed knowing you have a logged in user who's authenticated.
+    			$user_profile = $facebook->api('/me');
+			  } catch (FacebookApiException $e) {
+    			//error_log($e);
+    			$user = null;
+  			}
+			
+		}
+		if($user){
+			$this->set('user',$user);
+			
+		}
+		else{
+			$url = $facebook->getLoginUrl(array(
+            'canvas' => 1,
+            'fbconnect' => 0
+        ));
+        
+		  $this->redirect($url);
+		  return;
+		}
+	}
+}

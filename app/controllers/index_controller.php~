@@ -1,0 +1,21 @@
+<?php
+class IndexController extends AppController {
+
+	var $name = 'Index';
+	var $uses = array();
+	var $components = array('Cookie');
+	function index(){
+		//$this->connectToFacebookOrLogin();
+       
+		$this->layout = 'voto';
+		$this->loadModel('Category');
+		$categories = $this->Category->findAllForIndex();
+		$this->set('categories', $categories);
+	}
+	function vota(){
+		debug($this->data);
+		$this->render('resultado');
+		
+	}
+
+}

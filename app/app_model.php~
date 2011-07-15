@@ -1,0 +1,11 @@
+<?php
+class AppModel extends Model {
+	var $recursive = -1;
+	function find($type=NULL,$params=NULL){
+		$hasPublicAttribute=array_key_exists('public',$this->_schema);
+		if(array_key_exists('public',$this->_schema)){
+			$params['conditions']['public']=true;
+		}
+		return Model::find($type,$params);
+	}
+}
