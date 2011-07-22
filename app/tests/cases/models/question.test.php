@@ -29,6 +29,7 @@ class QuestionTestCase extends CakeTestCase {
 							'question' => '¿que piensas de los numeros imaginarios dibujados en un plano cartesiano?',
 							'category_id' => 1,
 							'sour' => 0,
+                                                        'order'=>1,
 							'public' => 1
 						),
 				'Answer' => array(
@@ -52,6 +53,7 @@ class QuestionTestCase extends CakeTestCase {
                                 'question' => '¿un numero imaginario es par o impar??',
                                 'category_id' => 1,
                                 'sour' => 0,
+                                'order'=>2,
                                 'public' => 1
                              ),
                              'Answer'=>array(

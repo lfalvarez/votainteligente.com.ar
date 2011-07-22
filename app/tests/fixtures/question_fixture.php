@@ -9,6 +9,7 @@ class QuestionFixture extends CakeTestFixture {
 		'category_id' => array('type'=>'integer', 'type' => 'integer', 'null' => false, 'default' => NULL),
 		'sour' => array('type'=>'boolean', 'type' => 'boolean', 'null' => false, 'default' => NULL),
 		'public' => array('type'=>'boolean', 'type' => 'boolean', 'null' => false, 'default' => NULL),
+                'order' => array('type'=>'integer', 'type' => 'integer'),
 		'indexes' => array('PRIMARY' => array('column' => 'id', 'unique' => 1))
 	);
 
@@ -18,6 +19,7 @@ class QuestionFixture extends CakeTestFixture {
 			'question' => '¿que piensas de los numeros imaginarios dibujados en un plano cartesiano?',
 			'category_id' => 1,
 			'sour' => 0,
+                        'order'=>1,
 			'public' => 1
 		),
 		array(
@@ -25,6 +27,7 @@ class QuestionFixture extends CakeTestFixture {
 			'question' => '¿un numero imaginario es par o impar??',
 			'category_id' => 1,
 			'sour' => 0,
+                        'order'=>2,
 			'public' => 1
 		),
                 array(
@@ -32,6 +35,7 @@ class QuestionFixture extends CakeTestFixture {
 			'question' => '¿es PI un numero par o impar?',
 			'category_id' => 2,
 			'sour' => 0,
+                        'order'=>3,
 			'public' => 1
 		),
                 array(
@@ -39,6 +43,7 @@ class QuestionFixture extends CakeTestFixture {
 			'question' => '¿una serie (que representa un numero real) geometrica es par?',
 			'category_id' => 2,
 			'sour' => 0,
+                        'order'=>4,
 			'public' => 1
 		),
             

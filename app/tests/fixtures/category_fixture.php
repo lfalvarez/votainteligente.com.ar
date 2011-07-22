@@ -6,17 +6,20 @@ class CategoryFixture extends CakeTestFixture {
 	var $fields = array(
 		'id' => array('type'=>'integer', 'type' => 'integer', 'null' => false, 'default' => NULL, 'key' => 'primary'),
 		'name' => array('type'=>'string', 'type' => 'string', 'null' => false, 'default' => NULL),
-		'indexes' => array('PRIMARY' => array('column' => 'id', 'unique' => 1))
+		'indexes' => array('PRIMARY' => array('column' => 'id', 'unique' => 1)),
+                'order' => array('type'=>'integer', 'type' => 'integer', 'default' => NULL)
 	);
 
 	var $records = array(
 		array(
 			'id' => 1,
-			'name' => 'numeros imaginarios'
+			'name' => 'numeros imaginarios',
+                        'order' => 1
 		),
             array(
 			'id' => 2,
-			'name' => 'numeros reales'
+			'name' => 'numeros reales',
+                        'order' => 2
 		),
 	);
 }

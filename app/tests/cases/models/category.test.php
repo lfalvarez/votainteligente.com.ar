@@ -128,12 +128,14 @@ class CategoryTestCase extends CakeTestCase {
                     'Category'=>array(
                         'id'=>1,
                         'name'=>'numeros imaginarios',
+                        'order'=>1,
                         )
                     ),
                 2=>array(
                     'Category'=>array(
                         'id'=>2,
                         'name'=>'numeros reales',
+                        'order'=>2,
                         )
                     )
             );

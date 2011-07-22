@@ -51,6 +51,7 @@ class CandidateTestCase extends CakeTestCase {
                     'Category'=>array(
                         'id'=>1,
                         'name'=>'numeros imaginarios',
+                        'order'=>1,
                         'afinity'=>100
                         )
                     ),
@@ -58,6 +59,7 @@ class CandidateTestCase extends CakeTestCase {
                     'Category'=>array(
                         'id'=>2,
                         'name'=>'numeros reales',
+                        'order'=>2,
                         'afinity'=>100
                         )
                     )
