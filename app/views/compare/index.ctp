@@ -20,15 +20,15 @@ $(document).ready(function() {
         if (secondCandidate<1){
             $('#errors').append('<li>Debes seleccionar el segundo candidato</li>');
         } else {
-        obtainCandidatesAndCategory();
+            obtainCandidatesAndCategory();
         }
         
     });
 });
 function obtainCandidatesAndCategory(){
     var category            = $('input[name=category]:checked').val();
-    var firstCandidate      = $('select[name=firstCandidate] option:checked').val();
-    var secondCandidate     = $('select[name=secondCandidate] option:checked').val();
+    var firstCandidate      = $('select[name=firstCandidate] option:selected').val();
+    var secondCandidate     = $('select[name=secondCandidate] option:selected').val();
     var theSelectionIsRight = (firstCandidate>0) && (secondCandidate>0) && (category!=undefined) && firstCandidate != secondCandidate;
     if (theSelectionIsRight) {
         $('#errors li').remove();
