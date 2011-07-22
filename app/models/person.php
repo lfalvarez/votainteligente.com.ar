@@ -24,9 +24,8 @@ class Person extends AppModel {
 		)
 	);
         function saveUser($data){
-            $this->create();
+            $this->create($data);
             $this->set('date',date('Y-m-d H:i:s') );
-            $this->set('candidate_id',$data['candidate_id']);
             $this->save();
         }
         function saveResult($winner,$answers,$userData){

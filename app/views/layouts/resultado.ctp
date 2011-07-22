@@ -133,7 +133,7 @@ table{
 <SCRIPT src="js/jquery.js">
 <script>
   window.fbAsyncInit = function() {
-    FB.init({appId: '176181905778804', status: true, cookie: true, xfbml: true});
+    FB.init({appId: '<?php echo $facebookAppId; ?>', status: true, cookie: true, xfbml: true});
   };
   (function() {
     var e = document.createElement('script'); e.async = true;

@@ -1,12 +1,20 @@
 <?php
 class AppController extends Controller {
-	/**
+	
+	var $FACEBOOK_APP_ID = '';
+        var $FACEBOOK_SECRET = '';
+        var $FACEBOOK_APP_URL = '';
+	
+	function __construct(){
+	    parent::__construct();
+	    Configure::load('facebook');
+	    $this->FACEBOOK_APP_ID = Configure::read('Facebook.APP_ID');
+	    $this->FACEBOOK_SECRET = Configure::read('Facebook.SECRET');
+	    $this->FACEBOOK_APP_URL = Configure::read('Facebook.APP_URL');
+	}
+        /**
 	*	Code taken from http://bakery.cakephp.org/articles/fsiebler/2010/08/23/integrating-facebook-connect
 	*/
-	var $FACEBOOK_APP_ID = '121469607944328';
-	var $FACEBOOK_API_ID = '121469607944328';
-   var $FACEBOOK_SECRET = '0f4d85f5f4c861216a6cf0ff711504e8';
-   var $FACEBOOK_COOKIE = '';
 	/**
 	 * Callback
 	 */
@@ -20,35 +28,37 @@ class AppController extends Controller {
 		}
 	}
 	function connectToFacebookOrLogin(){
+                if(isset($_GET['code'])){
+                        header("Location: " . $this->FACEBOOK_APP_URL);
+                        exit;
+                }
 		App::import('Vendor', 'facebook/facebook');
 		$facebook = new Facebook(array(
-		  'appId'  => '121469607944328',
-  		  'secret' => '0f4d85f5f4c861216a6cf0ff711504e8',
+		  'appId'  => $this->FACEBOOK_APP_ID,
+  		  'secret' => $this->FACEBOOK_SECRET,
+                  'cookie' => true
 		));
 		$user = $facebook->getUser();
-		//debug($facebook);
 		if($user){
-			try {
-    			// Proceed knowing you have a logged in user who's authenticated.
-    			$user_profile = $facebook->api('/me');
-			  } catch (FacebookApiException $e) {
-    			//error_log($e);
-    			$user = null;
-  			}
-			
-		}
-		if($user){
-			$this->set('user',$user);
-			
+                    try {
+                        // Proceed knowing you have a logged in user who's authenticated.
+                        $user_profile = $facebook->api('/me');
+                        $this->set('user',$user);
+                        $this->set('facebookAppId',$this->FACEBOOK_APP_ID);
+                    }
+                    catch (FacebookApiException $e) {
+                        $user = null;
+                    }
+                    return $user;
 		}
 		else{
-			$url = $facebook->getLoginUrl(array(
-            'canvas' => 1,
-            'fbconnect' => 0
-        ));
-        
-		  $this->redirect($url);
-		  return;
+                    $url = $facebook->getLoginUrl(array(
+                                'scope' => 'publish_stream, read_notifications',
+                                'canvas' => 1,
+                                'fbconnect' => 0,
+                            ));
+                    echo '<script>top.location.href = "' . $url . '";</script>';
+                    exit;
 		}
 	}
 }

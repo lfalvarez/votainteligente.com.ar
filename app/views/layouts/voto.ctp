@@ -130,16 +130,19 @@ table{
 </style>
 <SCRIPT src="js/jquery.js"></script>
 <div id="fb-root"></div>
-<script src="http://connect.facebook.net/en_US/all.js"></script>
 <script>
     window.fbAsyncInit = function() {
-    FB.init({appId: '176181905778804', status: true, cookie: true,
-             xfbml: true});
+    FB.init({appId: '<?php echo $facebookAppId; ?>',
+        status: true, 
+	cookie: true,
+        xfbml: true});
+    var height = <?php echo $height;?>;
+    FB.Canvas.setSize({ height: height });
   };
   (function() {
-    var e = document.createElement('script'); e.async = true;
-    e.src = document.location.protocol +
-      '//connect.facebook.net/en_US/all.js';
+    var e = document.createElement('script');
+    e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+    e.async = true;
     document.getElementById('fb-root').appendChild(e);
   }());
 </script>
@@ -187,11 +190,5 @@ table{
     </tr>
 </table>
 <div>
-<script>
-$(document).ready(function() {
-    var height = 3150;
-    FB.Canvas.setSize({ height: height });
-});
-</script>
 </body>
 </html>

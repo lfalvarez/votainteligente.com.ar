@@ -5,7 +5,7 @@ class IndexController extends AppController {
 	var $uses = array();
 	var $components = array('Cookie');
 	function index(){
-		//$this->connectToFacebookOrLogin();
+		$this->connectToFacebookOrLogin();
        
 		$this->layout = 'voto';
 		$this->loadModel('Category');
@@ -14,6 +14,7 @@ class IndexController extends AppController {
                 $this->render('index');
 	}
 	function vota(){
+                $facebookUserId = $this->connectToFacebookOrLogin();
                 $hasBeenAswered = !empty($this->data) && $this->referer()=='/';
                 if(!$hasBeenAswered){
                     $this->redirect('/');
@@ -42,7 +43,7 @@ class IndexController extends AppController {
                 unset($afinity[0]);
                 $this->set('winner',$winner);
                 $this->set('others',$afinity);
-                $idPerson = $this->Person->saveResult($winner,$this->data,array());
+                $idPerson = $this->Person->saveResult($winner,$this->data,array('idfacebook'=>$facebookUserId));
                 $this->set('person_id',$idPerson);
 		$this->render('resultado');
 		
