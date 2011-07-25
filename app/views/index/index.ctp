@@ -10,7 +10,7 @@ foreach($categories as $category){
 	foreach($category['Questions'] as $question){
 	?>
 	<tr class="titulo2">
-                    <td>
+                    <td style="width:370px;">
                             <strong><?php echo $question['Question']['question']; ?></strong>
                     </td>
                     <td class="titulo1" style="width:3px;">
@@ -20,7 +20,7 @@ foreach($categories as $category){
                     </td>
             </tr>
             <tr>
-                    <td>
+                    <td style="width:370px;">
                     <?php
 
                     foreach($question['Answer'] as $answer){

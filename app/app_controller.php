@@ -45,6 +45,7 @@ class AppController extends Controller {
                         $user_profile = $facebook->api('/me');
                         $this->set('user',$user);
                         $this->set('facebookAppId',$this->FACEBOOK_APP_ID);
+			$this->set('facebookAppUrl',$this->FACEBOOK_APP_URL);
                     }
                     catch (FacebookApiException $e) {
                         $user = null;

@@ -137,11 +137,11 @@ table{
 	cookie: true,
         xfbml: true});
     var height = <?php echo $height;?>;
-    FB.Canvas.setSize({ height: height });
+    FB.Canvas.setSize();
   };
   (function() {
     var e = document.createElement('script');
-    e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+    e.src = document.location.protocol + '//connect.facebook.net/es_LA/all.js';
     e.async = true;
     document.getElementById('fb-root').appendChild(e);
   }());
