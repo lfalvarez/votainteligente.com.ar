@@ -1,21 +1,3 @@
-<script>
-
-$(document).ready(function(){
-    $('input[name=confirmaCandidato]:radio').change(function(radio){
-        var confirmationData = new Object();
-        var confirmsCandidate = null;
-        if ( $('input[name=confirmaCandidato]:checked').val()=='yes' ) {
-            confirmsCandidate = 1;
-        }
-        else {
-            confirmsCandidate = 0;
-        }
-        confirmationData['data[Person][id]'] = <?php echo $person_id;?>;
-        confirmationData['data[Person][confirmsCandidate]'] = confirmsCandidate;
-        $.post('confirm',confirmationData,function(){},'script');
-    });
-});
-</script>
 <table class="tablaResultados">
         <tr>
         	<td colspan="2">
@@ -78,8 +60,8 @@ $(document).ready(function(){
                                                 <h3>Estás de Acuerdo con tu Resultado?</h3><br />
                                                 <input type="radio" name="confirmaCandidato" value="yes"> Si<br />
                                                 <input type="radio" name="confirmaCandidato" value="no"> No<br /><br />
-                                                <!--input type="submit" value="Publicar"-->
-                                                <div id="confirm"></div>
+						<div id="confirm"></div>
+                                                <input type="button" onclick="publishCandidate();" value="Publicar">
                                             </form>
                                         <!--block start="blockConfirmado"/>
                                            <h2> Y {sino} estas de Acuerdo con el Resultado.</h2>
@@ -150,14 +132,14 @@ $(document).ready(function(){
             
             </td>
         </tr>
-        <tr>
+        <!--tr>
             <td class="titulo">
             	Participa en la Discusión
             </td>
             <td class="titulo">
             	Recursos Adicionales
             </td>
-       	</tr>
+       	</tr-->
         <tr>
             <td colspan="2" style="background-color:#FFF">&nbsp;
             
@@ -170,9 +152,19 @@ $(document).ready(function(){
         </tr>
         <tr>
             <td colspan="2">
-                <fb:request-form action="http://apps.facebook.com/votainteligente/" method="POST" invite="true" type="Vota Inteligente" content="{content}">
-                    <fb:multi-friend-selector max="20" actiontext="Estos son tus amigos que aún no han participado" showborder="true" rows="3" exclude_ids="{friends}">
-                </fb:request-form>
+		<fb:serverFbml width="760px">
+		  <script type="text/fbml">
+		    <fb:fbml>
+		      <fb:request-form
+			    action='<?php echo $facebookAppUrl; ?>'
+			    method='POST'
+			    type='Vota inteligente'
+			    content="Revisa quien es tu media naranja<fb:req-choice url='<?php echo $facebookAppUrl; ?>' label='Register'/>"
+			<fb:multi-friend-selector actiontext="Invita a tus amigos a participar"></fb:multi-friend-selector>
+		     </fb:request-form>
+		   </fb:fbml>
+		  </script>
+		</fb:serverFbml>
             </td>
         </tr>
 	</table>

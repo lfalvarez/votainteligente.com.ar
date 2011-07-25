@@ -129,47 +129,58 @@ table{
 }
 </style>
 <div id="fb-root"></div>
-<script src="http://connect.facebook.net/en_US/all.js"></script>
-<SCRIPT src="js/jquery.js">
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({appId: '<?php echo $facebookAppId; ?>', status: true, cookie: true, xfbml: true});
-  };
-  (function() {
-    var e = document.createElement('script'); e.async = true;
-    e.src = document.location.protocol +
-      '//connect.facebook.net/en_US/all.js';
-    document.getElementById('fb-root').appendChild(e);
-  }());
-</script>
-
+<script src="js/jquery.js"></script>
 <div id="bodyOfMediaNaranja" class="bodyOfMediaNaranja">
-<div id="invite">
-<fb:serverfbml style="width: 600px; height: 650px;">
-    <script type="text/fbml">
-        <fb:request-form 
-            action="index.php"
-            method="POST"
-            invite="true"
-            type="MyApp"
-            content="Please have a look at my new __DYNAMICNAME_HERE__. 
-                <fb:req-choice url='http://apps.facebook.com/myapp/' label='View Now!' />" >
-
-            <div class="clearfix" style="padding-bottom: 10px;">
-                <fb:multi-friend-selector condensed="true" style="width: 600px;" />
-            </div>
-            <fb:request-form-submit /></fb:request-form>
-    </script>
-</fb:serverfbml></div>
 <?php echo $content_for_layout ?>
 </div>
-
 <script>
-$(document).ready(function() {
-    var height = 1300;
-    FB.Canvas.setSize({ height: height });
-    console.log('height = '+height+';');
+window.fbAsyncInit = function() {
+    FB.init({appId: '<?php echo $facebookAppId; ?>',
+	status: true, 
+	cookie: true,
+	xfbml: true});
+    var height = <?php echo $height;?>;
+    FB.Canvas.setSize({height:height});
+    FB.Canvas.scrollTo(0,0);
+};
+  (function() {
+    var e = document.createElement('script');
+    e.src = document.location.protocol + '//connect.facebook.net/es_LA/all.js';
+    e.async = true;
+    document.getElementById('fb-root').appendChild(e);
+  }());
+$('input[name=confirmaCandidato]:radio').change(function(radio){
+    var confirmationData = new Object();
+    var confirmsCandidate = null;
+    if ( $('input[name=confirmaCandidato]:checked').val()=='yes' ) {
+	confirmsCandidate = 1;
+    }
+    else {
+	confirmsCandidate = 0;
+    }
+    confirmationData['data[Person][id]'] = <?php echo $person_id;?>;
+    confirmationData['data[Person][confirmsCandidate]'] = confirmsCandidate;
+    $.post('confirm',confirmationData,function(){},'script');
 });
+function publishCandidate() {
+      FB.ui({
+	method: 'stream.publish',
+	attachment: {
+	  name: '<?php echo $facebookWallPublication['title']; ?>',
+	  caption: '<?php echo $facebookWallPublication['caption']; ?>',
+	  media: [{
+	    type: 'image',
+	    href: '<?php echo $facebookWallPublication['image_link']; ?>',
+	    src: '<?php echo $facebookWallPublication['image']; ?>'
+	  }]
+	},
+	action_links: [{
+	  text: '<?php echo $facebookWallPublication['text']; ?>',
+	  href: '<?php echo $facebookWallPublication['href']; ?>'
+	}],
+	user_message_prompt: 'Cuentale a tus amigos'
+      });
+    }
 </script>
 </body>
 </html>
