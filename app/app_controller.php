@@ -11,6 +11,7 @@ class AppController extends Controller {
 	    $this->FACEBOOK_APP_ID = Configure::read('Facebook.APP_ID');
 	    $this->FACEBOOK_SECRET = Configure::read('Facebook.SECRET');
 	    $this->FACEBOOK_APP_URL = Configure::read('Facebook.APP_URL');
+	    $this->helpers['Js'] = array('Jquery');
 	}
         /**
 	*	Code taken from http://bakery.cakephp.org/articles/fsiebler/2010/08/23/integrating-facebook-connect
@@ -21,9 +22,9 @@ class AppController extends Controller {
 	function beforeFilter() {
 		// if an admin route is requested and not logged in
 		$user = $this->Session->read('User');
-		if(isset($this->params['admin']) && $this->params['admin'] && is_null($user)) {
+		if(isset($this->params['admin']) && $this->params['admin'] && (is_null($user) || !$user['User']['admin'])) {
 			// set Flash and redirect to login page
-			$this->Session->setFlash('You need to be logged for that action.','default',array('class'=>'flash_bad'));
+			$this->Session->setFlash('Debes ser un administrador para acceder a esto','default',array('class'=>'flash_bad'));
 			$this->redirect(array('controller'=>'users','action'=>'login','admin'=>FALSE));
 		}
 	}
