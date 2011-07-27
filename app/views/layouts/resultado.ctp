@@ -129,7 +129,7 @@ table{
 }
 </style>
 <div id="fb-root"></div>
-<script src="js/jquery.js"></script>
+<?php echo $this->Html->script('jquery'); ?>
 <div id="bodyOfMediaNaranja" class="bodyOfMediaNaranja">
 <?php echo $content_for_layout ?>
 </div>

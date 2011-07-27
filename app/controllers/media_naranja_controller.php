@@ -1,7 +1,7 @@
 <?php
-class IndexController extends AppController {
+class MediaNaranjaController extends AppController {
 
-	var $name = 'Index';
+	var $name = 'MediaNaranja';
 	var $uses = array();
 	var $components = array('Cookie');
 	function index(){
@@ -15,9 +15,9 @@ class IndexController extends AppController {
 	}
 	function vota(){
                 $facebookUserId = $this->connectToFacebookOrLogin();
-                $hasBeenAswered = !empty($this->data) && $this->referer()=='/';
+                $hasBeenAswered = !empty($this->data);
                 if(!$hasBeenAswered){
-                    $this->redirect('/');
+                    $this->redirect('/media_naranja');
                     return;
                 }
                 $categories = $this->data;
@@ -38,7 +38,7 @@ class IndexController extends AppController {
                     $afinity[] =$candidate;
                 }
                 $this->loadModel('Person');
-                usort($afinity,array("IndexController","_orderCandidates"));
+                usort($afinity,array("MediaNaranjaController","_orderCandidates"));
                 $winner = $afinity[0];
                 unset($afinity[0]);
                 $this->set('winner',$winner);

@@ -128,7 +128,7 @@ table{
 	height:100%;
 }
 </style>
-<SCRIPT src="js/jquery.js"></script>
+<?php echo $this->Html->script('jquery'); ?>
 <div id="fb-root"></div>
 <script>
     window.fbAsyncInit = function() {
@@ -177,7 +177,7 @@ table{
 				<img src="http://www.votainteligente.cl/medianaranja/images/importancia.png" width="316" height="46" border="0" />
             </td>
         </tr>
-        <form action="vota" method="post">        
+        <form action="media_naranja/vota" method="post">        
         <?php echo $content_for_layout ?>
         <tr>
             <td class="titulo" colspan="2">

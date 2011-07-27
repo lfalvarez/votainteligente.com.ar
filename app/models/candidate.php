@@ -27,6 +27,7 @@ class Candidate extends AppModel {
 			'counterQuery' => ''
 		)
 	);
+	var $hasOne = array('CandidateProfile');
         function compatibility($idCandidate,$categories){
             $candidate = $this->findById($idCandidate);
             $result = array();
@@ -65,6 +66,18 @@ class Candidate extends AppModel {
             }
             return $totalSum/count($data);
         }
+	function getProfile($candidateId){
+	    $this->CandidateProfile->recursive = 1;
+	    $profile = $this->CandidateProfile->find('first',array('conditions'=>array('candidate_id'=>$candidateId)));
+	    return $profile;
+	}
+	function slugifyName($name){
+	    return strtolower(Inflector::slug($name,'-'));
+	}
+	function beforeSave($options = array()) {
+	    $this->data['Candidate']['slug']=$this->slugifyName($this->data['Candidate']['name']);
+	    return true;
+	}
 
 }
 ?>

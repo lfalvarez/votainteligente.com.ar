@@ -65,7 +65,7 @@ class User extends AppModel {
 			if($user['User']['password'] != md5($_POST['data']['User']['password'].$salt)) {
 			return FALSE;
 			}
-
+			
 			// save User
 			$this->_user = $user;
 		}

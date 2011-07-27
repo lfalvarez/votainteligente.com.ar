@@ -3,7 +3,9 @@
 App::import('Model', 'Person');
 
 class PersonTestCase extends CakeTestCase {
-	var $fixtures = array('app.person_answer','app.person','app.question', 'app.result', 'app.candidate', 'app.category', 'app.result_detail', 'app.answer', 'app.weight');
+	var $fixtures = array('app.candidate_profile','app.candidate_link','app.candidate_party',
+	                    'app.candidate_political_experience','app.candidate_university_study',
+			    'app.candidate_work_experience','app.person_answer','app.person','app.question', 'app.result', 'app.candidate', 'app.category', 'app.result_detail', 'app.answer', 'app.weight');
         var $answers = array(
                 'Category'=>array(
                     1=>array(

@@ -3,7 +3,11 @@
 App::import('Model', 'Candidate');
 
 class CandidateTestCase extends CakeTestCase {
-	var $fixtures = array('app.person','app.question', 'app.result', 'app.candidate', 'app.category', 'app.result_detail', 'app.answer', 'app.weight');
+	var $fixtures = array('app.candidate_profile','app.candidate_link','app.candidate_party',
+	                    'app.candidate_political_experience','app.candidate_university_study',
+			    'app.candidate_work_experience',
+			    'app.person','app.question', 'app.result', 'app.candidate', 'app.category', 
+			    'app.result_detail', 'app.answer', 'app.weight');
 
 	function startTest() {
 		$this->Candidate =& ClassRegistry::init('Candidate');

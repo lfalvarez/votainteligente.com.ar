@@ -8,6 +8,7 @@ class Category extends AppModel {
 		)
 	);
         var $order = "Category.order ASC";
+	var $actAs = array('Containable');
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 	var $hasMany = array(
@@ -90,5 +91,20 @@ class Category extends AppModel {
             }
             return $result;
         }
+	function getAllCategoriesAndQuestionsForCandidate($candidateId){
+	    $this->Behaviors->attach('Containable');
+	    $contain = array(
+		'Question'=>array(
+		    'Answer'=>array(
+			'Weight'=>array(
+			    'conditions'=>array(
+				'Weight.candidate_id ='=>$candidateId
+				),
+			    )
+			)
+		    )
+		);
+	    return $this->find('all',array('contain'=>$contain));
+	}
 }
 ?>
