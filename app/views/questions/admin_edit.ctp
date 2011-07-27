@@ -5,10 +5,12 @@
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('question');
+		echo $this->Form->input('explanation');
+		echo $this->Form->input('short_description');
 		echo $this->Form->input('category_id');
 		echo $this->Form->input('sour');
 		echo $this->Form->input('public');
-                echo $this->Form->input('order');
+		echo $this->Form->input('order');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>

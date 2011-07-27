@@ -4,10 +4,12 @@
 	<tr>
 			<th><?php echo $this->Paginator->sort('id');?></th>
 			<th><?php echo $this->Paginator->sort('question');?></th>
+			<th><?php echo $this->Paginator->sort('explanation');?></th>
+			<th><?php echo $this->Paginator->sort('short_description');?></th>
 			<th><?php echo $this->Paginator->sort('category_id');?></th>
 			<th><?php echo $this->Paginator->sort('sour');?></th>
 			<th><?php echo $this->Paginator->sort('public');?></th>
-                        <th><?php echo $this->Paginator->sort('order');?></th>
+			<th><?php echo $this->Paginator->sort('order');?></th>
 			<th class="actions"><?php __('Actions');?></th>
 	</tr>
 	<?php
@@ -21,12 +23,14 @@
 	<tr<?php echo $class;?>>
 		<td><?php echo $question['Question']['id']; ?>&nbsp;</td>
 		<td><?php echo $question['Question']['question']; ?>&nbsp;</td>
+		<td><?php echo $question['Question']['explanation']; ?>&nbsp;</td>
+		<td><?php echo $question['Question']['short_description']; ?>&nbsp;</td>
 		<td>
 			<?php echo $this->Html->link($question['Category']['name'], array('controller' => 'categories', 'action' => 'view', $question['Category']['id'])); ?>
 		</td>
 		<td><?php echo $this->Admin->booleanValue($question['Question']['sour']); ?>&nbsp;</td>
 		<td><?php echo $this->Admin->booleanValue($question['Question']['public']); ?>&nbsp;</td>
-                <td><?php echo $question['Question']['order']; ?>&nbsp;</td>
+		<td><?php echo $question['Question']['order']; ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $question['Question']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $question['Question']['id'])); ?>
