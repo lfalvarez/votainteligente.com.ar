@@ -64,4 +64,9 @@ class AnswersController extends AppController {
 		$this->Session->setFlash(__('Answer was not deleted', true));
 		$this->redirect(array('action' => 'index'));
 	}
+	function admin_getAnswersForThisQuestion($questionId){
+	    $this->layout = 'script';
+	    $answers = $this->Answer->find('all',array('conditions'=>array('question_id'=>$questionId)));
+	    $this->set('answers',$answers);
+	}
 }

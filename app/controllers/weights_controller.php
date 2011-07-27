@@ -29,8 +29,7 @@ class WeightsController extends AppController {
 		}
 		$questions = $this->Weight->Question->find('list');
 		$candidates = $this->Weight->Candidate->find('list');
-		$answers = $this->Weight->Answer->find('list');
-		$this->set(compact('questions', 'candidates', 'answers'));
+		$this->set(compact('questions', 'candidates'));
 	}
 
 	function admin_edit($id = null) {

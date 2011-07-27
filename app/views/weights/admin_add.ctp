@@ -2,10 +2,22 @@
 <?php echo $this->Form->create('Weight');?>
 	<fieldset>
 		<legend><?php __('Admin Add Weight'); ?></legend>
+		<script>
+		    function updateValues(selected){
+			$('#WeightAnswerId option').remove();
+			$.post('<?php echo Router::url(array(
+			    'controller'=>'answers',
+			    'action'=>'getAnswersForThisQuestion'));
+			?>/'+selected.value,
+			function(data){
+			    $('#WeightAnswerId').html(data);
+			});
+		    }
+		</script>
 	<?php
-		echo $this->Form->input('question_id');
+		echo $this->Form->input('question_id',array('empty'=>'Selecciona una pregunta','onChange'=>'updateValues(this);'));
 		echo $this->Form->input('candidate_id');
-		echo $this->Form->input('answer_id');
+		echo $this->Form->input('answer_id',array('empty'=>'Selecciona una pregunta'));
 		Configure::load('medianaranja');
 		echo $this->Form->input('weighting',array('type'=>'select','default'=>1,'options'=>Configure::read('Weights.possibleValues')));
 	?>

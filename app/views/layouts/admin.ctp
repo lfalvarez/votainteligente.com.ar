@@ -32,6 +32,7 @@
 
 		echo $scripts_for_layout;
 	?>
+	<?php echo $this->Html->script('jquery'); ?>
 </head>
 <body>
 	<div id="container">
