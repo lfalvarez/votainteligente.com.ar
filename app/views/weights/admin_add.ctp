@@ -6,7 +6,8 @@
 		echo $this->Form->input('question_id');
 		echo $this->Form->input('candidate_id');
 		echo $this->Form->input('answer_id');
-		echo $this->Form->input('weighting');
+		Configure::load('medianaranja');
+		echo $this->Form->input('weighting',array('type'=>'select','default'=>1,'options'=>Configure::read('Weights.possibleValues')));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>
