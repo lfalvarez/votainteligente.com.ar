@@ -133,7 +133,7 @@ table{
 <script>
     window.fbAsyncInit = function() {
     FB.init({appId: '<?php echo $facebookAppId; ?>',
-        status: true, 
+        status: true,
 	cookie: true,
         xfbml: true});
     var height = <?php echo $height;?>;
@@ -152,7 +152,7 @@ table{
 		<td align="left">
             <table align="left" style="width:760px;" cellpadding="0" cellspacing="0" border="0">
                 <td style="text-align:left; width:500px">
-                
+
                     <img src="http://www.votainteligente.cl/medianaranja/images/fb_header_1.png" width="500" height="113" border="0" />
                 </td>
                 <td style="text-align:left; width:260px">
@@ -162,7 +162,7 @@ table{
      	</td>
     </tr>
     <tr>
-        <td bgcolor="#FFFFFF" style="width:760px; text-align:left; padding:0px; border:0px;">  	
+        <td bgcolor="#FFFFFF" style="width:760px; text-align:left; padding:0px; border:0px;">
   	<table class="tablaEncuesta">
         <tr>
             <td class="titulo" style="font-weight:normal" colspan="2">
@@ -177,14 +177,14 @@ table{
 				<img src="http://www.votainteligente.cl/medianaranja/images/importancia.png" width="316" height="46" border="0" />
             </td>
         </tr>
-        <form action="media_naranja/vota" method="post">        
+        <?php echo $this->Form->create(null, array('url' => array('controller' => 'media_naranja', 'action' => 'vota'))); ?>
         <?php echo $content_for_layout ?>
         <tr>
             <td class="titulo" colspan="2">
                 <input type="submit" value="Buscar Media Naranja">
             </td>
         </tr>
-   		</form>
+   	<?php echo $this->Form->end(); ?>
    	</table>
    	        </td>
     </tr>
