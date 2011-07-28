@@ -62,7 +62,7 @@ class Category extends AppModel {
                     $answer['Answer']=0;
                 }
                 $importance = $answer['Percentage'];
-                
+
                 $weight = 0;
                 foreach($weightsForThisCandidate as $weightForThisCandidate){
                     $isThisTheRightWeight = ($weightForThisCandidate['Weight']['question_id']==$idQuestion)&&($weightForThisCandidate['Weight']['answer_id']==$answer['Answer']);
@@ -105,6 +105,10 @@ class Category extends AppModel {
 		    )
 		);
 	    return $this->find('all',array('contain'=>$contain));
+	}
+	function beforeSave($options = array()) {
+	    $this->data['Category']['slug']=$this->slugifyName($this->data['Category']['name']);
+	    return true;
 	}
 }
 ?>

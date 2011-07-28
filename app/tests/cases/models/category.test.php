@@ -145,6 +145,16 @@ class CategoryTestCase extends CakeTestCase {
             );
             $this->assertEqual($result,$expected);
         }
+	function testOnSaveSlugifyTheName(){
+	    $data = array(
+		'Category'=>array(
+		    'name'=>'name of the new category with ñá',
+		    'order'=>4
+		    ));
+	    $this->Category->save($data);
+	    $category = $this->Category->findBySlug('name-of-the-new-category-with-na');
+	    $this->assertEqual(count($category),1);
+	}
 
 }
 ?>

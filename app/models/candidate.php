@@ -71,9 +71,6 @@ class Candidate extends AppModel {
 	    $profile = $this->CandidateProfile->find('first',array('conditions'=>array('candidate_id'=>$candidateId)));
 	    return $profile;
 	}
-	function slugifyName($name){
-	    return strtolower(Inflector::slug($name,'-'));
-	}
 	function beforeSave($options = array()) {
 	    $this->data['Candidate']['slug']=$this->slugifyName($this->data['Candidate']['name']);
 	    return true;
