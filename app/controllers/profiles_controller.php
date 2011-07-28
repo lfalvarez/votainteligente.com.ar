@@ -3,9 +3,11 @@ class ProfilesController extends AppController {
 
 	var $name = 'Profiles';
 	var $uses = array('Candidate');
-	
-	function index(){
+	var $layout = 'profile_layout';
+	function beforeFilter() {
 	    $this->_getAllCandidates();
+	}
+	function index(){
 	}
 	function view($slug){
 	    $candidate = $this->Candidate->findBySlug($slug);
@@ -16,7 +18,6 @@ class ProfilesController extends AppController {
 	    $candidateProfile = $this->Candidate->getProfile($candidateId);
 	    $this->set('profile',$candidateProfile);
 	    $this->_getCandidatesAnswer($candidateId);
-	    $this->_getAllCandidates();
 	}
 	function _getAllCandidates(){
 	    $candidates = $this->Candidate->find('all');
