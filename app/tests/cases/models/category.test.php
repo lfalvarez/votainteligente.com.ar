@@ -88,7 +88,7 @@ class CategoryTestCase extends CakeTestCase {
             $this->assertEqual($result,$expected);
         }
         function testCalculateAfinityWithACandidateWithASeventyFivePercent(){
-            
+
             $answersAndPercentages = array(
                 'Question'=>array(
                         1=>array(
@@ -106,7 +106,7 @@ class CategoryTestCase extends CakeTestCase {
             $this->assertEqual($result,$expected);
         }
         function testCalculateAfinityWithACandidateWithAZeroPercent(){
-            
+
             $answersAndPercentages = array(
                 'Question'=>array(
                         1=>array(
@@ -129,6 +129,7 @@ class CategoryTestCase extends CakeTestCase {
                 1=>array(
                     'Category'=>array(
                         'id'=>1,
+			'slug'=>'numeros-imaginarios',
                         'name'=>'numeros imaginarios',
                         'order'=>1,
                         )
@@ -136,6 +137,7 @@ class CategoryTestCase extends CakeTestCase {
                 2=>array(
                     'Category'=>array(
                         'id'=>2,
+			'slug'=>'numeros-reales',
                         'name'=>'numeros reales',
                         'order'=>2,
                         )

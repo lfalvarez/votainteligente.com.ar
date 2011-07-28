@@ -6,7 +6,7 @@ class CandidateTestCase extends CakeTestCase {
 	var $fixtures = array('app.candidate_profile','app.candidate_link','app.candidate_party',
 	                    'app.candidate_political_experience','app.candidate_university_study',
 			    'app.candidate_work_experience',
-			    'app.person','app.question', 'app.result', 'app.candidate', 'app.category', 
+			    'app.person','app.question', 'app.result', 'app.candidate', 'app.category',
 			    'app.result_detail', 'app.answer', 'app.weight');
 
 	function startTest() {
@@ -17,7 +17,7 @@ class CandidateTestCase extends CakeTestCase {
 		unset($this->Candidate);
 		ClassRegistry::flush();
 	}
-        
+
         function testCandidateCompatibility(){
             $data = array(
                 'Category'=>array(
@@ -48,12 +48,13 @@ class CandidateTestCase extends CakeTestCase {
                     )
                 );
             $idCandidate = 1;
-            
+
             $result = $this->Candidate->compatibility($idCandidate,$data);
             $expected = array(
                 1=>array(
                     'Category'=>array(
                         'id'=>1,
+			'slug'=>'numeros-imaginarios',
                         'name'=>'numeros imaginarios',
                         'order'=>1,
                         'afinity'=>100
@@ -62,6 +63,7 @@ class CandidateTestCase extends CakeTestCase {
                 2=>array(
                     'Category'=>array(
                         'id'=>2,
+			'slug'=>'numeros-reales',
                         'name'=>'numeros reales',
                         'order'=>2,
                         'afinity'=>100
@@ -70,7 +72,7 @@ class CandidateTestCase extends CakeTestCase {
             );
             $this->assertEqual($result,$expected);
         }
-        
+
         function testCalculateTotalAfinity(){
             $data = array(
                 1=>array(

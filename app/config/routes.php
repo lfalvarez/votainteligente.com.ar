@@ -40,7 +40,13 @@
         Router::connect('/admin', array('controller' => 'admin','admin'=>1));
         Router::connect('/admin/login', array('controller' => 'users', 'action' => 'login'));
 	Router::connect('/logout', array('controller' => 'users', 'action' => 'logout'));
-	
+	Router::connect('/compare', array('controller' => 'compare', 'action' => 'index'));
+	Router::connect('/compare/getComparisonAddress', array('controller' => 'compare', 'action' => 'getComparisonAddress'));
+	Router::connect('/compare/:data', array('controller' => 'compare', 'action' => 'index'),array(
+	    'pass'=>array('data'),
+	    'data'=>'[a-z0-9\-\_\/\\\]+'
+	));
+
 	//Router::connect('/register', array('controller' => 'users', 'action' => 'register'));
 /**
  * ...and connect the rest of 'Pages' controller's urls.
