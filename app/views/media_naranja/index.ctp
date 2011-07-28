@@ -6,7 +6,7 @@ foreach($categories as $category){
    <td class="titulo1" colspan="2">
 	<?php echo $category['Category']['name'];?><br />
 <table class="tablaEncuesta">
-	<?php 
+	<?php
 	foreach($category['Questions'] as $question){
 	?>
 	<tr class="titulo2">
@@ -16,7 +16,7 @@ foreach($categories as $category){
                     <td class="titulo1" style="width:3px;">
                     </td>
                     <td style="width:130px;">
-                            <i>Importancia:</i> 
+                            <i>Importancia:</i>
                     </td>
             </tr>
             <tr>
@@ -25,11 +25,19 @@ foreach($categories as $category){
 
                     foreach($question['Answer'] as $answer){
                     ?>
-                            <input type="radio" name="data[Category][<?php echo $category['Category']['id'];?>][Question][<?php echo $question['Question']['id']; ?>][Answer]" value="<?php echo $answer['id'];?>"><?php echo $answer['answer']?><br />
+                            <input type="radio"
+				   name="data[Category][<?php echo $category['Category']['id'];?>][Question][<?php echo $question['Question']['id']; ?>][Answer]"
+				   value="<?php echo $answer['id'];?>"
+				   id="Answer_<?php echo $answer['id'];?>">
+			    <label for="Answer_<?php echo $answer['id'];?>"><?php echo $answer['answer']?></label><br />
                     <?php
                     }
                     ?>
-                            <input type="radio" name="data[Category][<?php echo $category['Category']['id'];?>][Question][<?php echo $question['Question']['id']; ?>][Answer]" value="0">Ninguna de las anteriores representa mi posici&oacute;n<br /><br />
+                            <input type="radio"
+				   name="data[Category][<?php echo $category['Category']['id'];?>][Question][<?php echo $question['Question']['id']; ?>][Answer]"
+				   value="0"
+				   id="Answer_0_<?php echo $question['Question']['id']; ?>">
+			    <label for="Answer_0_<?php echo $question['Question']['id']; ?>">Ninguna de las anteriores representa mi posici&oacute;n</label><br /><br />
                     </td>
                     <td>
                     </td>
