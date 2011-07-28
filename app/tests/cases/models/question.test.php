@@ -31,8 +31,11 @@ class QuestionTestCase extends CakeTestCase {
 							'question' => '¿que piensas de los numeros imaginarios dibujados en un plano cartesiano?',
 							'category_id' => 1,
 							'sour' => 0,
+							'explanation'=>'blah',
+							'short_description'=>'blah',
                                                         'order'=>1,
-							'public' => 1
+							'public' => 1,
+							'included_in_media_naranja' => 1,
 						),
 				'Answer' => array(
 						array(
@@ -55,8 +58,11 @@ class QuestionTestCase extends CakeTestCase {
                                 'question' => '¿un numero imaginario es par o impar??',
                                 'category_id' => 1,
                                 'sour' => 0,
+				'explanation'=>'blah',
+				'short_description'=>'blah',
                                 'order'=>2,
-                                'public' => 1
+                                'public' => 1,
+				'included_in_media_naranja' => 0,
                              ),
                              'Answer'=>array(
                                          array(
@@ -72,11 +78,14 @@ class QuestionTestCase extends CakeTestCase {
                                                 'public' => 1
                                         )
                              )
-                                
+
                         )
 		);
 		$this->assertEqual($expected,$result);
 	}
-
+	function testFindAllWithConditionsForMediaNaranja(){
+	    $result = $this->Question->findAllWithConditions(1,array('included_in_media_naranja'=>1));
+	    $this->assertEqual(1,count($result));
+	}
 }
 ?>

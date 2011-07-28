@@ -36,6 +36,11 @@
 			<?php echo $this->Admin->booleanValue($question['Question']['public']); ?>
 			&nbsp;
 		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Included In Media Naranja'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $this->Admin->booleanValue($question['Question']['included_in_media_naranja']); ?>
+			&nbsp;
+		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Order'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $question['Question']['order']; ?>

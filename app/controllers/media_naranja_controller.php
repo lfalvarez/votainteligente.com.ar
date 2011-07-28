@@ -8,7 +8,7 @@ class MediaNaranjaController extends AppController {
 		$this->connectToFacebookOrLogin();
 		$this->layout = 'voto';
 		$this->loadModel('Category');
-		$categories = $this->Category->findAllForIndex();
+		$categories = $this->Category->findAllForMediaNaranja();
 		$this->set('height',Configure::read('Facebook.MEDIANARANJA.form.height'));
 		$this->set('categories', $categories);
                 $this->render('index');
@@ -21,12 +21,12 @@ class MediaNaranjaController extends AppController {
                     return;
                 }
                 $categories = $this->data;
-                
-                
+
+
                 $this->helpers[]= 'Number';
                 $this->helpers[]= 'Percentage';
 		$this->layout = 'resultado';
-                
+
                 $this->loadModel('Candidate');
                 $candidates = $this->Candidate->find('all');
                 $afinity = array();
@@ -48,7 +48,7 @@ class MediaNaranjaController extends AppController {
 		$this->set('height',Configure::read('Facebook.MEDIANARANJA.result.height'));
 		$this->_prepareFacebookWallPublication($winner);
 		$this->render('resultado');
-		
+
 	}
         function _orderCandidates($candidateA,$candidateB){
             return $candidateB['Candidate']['total'] - $candidateA['Candidate']['total'];

@@ -50,12 +50,17 @@ class Question extends AppModel {
 		)
 	);
 	function findAllForIndex($category_id){
+	    return $this->findAllWithConditions($category_id);
+	}
+	function findAllWithConditions($category_id,$conditionsForQuestions = array()){
 		$this->Behaviors->attach('Containable');
-		$this->contain('Answer.public = 1');
-		$questions = $this->find('all',array('conditions'=>array(
-                        'Question.category_id'=>$category_id,
-                        'Question.public'=>1
-                        )
+		$conditionsForQuestions['Question.public'] = 1;
+		$conditionsForQuestions['Question.category_id'] = $category_id;
+		$questions = $this->find('all',array(
+		    'conditions'=>$conditionsForQuestions,
+		    'contain'=>array(
+			'Answer'
+			)
                     )
                 );
 		return $questions;
@@ -65,7 +70,7 @@ class Question extends AppModel {
             $this->contain('Answer');
             $questions = $this->find('all',array('conditions'=>array('category_id'=>$idCategory)));
             return $questions;
-             
+
         }
 
 }

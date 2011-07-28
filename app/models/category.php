@@ -40,18 +40,24 @@ class Category extends AppModel {
 		)
 	);
 	function findAllForIndex(){
-		$this->recursive = -1;
-		$categories = $this->find('all');
-		$categoriesResult = array();
-		foreach ($categories as $category){
-			$questionsInThisCategory = $this->Question->findAllForIndex($category['Category']['id']);
-			$thereAreQuestions = count($questionsInThisCategory)>0;
-			if($thereAreQuestions){
-				$category['Questions']=$questionsInThisCategory;
-				$categoriesResult[]=$category;
-			}
-		}
-		return $categoriesResult;
+		return $this->findAllWithConditions();
+	}
+	function findAllForMediaNaranja(){
+	    return $this->findAllWithConditions(array('included_in_media_naranja '=>1));
+	}
+	function findAllWithConditions($conditionsForQuestions = array()){
+	    $this->recursive = -1;
+	    $categories = $this->find('all');
+	    $categoriesResult = array();
+	    foreach ($categories as $category){
+		    $questionsInThisCategory = $this->Question->findAllWithConditions($category['Category']['id'],$conditionsForQuestions);
+		    $areThereQuestions = count($questionsInThisCategory)>0;
+		    if($areThereQuestions){
+			    $category['Questions']=$questionsInThisCategory;
+			    $categoriesResult[]=$category;
+		    }
+	    }
+	    return $categoriesResult;
 	}
         function calculateAfinity($weightsForThisCandidate,$answersAndPercentages){
             $totalAfinity = 0;

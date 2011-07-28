@@ -8,7 +8,8 @@
 			<th><?php echo $this->Paginator->sort('short_description');?></th>
 			<th><?php echo $this->Paginator->sort('category_id');?></th>
 			<th><?php echo $this->Paginator->sort('sour');?></th>
-			<th><?php echo $this->Paginator->sort('public',array('default'=>true));?></th>
+			<th><?php echo $this->Paginator->sort('public',array('checked'=>true));?></th>
+			<th><?php echo $this->Paginator->sort('included_in_media_naranja',array('checked'=>true));?></th>
 			<th><?php echo $this->Paginator->sort('order');?></th>
 			<th class="actions"><?php __('Actions');?></th>
 	</tr>
@@ -30,6 +31,7 @@
 		</td>
 		<td><?php echo $this->Admin->booleanValue($question['Question']['sour']); ?>&nbsp;</td>
 		<td><?php echo $this->Admin->booleanValue($question['Question']['public']); ?>&nbsp;</td>
+		<td><?php echo $this->Admin->booleanValue($question['Question']['included_in_media_naranja']); ?>&nbsp;</td>
 		<td><?php echo $question['Question']['order']; ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $question['Question']['id'])); ?>

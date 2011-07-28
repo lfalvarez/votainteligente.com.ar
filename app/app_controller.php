@@ -1,10 +1,10 @@
 <?php
 class AppController extends Controller {
-	
+
 	var $FACEBOOK_APP_ID = '';
         var $FACEBOOK_SECRET = '';
         var $FACEBOOK_APP_URL = '';
-	
+
 	function __construct(){
 	    parent::__construct();
 	    Configure::load('facebook');
@@ -55,7 +55,7 @@ class AppController extends Controller {
 		}
 		else{
                     $url = $facebook->getLoginUrl(array(
-                                'scope' => 'publish_stream, read_notifications',
+                                'scope' => 'publish_stream',
                                 'canvas' => 1,
                                 'fbconnect' => 0,
                             ));
