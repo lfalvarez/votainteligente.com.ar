@@ -5,7 +5,7 @@
 			<th><?php echo $this->Paginator->sort('id');?></th>
 			<th><?php echo $this->Paginator->sort('answer');?></th>
 			<th><?php echo $this->Paginator->sort('question_id');?></th>
-			<th><?php echo $this->Paginator->sort('public');?></th>
+			<th><?php echo $this->Paginator->sort('public',array('default'=>true));?></th>
 			<th class="actions"><?php __('Actions');?></th>
 	</tr>
 	<?php

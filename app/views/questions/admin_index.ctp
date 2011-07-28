@@ -8,7 +8,7 @@
 			<th><?php echo $this->Paginator->sort('short_description');?></th>
 			<th><?php echo $this->Paginator->sort('category_id');?></th>
 			<th><?php echo $this->Paginator->sort('sour');?></th>
-			<th><?php echo $this->Paginator->sort('public');?></th>
+			<th><?php echo $this->Paginator->sort('public',array('default'=>true));?></th>
 			<th><?php echo $this->Paginator->sort('order');?></th>
 			<th class="actions"><?php __('Actions');?></th>
 	</tr>

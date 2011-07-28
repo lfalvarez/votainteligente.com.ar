@@ -5,7 +5,7 @@
 	<?php
 		echo $this->Form->input('answer');
 		echo $this->Form->input('question_id');
-		echo $this->Form->input('public');
+		echo $this->Form->input('public',array('checked'=>true));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>

@@ -8,7 +8,7 @@
 		echo $this->Form->input('short_description');
 		echo $this->Form->input('category_id');
 		echo $this->Form->input('sour');
-		echo $this->Form->input('public');
+		echo $this->Form->input('public',array('checked'=>true));
 		echo $this->Form->input('order');
 	?>
 	</fieldset>
