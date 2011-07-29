@@ -67,8 +67,8 @@ class Person extends AppModel {
             }
             $personAnswer =& ClassRegistry::init('PersonAnswer');
             $personAnswer->saveAll($answers);
-            
+
         }
-        
+
 }
 ?>

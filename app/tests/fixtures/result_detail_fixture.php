@@ -16,7 +16,13 @@ class ResultDetailFixture extends CakeTestFixture {
 			'id' => 1,
 			'result_id' => 1,
 			'category_id' => 1,
-			'result' => 1
+			'result' => 100
+		),
+		array(
+			'id' => 2,
+			'result_id' => 1,
+			'category_id' => 2,
+			'result' => 69
 		),
 	);
 }

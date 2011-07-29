@@ -127,6 +127,9 @@ table{
 .bodyOfMediaNaranja{
 	height:100%;
 }
+.not-answered-yet{
+    background-color: red;
+}
 </style>
 <?php echo $this->Html->script('jquery'); ?>
 <div id="fb-root"></div>
@@ -138,6 +141,26 @@ table{
         xfbml: true});
     var height = <?php echo $height;?>;
     FB.Canvas.setSize();
+    $(':radio[name$="\\[Answer\\]"]').click(function(){
+	var questionId = $(this).attr('question_id');
+	$('#section_question_'+questionId).removeClass('not-answered-yet');
+    });
+    $('#CategoryIndexForm').submit(function(){
+	var allAnswered = true;
+	var questionId = 0;
+	$(':radio[name$="\\[Answer\\]"]').each(function(index,element){
+	    if ($(':radio:checked[name$="'+element.name+'"]').length === 0 ){
+		allAnswered = false;
+		questionId = $(element).attr('question_id');
+		$('#section_question_'+questionId).addClass('not-answered-yet');
+	    }
+	});
+	if (allAnswered) {
+	    return true;
+	}
+	$('#media-naranja-form-errors').text('Existen preguntas que no respondiste');
+	return false;
+    });
   };
   (function() {
     var e = document.createElement('script');
@@ -181,9 +204,11 @@ table{
         <?php echo $content_for_layout ?>
         <tr>
             <td class="titulo" colspan="2">
+		<div id="media-naranja-form-errors">&nbsp;</div>
                 <input type="submit" value="Buscar Media Naranja">
             </td>
         </tr>
+
    	<?php echo $this->Form->end(); ?>
    	</table>
    	        </td>

@@ -60,5 +60,5 @@ class PersonTestCase extends CakeTestCase {
             $this->assertEqual(1,count($result));
         }
 
-}
+	}
 ?>

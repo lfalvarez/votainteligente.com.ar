@@ -16,7 +16,7 @@ class PersonFixture extends CakeTestFixture {
 	var $records = array(
 		array(
 			'id' => 1,
-			'idfacebook' => 'Lorem ipsum dolor sit amet',
+			'idfacebook' => '1_facebook_id',
 			'session_key' => 'Lorem ipsum dolor sit amet',
 			'candidate_id' => 1,
 			'date' => '2011-07-07 12:12:58',

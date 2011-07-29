@@ -6,6 +6,7 @@ class MediaNaranjaController extends AppController {
 	var $components = array('Cookie');
 	function index(){
 		$this->connectToFacebookOrLogin();
+		$this->helpers[] = 'Javascript';
 		$this->layout = 'voto';
 		$this->loadModel('Category');
 		$categories = $this->Category->findAllForMediaNaranja();
@@ -15,14 +16,12 @@ class MediaNaranjaController extends AppController {
 	}
 	function vota(){
                 $facebookUserId = $this->connectToFacebookOrLogin();
-                $hasBeenAswered = !empty($this->data);
-                if(!$hasBeenAswered){
+                $hasBeenAsweredCorrectly = $this->_answeredCorrectly($this->data);
+                if(!$hasBeenAsweredCorrectly){
                     $this->redirect('/media_naranja');
                     return;
                 }
                 $categories = $this->data;
-
-
                 $this->helpers[]= 'Number';
                 $this->helpers[]= 'Percentage';
 		$this->layout = 'resultado';
@@ -48,6 +47,31 @@ class MediaNaranjaController extends AppController {
 		$this->set('height',Configure::read('Facebook.MEDIANARANJA.result.height'));
 		$this->_prepareFacebookWallPublication($winner);
 		$this->render('resultado');
+
+	}
+	function _answeredCorrectly($data){
+	    if (empty($data)) {
+		return false;
+	    }
+	    $this->loadModel('Question');
+	    $amountOfQuestionsThatShouldHaveBeenAnswered = $this->Question->find('count',array(
+		'conditions' => array(
+		    'public'=>1,
+		    'included_in_media_naranja'=>1
+		    )
+		));
+	    $amountOfQuestionsActuallyAnswered = 0;
+	    foreach ($data['Category'] as $category){
+		foreach ($category['Question'] as $question) {
+		    if (isset($question['Answer']) && !is_null($question['Answer'])) {
+			$amountOfQuestionsActuallyAnswered ++;
+		    }
+		}
+	    }
+	    if ($amountOfQuestionsActuallyAnswered == $amountOfQuestionsThatShouldHaveBeenAnswered) {
+		return true;
+	    }
+	    return false;
 
 	}
         function _orderCandidates($candidateA,$candidateB){

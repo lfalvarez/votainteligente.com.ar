@@ -136,11 +136,11 @@ table{
 <script>
 window.fbAsyncInit = function() {
     FB.init({appId: '<?php echo $facebookAppId; ?>',
-	status: true, 
+	status: true,
 	cookie: true,
 	xfbml: true});
     var height = <?php echo $height;?>;
-    FB.Canvas.setSize({height:height});
+    FB.Canvas.setSize();
     FB.Canvas.scrollTo(0,0);
 };
   (function() {

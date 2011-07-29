@@ -10,7 +10,7 @@ foreach($categories as $category){
 	foreach($category['Questions'] as $question){
 	?>
 	<tr class="titulo2">
-                    <td style="width:370px;">
+                    <td style="width:370px;" id="section_question_<?php echo $question['Question']['id']; ?>">
                             <strong><?php echo $question['Question']['question']; ?></strong>
                     </td>
                     <td class="titulo1" style="width:3px;">
@@ -28,7 +28,8 @@ foreach($categories as $category){
                             <input type="radio"
 				   name="data[Category][<?php echo $category['Category']['id'];?>][Question][<?php echo $question['Question']['id']; ?>][Answer]"
 				   value="<?php echo $answer['id'];?>"
-				   id="Answer_<?php echo $answer['id'];?>">
+				   id="Answer_<?php echo $answer['id'];?>"
+				   question_id="<?php echo $question['Question']['id']; ?>">
 			    <label for="Answer_<?php echo $answer['id'];?>"><?php echo $answer['answer']?></label><br />
                     <?php
                     }
@@ -36,7 +37,8 @@ foreach($categories as $category){
                             <input type="radio"
 				   name="data[Category][<?php echo $category['Category']['id'];?>][Question][<?php echo $question['Question']['id']; ?>][Answer]"
 				   value="0"
-				   id="Answer_0_<?php echo $question['Question']['id']; ?>">
+				   id="Answer_0_<?php echo $question['Question']['id']; ?>"
+				   question_id="<?php echo $question['Question']['id']; ?>">
 			    <label for="Answer_0_<?php echo $question['Question']['id']; ?>">Ninguna de las anteriores representa mi posici&oacute;n</label><br /><br />
                     </td>
                     <td>

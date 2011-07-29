@@ -4,7 +4,7 @@
                 <table class="tablaResultados">
             		<tr>
                     	<td class="titulo" style="width:30px">&nbsp;
-	                    	
+
                        	</td>
                     	<td class="titulo">
                         	Tu Media Naranja Política es...
@@ -13,7 +13,7 @@
                     </tr>
             		<tr>
                     	<td class="titulo" style="width:30px">&nbsp;
-	                    	
+
                    	  </td>
                     	<td class="titulo">
                        		<table style="width:730px">
@@ -45,13 +45,13 @@
 						</tr>
                                             <?php } ?>
                                                 <td style="background-color:#FFF">&nbsp;
-													
+
                                                 </td>
-                                           	</tr>                                         
+                                           	</tr>
 						</table>
                                     </td>
                                     <td style="background-color:#cce599; width:15px">&nbsp;
-                                    	
+
                                     </td>
                                     <td style="background-color:#FFF; width:260px; padding:10px">
                                         <block start="blockConfirmar"/>
@@ -68,7 +68,7 @@
                                         <block end="blockConfirmado"/-->
                                     </td>
                                     <td style="width:60px; background-color:#cce599">&nbsp;
-                                    	
+
                                     </td>
                                 </tr>
 	                      	</table>
@@ -86,7 +86,7 @@
             	Compatibilidad con otros Candidatos
             </td>
         </tr>
-        
+
                 <?php foreach($others as $other) { ?>
                 <tr>
         	<td>
@@ -98,13 +98,13 @@
                             <td>
                             <table>
                             <tr>
-                            
+
                             <td style="width:75px" align="center" rowspan="3">
                                     <img src="<?php echo $other['Candidate']['imagepath'];?>" width="75" height="100" />
                                     </td>
-                                    
+
                             </tr>
-                            <tr>                       
+                            <tr>
                                     <td align="center">
                                     <strong>Indices de Compatibilidad</strong>
                                     </td>
@@ -119,17 +119,17 @@
                             </table>
                             </td>
                             </tr>
-                   	
-                   	
+
+
                	</table>
-                
+
         	</td>
                 </tr>
                 <?php } ?>
-       	
+
         <tr>
             <td colspan="2" style="background-color:#FFF">&nbsp;
-            
+
             </td>
         </tr>
         <!--tr>
@@ -142,7 +142,7 @@
        	</tr-->
         <tr>
             <td colspan="2" style="background-color:#FFF">&nbsp;
-            
+
             </td>
         </tr>
         <tr>
@@ -151,7 +151,7 @@
             </td>
         </tr>
         <tr>
-            <td colspan="2">
+            <td colspan="2" height="150">
 		<fb:serverFbml width="760px">
 		  <script type="text/fbml">
 		    <fb:fbml>
