@@ -8,6 +8,9 @@ class CompareController extends AppController {
 	    $candidates = $this->Candidate->find('all');
             $categories = $this->Category->findAllForIndex();
             $this->set('categories',$categories);
+	    if (isset($categories[0]['Category']['id'])) {
+		$this->set('categoryId',$categories[0]['Category']['id']);
+	    }
             $this->set('candidates',$candidates);
 	    if (!is_null($data)) {
 		$elements = $this->_decodeData($data);

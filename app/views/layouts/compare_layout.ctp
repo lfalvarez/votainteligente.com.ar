@@ -107,11 +107,13 @@
     </div>
     <div style="width: 250px; float: left;margin-top: 50px;">
 	<?php foreach ($categories as $category) {?>
-	<input type="radio" name="category" value="<?php echo $category['Category']['id'] ;?>" <?php
-		if(isset($categoryId) && $categoryId==$category['Category']['id']) {
-		    echo 'Checked';
-		}
-		?> /><?php echo $category['Category']['name'];?><br />
+	<?php
+	$selected = false;
+	if(isset($categoryId) && $categoryId == $category['Category']['id']) {
+	    $selected = true;
+	}
+	echo $this->Form->radio(null,array($category['Category']['id']=>$category['Category']['name']),array('checked'=>$selected,'id'=>'category_'.$category['Category']['id'],'name'=>'category'));
+	?><br />
 	<?php } ?>
     </div><br />
 </body>
