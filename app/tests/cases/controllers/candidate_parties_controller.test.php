@@ -11,7 +11,7 @@ class TestCandidatePartiesController extends CandidatePartiesController {
 }
 
 class CandidatePartiesControllerTestCase extends CakeTestCase {
-	var $fixtures = array('app.candidate_party', 'app.candidate_profile', 'app.candidate', 'app.weight', 'app.question', 'app.category', 'app.result_detail', 'app.result', 'app.person', 'app.answer', 'app.candidate_link', 'app.candidate_political_experience', 'app.candidate_university_study', 'app.candidate_work_experience');
+	var $fixtures = array('app.source_of_answer','app.candidate_party', 'app.candidate_profile', 'app.candidate', 'app.weight', 'app.question', 'app.category', 'app.result_detail', 'app.result', 'app.person', 'app.answer', 'app.candidate_link', 'app.candidate_political_experience', 'app.candidate_university_study', 'app.candidate_work_experience');
 
 	function startTest() {
 		$this->CandidateParties =& new TestCandidatePartiesController();

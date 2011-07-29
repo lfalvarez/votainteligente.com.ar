@@ -3,7 +3,7 @@
 App::import('Model', 'Person');
 
 class PersonTestCase extends CakeTestCase {
-	var $fixtures = array('app.candidate_profile','app.candidate_link','app.candidate_party',
+	var $fixtures = array('app.source_of_answer','app.candidate_profile','app.candidate_link','app.candidate_party',
 	                    'app.candidate_political_experience','app.candidate_university_study',
 			    'app.candidate_work_experience','app.person_answer','app.person','app.question', 'app.result', 'app.candidate', 'app.category', 'app.result_detail', 'app.answer', 'app.weight');
         var $answers = array(
@@ -21,7 +21,7 @@ class PersonTestCase extends CakeTestCase {
                     )
                 )
             );
-        
+
 	function startTest() {
 		$this->Person =& ClassRegistry::init('Person');
 	}
@@ -30,7 +30,7 @@ class PersonTestCase extends CakeTestCase {
 		unset($this->Person);
 		ClassRegistry::flush();
 	}
-        
+
         function testSaveAnswers(){
             $this->Person->saveAnswers($this->answers,1);
             $this->PersonAnswer =& ClassRegistry::init('PersonAnswer');

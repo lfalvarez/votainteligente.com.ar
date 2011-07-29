@@ -3,7 +3,7 @@
 App::import('Model', 'Question');
 
 class QuestionTestCase extends CakeTestCase {
-	var $fixtures = array('app.candidate_profile','app.candidate_link','app.candidate_party',
+	var $fixtures = array('app.source_of_answer','app.candidate_profile','app.candidate_link','app.candidate_party',
 	                    'app.candidate_political_experience','app.candidate_university_study',
 			    'app.candidate_work_experience','app.person','app.question', 'app.result', 'app.candidate', 'app.category', 'app.result_detail', 'app.answer', 'app.weight');
 

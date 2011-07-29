@@ -11,7 +11,7 @@ class TestAnswersController extends AnswersController {
 }
 
 class AnswersControllerTestCase extends CakeTestCase {
-	var $fixtures = array('app.candidate_profile','app.candidate_link','app.candidate_party',
+	var $fixtures = array('app.source_of_answer','app.candidate_profile','app.candidate_link','app.candidate_party',
 	                    'app.candidate_political_experience','app.candidate_university_study',
 			    'app.candidate_work_experience','app.answer', 'app.question', 'app.category', 'app.result_detail', 'app.result', 'app.person', 'app.candidate', 'app.weight');
 

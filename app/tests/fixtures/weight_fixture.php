@@ -1,15 +1,16 @@
 <?php
-/* Weight Fixture generated on: 2011-07-07 12:07:49 : 1310056969 */
+/* Weight Fixture generated on: 2011-07-28 17:47:21 : 1311889641 */
 class WeightFixture extends CakeTestFixture {
 	var $name = 'Weight';
 
 	var $fields = array(
-		'id' => array('type'=>'integer', 'type' => 'integer', 'null' => false, 'default' => NULL, 'key' => 'primary'),
-		'question_id' => array('type'=>'integer', 'type' => 'integer', 'null' => false, 'default' => NULL),
-		'candidate_id' => array('type'=>'integer', 'type' => 'integer', 'null' => false, 'default' => NULL),
-		'answer_id' => array('type'=>'integer', 'type' => 'integer', 'null' => false, 'default' => NULL),
-		'weighting' => array('type'=>'float', 'type' => 'float', 'null' => false, 'default' => NULL),
-		'indexes' => array('PRIMARY' => array('column' => 'id', 'unique' => 1))
+		'id' => array('type' => 'integer', 'null' => false, 'default' => NULL, 'key' => 'primary'),
+		'question_id' => array('type' => 'integer', 'null' => false, 'default' => NULL),
+		'candidate_id' => array('type' => 'integer', 'null' => false, 'default' => NULL),
+		'answer_id' => array('type' => 'integer', 'null' => false, 'default' => NULL),
+		'weighting' => array('type' => 'float', 'null' => false, 'default' => NULL),
+		'indexes' => array('PRIMARY' => array('column' => 'id', 'unique' => 1)),
+		'tableParameters' => array()
 	);
 
 	var $records = array(
@@ -27,7 +28,7 @@ class WeightFixture extends CakeTestFixture {
 			'answer_id' => 2,
 			'weighting' => 1
 		),
-            
+
                 //pregunta 2
                 array(
 			'id' => 3,
@@ -43,7 +44,7 @@ class WeightFixture extends CakeTestFixture {
 			'answer_id' => 4,
 			'weighting' => 1
 		),
-            
+
                 //pregunta 3
                 array(
 			'id' => 5,
@@ -76,4 +77,3 @@ class WeightFixture extends CakeTestFixture {
 		),
 	);
 }
-?>

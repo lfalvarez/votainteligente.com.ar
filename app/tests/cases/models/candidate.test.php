@@ -3,7 +3,7 @@
 App::import('Model', 'Candidate');
 
 class CandidateTestCase extends CakeTestCase {
-	var $fixtures = array('app.candidate_profile','app.candidate_link','app.candidate_party',
+	var $fixtures = array('app.source_of_answer','app.candidate_profile','app.candidate_link','app.candidate_party',
 	                    'app.candidate_political_experience','app.candidate_university_study',
 			    'app.candidate_work_experience',
 			    'app.person','app.question', 'app.result', 'app.candidate', 'app.category',
@@ -27,10 +27,9 @@ class CandidateTestCase extends CakeTestCase {
                                 'Answer'=>1,
                                 'Percentage'=>0.5
                                 ),
-                            2=>array(
-                                'Answer'=>3,
-                                'Percentage'=>0.5
-                                ),
+			    //it is important to notice that the second question is not answered because it
+			    //was never shown in the form, this was because the'included_in_media_naranja'
+			    //field in this case is 0 or false
                         )
                     ),
                     2=>array(
