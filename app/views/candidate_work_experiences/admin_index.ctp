@@ -4,7 +4,8 @@
 	<tr>
 			<th><?php echo $this->Paginator->sort('id');?></th>
 			<th><?php echo $this->Paginator->sort('candidate_profile_id');?></th>
-			<th><?php echo $this->Paginator->sort('year');?></th>
+			<th><?php echo $this->Paginator->sort('starting_year');?></th>
+			<th><?php echo $this->Paginator->sort('ending_year');?></th>
 			<th><?php echo $this->Paginator->sort('position');?></th>
 			<th><?php echo $this->Paginator->sort('company');?></th>
 			<th class="actions"><?php __('Actions');?></th>
@@ -20,9 +21,10 @@
 	<tr<?php echo $class;?>>
 		<td><?php echo $candidateWorkExperience['CandidateWorkExperience']['id']; ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($candidateWorkExperience['CandidateProfile']['id'], array('controller' => 'candidate_profiles', 'action' => 'view', $candidateWorkExperience['CandidateProfile']['id'])); ?>
+			<?php echo $this->Html->link($candidateWorkExperience['CandidateProfile']['name'], array('controller' => 'candidate_profiles', 'action' => 'view', $candidateWorkExperience['CandidateProfile']['id'])); ?>
 		</td>
-		<td><?php echo $candidateWorkExperience['CandidateWorkExperience']['year']; ?>&nbsp;</td>
+		<td><?php echo $candidateWorkExperience['CandidateWorkExperience']['starting_year']; ?>&nbsp;</td>
+		<td><?php echo $candidateWorkExperience['CandidateWorkExperience']['ending_year']; ?>&nbsp;</td>
 		<td><?php echo $candidateWorkExperience['CandidateWorkExperience']['position']; ?>&nbsp;</td>
 		<td><?php echo $candidateWorkExperience['CandidateWorkExperience']['company']; ?>&nbsp;</td>
 		<td class="actions">

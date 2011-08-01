@@ -8,12 +8,17 @@
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Candidate Profile'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $this->Html->link($candidateWorkExperience['CandidateProfile']['id'], array('controller' => 'candidate_profiles', 'action' => 'view', $candidateWorkExperience['CandidateProfile']['id'])); ?>
+			<?php echo $this->Html->link($candidateWorkExperience['CandidateProfile']['name'], array('controller' => 'candidate_profiles', 'action' => 'view', $candidateWorkExperience['CandidateProfile']['id'])); ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Year'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Starting Year'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $candidateWorkExperience['CandidateWorkExperience']['year']; ?>
+			<?php echo $candidateWorkExperience['CandidateWorkExperience']['starting_year']; ?>
+			&nbsp;
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Ending Year'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $candidateWorkExperience['CandidateWorkExperience']['ending_year']; ?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Position'); ?></dt>

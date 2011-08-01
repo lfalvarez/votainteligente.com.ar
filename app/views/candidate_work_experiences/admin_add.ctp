@@ -4,7 +4,8 @@
 		<legend><?php __('Admin Add Candidate Work Experience'); ?></legend>
 	<?php
 		echo $this->Form->input('candidate_profile_id');
-		echo $this->Form->input('year');
+		echo $this->Form->input('starting_year');
+		echo $this->Form->input('ending_year');
 		echo $this->Form->input('position');
 		echo $this->Form->input('company');
 	?>
