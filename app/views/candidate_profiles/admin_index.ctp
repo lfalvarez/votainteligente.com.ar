@@ -4,10 +4,11 @@
 	<tr>
 			<th><?php echo $this->Paginator->sort('id');?></th>
 			<th><?php echo $this->Paginator->sort('candidate_id');?></th>
+			<th><?php echo $this->Paginator->sort('name');?></th>
 			<th><?php echo $this->Paginator->sort('birth');?></th>
 			<th><?php echo $this->Paginator->sort('profession');?></th>
 			<th><?php echo $this->Paginator->sort('sons');?></th>
-			<th><?php echo $this->Paginator->sort('state');?></th>
+			<th><?php echo $this->Paginator->sort('marital_status');?></th>
 			<th><?php echo $this->Paginator->sort('religion');?></th>
 			<th><?php echo $this->Paginator->sort('twitter');?></th>
 			<th><?php echo $this->Paginator->sort('facebook');?></th>
@@ -30,10 +31,11 @@
 		<td>
 			<?php echo $this->Html->link($candidateProfile['Candidate']['name'], array('controller' => 'candidates', 'action' => 'view', $candidateProfile['Candidate']['id'])); ?>
 		</td>
+		<td><?php echo $candidateProfile['CandidateProfile']['name']; ?>&nbsp;</td>
 		<td><?php echo $candidateProfile['CandidateProfile']['birth']; ?>&nbsp;</td>
 		<td><?php echo $candidateProfile['CandidateProfile']['profession']; ?>&nbsp;</td>
 		<td><?php echo $candidateProfile['CandidateProfile']['sons']; ?>&nbsp;</td>
-		<td><?php echo $candidateProfile['CandidateProfile']['state']; ?>&nbsp;</td>
+		<td><?php echo $candidateProfile['CandidateProfile']['marital_status']; ?>&nbsp;</td>
 		<td><?php echo $candidateProfile['CandidateProfile']['religion']; ?>&nbsp;</td>
 		<td><?php echo $candidateProfile['CandidateProfile']['twitter']; ?>&nbsp;</td>
 		<td><?php echo $candidateProfile['CandidateProfile']['facebook']; ?>&nbsp;</td>

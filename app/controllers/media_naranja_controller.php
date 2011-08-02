@@ -6,7 +6,6 @@ class MediaNaranjaController extends AppController {
 	var $components = array('Cookie');
 	function index(){
 		$this->connectToFacebookOrLogin();
-		$this->helpers[] = 'Javascript';
 		$this->layout = 'voto';
 		$this->loadModel('Category');
 		$categories = $this->Category->findAllForMediaNaranja();

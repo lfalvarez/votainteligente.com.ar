@@ -1,17 +1,25 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-	<?php echo $this->Html->charset(); ?>
-	<title>
-	</title>
-	<?php
-
-		echo $scripts_for_layout;
-	?>
-	<?php echo $this->Html->script('jquery'); ?>
+    <meta charset="utf-8">
+    <?php echo $this->Html->charset(); ?>
+    <title>Vota inteligente</title>
+    <?php
+	    echo $scripts_for_layout;
+    ?>
+    <?php echo $this->Html->script('jquery'); ?>
+    <?php echo $this->Html->script('jquery.qtip'); ?>
+    <!--[if IE]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+        <?php echo $this->Html->css('nav'); ?>
+	<?php echo $this->Html->css('tooltip'); ?>
+	<?php echo $this->Html->css('profile'); ?>
+	<?php echo $this->Html->css('jquery.qtip'); ?>
 </head>
-<body>
-    Ver los perfiles de los candidatos:
+<body class="no-js">
+    <h1>Vota inteligente</h1>
+    <nav id="topNav">
     <ul>
     <?php
     foreach( $candidates as $candidate ){
@@ -19,6 +27,7 @@
     }
     ?>
     </ul>
+    </nav>
     <div id="candidatesProfile">
 	<?php echo $content_for_layout ?>
     </div>

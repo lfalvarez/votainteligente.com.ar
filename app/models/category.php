@@ -103,6 +103,7 @@ class Category extends AppModel {
 		'Question'=>array(
 		    'Answer'=>array(
 			'Weight'=>array(
+			    'SourceOfAnswer',
 			    'conditions'=>array(
 				'Weight.candidate_id ='=>$candidateId
 				),
@@ -110,7 +111,13 @@ class Category extends AppModel {
 			)
 		    )
 		);
-	    return $this->find('all',array('contain'=>$contain));
+	    $categories = $this->find('all',array('contain'=>$contain));
+	    foreach ($categories as $key => $category){
+		if (empty($category['Question'])) {
+		    unset($categories[$key]);
+		}
+	    }
+	    return $categories;
 	}
 	function beforeSave($options = array()) {
 	    $this->data['Category']['slug']=$this->slugifyName($this->data['Category']['name']);

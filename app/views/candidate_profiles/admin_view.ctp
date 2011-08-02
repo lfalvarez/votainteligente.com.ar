@@ -11,6 +11,11 @@
 			<?php echo $this->Html->link($candidateProfile['Candidate']['name'], array('controller' => 'candidates', 'action' => 'view', $candidateProfile['Candidate']['id'])); ?>
 			&nbsp;
 		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Name'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $candidateProfile['CandidateProfile']['name']; ?>
+			&nbsp;
+		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Birth'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $candidateProfile['CandidateProfile']['birth']; ?>
@@ -26,9 +31,9 @@
 			<?php echo $candidateProfile['CandidateProfile']['sons']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('State'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Marital Status'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $candidateProfile['CandidateProfile']['state']; ?>
+			<?php echo $candidateProfile['CandidateProfile']['marital_status']; ?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Religion'); ?></dt>
@@ -264,7 +269,8 @@
 	<tr>
 		<th><?php __('Id'); ?></th>
 		<th><?php __('Candidate Profile Id'); ?></th>
-		<th><?php __('Year'); ?></th>
+		<th><?php __('Starting Year'); ?></th>
+		<th><?php __('Ending Year'); ?></th>
 		<th><?php __('Position'); ?></th>
 		<th><?php __('Company'); ?></th>
 		<th class="actions"><?php __('Actions');?></th>
@@ -280,7 +286,8 @@
 		<tr<?php echo $class;?>>
 			<td><?php echo $candidateWorkExperience['id'];?></td>
 			<td><?php echo $candidateWorkExperience['candidate_profile_id'];?></td>
-			<td><?php echo $candidateWorkExperience['year'];?></td>
+			<td><?php echo $candidateWorkExperience['starting_year'];?></td>
+			<td><?php echo $candidateWorkExperience['ending_year'];?></td>
 			<td><?php echo $candidateWorkExperience['position'];?></td>
 			<td><?php echo $candidateWorkExperience['company'];?></td>
 			<td class="actions">

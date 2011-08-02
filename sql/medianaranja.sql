@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 27-07-2011 a las 11:08:44
+-- Tiempo de generación: 02-08-2011 a las 12:04:38
 -- Versión del servidor: 5.1.54
 -- Versión de PHP: 5.3.5-1ubuntu7.2
 
@@ -265,11 +265,13 @@ CREATE TABLE IF NOT EXISTS `mn_candidate_profiles` (
   `birth` date DEFAULT NULL,
   `profession` varchar(255) DEFAULT NULL,
   `sons` int(11) DEFAULT NULL,
-  `state` varchar(255) NOT NULL,
+  `marital_status` varchar(255) NOT NULL,
   `religion` varchar(255) DEFAULT NULL,
   `twitter` varchar(255) DEFAULT NULL,
   `facebook` varchar(255) DEFAULT NULL,
   `highschool` varchar(255) DEFAULT NULL,
+  `current_party` varchar(255) NOT NULL,
+  `current_party_starting_year` int(11) NOT NULL,
   `assets` text,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
@@ -280,11 +282,11 @@ CREATE TABLE IF NOT EXISTS `mn_candidate_profiles` (
 -- Volcar la base de datos para la tabla `mn_candidate_profiles`
 --
 
-INSERT INTO `mn_candidate_profiles` (`id`, `candidate_id`, `name`, `birth`, `profession`, `sons`, `state`, `religion`, `twitter`, `facebook`, `highschool`, `assets`, `created`, `modified`) VALUES
-(1, 1, 'Perfil de Jorge Arrate', '2031-05-01', 'Abogado', 2, 'Casado con Diamela Eltit', '--', 'www.twitter.com/jarrate', 'www.facebook.com/jarrate', 'Saint Paul/Mackay/Instituto Nacional', 'Esperando respuesta', '2011-07-26 13:04:11', '2011-07-26 15:33:53'),
-(2, 2, 'Perfil de Sebastián Piñera', '2011-07-26', 'asdfasdf', 0, 'asdfasdf', 'sdfasdf', 'asdasd', 'asdasd', 'asdasdasd', 'dfgsdfgsdfg', '2011-07-26 17:20:08', '2011-07-26 17:20:08'),
-(3, 13, 'Perfil de lf Ááéñ~colita de chancho', '1992-07-26', 'chancho', 19, 'soltero sin compromiso', 'pastafarian', 'www.twitter.com/shansho', 'www.facebook.com/shansho', 'The shansho''s Colita High school', 'Esperando para que la envíe', '2011-07-26 17:43:44', '2011-07-26 17:43:44'),
-(4, 14, 'Perfil de Otro candidato', '1995-07-26', '5674567', 0, 'soltero sin compromiso', '3453', 'www.twitter.com/jarrate', 'www.facebook.com/shansho', 'Saint Paul/Mackay/Instituto Nacional', 'fghjfghj', '2011-07-26 18:14:33', '2011-07-26 18:14:33');
+INSERT INTO `mn_candidate_profiles` (`id`, `candidate_id`, `name`, `birth`, `profession`, `sons`, `marital_status`, `religion`, `twitter`, `facebook`, `highschool`, `current_party`, `current_party_starting_year`, `assets`, `created`, `modified`) VALUES
+(1, 1, 'Perfil de Jorge Arrate', '2031-05-01', 'Abogado', 2, 'Casado con Diamela Eltit', '--', 'www.twitter.com/jarrate', 'www.facebook.com/jarrate', 'Saint Paul/Mackay/Instituto Nacional', 'Socialistas allendistas', 2009, 'Esperando respuesta', '2011-07-26 13:04:11', '2011-07-26 15:33:53'),
+(2, 2, 'Perfil de Sebastián Piñera', '2011-07-26', 'asdfasdf', 0, 'asdfasdf', 'sdfasdf', 'asdasd', 'asdasd', 'asdasdasd', '', 0, 'dfgsdfgsdfg', '2011-07-26 17:20:08', '2011-07-26 17:20:08'),
+(3, 13, 'Perfil de lf Ááéñ~colita de chancho', '1992-07-26', 'chancho', 19, 'soltero sin compromiso y en busca del verdadero amor (podrías ser tú)', 'pastafarian', 'www.twitter.com/shansho', 'www.facebook.com/shansho', 'The shansho''s Colita High school', '', 0, 'Esperando para que la envíe', '2011-07-26 17:43:44', '2011-08-01 13:20:27'),
+(4, 14, 'Perfil de Otro candidato', '1995-07-26', '5674567', 0, 'soltero sin compromiso', '3453', 'www.twitter.com/jarrate', 'www.facebook.com/shansho', 'Saint Paul/Mackay/Instituto Nacional', '', 0, 'fghjfghj', '2011-07-26 18:14:33', '2011-07-26 18:14:33');
 
 -- --------------------------------------------------------
 
@@ -318,7 +320,8 @@ INSERT INTO `mn_candidate_university_studies` (`id`, `candidate_profile_id`, `ca
 CREATE TABLE IF NOT EXISTS `mn_candidate_work_experiences` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `candidate_profile_id` int(11) NOT NULL,
-  `year` int(11) DEFAULT NULL,
+  `starting_year` int(11) NOT NULL,
+  `ending_year` int(11) DEFAULT NULL,
   `position` varchar(255) DEFAULT NULL,
   `company` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -328,9 +331,9 @@ CREATE TABLE IF NOT EXISTS `mn_candidate_work_experiences` (
 -- Volcar la base de datos para la tabla `mn_candidate_work_experiences`
 --
 
-INSERT INTO `mn_candidate_work_experiences` (`id`, `candidate_profile_id`, `year`, `position`, `company`) VALUES
-(1, 1, 1970, 'Director', 'Empresa editora ZigZag'),
-(2, 3, 1998, 'Carnicero', 'Matadero los shanshos ricos');
+INSERT INTO `mn_candidate_work_experiences` (`id`, `candidate_profile_id`, `starting_year`, `ending_year`, `position`, `company`) VALUES
+(1, 1, 0, 1970, 'Director', 'Empresa editora ZigZag'),
+(2, 3, 0, 1998, 'Carnicero', 'Matadero los shanshos ricos');
 
 -- --------------------------------------------------------
 
@@ -340,6 +343,7 @@ INSERT INTO `mn_candidate_work_experiences` (`id`, `candidate_profile_id`, `year
 
 CREATE TABLE IF NOT EXISTS `mn_categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `slug` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `order` int(11) NOT NULL,
   PRIMARY KEY (`id`)
@@ -349,17 +353,17 @@ CREATE TABLE IF NOT EXISTS `mn_categories` (
 -- Volcar la base de datos para la tabla `mn_categories`
 --
 
-INSERT INTO `mn_categories` (`id`, `name`, `order`) VALUES
-(1, 'Temas valóricos', 1),
-(2, 'Economía y trabajo', 2),
-(3, 'Educación', 3),
-(4, 'Sistema político', 4),
-(5, 'Otros', 10),
-(6, 'Educación y Cultura', 5),
-(7, 'Salud', 6),
-(8, 'Seguridad ciudadana', 7),
-(9, 'Vivienda', 8),
-(10, 'Energías', 9);
+INSERT INTO `mn_categories` (`id`, `slug`, `name`, `order`) VALUES
+(1, 'temas-valoricos', 'Temas valóricos', 1),
+(2, 'economia-y-trabajo', 'Economía y trabajo', 2),
+(3, 'educacion', 'Educación', 3),
+(4, 'sistema-politico', 'Sistema político', 4),
+(5, 'otros', 'Otros', 10),
+(6, 'educacion-y-cultura', 'Educación y Cultura', 5),
+(7, 'salud', 'Salud', 6),
+(8, 'seguridad-ciudadana', 'Seguridad ciudadana', 7),
+(9, 'vivienda', 'Vivienda', 8),
+(10, 'energias', 'Energías', 9);
 
 -- --------------------------------------------------------
 
@@ -375,57 +379,16 @@ CREATE TABLE IF NOT EXISTS `mn_people` (
   `date` datetime NOT NULL,
   `confirmsCandidate` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=54 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Volcar la base de datos para la tabla `mn_people`
 --
 
 INSERT INTO `mn_people` (`id`, `idfacebook`, `session_key`, `candidate_id`, `date`, `confirmsCandidate`) VALUES
-(14, '560973905', '', 1, '2011-07-25 11:22:35', 1),
-(13, '560973905', '', 1, '2011-07-25 11:19:58', NULL),
-(12, '560973905', '', 1, '2011-07-25 11:18:48', NULL),
-(11, '560973905', '', 1, '2011-07-22 17:02:29', NULL),
-(10, '560973905', '', 1, '2011-07-22 10:59:24', 0),
-(15, '560973905', '', 1, '2011-07-25 11:30:57', 1),
-(16, '560973905', '', 1, '2011-07-25 11:34:31', NULL),
-(17, '560973905', '', 1, '2011-07-25 11:41:59', NULL),
-(18, '560973905', '', 1, '2011-07-25 11:42:33', NULL),
-(19, '560973905', '', 1, '2011-07-25 11:44:44', NULL),
-(20, '560973905', '', 1, '2011-07-25 11:50:21', NULL),
-(21, '560973905', '', 1, '2011-07-25 11:53:59', NULL),
-(22, '560973905', '', 1, '2011-07-25 11:54:53', NULL),
-(23, '560973905', '', 1, '2011-07-25 12:04:26', NULL),
-(24, '560973905', '', 1, '2011-07-25 12:41:44', NULL),
-(25, '560973905', '', 1, '2011-07-25 12:42:27', NULL),
-(26, '560973905', '', 1, '2011-07-25 12:43:56', NULL),
-(27, '560973905', '', 1, '2011-07-25 12:44:47', NULL),
-(28, '560973905', '', 1, '2011-07-25 12:57:47', NULL),
-(29, '560973905', '', 1, '2011-07-25 13:06:19', NULL),
-(30, '560973905', '', 1, '2011-07-25 13:07:35', NULL),
-(31, '560973905', '', 1, '2011-07-25 13:21:56', NULL),
-(32, '560973905', '', 1, '2011-07-25 14:50:13', 1),
-(33, '560973905', '', 4, '2011-07-25 14:53:31', NULL),
-(34, '560973905', '', 1, '2011-07-25 15:13:12', NULL),
-(35, '560973905', '', 1, '2011-07-25 15:15:06', NULL),
-(36, '560973905', '', 1, '2011-07-25 15:22:43', NULL),
-(37, '560973905', '', 1, '2011-07-25 15:33:00', NULL),
-(38, '560973905', '', 3, '2011-07-25 15:34:53', NULL),
-(39, '560973905', '', 4, '2011-07-25 15:37:51', NULL),
-(40, '560973905', '', 4, '2011-07-25 15:43:23', NULL),
-(41, '560973905', '', 4, '2011-07-25 15:44:58', NULL),
-(42, '560973905', '', 4, '2011-07-25 15:45:40', 1),
-(43, '560973905', '', 4, '2011-07-25 15:47:41', 0),
-(44, '560973905', '', 1, '2011-07-26 11:20:11', NULL),
-(45, '560973905', '', 4, '2011-07-26 11:21:20', NULL),
-(46, '560973905', '', 4, '2011-07-26 11:22:25', NULL),
-(47, '560973905', '', 4, '2011-07-26 11:25:50', NULL),
-(48, '560973905', '', 4, '2011-07-26 11:28:50', NULL),
-(49, '560973905', '', 4, '2011-07-26 11:29:43', NULL),
-(50, '560973905', '', 4, '2011-07-26 11:31:37', NULL),
-(51, '560973905', '', 4, '2011-07-26 11:34:57', 1),
-(52, '560973905', '', 4, '2011-07-26 17:02:04', 0),
-(53, '560973905', '', 12, '2011-07-26 17:52:41', 0);
+(1, '560973905', '', 1, '2011-07-29 14:11:09', 1),
+(2, '560973905', '', 1, '2011-07-29 18:19:06', NULL),
+(3, '560973905', '', 2, '2011-07-29 18:23:52', 0);
 
 -- --------------------------------------------------------
 
@@ -440,7 +403,7 @@ CREATE TABLE IF NOT EXISTS `mn_person_answers` (
   `importance` float NOT NULL,
   `created` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=79 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=139 ;
 
 --
 -- Volcar la base de datos para la tabla `mn_person_answers`
@@ -524,7 +487,67 @@ INSERT INTO `mn_person_answers` (`id`, `result_id`, `answer_id`, `importance`, `
 (75, 0, 0, 0, '2011-07-26 11:31:37'),
 (76, 0, 0, 0, '2011-07-26 11:34:57'),
 (77, 1, 1, 0.1, '2011-07-26 17:02:04'),
-(78, 0, 0, 0, '2011-07-26 17:52:41');
+(78, 0, 0, 0, '2011-07-26 17:52:41'),
+(79, 1, 1, 0.1, '2011-07-29 14:11:09'),
+(80, 1, 72, 0.1, '2011-07-29 14:11:09'),
+(81, 1, 36, 0.1, '2011-07-29 14:11:09'),
+(82, 1, 39, 0.1, '2011-07-29 14:11:09'),
+(83, 1, 42, 0.1, '2011-07-29 14:11:09'),
+(84, 1, 74, 0.1, '2011-07-29 14:11:09'),
+(85, 1, 8, 0.1, '2011-07-29 14:11:09'),
+(86, 1, 11, 0.1, '2011-07-29 14:11:09'),
+(87, 1, 27, 0.1, '2011-07-29 14:11:09'),
+(88, 1, 23, 0.1, '2011-07-29 14:11:09'),
+(89, 1, 97, 0.1, '2011-07-29 14:11:09'),
+(90, 1, 48, 0.1, '2011-07-29 14:11:09'),
+(91, 1, 52, 0.1, '2011-07-29 14:11:09'),
+(92, 1, 58, 0.1, '2011-07-29 14:11:09'),
+(93, 1, 63, 0.1, '2011-07-29 14:11:09'),
+(94, 1, 90, 0.1, '2011-07-29 14:11:09'),
+(95, 1, 66, 0.1, '2011-07-29 14:11:09'),
+(96, 1, 100, 0.1, '2011-07-29 14:11:09'),
+(97, 1, 84, 0.1, '2011-07-29 14:11:09'),
+(98, 1, 86, 0.1, '2011-07-29 14:11:09'),
+(99, 1, 1, 0.1, '2011-07-29 18:19:07'),
+(100, 1, 71, 0.1, '2011-07-29 18:19:07'),
+(101, 1, 37, 0.1, '2011-07-29 18:19:07'),
+(102, 1, 40, 0.1, '2011-07-29 18:19:07'),
+(103, 1, 43, 0.1, '2011-07-29 18:19:07'),
+(104, 1, 77, 0.1, '2011-07-29 18:19:07'),
+(105, 1, 7, 0.1, '2011-07-29 18:19:07'),
+(106, 1, 10, 0.1, '2011-07-29 18:19:07'),
+(107, 1, 27, 0.1, '2011-07-29 18:19:07'),
+(108, 1, 24, 0.1, '2011-07-29 18:19:07'),
+(109, 1, 99, 0.1, '2011-07-29 18:19:07'),
+(110, 1, 50, 0.1, '2011-07-29 18:19:07'),
+(111, 1, 52, 0.1, '2011-07-29 18:19:07'),
+(112, 1, 58, 0.1, '2011-07-29 18:19:07'),
+(113, 1, 63, 0.1, '2011-07-29 18:19:07'),
+(114, 1, 91, 0.1, '2011-07-29 18:19:07'),
+(115, 1, 66, 0.1, '2011-07-29 18:19:07'),
+(116, 1, 101, 0.1, '2011-07-29 18:19:07'),
+(117, 1, 83, 0.1, '2011-07-29 18:19:07'),
+(118, 1, 86, 0.1, '2011-07-29 18:19:07'),
+(119, 1, 2, 0.1, '2011-07-29 18:23:52'),
+(120, 1, 72, 0.1, '2011-07-29 18:23:52'),
+(121, 1, 37, 0.1, '2011-07-29 18:23:52'),
+(122, 1, 39, 0.1, '2011-07-29 18:23:52'),
+(123, 1, 42, 0.1, '2011-07-29 18:23:52'),
+(124, 1, 74, 0.1, '2011-07-29 18:23:52'),
+(125, 1, 8, 0.1, '2011-07-29 18:23:52'),
+(126, 1, 11, 0.1, '2011-07-29 18:23:52'),
+(127, 1, 27, 0.1, '2011-07-29 18:23:52'),
+(128, 1, 23, 0.1, '2011-07-29 18:23:52'),
+(129, 1, 99, 0.1, '2011-07-29 18:23:52'),
+(130, 1, 51, 0.1, '2011-07-29 18:23:52'),
+(131, 1, 53, 0.1, '2011-07-29 18:23:52'),
+(132, 1, 58, 0.1, '2011-07-29 18:23:52'),
+(133, 1, 63, 0.1, '2011-07-29 18:23:52'),
+(134, 1, 93, 0.1, '2011-07-29 18:23:52'),
+(135, 1, 68, 0.1, '2011-07-29 18:23:52'),
+(136, 1, 101, 0.1, '2011-07-29 18:23:52'),
+(137, 1, 85, 0.1, '2011-07-29 18:23:52'),
+(138, 1, 86, 0.1, '2011-07-29 18:23:52');
 
 -- --------------------------------------------------------
 
@@ -540,6 +563,7 @@ CREATE TABLE IF NOT EXISTS `mn_questions` (
   `category_id` int(11) NOT NULL,
   `sour` tinyint(1) NOT NULL,
   `public` tinyint(1) NOT NULL,
+  `included_in_media_naranja` tinyint(4) NOT NULL,
   `order` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=38 ;
@@ -548,44 +572,44 @@ CREATE TABLE IF NOT EXISTS `mn_questions` (
 -- Volcar la base de datos para la tabla `mn_questions`
 --
 
-INSERT INTO `mn_questions` (`id`, `question`, `explanation`, `short_description`, `category_id`, `sour`, `public`, `order`) VALUES
-(1, '¿Estas de acuerdo con legalizar el aborto?', 'El aborto blablablabla', 'Legalizar aborto', 1, 1, 1, 1),
-(2, '¿Estás de acuerdo con legalizar el matrimonio homosexual?', 'El matrimonio es blabalbla', 'Matrimonio homosexual', 1, 1, 0, 2),
-(3, '¿Aprobaría la creación de una AFP Estatal?', 'El sistema de AFP', 'AFP estatal', 2, 1, 1, 8),
-(4, '¿Estás de acuerdo con privatizar Codelco?', '', '0', 2, 0, 1, 10),
-(5, '¿Estás de acuerdo con la flexibilidad laboral?', '', '0', 2, 1, 0, 9),
-(6, '¿Cómo debiera ser el sistema de inscripción electoral en Chile?', '', '0', 4, 1, 0, 4),
-(7, '¿Estás de acuerdo con la inclusión en el sistema electoral de los chilenos residentes en países extranjeros?', '', '0', 4, 0, 1, 3),
-(8, '¿Qué harías con el sistema binominal?', '', '0', 4, 0, 1, 2),
-(9, '¿Apoyas la construcción de las represas hidroeléctricas en Aysén?', '', '0', 10, 1, 0, 2),
-(10, '¿Apoyas la utilización de energía nuclear como una de las fuentes de abastecimiento energético para Chile?', '', '0', 10, 1, 0, 1),
-(11, '¿Qué harías con el impuesto específico a los combustibles?', '', '0', 2, 0, 0, 7),
-(12, '¿Que harías con el valor del IVA?', '', '0', 2, 0, 0, 1),
-(13, '¿Con qué medidas estás más de acuerdo para combatir el desempleo?', '', '0', 2, 0, 0, 2),
-(14, '¿Qué propones para fortalecer las PYMES?', '', '0', 2, 0, 1, 3),
-(15, '¿Qué medida sugieres para fomentar la agricultura?', '', '0', 2, 0, 1, 4),
-(16, '¿Con cuál de estas medidas estás más de acuerdo en base a la regla de superávit fiscal?', '', '0', 2, 0, 1, 5),
-(17, 'De acuerdo al rol que cumple actualmente el Estado en Chile. ¿Qué propones?', '', '0', 4, 0, 0, 1),
-(18, '¿Qué propuesta apoyas para el sistema de Becas y Créditos en la Educación Superior?', '', '0', 6, 0, 1, 3),
-(19, '¿Qué propones para el sistema de Fondos Concursables de Cultura?', '', '0', 6, 0, 1, 4),
-(20, '¿Qué medida propones, entre otras, para mejorar el servicio de atención primaria en la salud pública?', '', '0', 7, 0, 0, 3),
-(21, 'En relación a la infraestructura de salud del país. ¿Qué sugieres?', '', '0', 7, 0, 1, 2),
-(22, '¿Estás de acuerdo con la eliminación del 7% de las cotizaciones de salud para las personas jubiladas?', '', '0', 7, 0, 0, 1),
-(23, '¿Qué propuesta consideras más relevante para las personas que tienen discapacidad física? ', '', '0', 7, 0, 1, 4),
-(24, '¿Estás de acuerdo con el aumento en la dotación de carabineros en el país?', '', '0', 8, 0, 0, 2),
-(25, '¿Con qué propuesta estás más de acuerdo en materia de viviendas sociales?', '', '0', 9, 0, 1, 1),
-(26, '¿Estás de acuerdo con la construcción del puente sobre el canal de Chacao?', '', '0', 5, 0, 0, 4),
-(27, '¿Estás de acuerdo con el indulto presidencial?', '', '0', 1, 1, 1, 3),
-(28, '¿Cómo contribuirías a asegurar la participación laboral femenina?', '', '0', 2, 1, 1, 6),
-(29, '¿Qué harías para regular el financiamiento de las campañas políticas?', '', '0', 4, 1, 0, 5),
-(30, '¿Estás de acuerdo con la legalización de la marihuana?', '', '0', 5, 1, 0, 1),
-(31, '¿Qué propones para la situación limítrofe con Bolivia, en torno a una salida al mar?', '', '0', 5, 1, 1, 2),
-(32, '¿Cuál de estas alternativas refleja tus ideas para descentralizar las tareas en el país?', '', '0', 5, 1, 1, 3),
-(33, '¿Qué  sugieres para eliminar la “puerta giratoria” de la delincuencia?', '', '0', 8, 1, 1, 1),
-(34, '¿Qué medida propones para el impuesto a los libros?', '', '0', 6, 1, 0, 1),
-(35, '¿Qué medidas tomarías respecto a la administración de la educación pública de nuestro país?', '', '0', 6, 1, 1, 2),
-(36, '¿cual es tu fruta favorita???', '', '0', 5, 1, 1, 0),
-(37, '¿Cual es tu color favorito?', 'el color es la forma como repesentamos la frecuencia de la onda de luz reflejada sobre una superficie', 'Color favorito', 1, 0, 1, 0);
+INSERT INTO `mn_questions` (`id`, `question`, `explanation`, `short_description`, `category_id`, `sour`, `public`, `included_in_media_naranja`, `order`) VALUES
+(1, '¿Estas de acuerdo con legalizar el aborto?', 'El aborto blablablabla', 'Legalizar aborto', 1, 1, 1, 1, 1),
+(2, '¿Estás de acuerdo con legalizar el matrimonio homosexual?', 'El matrimonio es blabalbla', 'Matrimonio homosexual', 1, 1, 0, 1, 2),
+(3, '¿Aprobaría la creación de una AFP Estatal?', 'El sistema de AFP', 'AFP estatal', 2, 1, 1, 1, 8),
+(4, '¿Estás de acuerdo con privatizar Codelco?', '', '0', 2, 0, 1, 1, 10),
+(5, '¿Estás de acuerdo con la flexibilidad laboral?', '', '0', 2, 1, 0, 1, 9),
+(6, '¿Cómo debiera ser el sistema de inscripción electoral en Chile?', '', '0', 4, 1, 0, 1, 4),
+(7, '¿Estás de acuerdo con la inclusión en el sistema electoral de los chilenos residentes en países extranjeros?', '', '0', 4, 0, 1, 1, 3),
+(8, '¿Qué harías con el sistema binominal?', '', '0', 4, 0, 1, 1, 2),
+(9, '¿Apoyas la construcción de las represas hidroeléctricas en Aysén?', '', '0', 10, 1, 0, 1, 2),
+(10, '¿Apoyas la utilización de energía nuclear como una de las fuentes de abastecimiento energético para Chile?', '', '0', 10, 1, 0, 1, 1),
+(11, '¿Qué harías con el impuesto específico a los combustibles?', '', '0', 2, 0, 0, 1, 7),
+(12, '¿Que harías con el valor del IVA?', '', '0', 2, 0, 0, 1, 1),
+(13, '¿Con qué medidas estás más de acuerdo para combatir el desempleo?', '', '0', 2, 0, 0, 1, 2),
+(14, '¿Qué propones para fortalecer las PYMES?', '', '0', 2, 0, 1, 1, 3),
+(15, '¿Qué medida sugieres para fomentar la agricultura?', '', '0', 2, 0, 1, 1, 4),
+(16, '¿Con cuál de estas medidas estás más de acuerdo en base a la regla de superávit fiscal?', '', '0', 2, 0, 1, 1, 5),
+(17, 'De acuerdo al rol que cumple actualmente el Estado en Chile. ¿Qué propones?', '', '0', 4, 0, 0, 1, 1),
+(18, '¿Qué propuesta apoyas para el sistema de Becas y Créditos en la Educación Superior?', '', '0', 6, 0, 1, 1, 3),
+(19, '¿Qué propones para el sistema de Fondos Concursables de Cultura?', '', '0', 6, 0, 1, 1, 4),
+(20, '¿Qué medida propones, entre otras, para mejorar el servicio de atención primaria en la salud pública?', '', '0', 7, 0, 0, 1, 3),
+(21, 'En relación a la infraestructura de salud del país. ¿Qué sugieres?', '', '0', 7, 0, 1, 1, 2),
+(22, '¿Estás de acuerdo con la eliminación del 7% de las cotizaciones de salud para las personas jubiladas?', '', '0', 7, 0, 0, 1, 1),
+(23, '¿Qué propuesta consideras más relevante para las personas que tienen discapacidad física? ', '', '0', 7, 0, 1, 1, 4),
+(24, '¿Estás de acuerdo con el aumento en la dotación de carabineros en el país?', '', '0', 8, 0, 0, 1, 2),
+(25, '¿Con qué propuesta estás más de acuerdo en materia de viviendas sociales?', '', '0', 9, 0, 1, 1, 1),
+(26, '¿Estás de acuerdo con la construcción del puente sobre el canal de Chacao?', '', '0', 5, 0, 0, 1, 4),
+(27, '¿Estás de acuerdo con el indulto presidencial?', '', '0', 1, 1, 1, 1, 3),
+(28, '¿Cómo contribuirías a asegurar la participación laboral femenina?', '', '0', 2, 1, 1, 1, 6),
+(29, '¿Qué harías para regular el financiamiento de las campañas políticas?', '', '0', 4, 1, 0, 1, 5),
+(30, '¿Estás de acuerdo con la legalización de la marihuana?', '', '0', 5, 1, 0, 1, 1),
+(31, '¿Qué propones para la situación limítrofe con Bolivia, en torno a una salida al mar?', '', '0', 5, 1, 1, 1, 2),
+(32, '¿Cuál de estas alternativas refleja tus ideas para descentralizar las tareas en el país?', '', '0', 5, 1, 1, 1, 3),
+(33, '¿Qué  sugieres para eliminar la “puerta giratoria” de la delincuencia?', '', '0', 8, 1, 1, 1, 1),
+(34, '¿Qué medida propones para el impuesto a los libros?', '', '0', 6, 1, 0, 1, 1),
+(35, '¿Qué medidas tomarías respecto a la administración de la educación pública de nuestro país?', '', '0', 6, 1, 1, 1, 2),
+(36, '¿cual es tu fruta favorita???', '', '0', 5, 1, 1, 1, 0),
+(37, '¿Cual es tu color favorito?', 'el color es la forma como repesentamos la frecuencia de la onda de luz reflejada sobre una superficie', 'Color favorito', 1, 0, 1, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -599,7 +623,7 @@ CREATE TABLE IF NOT EXISTS `mn_results` (
   `candidate_id` int(11) NOT NULL,
   `result` double NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=55 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=58 ;
 
 --
 -- Volcar la base de datos para la tabla `mn_results`
@@ -659,7 +683,10 @@ INSERT INTO `mn_results` (`id`, `person_id`, `candidate_id`, `result`) VALUES
 (51, 50, 4, 0),
 (52, 51, 4, 0),
 (53, 52, 4, 6.25),
-(54, 53, 12, 0);
+(54, 53, 12, 0),
+(55, 1, 1, 77.083333),
+(56, 2, 1, 31.25),
+(57, 3, 2, 54.166667);
 
 -- --------------------------------------------------------
 
@@ -673,7 +700,7 @@ CREATE TABLE IF NOT EXISTS `mn_result_details` (
   `category_id` int(11) NOT NULL,
   `result` double NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=433 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=457 ;
 
 --
 -- Volcar la base de datos para la tabla `mn_result_details`
@@ -1111,7 +1138,53 @@ INSERT INTO `mn_result_details` (`id`, `result_id`, `category_id`, `result`) VAL
 (429, 54, 7, 0),
 (430, 54, 8, 0),
 (431, 54, 9, 0),
-(432, 54, 5, 0);
+(432, 54, 5, 0),
+(433, 55, 1, 66.666667),
+(434, 55, 2, 83.333333),
+(435, 55, 4, 100),
+(436, 55, 6, 100),
+(437, 55, 7, 0),
+(438, 55, 8, 100),
+(439, 55, 9, 100),
+(440, 55, 5, 66.666667),
+(441, 56, 1, 33.333333),
+(442, 56, 2, 0),
+(443, 56, 4, 50),
+(444, 56, 6, 33.333333),
+(445, 56, 7, 0),
+(446, 56, 8, 0),
+(447, 56, 9, 100),
+(448, 56, 5, 33.333333),
+(449, 57, 1, 33.333333),
+(450, 57, 2, 0),
+(451, 57, 4, 0),
+(452, 57, 6, 100),
+(453, 57, 7, 100),
+(454, 57, 8, 100),
+(455, 57, 9, 100),
+(456, 57, 5, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `mn_source_of_answers`
+--
+
+CREATE TABLE IF NOT EXISTS `mn_source_of_answers` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `weight_id` int(11) NOT NULL,
+  `sentence` text,
+  `media_name` varchar(1024) DEFAULT NULL,
+  `link` varchar(2048) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Volcar la base de datos para la tabla `mn_source_of_answers`
+--
+
+INSERT INTO `mn_source_of_answers` (`id`, `weight_id`, `sentence`, `media_name`, `link`) VALUES
+(1, 1, 'yo si blablablabla', 'la época', 'http://www.laepoca.cl/la-noticia-importante');
 
 -- --------------------------------------------------------
 
@@ -1136,7 +1209,7 @@ CREATE TABLE IF NOT EXISTS `mn_users` (
 
 INSERT INTO `mn_users` (`id`, `username`, `password`, `admin`, `last_login`, `created`, `modified`) VALUES
 (5, 'falvarez', '612b143c091857daec94f802223db814', 0, '2011-07-26 18:11:29', '2011-07-07 16:39:55', '2011-07-26 18:11:29'),
-(3, 'admin', 'ad2af8aa45f2913c2725a583334b3da6', 1, '2011-07-27 10:15:55', '2011-07-07 16:38:00', '2011-07-27 10:15:55');
+(3, 'admin', 'ad2af8aa45f2913c2725a583334b3da6', 1, '2011-08-01 18:10:41', '2011-07-07 16:38:00', '2011-08-01 18:10:41');
 
 -- --------------------------------------------------------
 
