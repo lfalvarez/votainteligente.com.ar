@@ -9,7 +9,7 @@
 		echo $this->Form->input('birth');
 		echo $this->Form->input('profession');
 		echo $this->Form->input('sons');
-		echo $this->Form->input('marital_status');
+		echo $this->Form->input('civil_status');
 		echo $this->Form->input('religion');
 		echo $this->Form->input('twitter');
 		echo $this->Form->input('facebook');

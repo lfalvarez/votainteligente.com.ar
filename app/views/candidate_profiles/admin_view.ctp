@@ -31,9 +31,9 @@
 			<?php echo $candidateProfile['CandidateProfile']['sons']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Marital Status'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Civil Status'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $candidateProfile['CandidateProfile']['marital_status']; ?>
+			<?php echo $candidateProfile['CandidateProfile']['civil_status']; ?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Religion'); ?></dt>

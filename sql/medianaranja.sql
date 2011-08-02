@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 02-08-2011 a las 12:04:38
+-- Tiempo de generación: 02-08-2011 a las 16:42:32
 -- Versión del servidor: 5.1.54
 -- Versión de PHP: 5.3.5-1ubuntu7.2
 
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `mn_answers` (
   `question_id` int(11) NOT NULL,
   `public` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=102 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=104 ;
 
 --
 -- Volcar la base de datos para la tabla `mn_answers`
@@ -134,7 +134,9 @@ INSERT INTO `mn_answers` (`id`, `answer`, `question_id`, `public`) VALUES
 (98, 'Fin administración municipal en ciertos casos', 35, 1),
 (99, 'Fin administración municipal. Sistema de nuevas corporaciones de educación', 35, 1),
 (100, 'manzana', 36, 1),
-(101, 'platano', 36, 1);
+(101, 'platano', 36, 1),
+(102, 'Rojo', 37, 1),
+(103, 'Amarilllo', 37, 1);
 
 -- --------------------------------------------------------
 
@@ -265,7 +267,7 @@ CREATE TABLE IF NOT EXISTS `mn_candidate_profiles` (
   `birth` date DEFAULT NULL,
   `profession` varchar(255) DEFAULT NULL,
   `sons` int(11) DEFAULT NULL,
-  `marital_status` varchar(255) NOT NULL,
+  `civil_status` varchar(255) NOT NULL,
   `religion` varchar(255) DEFAULT NULL,
   `twitter` varchar(255) DEFAULT NULL,
   `facebook` varchar(255) DEFAULT NULL,
@@ -282,7 +284,7 @@ CREATE TABLE IF NOT EXISTS `mn_candidate_profiles` (
 -- Volcar la base de datos para la tabla `mn_candidate_profiles`
 --
 
-INSERT INTO `mn_candidate_profiles` (`id`, `candidate_id`, `name`, `birth`, `profession`, `sons`, `marital_status`, `religion`, `twitter`, `facebook`, `highschool`, `current_party`, `current_party_starting_year`, `assets`, `created`, `modified`) VALUES
+INSERT INTO `mn_candidate_profiles` (`id`, `candidate_id`, `name`, `birth`, `profession`, `sons`, `civil_status`, `religion`, `twitter`, `facebook`, `highschool`, `current_party`, `current_party_starting_year`, `assets`, `created`, `modified`) VALUES
 (1, 1, 'Perfil de Jorge Arrate', '2031-05-01', 'Abogado', 2, 'Casado con Diamela Eltit', '--', 'www.twitter.com/jarrate', 'www.facebook.com/jarrate', 'Saint Paul/Mackay/Instituto Nacional', 'Socialistas allendistas', 2009, 'Esperando respuesta', '2011-07-26 13:04:11', '2011-07-26 15:33:53'),
 (2, 2, 'Perfil de Sebastián Piñera', '2011-07-26', 'asdfasdf', 0, 'asdfasdf', 'sdfasdf', 'asdasd', 'asdasd', 'asdasdasd', '', 0, 'dfgsdfgsdfg', '2011-07-26 17:20:08', '2011-07-26 17:20:08'),
 (3, 13, 'Perfil de lf Ááéñ~colita de chancho', '1992-07-26', 'chancho', 19, 'soltero sin compromiso y en busca del verdadero amor (podrías ser tú)', 'pastafarian', 'www.twitter.com/shansho', 'www.facebook.com/shansho', 'The shansho''s Colita High school', '', 0, 'Esperando para que la envíe', '2011-07-26 17:43:44', '2011-08-01 13:20:27'),
@@ -1177,14 +1179,18 @@ CREATE TABLE IF NOT EXISTS `mn_source_of_answers` (
   `media_name` varchar(1024) DEFAULT NULL,
   `link` varchar(2048) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Volcar la base de datos para la tabla `mn_source_of_answers`
 --
 
 INSERT INTO `mn_source_of_answers` (`id`, `weight_id`, `sentence`, `media_name`, `link`) VALUES
-(1, 1, 'yo si blablablabla', 'la época', 'http://www.laepoca.cl/la-noticia-importante');
+(1, 1, 'yo si blablablabla', 'la época', 'http://www.laepoca.cl/la-noticia-importante'),
+(4, 2, 'Diosito blablablabla', 'cooperativa.cl', 'http://cooperativa.cl/adimark-aprobacion-a-pinera-bajo-a-30-por-ciento-y-rechazo-llego-a-62/prontus_nots/2011-08-02/095902.html'),
+(5, 141, 'las manzanas son muy ricas', 'el mostrador', 'http://www.elmostrador.cl'),
+(6, 143, 'El rojo es el color de las manzanas, que en verano que me gustan mucho', 'el mostrador', 'http://www.elmostrador.cl/noticias/pais/2011/08/02/jorge-arrate-propone-destinar-10-de-las-ventas-del-cobre-a-un-fondo-de-educacion/'),
+(7, 144, 'el amarillo es el color del sol que dibujan los niños', 'el mostrador', 'http://www.elmostrador.cl/noticias/pais/2011/08/02/adimark-aprobacion-de-pinera-y-el-gobierno-sigue-a-la-baja/');
 
 -- --------------------------------------------------------
 
@@ -1209,7 +1215,7 @@ CREATE TABLE IF NOT EXISTS `mn_users` (
 
 INSERT INTO `mn_users` (`id`, `username`, `password`, `admin`, `last_login`, `created`, `modified`) VALUES
 (5, 'falvarez', '612b143c091857daec94f802223db814', 0, '2011-07-26 18:11:29', '2011-07-07 16:39:55', '2011-07-26 18:11:29'),
-(3, 'admin', 'ad2af8aa45f2913c2725a583334b3da6', 1, '2011-08-01 18:10:41', '2011-07-07 16:38:00', '2011-08-01 18:10:41');
+(3, 'admin', 'ad2af8aa45f2913c2725a583334b3da6', 1, '2011-08-02 12:22:59', '2011-07-07 16:38:00', '2011-08-02 12:22:59');
 
 -- --------------------------------------------------------
 
@@ -1224,7 +1230,7 @@ CREATE TABLE IF NOT EXISTS `mn_weights` (
   `answer_id` int(11) NOT NULL,
   `weighting` double NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=143 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=145 ;
 
 --
 -- Volcar la base de datos para la tabla `mn_weights`
@@ -1372,4 +1378,6 @@ INSERT INTO `mn_weights` (`id`, `question_id`, `candidate_id`, `answer_id`, `wei
 (139, 35, 4, 97, 1),
 (140, 1, 1, 2, 0.1),
 (141, 36, 13, 100, 1),
-(142, 36, 14, 101, 1);
+(142, 36, 14, 101, 1),
+(143, 37, 1, 102, 1),
+(144, 37, 2, 103, 1);

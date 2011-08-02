@@ -8,7 +8,7 @@ App::import('Sanitize');
 	<h2><?php echo $profile['Candidate']['name'];?></h2>
 	<span class="profile-description">Nacimiento: </span><?php echo $profile['CandidateProfile']['birth'];?><br />
 	<span class="profile-description">Profesión: </span><?php echo $profile['CandidateProfile']['profession'];?><br />
-	<span class="profile-description">Estado Civil: </span><?php echo $profile['CandidateProfile']['marital_status'];?><br />
+	<span class="profile-description">Estado Civil: </span><?php echo $profile['CandidateProfile']['civil_status'];?><br />
 	<span class="profile-description">Hijos: </span><?php echo $profile['CandidateProfile']['sons'];?><br />
 	<span class="profile-description">Religión: </span><?php echo $profile['CandidateProfile']['religion'];?><br />
 

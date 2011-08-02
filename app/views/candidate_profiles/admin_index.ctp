@@ -8,7 +8,7 @@
 			<th><?php echo $this->Paginator->sort('birth');?></th>
 			<th><?php echo $this->Paginator->sort('profession');?></th>
 			<th><?php echo $this->Paginator->sort('sons');?></th>
-			<th><?php echo $this->Paginator->sort('marital_status');?></th>
+			<th><?php echo $this->Paginator->sort('civil_status');?></th>
 			<th><?php echo $this->Paginator->sort('religion');?></th>
 			<th><?php echo $this->Paginator->sort('twitter');?></th>
 			<th><?php echo $this->Paginator->sort('facebook');?></th>
@@ -35,7 +35,7 @@
 		<td><?php echo $candidateProfile['CandidateProfile']['birth']; ?>&nbsp;</td>
 		<td><?php echo $candidateProfile['CandidateProfile']['profession']; ?>&nbsp;</td>
 		<td><?php echo $candidateProfile['CandidateProfile']['sons']; ?>&nbsp;</td>
-		<td><?php echo $candidateProfile['CandidateProfile']['marital_status']; ?>&nbsp;</td>
+		<td><?php echo $candidateProfile['CandidateProfile']['civil_status']; ?>&nbsp;</td>
 		<td><?php echo $candidateProfile['CandidateProfile']['religion']; ?>&nbsp;</td>
 		<td><?php echo $candidateProfile['CandidateProfile']['twitter']; ?>&nbsp;</td>
 		<td><?php echo $candidateProfile['CandidateProfile']['facebook']; ?>&nbsp;</td>
