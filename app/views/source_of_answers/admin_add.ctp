@@ -3,7 +3,7 @@
 	<fieldset>
 		<legend><?php __('Admin Add Source Of Answer'); ?></legend>
 	<?php
-		echo $this->Form->select('Ponderación',$weights,array('empty'=>'Selecciona una respuesta de candidato'));
+		echo $this->Form->select('weight_id',$weights,array('empty'=>'Selecciona una respuesta de candidato'));
 		echo $this->Form->input('sentence');
 		echo $this->Form->input('media_name');
 		echo $this->Form->input('link');
