@@ -123,5 +123,16 @@ class Category extends AppModel {
 	    $this->data['Category']['slug']=$this->slugifyName($this->data['Category']['name']);
 	    return true;
 	}
+	function getQuestionsOrderedByCategoryForComboBox(){
+	    $questions = $this->Question->find('list',array(
+		'fields'=>array('Question.id','Question.question','Question.category_id')
+		));
+	    $categories = $this->find('list');
+	    $result = array();
+	    foreach ($questions as $idCategory => $question) {
+		$result[$categories[$idCategory]] = $question;
+	    }
+	    return $result;
+	}
 }
 ?>
