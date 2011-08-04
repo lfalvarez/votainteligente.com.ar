@@ -16,8 +16,13 @@ class WeightTestCase extends CakeTestCase {
 
 	function testGetNameOfTheWeight() {
 	    $weight = $this->Weight->findAllWithName();
-	    $expected = '¿que piensas de los numeros imaginarios dibujados en un plano cartesiano?|Candidato por los numeros impares|esta bien eso para verlo de manera grafica pero no se demuestra la imparidad de los numeros imaginarios';
+	    $expected = 'esta bien eso para verlo de manera grafica pero no se demuestra la imparidad de los numeros imaginarios - Respuesta del candidato' ;
 	    $this->assertEqual($expected,$weight[0]['Weight']['name']);
+	}
+	function testListWeightsWithName() {
+	    $weights = $this->Weight->listWeightsWithName(1,1);
+	    $expected = 'esta bien eso para verlo de manera grafica pero no se demuestra la imparidad de los numeros imaginarios - Respuesta del candidato' ;
+	    $this->assertEqual($expected,$weights[1]);
 	}
 
 }

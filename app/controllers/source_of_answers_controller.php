@@ -9,6 +9,7 @@ class SourceOfAnswersController extends AppController {
 	}
 
 	function admin_view($id = null) {
+		$this->SourceOfAnswer->recursive = 0;
 		if (!$id) {
 			$this->Session->setFlash(__('Invalid source of answer', true));
 			$this->redirect(array('action' => 'index'));
@@ -27,13 +28,7 @@ class SourceOfAnswersController extends AppController {
 			}
 		}
 		$candidates = $this->SourceOfAnswer->Weight->Candidate->find('list');
-		$weights = $this->SourceOfAnswer->Weight->findAllWithName();
-		$weightsForInput = array();
-		foreach ($weights as $weight){
-		    $weightsForInput[$weight['Weight']['id']]=$weight['Weight']['name'];
-		}
 		$this->set('candidates',$candidates);
-		$this->set('weights',$weightsForInput);
 	}
 	function admin_edit($id = null) {
 		if (!$id && empty($this->data)) {
@@ -49,9 +44,14 @@ class SourceOfAnswersController extends AppController {
 			}
 		}
 		if (empty($this->data)) {
+			$this->SourceOfAnswer->recursive = 0;
 			$this->data = $this->SourceOfAnswer->read(null, $id);
 		}
-		$weights = $this->SourceOfAnswer->Weight->find('list');
+		$weights = $this->SourceOfAnswer->Weight->listWeightsWithName($this->data['Weight']['candidate_id'],$this->data['Weight']['question_id']);
+		$candidates = $this->SourceOfAnswer->Weight->Candidate->find('list');
+		$questions = $this->SourceOfAnswer->Weight->Question->Category->getQuestionsOrderedByCategoryForComboBox();
+		$this->set(compact('questions'));
+		$this->set(compact('candidates'));
 		$this->set(compact('weights'));
 	}
 
