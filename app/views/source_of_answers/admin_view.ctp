@@ -26,6 +26,11 @@
 			<?php echo $sourceOfAnswer['SourceOfAnswer']['link']; ?>
 			&nbsp;
 		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Date'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $sourceOfAnswer['SourceOfAnswer']['date']; ?>
+			&nbsp;
+		</dd>
 	</dl>
 </div>
 <div class="actions">

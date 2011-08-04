@@ -7,6 +7,7 @@
 			<th><?php echo $this->Paginator->sort('sentence');?></th>
 			<th><?php echo $this->Paginator->sort('media_name');?></th>
 			<th><?php echo $this->Paginator->sort('link');?></th>
+			<th><?php echo $this->Paginator->sort('date');?></th>
 			<th class="actions"><?php __('Actions');?></th>
 	</tr>
 	<?php
@@ -25,6 +26,7 @@
 		<td><?php echo $sourceOfAnswer['SourceOfAnswer']['sentence']; ?>&nbsp;</td>
 		<td><?php echo $sourceOfAnswer['SourceOfAnswer']['media_name']; ?>&nbsp;</td>
 		<td><?php echo $sourceOfAnswer['SourceOfAnswer']['link']; ?>&nbsp;</td>
+		<td><?php echo $sourceOfAnswer['SourceOfAnswer']['date']; ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $sourceOfAnswer['SourceOfAnswer']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $sourceOfAnswer['SourceOfAnswer']['id'])); ?>

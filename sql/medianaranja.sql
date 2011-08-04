@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 02-08-2011 a las 16:42:32
+-- Tiempo de generación: 04-08-2011 a las 11:41:27
 -- Versión del servidor: 5.1.54
 -- Versión de PHP: 5.3.5-1ubuntu7.2
 
@@ -1178,19 +1178,22 @@ CREATE TABLE IF NOT EXISTS `mn_source_of_answers` (
   `sentence` text,
   `media_name` varchar(1024) DEFAULT NULL,
   `link` varchar(2048) DEFAULT NULL,
+  `date` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Volcar la base de datos para la tabla `mn_source_of_answers`
 --
 
-INSERT INTO `mn_source_of_answers` (`id`, `weight_id`, `sentence`, `media_name`, `link`) VALUES
-(1, 1, 'yo si blablablabla', 'la época', 'http://www.laepoca.cl/la-noticia-importante'),
-(4, 2, 'Diosito blablablabla', 'cooperativa.cl', 'http://cooperativa.cl/adimark-aprobacion-a-pinera-bajo-a-30-por-ciento-y-rechazo-llego-a-62/prontus_nots/2011-08-02/095902.html'),
-(5, 141, 'las manzanas son muy ricas', 'el mostrador', 'http://www.elmostrador.cl'),
-(6, 143, 'El rojo es el color de las manzanas, que en verano que me gustan mucho', 'el mostrador', 'http://www.elmostrador.cl/noticias/pais/2011/08/02/jorge-arrate-propone-destinar-10-de-las-ventas-del-cobre-a-un-fondo-de-educacion/'),
-(7, 144, 'el amarillo es el color del sol que dibujan los niños', 'el mostrador', 'http://www.elmostrador.cl/noticias/pais/2011/08/02/adimark-aprobacion-de-pinera-y-el-gobierno-sigue-a-la-baja/');
+INSERT INTO `mn_source_of_answers` (`id`, `weight_id`, `sentence`, `media_name`, `link`, `date`) VALUES
+(1, 1, 'yo si blablablabla', 'la época', 'http://www.laepoca.cl/la-noticia-importante', '0000-00-00'),
+(4, 2, 'Diosito blablablabla', 'cooperativa.cl', 'http://cooperativa.cl/adimark-aprobacion-a-pinera-bajo-a-30-por-ciento-y-rechazo-llego-a-62/prontus_nots/2011-08-02/095902.html', '0000-00-00'),
+(5, 141, 'las manzanas son muy ricas', 'el mostrador', 'http://www.elmostrador.cl', '0000-00-00'),
+(6, 143, 'El rojo es el color de las manzanas, que en verano que me gustan mucho', 'el mostrador', 'http://www.elmostrador.cl/noticias/pais/2011/08/02/jorge-arrate-propone-destinar-10-de-las-ventas-del-cobre-a-un-fondo-de-educacion/', '0000-00-00'),
+(7, 144, 'el amarillo es el color del sol que dibujan los niños', 'el mostrador', 'http://www.elmostrador.cl/noticias/pais/2011/08/02/adimark-aprobacion-de-pinera-y-el-gobierno-sigue-a-la-baja/', '0000-00-00'),
+(8, 5, 'Claro que si por que blah blah blah', 'la nacion', 'http://lanacion.cl/hinzpeter-se-acabaron-las-marchas-estudiantiles-por-la-alameda/noticias/2011-08-03/122746.html', '2011-08-03'),
+(9, 1, 'que bueno que me preguntaste por que yo justo estaba pensando en responder algo que no tenia nada que ver y ya ves!', 'ritmo', 'http://www.ritmo.cl/arrate-responde', '2011-08-03');
 
 -- --------------------------------------------------------
 
@@ -1215,7 +1218,7 @@ CREATE TABLE IF NOT EXISTS `mn_users` (
 
 INSERT INTO `mn_users` (`id`, `username`, `password`, `admin`, `last_login`, `created`, `modified`) VALUES
 (5, 'falvarez', '612b143c091857daec94f802223db814', 0, '2011-07-26 18:11:29', '2011-07-07 16:39:55', '2011-07-26 18:11:29'),
-(3, 'admin', 'ad2af8aa45f2913c2725a583334b3da6', 1, '2011-08-02 12:22:59', '2011-07-07 16:38:00', '2011-08-02 12:22:59');
+(3, 'admin', 'ad2af8aa45f2913c2725a583334b3da6', 1, '2011-08-04 11:13:06', '2011-07-07 16:38:00', '2011-08-04 11:13:06');
 
 -- --------------------------------------------------------
 

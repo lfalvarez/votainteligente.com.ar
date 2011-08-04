@@ -26,7 +26,7 @@
 	<fieldset>
 		<legend><?php __('Admin Add Source Of Answer'); ?></legend>
 	<?php
-		echo $this->Form->input(null,array(
+		echo $this->Form->input('candidate_id',array(
 		    'type'=>'select',
 		    'options'=>$candidates,
 		    'empty'=>'Selecciona un candidato',
@@ -34,7 +34,7 @@
 		    'onchange'=>'selectCandidate(this.value);',
 		    'label'=>'Candidato'
 		    ));
-		echo $this->Form->input(null,array(
+		echo $this->Form->input('question_id',array(
 			'type'=>'select',
 			'empty'=>'Selecciona un candidato',
 			'id'=>'questionsForCandidate',
@@ -50,6 +50,7 @@
 		echo $this->Form->input('sentence');
 		echo $this->Form->input('media_name');
 		echo $this->Form->input('link');
+		echo $this->Form->input('date');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>

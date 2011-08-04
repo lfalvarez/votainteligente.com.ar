@@ -89,8 +89,8 @@ App::import('Sanitize');
 		    <span style="opacity:<?php echo $answer['Weight'][0]['weighting'];?>;" class="has-an-explanation answer" tooltip_message="<?php
 		    if (!empty($answer['Weight'][0]['SourceOfAnswer'])) {
 		    	foreach ($answer['Weight'][0]['SourceOfAnswer'] as $source) {
-			    echo '<span class=\'sentence\'>&quot;'.Sanitize::html($source['sentence']).'&quot;</span> ';
-			    echo '<a class=\'media-name\' href=\''.$source['link'].'\'>'.Sanitize::html($source['media_name']).'</a>';
+			    echo '&#8226;<span class=\'sentence\'>&quot;'.Sanitize::html($source['sentence']).'&quot;</span> el '.$source['date'].' ';
+			    echo '<a class=\'media-name\' href=\''.$source['link'].'\'>'.Sanitize::html($source['media_name']).'</a><br />';
 			}
 		    }
 		    ?>"> · <?php echo $answer['answer'];?></span>
