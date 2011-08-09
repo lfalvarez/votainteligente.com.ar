@@ -21,7 +21,7 @@
 	<tr<?php echo $class;?>>
 		<td><?php echo $candidatePoliticalExperience['CandidatePoliticalExperience']['id']; ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($candidatePoliticalExperience['CandidateProfile']['id'], array('controller' => 'candidate_profiles', 'action' => 'view', $candidatePoliticalExperience['CandidateProfile']['id'])); ?>
+			<?php echo $this->Html->link($candidatePoliticalExperience['CandidateProfile']['name'], array('controller' => 'candidate_profiles', 'action' => 'view', $candidatePoliticalExperience['CandidateProfile']['id'])); ?>
 		</td>
 		<td><?php echo $candidatePoliticalExperience['CandidatePoliticalExperience']['starting_year']; ?>&nbsp;</td>
 		<td><?php echo $candidatePoliticalExperience['CandidatePoliticalExperience']['ending_year']; ?>&nbsp;</td>

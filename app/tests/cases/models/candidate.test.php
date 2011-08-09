@@ -93,6 +93,44 @@ class CandidateTestCase extends CakeTestCase {
             $result = $this->Candidate->calculateTotalAfinity($data);
             $this->assertEqual($expected,$result);
         }
-
+	function testSaveCandidateTest(){
+	    $profile = $this->Candidate->getProfile(1);
+	    $this->assertTrue(isset($profile['CandidatePoliticalExperience'][1]['description']));
+	}
+	function testRemoveEmptyDataFromArray(){
+	    $testArray = array(
+		'a'=>'a',
+		'shouldNotBeRemoved'=>array(
+		    'firstElement'=>'a',
+		    'secondElement'=>'b'
+		),
+		'shouldNeitherBeRemoved'=>array(
+		    'notRemoved'=>'Imnotbeingremoved',
+		    'butThis'=>array(
+			'anElement'=>null
+		    )
+		),
+		'shouldBeRemoved'=>array(
+		    'firstElement'=>'',
+		    'secondElement'=>null
+		),
+		'shouldAlsoBeRemoved'=>array(
+		    'firstElement'=>null,
+		    'secondElement'=>'anything'
+		)
+	    );
+	    $expected = array(
+		'a'=>'a',
+		'shouldNotBeRemoved'=>array(
+		    'firstElement'=>'a',
+		    'secondElement'=>'b'
+		),
+		'shouldNeitherBeRemoved'=>array(
+		    'notRemoved'=>'Imnotbeingremoved'
+		)
+	    );
+	    $result = $this->Candidate->removeEmptyDataFromArray($testArray);
+	    $this->assertEqual($expected,$result);
+	}
 }
 ?>

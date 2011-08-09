@@ -20,7 +20,7 @@
 	<tr<?php echo $class;?>>
 		<td><?php echo $candidateParty['CandidateParty']['id']; ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($candidateParty['CandidateProfile']['id'], array('controller' => 'candidate_profiles', 'action' => 'view', $candidateParty['CandidateProfile']['id'])); ?>
+			<?php echo $this->Html->link($candidateParty['CandidateProfile']['name'], array('controller' => 'candidate_profiles', 'action' => 'view', $candidateParty['CandidateProfile']['id'])); ?>
 		</td>
 		<td><?php echo $candidateParty['CandidateParty']['starting_year']; ?>&nbsp;</td>
 		<td><?php echo $candidateParty['CandidateParty']['ending_year']; ?>&nbsp;</td>

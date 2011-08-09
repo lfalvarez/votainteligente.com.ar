@@ -18,7 +18,7 @@ class CandidateProfile extends AppModel {
 		'CandidateLink' => array(
 			'className' => 'CandidateLink',
 			'foreignKey' => 'candidate_profile_id',
-			'dependent' => false,
+			'dependent' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',
@@ -31,7 +31,7 @@ class CandidateProfile extends AppModel {
 		'CandidateParty' => array(
 			'className' => 'CandidateParty',
 			'foreignKey' => 'candidate_profile_id',
-			'dependent' => false,
+			'dependent' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',
@@ -44,7 +44,7 @@ class CandidateProfile extends AppModel {
 		'CandidatePoliticalExperience' => array(
 			'className' => 'CandidatePoliticalExperience',
 			'foreignKey' => 'candidate_profile_id',
-			'dependent' => false,
+			'dependent' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',
@@ -57,7 +57,7 @@ class CandidateProfile extends AppModel {
 		'CandidateUniversityStudy' => array(
 			'className' => 'CandidateUniversityStudy',
 			'foreignKey' => 'candidate_profile_id',
-			'dependent' => false,
+			'dependent' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',
@@ -70,7 +70,7 @@ class CandidateProfile extends AppModel {
 		'CandidateWorkExperience' => array(
 			'className' => 'CandidateWorkExperience',
 			'foreignKey' => 'candidate_profile_id',
-			'dependent' => false,
+			'dependent' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',

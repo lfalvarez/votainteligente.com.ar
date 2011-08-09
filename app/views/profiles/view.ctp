@@ -57,6 +57,20 @@ App::import('Sanitize');
 	}
 	?>
 	</ul>
+	<h3>Experiencia política: </h3>
+	<ul>
+	<?php
+	foreach ($profile['CandidatePoliticalExperience'] as $type) {
+	?>
+	    <h4><?php echo $type['description'];?></h4>
+	    <?php foreach ($type['experiences'] as $experience) {
+		?>
+	    <li><?php echo $experience['starting_year'].'-'.$experience['ending_year'].', '.$experience['position']; ?></li>
+	    <?php
+	    }
+	}
+	?>
+	</ul>
 	</p>
     </div>
 

@@ -4,7 +4,6 @@
 		<legend><?php __('Admin Add Candidate Profile'); ?></legend>
 	<?php
 		echo $this->Form->input('candidate_id');
-		echo $this->Form->input('name');
 		echo $this->Form->input('birth');
 		echo $this->Form->input('profession');
 		echo $this->Form->input('sons');
