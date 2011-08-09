@@ -23,5 +23,21 @@ class CandidatePoliticalExperienceFixture extends CakeTestFixture {
 			'position' => 'Lorem ipsum dolor sit amet',
 			'type' => 1
 		),
+		array(
+			'id' => 2,
+			'candidate_profile_id' => 1,
+			'starting_year' => 1,
+			'ending_year' => 1,
+			'position' => 'Lorem ipsum dolor sit amet',
+			'type' => 0
+		),
+		array(
+			'id' => 3,
+			'candidate_profile_id' => 1,
+			'starting_year' => 199,
+			'ending_year' => 111,
+			'position' => 'Lorasdasdem ipsum dolor sit amet',
+			'type' => 1
+		),
 	);
 }

@@ -20,13 +20,16 @@ class CandidatesController extends AppController {
 	function admin_add() {
 		if (!empty($this->data)) {
 			$this->Candidate->create();
-			if ($this->Candidate->save($this->data)) {
+			if ($this->Candidate->saveAllData($this->data)) {
 				$this->Session->setFlash(__('The candidate has been saved', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The candidate could not be saved. Please, try again.', true));
 			}
 		}
+		Configure::load('medianaranja');
+		$possibleTypes = Configure::read('PoliticalExperience.types');
+		$this->set('politicalExperienceTypes',$possibleTypes);
 	}
 
 	function admin_edit($id = null) {
@@ -35,7 +38,7 @@ class CandidatesController extends AppController {
 			$this->redirect(array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
-			if ($this->Candidate->save($this->data)) {
+			if ($this->Candidate->saveAllData($this->data)) {
 				$this->Session->setFlash(__('The candidate has been saved', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
@@ -44,6 +47,14 @@ class CandidatesController extends AppController {
 		}
 		if (empty($this->data)) {
 			$this->data = $this->Candidate->read(null, $id);
+			$idProfile = $this->Candidate->CandidateProfile->field('id',array('candidate_id' => $id));
+			$this->Candidate->CandidateProfile->Behaviors->attach('Containable');
+			$this->Candidate->CandidateProfile->contain(array('CandidateLink','CandidateParty','CandidatePoliticalExperience','CandidateUniversityStudy','CandidateWorkExperience'));
+			$profile = $this->Candidate->CandidateProfile->read(null,$idProfile);
+			Configure::load('medianaranja');
+			$possibleTypes = Configure::read('PoliticalExperience.types');
+			$this->set('politicalExperienceTypes',$possibleTypes);
+			$this->data = array_merge($this->data,$profile);
 		}
 	}
 
