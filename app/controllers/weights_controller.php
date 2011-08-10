@@ -27,7 +27,7 @@ class WeightsController extends AppController {
 				$this->Session->setFlash(__('The weight could not be saved. Please, try again.', true));
 			}
 		}
-		$questions = $this->Weight->Question->find('list');
+		$questions = $this->Weight->Question->Category->getQuestionsOrderedByCategoryForComboBox();
 		$candidates = $this->Weight->Candidate->find('list');
 		$this->set(compact('questions', 'candidates'));
 	}
@@ -48,7 +48,7 @@ class WeightsController extends AppController {
 		if (empty($this->data)) {
 			$this->data = $this->Weight->read(null, $id);
 		}
-		$questions = $this->Weight->Question->find('list');
+		$questions = $this->Weight->Question->Category->getQuestionsOrderedByCategoryForComboBox();
 		$candidates = $this->Weight->Candidate->find('list');
 		$answers = $this->Weight->Answer->find('list');
 		$this->set(compact('questions', 'candidates', 'answers'));

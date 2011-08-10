@@ -28,7 +28,7 @@ class AnswersController extends AppController {
 				$this->Session->setFlash(__('The answer could not be saved. Please, try again.', true));
 			}
 		}
-		$questions = $this->Answer->Question->find('list');
+		$questions = $this->Answer->Question->Category->getQuestionsOrderedByCategoryForComboBox();
 		$this->set(compact('questions'));
 	}
 
@@ -48,7 +48,7 @@ class AnswersController extends AppController {
 		if (empty($this->data)) {
 			$this->data = $this->Answer->read(null, $id);
 		}
-		$questions = $this->Answer->Question->find('list');
+		$questions = $this->Answer->Question->Category->getQuestionsOrderedByCategoryForComboBox();
 		$this->set(compact('questions'));
 	}
 
