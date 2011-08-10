@@ -3,6 +3,7 @@ class CategoriesController extends AppController {
 
 	var $name = 'Categories';
         var $layout = 'admin';
+	var $helpers = array('Admin');
 	function admin_index() {
 		$this->Category->recursive = 0;
 		$this->set('categories', $this->paginate());
@@ -43,6 +44,8 @@ class CategoriesController extends AppController {
 		}
 		if (empty($this->data)) {
 			$this->data = $this->Category->read(null, $id);
+			$this->loadModel('Question');
+			$this->set('questions', $this->paginate('Question',array('category_id'=>$id)));
 		}
 	}
 
