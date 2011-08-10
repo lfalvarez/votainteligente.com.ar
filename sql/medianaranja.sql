@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 04-08-2011 a las 11:41:27
+-- Tiempo de generación: 09-08-2011 a las 16:48:11
 -- Versión del servidor: 5.1.54
 -- Versión de PHP: 5.3.5-1ubuntu7.2
 
@@ -168,7 +168,7 @@ CREATE TABLE IF NOT EXISTS `mn_candidates` (
   `name` varchar(255) DEFAULT NULL,
   `imagepath` varchar(1024) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=42 ;
 
 --
 -- Volcar la base de datos para la tabla `mn_candidates`
@@ -177,11 +177,11 @@ CREATE TABLE IF NOT EXISTS `mn_candidates` (
 INSERT INTO `mn_candidates` (`id`, `slug`, `name`, `imagepath`) VALUES
 (1, 'jorge-arrate', 'Jorge Arrate', 'http://www.votainteligente.cl/medianaranja/images/arrate.jpg'),
 (2, 'sebastian-pinera', 'Sebastián Piñera', 'http://www.votainteligente.cl/medianaranja/images/pinera.jpg'),
-(3, 'eduardo-frei', 'Eduardo Frei', 'http://www.votainteligente.cl/medianaranja/images/frei.jpg'),
-(4, 'marco-enriquez-ominami', 'Marco Enriquez-Ominami', 'http://www.votainteligente.cl/medianaranja/images/ominami.jpg'),
-(12, 'perico-los-palotes', 'perico los palotes', 'http://4.bp.blogspot.com/-9MFHtS57cRw/TcITV-tOk0I/AAAAAAAAAA0/KDGeJlF_YKk/s1600/perico.jpg'),
-(13, 'lf-aaen-colita-de-chancho', 'lf Ááéñ~colita de chancho', 'http://1.bp.blogspot.com/-Y10l-YqE_9s/TVk__CnNZGI/AAAAAAAAAI8/eh9BoFXXPFs/s1600/chancho.jpg'),
-(14, 'otro-candidato', 'Otro candidato', 'http://www.theclinic.cl/wp-content/uploads/2011/07/Huelga-Escondida.jpg');
+(40, 'pato-aparato', 'Pato Aparato', 'http://cdn.buzznet.com/assets/users16/nagual2012/default/pato-aparato-duck-tales-pato--large-msg-12293439043.jpg'),
+(41, 'mowgli-de-la-selva', 'Mowgli de la selva', 'http://upload.wikimedia.org/wikipedia/commons/5/5e/Mowgli-1895-illustration.png'),
+(28, 'mickey-mouse', 'Mickey Mouse', 'http://3.bp.blogspot.com/-ENXaCTVkQ6Q/TiXU0nvlxnI/AAAAAAAAIqc/LhA6MFHqS9Q/s1600/mickey-mouse-10.jpg'),
+(39, 'marvin-el-marciano', 'Marvin el Marciano', 'http://upload.wikimedia.org/wikipedia/en/3/31/Marvinthemartain.jpg'),
+(25, 'pato-donald', 'Pato Donald', 'http://blog.es.privalia.com/wp-content/uploads/2009/06/donald-duck.gif');
 
 -- --------------------------------------------------------
 
@@ -195,7 +195,7 @@ CREATE TABLE IF NOT EXISTS `mn_candidate_links` (
   `description` varchar(255) DEFAULT NULL,
   `link` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=49 ;
 
 --
 -- Volcar la base de datos para la tabla `mn_candidate_links`
@@ -203,7 +203,22 @@ CREATE TABLE IF NOT EXISTS `mn_candidate_links` (
 
 INSERT INTO `mn_candidate_links` (`id`, `candidate_profile_id`, `description`, `link`) VALUES
 (1, 1, 'Página principal', 'www.arrate.cl'),
-(2, 3, 'la página', 'www.shansho.cl');
+(39, 26, 'numero 37', 'sdasd'),
+(40, 26, 'otro lonk', 'asdasdasrrr'),
+(41, 27, 'En wikipedia', 'es.wikipedia.org/wiki/DuckTales'),
+(11, 12, 'Página oficial', 'www.donaldduck.com'),
+(38, 19, 'viaje dos en lan', 'www.lan.com/cgi-bin/compra/paso2.cgi?fecha1_dia=07&fecha1_anomes=2011-12&fecha2_dia=11&fecha2_anomes=2011-12&otras_ciudades=&num_segmentos_interfaz=2&tipo_paso1=caja&rand_check=1178.4693808294833&from_city2=ARI&to_city2=SCL&ida_vuelta=ida_vuelta&vu'),
+(23, 19, 'Página oficial', 'http://www.mickeypresidente.com'),
+(36, 26, 'Página del partido de marvin', 'http://www.partidodemarvin.com'),
+(37, 19, 'viaje', 'http://www.despegar.cl/search/flights/RoundTrip/SCL/ARI/2011-12-07/2011-12-11/1/0/0'),
+(35, 26, 'Página oficial', 'http://www.marvinpresidente.com'),
+(42, 27, 'toonopedia', 'www.toonopedia.com/'),
+(43, 27, 'Descripcion de un elemento dinámicamente agregado', 'www.google.com'),
+(44, 2, 'pagina oficial', 'www.tatan.cl'),
+(45, 2, 'Descripcion', 'lonk.com'),
+(46, 28, 'Wikipedia', 'http://en.wikipedia.org/wiki/Mowgli'),
+(47, 28, 'The jungle book', 'http://en.wikipedia.org/wiki/The_Jungle_Book'),
+(48, 28, 'The law of the jungle', 'http://en.wikipedia.org/wiki/The_Law_of_the_Jungle');
 
 -- --------------------------------------------------------
 
@@ -218,7 +233,7 @@ CREATE TABLE IF NOT EXISTS `mn_candidate_parties` (
   `ending_year` int(11) DEFAULT NULL,
   `party` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=42 ;
 
 --
 -- Volcar la base de datos para la tabla `mn_candidate_parties`
@@ -226,8 +241,17 @@ CREATE TABLE IF NOT EXISTS `mn_candidate_parties` (
 
 INSERT INTO `mn_candidate_parties` (`id`, `candidate_profile_id`, `starting_year`, `ending_year`, `party`) VALUES
 (1, 1, 1963, 2009, 'Partido Socialista'),
-(2, 3, 1994, 1999, 'Partido porcino'),
-(3, 1, 2000, 2011, 'Partido Porcino Popular');
+(39, 27, 2000, 2011, 'Probando un elemento agregado dinamicamente'),
+(3, 1, 2000, 2011, 'Partido Porcino Popular'),
+(37, 27, 1985, 1990, 'Desconocido'),
+(36, 26, 1910, 1988, 'partido patistico conservador y revolucionario'),
+(12, 12, 1985, 1989, 'partido patistico conservador y revolucionario'),
+(13, 12, 1989, 2000, 'PAZ'),
+(25, 19, 1989, 2000, 'PAZ'),
+(24, 19, 1910, 1992, 'Partido roedorae'),
+(38, 27, 1990, 2000, 'Nuevamente desconocido'),
+(40, 27, 2011, 2011, 'Otro elemento agregado dinamicamente'),
+(41, 2, 1990, 2011, 'RN');
 
 -- --------------------------------------------------------
 
@@ -243,7 +267,7 @@ CREATE TABLE IF NOT EXISTS `mn_candidate_political_experiences` (
   `position` varchar(255) DEFAULT NULL,
   `type` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=38 ;
 
 --
 -- Volcar la base de datos para la tabla `mn_candidate_political_experiences`
@@ -252,7 +276,18 @@ CREATE TABLE IF NOT EXISTS `mn_candidate_political_experiences` (
 INSERT INTO `mn_candidate_political_experiences` (`id`, `candidate_profile_id`, `starting_year`, `ending_year`, `position`, `type`) VALUES
 (1, 1, 1975, 1977, 'Secretario de relaciones internacionales del Partido Socialista', 0),
 (2, 1, 1972, 1973, 'Ministro de minería interina', 1),
-(3, 3, 2010, 2011, 'Jefe del partido', 0);
+(32, 27, 1995, 1997, 'Secreatario general', 1),
+(31, 27, 1987, 1988, 'Jefe de relaciones internacionales', 0),
+(6, 12, 1987, 1988, 'Jefe de relaciones internacionales', 0),
+(7, 12, 1995, 1997, 'Secreatario general', 1),
+(30, 26, 1920, 1988, 'Presidente del partido', 0),
+(18, 19, 1920, 1988, 'Presidente del partido', 0),
+(19, 19, 1922, 1997, 'Jefe de comunicaciones del gobieron', 1),
+(36, 28, 1910, 2011, 'Personaje', 1),
+(35, 28, 1900, 1910, 'Personaje ficticio', 0),
+(34, 28, 1898, 1900, 'Niño', 1),
+(33, 2, 1990, 1994, 'Senador', 1),
+(37, 1, 1977, 1989, 'Encargado de comunicaciones', 0);
 
 -- --------------------------------------------------------
 
@@ -278,17 +313,20 @@ CREATE TABLE IF NOT EXISTS `mn_candidate_profiles` (
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
 
 --
 -- Volcar la base de datos para la tabla `mn_candidate_profiles`
 --
 
 INSERT INTO `mn_candidate_profiles` (`id`, `candidate_id`, `name`, `birth`, `profession`, `sons`, `civil_status`, `religion`, `twitter`, `facebook`, `highschool`, `current_party`, `current_party_starting_year`, `assets`, `created`, `modified`) VALUES
-(1, 1, 'Perfil de Jorge Arrate', '2031-05-01', 'Abogado', 2, 'Casado con Diamela Eltit', '--', 'www.twitter.com/jarrate', 'www.facebook.com/jarrate', 'Saint Paul/Mackay/Instituto Nacional', 'Socialistas allendistas', 2009, 'Esperando respuesta', '2011-07-26 13:04:11', '2011-07-26 15:33:53'),
-(2, 2, 'Perfil de Sebastián Piñera', '2011-07-26', 'asdfasdf', 0, 'asdfasdf', 'sdfasdf', 'asdasd', 'asdasd', 'asdasdasd', '', 0, 'dfgsdfgsdfg', '2011-07-26 17:20:08', '2011-07-26 17:20:08'),
-(3, 13, 'Perfil de lf Ááéñ~colita de chancho', '1992-07-26', 'chancho', 19, 'soltero sin compromiso y en busca del verdadero amor (podrías ser tú)', 'pastafarian', 'www.twitter.com/shansho', 'www.facebook.com/shansho', 'The shansho''s Colita High school', '', 0, 'Esperando para que la envíe', '2011-07-26 17:43:44', '2011-08-01 13:20:27'),
-(4, 14, 'Perfil de Otro candidato', '1995-07-26', '5674567', 0, 'soltero sin compromiso', '3453', 'www.twitter.com/jarrate', 'www.facebook.com/shansho', 'Saint Paul/Mackay/Instituto Nacional', '', 0, 'fghjfghj', '2011-07-26 18:14:33', '2011-07-26 18:14:33');
+(1, 1, 'Perfil de Jorge Arrate', '2031-05-01', 'Abogado', 2, 'Casado con Diamela Eltit', '--', 'www.twitter.com/jarrate', 'www.facebook.com/jarrate', 'Saint Paul/Mackay/Instituto Nacional', 'Socialistas allendistas', 2009, 'Esperando respuesta', '2011-07-26 13:04:11', '2011-08-08 19:00:04'),
+(2, 2, 'Perfil de Sebastián Piñera', '2011-07-26', 'asdfasdf', 0, 'asdfasdf', 'sdfasdf', 'asdasd', 'asdasd', 'asdasdasd', '', 0, 'dfgsdfgsdfg', '2011-07-26 17:20:08', '2011-08-08 18:06:38'),
+(28, 41, 'Perfil de Mowgli de la selva', '2011-08-08', 'niño', 0, 'Soltero y es un niño', 'Indu', 'www.twitter.com/mowgli', 'www.facebook.com/mowgli', 'No va a la escuela', '', 0, 'No tiene nada', '2011-08-08 18:32:20', '2011-08-08 18:32:20'),
+(12, 25, 'Perfil de Pato Donald', '2011-08-04', 'Pato', 3, 'Soltero', '', 'www.twitter.com/donald_duck', 'www.twitter.com/donald_duck', 'Instituto Nacional', '', 0, '', '2011-08-04 17:35:52', '2011-08-04 17:35:52'),
+(19, 28, 'Perfil de Mickey Mouse', '2011-08-05', 'Ratón', 1200, 'Casado con Minnie Mouse', 'Católico apostólico y romano', 'www.twitter.com/mickey_mouse', 'www.facebook.com/mickey_mouse', 'The entrance high', '', 0, '', '2011-08-05 12:50:29', '2011-08-08 14:48:59'),
+(26, 39, 'Perfil de Marvin el Marciano', '2011-08-05', 'Marciano', 0, 'Solterisimo 1313', 'Iglesia maradoniana', 'www.twitter.com/marvin_martian', 'www.facebook.com/marvin_martian', 'The mars high', '', 0, '', '2011-08-05 15:48:27', '2011-08-08 15:16:53'),
+(27, 40, 'Perfil de Pato Aparato', '2011-08-08', 'contador', 0, 'Desconocido (su identidad secreta no ha sido revelada aún)', 'Sintoligista', 'www.twitter.com/pato_aparato', 'www.facebook.com/pato_aparato', 'Patolandia high', '', 0, 'Posee 1 traje especial que lo convierte en pato aparato y nada más', '2011-08-08 15:26:53', '2011-08-08 15:33:27');
 
 -- --------------------------------------------------------
 
@@ -303,7 +341,7 @@ CREATE TABLE IF NOT EXISTS `mn_candidate_university_studies` (
   `university` varchar(255) DEFAULT NULL,
   `ending_year` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=34 ;
 
 --
 -- Volcar la base de datos para la tabla `mn_candidate_university_studies`
@@ -311,7 +349,16 @@ CREATE TABLE IF NOT EXISTS `mn_candidate_university_studies` (
 
 INSERT INTO `mn_candidate_university_studies` (`id`, `candidate_profile_id`, `career`, `university`, `ending_year`) VALUES
 (1, 1, 'Derecho', 'Universidad de Chile', 1964),
-(2, 1, 'PhD (c) en economía/Master of arts en economía', 'Hardvard', 1967);
+(2, 1, 'PhD (c) en economía/Master of arts en economía', 'Hardvard', 1967),
+(5, 12, 'Ingenieria', 'Universidad Estatal de Patolandia', 1980),
+(6, 12, 'Msc en Actuación', 'Universidad Estatal de Patolandia', 1983),
+(18, 19, 'Msc en Actuación', 'Universidad Estatal de Patolandia', 1983),
+(17, 19, 'Ingenieria', 'Universidad Estatal de Patolandia', 1928),
+(32, 2, 'Ingenieria comercial', 'Universidad Católica', 1980),
+(30, 27, 'Ingenieria Mecánica', 'Universidad Estatal de Patolandia', 1980),
+(29, 26, 'Ingenieria', 'Universidad Estatal de Marte', 1980),
+(31, 27, 'Msc en Ingeniería Mecánica', 'Universidad Estatal de Patolandia', 1983),
+(33, 28, 'Sobrevivencia', 'Universidad Nacional de La Selva', 1899);
 
 -- --------------------------------------------------------
 
@@ -327,7 +374,7 @@ CREATE TABLE IF NOT EXISTS `mn_candidate_work_experiences` (
   `position` varchar(255) DEFAULT NULL,
   `company` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
 
 --
 -- Volcar la base de datos para la tabla `mn_candidate_work_experiences`
@@ -335,7 +382,15 @@ CREATE TABLE IF NOT EXISTS `mn_candidate_work_experiences` (
 
 INSERT INTO `mn_candidate_work_experiences` (`id`, `candidate_profile_id`, `starting_year`, `ending_year`, `position`, `company`) VALUES
 (1, 1, 0, 1970, 'Director', 'Empresa editora ZigZag'),
-(2, 3, 0, 1998, 'Carnicero', 'Matadero los shanshos ricos');
+(20, 2, 1999, 2011, 'Dueño', 'LAN'),
+(19, 27, 1986, 1989, 'Contador e ingeniero', 'Disney Pictures'),
+(5, 12, 1982, 1983, 'Actor', 'Disney Pictures'),
+(6, 12, 1986, 1989, 'Director de cine', 'Disney Pictures'),
+(14, 19, 1982, 1983, 'Actor', 'Disney Pictures'),
+(15, 19, 1954, 1989, 'Director de cine', 'Disney Pictures'),
+(16, 26, 1982, 1983, 'Actor', 'Disney Pictures'),
+(17, 26, 1954, 1968, 'Director de cine', 'Disney Pictures'),
+(18, 27, 1982, 1983, 'Heroe de serie animada', 'Disney Pictures');
 
 -- --------------------------------------------------------
 
@@ -1218,7 +1273,7 @@ CREATE TABLE IF NOT EXISTS `mn_users` (
 
 INSERT INTO `mn_users` (`id`, `username`, `password`, `admin`, `last_login`, `created`, `modified`) VALUES
 (5, 'falvarez', '612b143c091857daec94f802223db814', 0, '2011-07-26 18:11:29', '2011-07-07 16:39:55', '2011-07-26 18:11:29'),
-(3, 'admin', 'ad2af8aa45f2913c2725a583334b3da6', 1, '2011-08-04 11:13:06', '2011-07-07 16:38:00', '2011-08-04 11:13:06');
+(3, 'admin', 'ad2af8aa45f2913c2725a583334b3da6', 1, '2011-08-09 13:24:16', '2011-07-07 16:38:00', '2011-08-09 13:24:16');
 
 -- --------------------------------------------------------
 
@@ -1242,145 +1297,73 @@ CREATE TABLE IF NOT EXISTS `mn_weights` (
 INSERT INTO `mn_weights` (`id`, `question_id`, `candidate_id`, `answer_id`, `weighting`) VALUES
 (1, 1, 1, 1, 1),
 (2, 1, 2, 2, 1),
-(3, 1, 3, 3, 1),
-(4, 1, 4, 1, 1),
 (5, 2, 1, 4, 1),
 (6, 2, 2, 5, 1),
-(7, 2, 3, 4, 1),
-(8, 2, 4, 5, 1),
 (9, 3, 1, 8, 1),
 (10, 3, 2, 6, 1),
-(11, 3, 3, 7, 1),
-(12, 3, 4, 7, 1),
 (13, 4, 1, 11, 1),
 (14, 4, 2, 9, 1),
-(15, 4, 3, 11, 1),
-(16, 4, 4, 10, 1),
 (17, 5, 1, 14, 1),
 (18, 5, 2, 15, 1),
-(19, 5, 3, 16, 1),
-(20, 5, 4, 16, 1),
 (21, 6, 1, 19, 1),
 (22, 6, 2, 19, 1),
-(23, 6, 3, 19, 1),
-(24, 6, 4, 19, 1),
 (25, 7, 1, 23, 1),
 (26, 7, 2, 24, 1),
-(27, 7, 3, 23, 1),
-(28, 7, 4, 23, 1),
 (29, 8, 1, 27, 1),
 (30, 8, 2, 25, 1),
-(31, 8, 3, 26, 1),
-(32, 8, 4, 26, 1),
 (33, 9, 1, 12, 1),
 (34, 9, 2, 13, 1),
-(35, 9, 3, 13, 1),
-(36, 9, 4, 12, 1),
 (37, 10, 1, 17, 1),
 (38, 10, 2, 18, 1),
-(39, 10, 3, 18, 1),
-(40, 10, 4, 18, 1),
 (41, 11, 1, 28, 1),
 (42, 11, 2, 29, 1),
-(43, 11, 3, 29, 1),
-(44, 11, 4, 29, 1),
 (45, 12, 1, 31, 1),
 (46, 12, 2, 30, 1),
-(47, 12, 3, 30, 1),
-(48, 12, 4, 31, 1),
 (49, 13, 1, 32, 1),
 (50, 13, 2, 35, 1),
-(51, 13, 3, 34, 1),
-(52, 13, 4, 33, 1),
 (53, 14, 1, 36, 1),
 (54, 14, 2, 38, 1),
-(55, 14, 3, 37, 1),
-(56, 14, 4, 36, 1),
 (57, 15, 1, 39, 1),
 (58, 15, 2, 41, 1),
-(59, 15, 3, 40, 1),
-(60, 15, 4, 40, 1),
 (61, 16, 2, 44, 1),
-(62, 16, 3, 43, 1),
-(63, 16, 4, 42, 1),
 (64, 17, 1, 45, 1),
 (65, 17, 2, 46, 1),
-(66, 17, 3, 46, 1),
-(67, 17, 4, 46, 1),
 (68, 18, 1, 48, 1),
 (69, 18, 2, 51, 1),
-(70, 18, 3, 50, 1),
-(71, 18, 4, 49, 1),
 (72, 19, 1, 52, 1),
 (73, 19, 2, 53, 1),
-(74, 19, 3, 52, 1),
-(75, 19, 4, 53, 1),
 (76, 20, 1, 55, 1),
 (77, 20, 2, 54, 1),
-(78, 20, 3, 54, 1),
-(79, 20, 4, 54, 1),
 (80, 21, 1, 56, 1),
 (81, 21, 2, 58, 1),
-(82, 21, 3, 56, 1),
-(83, 21, 4, 57, 1),
 (84, 22, 1, 59, 1),
 (85, 22, 2, 60, 1),
-(86, 22, 3, 60, 1),
-(87, 22, 4, 60, 1),
 (88, 23, 1, 61, 1),
 (89, 23, 2, 63, 1),
-(90, 23, 3, 62, 1),
-(91, 23, 4, 62, 1),
 (92, 24, 1, 65, 1),
 (93, 24, 2, 64, 1),
-(94, 24, 3, 64, 1),
-(95, 24, 4, 64, 1),
 (96, 25, 1, 66, 1),
 (97, 25, 2, 68, 1),
-(98, 25, 3, 67, 1),
-(99, 25, 4, 68, 1),
 (100, 26, 1, 69, 1),
 (101, 26, 2, 70, 1),
-(102, 26, 3, 70, 1),
-(103, 26, 4, 70, 1),
 (104, 27, 1, 72, 1),
 (105, 27, 2, 73, 1),
-(106, 27, 3, 71, 1),
-(107, 27, 4, 72, 1),
 (108, 28, 1, 74, 1),
 (109, 28, 2, 77, 1),
-(110, 28, 3, 76, 1),
-(111, 28, 4, 75, 1),
 (112, 29, 1, 78, 1),
 (113, 29, 2, 78, 1),
-(114, 29, 3, 78, 1),
-(115, 29, 4, 79, 1),
 (116, 30, 1, 80, 1),
 (117, 30, 2, 81, 1),
-(118, 30, 3, 81, 1),
-(119, 30, 4, 82, 1),
 (120, 31, 1, 84, 1),
 (121, 31, 2, 83, 1),
-(122, 31, 3, 85, 1),
-(123, 31, 4, 84, 1),
 (124, 32, 1, 86, 1),
 (125, 32, 2, 87, 1),
-(126, 32, 3, 89, 1),
-(127, 32, 4, 88, 1),
 (128, 33, 1, 90, 1),
 (129, 33, 2, 93, 1),
-(130, 33, 3, 92, 1),
-(131, 33, 4, 91, 1),
 (132, 34, 1, 94, 1),
 (133, 34, 2, 94, 1),
-(134, 34, 3, 96, 1),
-(135, 34, 4, 95, 1),
 (136, 35, 1, 97, 1),
 (137, 35, 2, 99, 1),
-(138, 35, 3, 98, 1),
-(139, 35, 4, 97, 1),
 (140, 1, 1, 2, 0.1),
-(141, 36, 13, 100, 1),
-(142, 36, 14, 101, 1),
 (143, 37, 1, 102, 1),
 (144, 37, 2, 103, 1);
