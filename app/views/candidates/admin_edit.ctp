@@ -39,7 +39,7 @@ $(document).ready(function(){
 			    <legend>Link</legend>
 			    <?php
 				echo $this->Form->input('CandidateLink.0.description');
-				echo $this->Form->input('CandidateLink.0.link');
+				echo $this->Form->input('CandidateLink.0.link',array('label'=>'Link (recuerda anteponer http://)'));
 			    ?>
 			</fieldset>
 		    <?php
@@ -51,7 +51,7 @@ $(document).ready(function(){
 				<?php
 				    echo $this->Form->input('CandidateLink.'.$link['id'].'.id',array('value'=>$link['id']));
 				    echo $this->Form->input('CandidateLink.'.$link['id'].'.description',array('value'=>$link['description']));
-				    echo $this->Form->input('CandidateLink.'.$link['id'].'.link',array('value'=>$link['link']));
+				    echo $this->Form->input('CandidateLink.'.$link['id'].'.link',array('value'=>$link['link']),array('label'=>'Link (recuerda anteponer http://)'));
 				?>
 			    </fieldset>
 			    <?php

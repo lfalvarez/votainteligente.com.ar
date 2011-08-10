@@ -28,7 +28,7 @@
 			<legend>Link</legend>
 			<?php
 			    echo $this->Form->input('CandidateLink.0.description');
-			    echo $this->Form->input('CandidateLink.0.link');
+			    echo $this->Form->input('CandidateLink.0.link',array('label'=>'Link (recuerda anteponer http://)'));
 			?>
 		    </fieldset>
 		    <a onclick="addAnother('CandidateLink','Link');">+Añadir otro</a>

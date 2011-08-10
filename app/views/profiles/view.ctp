@@ -19,7 +19,7 @@ App::import('Sanitize');
 		<?php
 		foreach($profile['CandidateLink'] as $link) {
 		?>
-		<li><a href="<?php echo 'http://'.$link['link'];?>"><?php echo $link['description'];?></a></li>
+		<li><a href="<?php echo $link['link'];?>" target="_blank"><?php echo $link['description'];?></a></li>
 		<?php
 		}
 
@@ -104,7 +104,7 @@ App::import('Sanitize');
 		    if (!empty($answer['Weight'][0]['SourceOfAnswer'])) {
 		    	foreach ($answer['Weight'][0]['SourceOfAnswer'] as $source) {
 			    echo '&#8226;<span class=\'sentence\'>&quot;'.Sanitize::html($source['sentence']).'&quot;</span> el '.$source['date'].' ';
-			    echo '<a class=\'media-name\' href=\''.$source['link'].'\'>'.Sanitize::html($source['media_name']).'</a><br />';
+			    echo '<a class=\'media-name\' href=\''.$source['link'].'\' target=\'_blank\'>'.Sanitize::html($source['media_name']).'</a><br />';
 			}
 		    }
 		    ?>"> · <?php echo $answer['answer'];?></span>

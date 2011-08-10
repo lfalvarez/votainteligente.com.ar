@@ -52,7 +52,7 @@
 		));
 		echo $this->Form->input('sentence');
 		echo $this->Form->input('media_name');
-		echo $this->Form->input('link');
+		echo $this->Form->input('link',array('label'=>'Link (recuerda anteponer http://)'));
 		echo $this->Form->input('date');
 	?>
 	</fieldset>

@@ -5,7 +5,7 @@
 	<?php
 		echo $this->Form->input('candidate_profile_id');
 		echo $this->Form->input('description');
-		echo $this->Form->input('link');
+		echo $this->Form->input('link',array('label'=>'Link (recuerda anteponer http://)'));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>
