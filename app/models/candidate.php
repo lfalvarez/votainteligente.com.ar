@@ -151,12 +151,17 @@ class Candidate extends AppModel {
 	    return false;
 	}
 	function shouldThisElementBeRemoved($element){
+	    $thisElementHasAtLeastOneElementThatIsNotNull = false;
 	    foreach($element as $key=>$data){
-		if ($key != 'id' && ($data==null || $data=='')) {
-		    return true;
+		if ( $key!='id' && ($data != null || $data != '')) {
+		    $thisElementHasAtLeastOneElementThatIsNotNull = true;
 		}
 	    }
-	    return false;
+	    if($thisElementHasAtLeastOneElementThatIsNotNull) {
+		//this element should not be removed
+		return false;
+	    }
+	    return true;
 	}
 }
 ?>

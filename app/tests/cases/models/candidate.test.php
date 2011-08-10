@@ -114,7 +114,7 @@ class CandidateTestCase extends CakeTestCase {
 		    'firstElement'=>'',
 		    'secondElement'=>null
 		),
-		'shouldAlsoBeRemoved'=>array(
+		'shouldNotBeRemovedEither'=>array(
 		    'firstElement'=>null,
 		    'secondElement'=>'anything'
 		)
@@ -127,6 +127,10 @@ class CandidateTestCase extends CakeTestCase {
 		),
 		'shouldNeitherBeRemoved'=>array(
 		    'notRemoved'=>'Imnotbeingremoved'
+		),
+		'shouldNotBeRemovedEither'=>array(
+		    'firstElement'=>null,
+		    'secondElement'=>'anything'
 		)
 	    );
 	    $result = $this->Candidate->removeEmptyDataFromArray($testArray);
