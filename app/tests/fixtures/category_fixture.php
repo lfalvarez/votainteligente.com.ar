@@ -8,7 +8,7 @@ class CategoryFixture extends CakeTestFixture {
 		'slug' => array('type'=>'string', 'type' => 'string', 'null' => false, 'default' => NULL),
 		'name' => array('type'=>'string', 'type' => 'string', 'null' => false, 'default' => NULL),
 		'indexes' => array('PRIMARY' => array('column' => 'id', 'unique' => 1)),
-                'order' => array('type'=>'integer', 'type' => 'integer', 'default' => NULL)
+                'sort' => array('type'=>'integer', 'type' => 'integer', 'default' => NULL)
 	);
 
 	var $records = array(
@@ -16,13 +16,13 @@ class CategoryFixture extends CakeTestFixture {
 			'id' => 1,
 			'slug'=>'numeros-imaginarios',
 			'name' => 'numeros imaginarios',
-                        'order' => 1
+                        'sort' => 1
 		),
             array(
 			'id' => 2,
 			'slug'=>'numeros-reales',
 			'name' => 'numeros reales',
-                        'order' => 2
+                        'sort' => 2
 		),
 	);
 }

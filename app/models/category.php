@@ -7,7 +7,7 @@ class Category extends AppModel {
 			'notempty' => array('rule' => array('notempty')),
 		)
 	);
-        var $order = "Category.order ASC";
+        var $order = "Category.sort ASC";
 	var $actAs = array('Containable');
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 

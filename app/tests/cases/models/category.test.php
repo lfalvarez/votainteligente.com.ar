@@ -143,7 +143,7 @@ class CategoryTestCase extends CakeTestCase {
                         'id'=>1,
 			'slug'=>'numeros-imaginarios',
                         'name'=>'numeros imaginarios',
-                        'order'=>1,
+                        'sort'=>1,
                         )
                     ),
                 2=>array(
@@ -151,7 +151,7 @@ class CategoryTestCase extends CakeTestCase {
                         'id'=>2,
 			'slug'=>'numeros-reales',
                         'name'=>'numeros reales',
-                        'order'=>2,
+                        'sort'=>2,
                         )
                     )
             );
@@ -161,7 +161,7 @@ class CategoryTestCase extends CakeTestCase {
 	    $data = array(
 		'Category'=>array(
 		    'name'=>'name of the new category with ñá',
-		    'order'=>4
+		    'sort'=>4
 		    ));
 	    $this->Category->save($data);
 	    $category = $this->Category->findBySlug('name-of-the-new-category-with-na');
