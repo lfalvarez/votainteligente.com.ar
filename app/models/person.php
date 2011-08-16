@@ -42,7 +42,7 @@ class Person extends AppModel {
                     'ResultDetail'=>array(
                         'result_id'=>$this->Result->id,
                         'category_id'=>$category['Category']['id'],
-                        'result'=>$category['Category']['afinity']
+                        'result'=>$category['Category']['afinity']['percentage']
                     )
                 );
             }

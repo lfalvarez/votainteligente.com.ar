@@ -84,7 +84,11 @@ class CategoryTestCase extends CakeTestCase {
                     )
             );
             $result = $this->Category->calculateAfinity($this->weightsForOneCandidate,$answersAndPercentages);
-            $expected = 100;
+            $expected = array(
+		'importancesTimesWeights'=>2,
+		'importances'=>2,
+		'percentage'=>100
+	    );
             $this->assertEqual($result,$expected);
         }
         function testCalculateAfinityWithACandidateWithASeventyFivePercent(){
@@ -102,7 +106,11 @@ class CategoryTestCase extends CakeTestCase {
                     )
             );
             $result = $this->Category->calculateAfinity($this->weightsForOneCandidate,$answersAndPercentages);
-            $expected = 75;
+            $expected = array(
+		'importancesTimesWeights'=>0.75,
+		'importances'=>1,
+		'percentage'=>75
+	    );
             $this->assertEqual($result,$expected);
         }
         function testCalculateAfinityWithACandidateWithAZeroPercent(){
@@ -120,7 +128,11 @@ class CategoryTestCase extends CakeTestCase {
                     )
             );
             $result = $this->Category->calculateAfinity($this->weightsForOneCandidate,$answersAndPercentages);
-            $expected = 0;
+            $expected = array(
+		'importancesTimesWeights'=>0,//Us vs the candidates importances vs candidate
+		'importances'=>1,//sum of the users percentages
+		'percentage'=>0
+	    );
             $this->assertEqual($result,$expected);
         }
         function testGetAll(){

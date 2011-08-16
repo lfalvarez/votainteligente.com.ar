@@ -61,14 +61,16 @@ class Candidate extends AppModel {
             return $result;
         }
         function calculateTotalAfinity($data){
-            $totalSum = 0;
+            $totalImportancesTimesWeight = 0;
+	    $totalImportances = 0;
             foreach($data as $category){
-                $totalSum += $category['Category']['afinity'];
+                $totalImportancesTimesWeight += $category['Category']['afinity']['importancesTimesWeights'];
+		$totalImportances += $category['Category']['afinity']['importances'];
             }
-            if ( count($data)<1 ) {
+            if ( $totalImportances==0 ) {
                 return 0;
             }
-            return $totalSum/count($data);
+            return ($totalImportancesTimesWeight/$totalImportances)*100;
         }
 	function getProfile($candidateId){
 	    $this->CandidateProfile->Behaviors->attach('Containable');

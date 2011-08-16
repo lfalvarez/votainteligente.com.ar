@@ -56,7 +56,11 @@ class CandidateTestCase extends CakeTestCase {
 			'slug'=>'numeros-imaginarios',
                         'name'=>'numeros imaginarios',
                         'order'=>1,
-                        'afinity'=>100
+                        'afinity'=>array(
+				'importancesTimesWeights'=>0.5,//(1*0.5)
+				'importances'=>0.5,//(0.5)
+				'percentage'=>100
+			    )
                         )
                     ),
                 2=>array(
@@ -65,7 +69,11 @@ class CandidateTestCase extends CakeTestCase {
 			'slug'=>'numeros-reales',
                         'name'=>'numeros reales',
                         'order'=>2,
-                        'afinity'=>100
+                        'afinity'=>array(
+				'importancesTimesWeights'=>1,//(1*0.5)+(1*0.5)
+				'importances'=>1,//(0.5+0.5)
+				'percentage'=>100
+			    )
                         )
                     )
             );
@@ -78,14 +86,22 @@ class CandidateTestCase extends CakeTestCase {
                     'Category'=>array(
                         'id'=>1,
                         'name'=>'numeros imaginarios',
-                        'afinity'=>100
+                        'afinity'=>array(
+				'importancesTimesWeights'=>0.5,//(1*0.5)
+				'importances'=>0.5,//(0.5)
+				'percentage'=>100
+			    )
                         )
                     ),
                 2=>array(
                     'Category'=>array(
                         'id'=>2,
                         'name'=>'numeros reales',
-                        'afinity'=>100
+                        'afinity'=>array(
+				'importancesTimesWeights'=>1,//(1*0.5)+(1*0.5)
+				'importances'=>1,//(0.5+0.5)
+				'percentage'=>100
+			    )
                         )
                     )
             );

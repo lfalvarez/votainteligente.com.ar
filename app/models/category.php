@@ -81,7 +81,11 @@ class Category extends AppModel {
                 $importances += $importance;
             }
             $totalAfinity = ($importancesTimesWeights/$importances)*100;
-            return $totalAfinity;
+	    return array(
+		'importancesTimesWeights'=>$importancesTimesWeights,
+		'importances'=>$importances,
+		'percentage'=>$totalAfinity
+	    );
         }
         function getAll($conditions=array()){
             $categoriesFromDatabase = $this->find(

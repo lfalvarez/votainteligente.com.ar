@@ -50,7 +50,11 @@ class PersonTestCase extends CakeTestCase {
                             'Category'=>array(
                                 'id'=>1,
                                 'name'=>'numeros imaginarios',
-                                'afinity'=>50
+                                'afinity'=>array(
+				    'importancesTimesWeights'=>1,//(1*0.5)+(1*0.5)
+				    'importances'=>1,//(0.5+0.5)
+				    'afinity'=>100
+				)
                             )
                         )
                     )
