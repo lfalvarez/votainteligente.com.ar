@@ -4,6 +4,8 @@ class CategoriesController extends AppController {
 	var $name = 'Categories';
         var $layout = 'admin';
 	var $helpers = array('Admin');
+	var $components = array('RequestHandler');
+
 	function admin_index() {
 		$this->Category->recursive = 0;
 		$this->set('categories', $this->paginate());
@@ -27,6 +29,29 @@ class CategoriesController extends AppController {
 				$this->Session->setFlash(__('The category could not be saved. Please, try again.', true));
 			}
 		}
+	}
+
+	function admin_add_ajax(){
+	    $this->helpers[] = 'Javascript';
+	    $this->helpers[] = 'Ajax';
+	    if (!empty($this->data)) {
+		$this->Category->create();
+		if ($this->Category->save($this->data)) {
+			$this->Session->setFlash(__('The category has been saved', true));
+			$categories = $this->Category->find('list');
+			$this->set('idSelectedCategory',$this->Category->id);
+			$this->set('categories',$categories);
+			$this->render('ajax_success');
+		} else {
+			$this->Session->setFlash(__('The category could not be saved. Please, try again.', true));
+		}
+	    }
+	    if (!$this->params['isAjax']) {
+		$this->redirect(array('action' => 'index'));
+	    }
+	    $maxOrder = $this->Category->field('MAX(Category.sort) as sort');
+	    $this->set('maxOrder',$maxOrder+1);
+	    $this->layout = 'script';
 	}
 
 	function admin_edit($id = null) {

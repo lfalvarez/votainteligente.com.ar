@@ -29,10 +29,13 @@
 		echo $this->Html->meta('icon');
 
 		echo $this->Html->css('cake.generic');
+		echo $this->Html->css('ui-lightness/jquery-ui-1.8.15.custom');
 
 		echo $scripts_for_layout;
 	?>
 	<?php echo $this->Html->script('jquery'); ?>
+	<?php echo $this->Html->script('jquery-form'); ?>
+	<?php echo $this->Html->script('jquery-ui'); ?>
 </head>
 <body>
 	<div id="container">

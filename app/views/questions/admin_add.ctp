@@ -1,3 +1,4 @@
+<?php echo $this->Html->script('category-in-a-dialog'); ?>
 <div class="questions form">
 <?php echo $this->Form->create('Question');?>
 	<fieldset>
@@ -6,7 +7,8 @@
 		echo $this->Form->input('question');
 		echo $this->Form->input('explanation');
 		echo $this->Form->input('short_description');
-		echo $this->Form->input('category_id');
+		echo $this->Form->input('category_id',array('id'=>'idCategoryForNewQuestion','empty'=>'Selecciona una categoria','value'=>$selectedCategoryId));
+		echo $this->Html->link('Agregar otra categoria', '/admin/categories/add_ajax/', array('id' => 'addAnotherCategory'));
 		echo $this->Form->input('sour');
 		echo $this->Form->input('public',array('checked'=>true));
 		echo $this->Form->input('included_in_media_naranja',array('checked'=>true));
