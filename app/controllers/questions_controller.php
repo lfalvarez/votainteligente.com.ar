@@ -5,8 +5,31 @@ class QuestionsController extends AppController {
         var $layout = 'admin';
         var $helpers = array('Admin');
 	function admin_index() {
+		$this->paginate = array(
+		    'order'=>'category_id'
+		);
 		$this->Question->recursive = 0;
-		$this->set('questions', $this->paginate());
+		$questions = $this->paginate();
+		$categoryIds = array();
+		foreach ($questions as $question) {
+		    if (!in_array($question['Question']['category_id'],$categoryIds)) {
+			$categoryIds[] = $question['Question']['category_id'];
+		    }
+		}
+		$categories = $this->Question->Category->find('list',array('conditions'=>array('id'=>$categoryIds)));
+
+		$orderedQuestions = array();
+		foreach ($categories as $idCategory=>$category) {
+		    $orderedQuestions[$idCategory] = array(
+			'name'=>$category,
+			'questions'=>array()
+		    );
+		}
+		foreach ($questions as $question) {
+		    $orderedQuestions[$question['Question']['category_id']]['questions'][] = $question;
+		}
+		$this->set('orderedQuestions',$orderedQuestions);
+		$this->set('questions', $questions);
 	}
 
 	function admin_view($id = null) {
@@ -18,7 +41,7 @@ class QuestionsController extends AppController {
 		$this->set('question', $this->Question->read(null, $id));
 	}
 
-	function admin_add() {
+	function admin_add($idCategory = null) {
 		if (!empty($this->data)) {
 			$this->Question->create();
 			if ($this->Question->save($this->data)) {
@@ -29,6 +52,7 @@ class QuestionsController extends AppController {
 			}
 		}
 		$categories = $this->Question->Category->find('list');
+		$this->set('selectedCategoryId',$idCategory);
 		$this->set(compact('categories'));
 	}
 
