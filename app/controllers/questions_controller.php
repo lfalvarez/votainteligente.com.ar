@@ -44,7 +44,7 @@ class QuestionsController extends AppController {
 	function admin_add($idCategory = null) {
 		if (!empty($this->data)) {
 			$this->Question->create();
-			if ($this->Question->save($this->data)) {
+			if ($this->Question->saveAll($this->data)) {
 				$this->Session->setFlash(__('The question has been saved', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
@@ -62,7 +62,7 @@ class QuestionsController extends AppController {
 			$this->redirect(array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
-			if ($this->Question->save($this->data)) {
+			if ($this->Question->saveAll($this->data)) {
 				$this->Session->setFlash(__('The question has been saved', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
@@ -70,6 +70,8 @@ class QuestionsController extends AppController {
 			}
 		}
 		if (empty($this->data)) {
+			$this->Question->Behaviors->attach('Containable');
+			$this->Question->contain(array('Answer'));
 			$this->data = $this->Question->read(null, $id);
 		}
 		$categories = $this->Question->Category->find('list');
