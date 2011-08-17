@@ -44,7 +44,7 @@ class QuestionsController extends AppController {
 	function admin_add($idCategory = null) {
 		if (!empty($this->data)) {
 			$this->Question->create();
-			if ($this->Question->saveAll($this->data)) {
+			if ($this->Question->saveAllQuestionAnswersAndWeights($this->data)) {
 				$this->Session->setFlash(__('The question has been saved', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
@@ -52,8 +52,10 @@ class QuestionsController extends AppController {
 			}
 		}
 		$categories = $this->Question->Category->find('list');
+		$candidates = $this->Question->Weight->Candidate->find('list');
 		$this->set('selectedCategoryId',$idCategory);
 		$this->set(compact('categories'));
+		$this->set(compact('candidates'));
 	}
 
 	function admin_edit($id = null) {
@@ -71,7 +73,7 @@ class QuestionsController extends AppController {
 		}
 		if (empty($this->data)) {
 			$this->Question->Behaviors->attach('Containable');
-			$this->Question->contain(array('Answer'));
+			$this->Question->contain(array('Answer'=>array('Weight')));
 			$this->data = $this->Question->read(null, $id);
 		}
 		$categories = $this->Question->Category->find('list');

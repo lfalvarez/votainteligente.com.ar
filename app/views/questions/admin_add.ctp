@@ -18,15 +18,27 @@
 	</fieldset>
 	<fieldset>
 	    <legend>Respuestas para esta pregunta</legend>
-	    <fieldset Answer="0">
+	    <fieldset Answers="0">
 		<legend>Nueva Respuesta</legend>
 		<?php
 
-		    echo $this->Form->input('Answer.0.answer');
-		    echo $this->Form->input('Answer.0.public',array('type'=>'hidden','value'=>true));
+		    echo $this->Form->input('Answers.0.Answer.answer');
+		    echo $this->Form->input('Answers.0.Answer.public',array('type'=>'hidden','value'=>true));
+		    ?>
+		<div class="input">
+		<?php
+		    $candidateCounter = 0;
+		    foreach ($candidates as $idCandidate => $candidate) {
+			$fieldName = 'Answers.0.Weight.'.$candidateCounter.'.candidate_id';
+
+			echo $this->Form->checkbox($fieldName,array('value'=>$idCandidate,'hiddenField' => false));
+			echo $this->Form->label($fieldName,$candidate);
+			$candidateCounter++;
+		    }
 		?>
+		</div>
 	    </fieldset>
-	    <a onclick="addAnother('Answer','Nueva Respuesta');">+Añadir otra</a>
+	    <a onclick="addAnother('Answers','Nueva Respuesta');">+Añadir otra</a>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>
 </div>

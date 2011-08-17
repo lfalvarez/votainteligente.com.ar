@@ -70,8 +70,33 @@ class Question extends AppModel {
             $this->contain('Answer');
             $questions = $this->find('all',array('conditions'=>array('category_id'=>$idCategory)));
             return $questions;
-
         }
+	function saveAllQuestionAnswersAndWeights($data) {
+	    $savedCorrectly = $this->save($data);
+	    if (!$savedCorrectly) {
+		return false;
+	    }
+	    unset($data['Question']);
+	    foreach ($data['Answers'] as $counterAnswer=>$answer) {
+		$data['Answers'][$counterAnswer]['Answer']['question_id'] = $this->id;
+		foreach ($data['Answers'][$counterAnswer]['Weight'] as $counterWeight=>$weight) {
+		    $data['Answers'][$counterAnswer]['Weight'][$counterWeight]['question_id'] = $this->id;
+		    $data['Answers'][$counterAnswer]['Weight'][$counterWeight]['weighting'] = 1;
+		}
+	    }
+	    foreach ($data['Answers'] as $answer) {
+		$savedCorrectly = $this->Answer->saveAll($answer);
+		if (!$savedCorrectly) {
+		    break;
+		}
+	    }
+
+	    if (!$savedCorrectly) {
+		$this->delete($this->id);
+		return false;
+	    }
+	    return true;
+	}
 
 }
 ?>

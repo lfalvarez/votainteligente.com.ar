@@ -6,6 +6,7 @@ class Weight extends AppModel {
 		'weighting' => array(
 			'range' => array('rule' => array('range')),
 		),
+		'candidate_id' => 'notEmpty'
 	);
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
