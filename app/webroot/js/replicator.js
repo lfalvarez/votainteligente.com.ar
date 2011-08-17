@@ -10,13 +10,9 @@ function addAnother(idFieldset, newLabel){
     var newId = parseInt(maxId)+1;
     var lastFieldSet = $('['+idFieldset+'="'+currentId+'"]');
     var newElement = lastFieldSet.clone();
-    newElement.children().each(function(index,element){
-	if($(element).children().size()>0) {
-	    $(element).children().each(function(secondIndex,secondElement){
-		prepareInput(secondElement,currentId,newId,idFieldset);
-		resetValue(secondElement);
-	    });
-	}
+    $(":input, label",newElement).each(function(index,element){
+	prepareInput(element,currentId,newId,idFieldset);
+	resetValue(element);
     });
     newElement.filter('fieldset').attr(idFieldset,newId);
     newElement.find('legend').html(newLabel);
