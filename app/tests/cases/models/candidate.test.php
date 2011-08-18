@@ -55,7 +55,7 @@ class CandidateTestCase extends CakeTestCase {
                         'id'=>1,
 			'slug'=>'numeros-imaginarios',
                         'name'=>'numeros imaginarios',
-                        'order'=>1,
+                        'sort'=>1,
                         'afinity'=>array(
 				'importancesTimesWeights'=>0.5,//(1*0.5)
 				'importances'=>0.5,//(0.5)
@@ -68,7 +68,7 @@ class CandidateTestCase extends CakeTestCase {
                         'id'=>2,
 			'slug'=>'numeros-reales',
                         'name'=>'numeros reales',
-                        'order'=>2,
+                        'sort'=>2,
                         'afinity'=>array(
 				'importancesTimesWeights'=>1,//(1*0.5)+(1*0.5)
 				'importances'=>1,//(0.5+0.5)
@@ -149,6 +149,7 @@ class CandidateTestCase extends CakeTestCase {
 		    'secondElement'=>'anything'
 		)
 	    );
+	    $this->Candidate->Behaviors->attach('RelatedModelCleaner');
 	    $result = $this->Candidate->removeEmptyDataFromArray($testArray);
 	    $this->assertEqual($expected,$result);
 	}
