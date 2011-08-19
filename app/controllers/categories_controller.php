@@ -77,13 +77,13 @@ class CategoriesController extends AppController {
 	function admin_delete($id = null) {
 		if (!$id) {
 			$this->Session->setFlash(__('Invalid id for category', true));
-			$this->redirect(array('action'=>'index'));
+			$this->redirect(array('action'=>'index','controller'=>'questions'));
 		}
 		if ($this->Category->delete($id)) {
 			$this->Session->setFlash(__('Category deleted', true));
-			$this->redirect(array('action'=>'index'));
+			$this->redirect(array('action'=>'index','controller'=>'questions'));
 		}
 		$this->Session->setFlash(__('Category was not deleted', true));
-		$this->redirect(array('action' => 'index'));
+		$this->redirect(array('action' => 'index','controller'=>'questions'));
 	}
 }

@@ -2,6 +2,8 @@
     <?php foreach ($orderedQuestions as $categoryId=>$category) {?>
     <h2><?php echo $category['name']; ?></h2>
     <?php echo $this->Html->link('Agregar otra pregunta', '/admin/questions/add/'.$categoryId); ?>
+    -
+    <?php echo $this->Html->link('Elimina la categoria '.$category['name'], array('controller'=>'categories','action' => 'delete', $categoryId), null, sprintf(__('Estas seguro de querer eliminar la categoria %s y todas sus preguntas', true), $category['name'])); ?>
     <table cellpadding="0" cellspacing="0">
     <tr>
 		    <th><?php echo $this->Paginator->sort('id');?></th>
@@ -34,7 +36,7 @@
 		    <td class="actions">
 			    <?php echo $this->Html->link(__('View', true), array('action' => 'view', $question['Question']['id'])); ?>
 			    <?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $question['Question']['id'])); ?>
-			    <?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $question['Question']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $question['Question']['id'])); ?>
+			    <?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $question['Question']['id']), null, sprintf(__('¿Estas seguro de querer eliminar la pregunta \'%s\' y sus respuesta?', true), $question['Question']['question'])); ?>
 		    </td>
 	    </tr>
 	<?php endforeach; ?>

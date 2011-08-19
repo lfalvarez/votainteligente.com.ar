@@ -31,7 +31,7 @@ class Question extends AppModel {
 		'Answer' => array(
 			'className' => 'Answer',
 			'foreignKey' => 'question_id',
-			'dependent' => false,
+			'dependent' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',

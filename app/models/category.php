@@ -15,7 +15,7 @@ class Category extends AppModel {
 		'Question' => array(
 			'className' => 'Question',
 			'foreignKey' => 'category_id',
-			'dependent' => false,
+			'dependent' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',
