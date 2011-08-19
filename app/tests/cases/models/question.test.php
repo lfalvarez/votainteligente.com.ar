@@ -42,14 +42,12 @@ class QuestionTestCase extends CakeTestCase {
 						array(
                                                         'id' => 1,
                                                         'answer' => 'esta bien eso para verlo de manera grafica pero no se demuestra la imparidad de los numeros imaginarios',
-                                                        'question_id' => 1,
-                                                        'public' => 1
+                                                        'question_id' => 1
                                                 ),
                                                 array(
                                                         'id' => 2,
                                                         'answer' => 'me gusta!! por que tienen un numero par de ejes',
-                                                        'question_id' => 1,
-                                                        'public' => 1
+                                                        'question_id' => 1
                                                 )
 					)
 				),
@@ -69,14 +67,12 @@ class QuestionTestCase extends CakeTestCase {
                                          array(
                                                 'id' => 3,
                                                 'answer' => 'impar',
-                                                'question_id' => 2,
-                                                'public' => 1
+                                                'question_id' => 2
                                         ),
                                         array(
                                                 'id' => 4,
                                                 'answer' => 'par',
-                                                'question_id' => 2,
-                                                'public' => 1
+                                                'question_id' => 2
                                         )
                              )
 
@@ -179,7 +175,6 @@ class QuestionTestCase extends CakeTestCase {
 	    $this->Question->contain(array('Answer'=>'Weight'));
 	    $question = $this->Question->find('first',array('conditions'=>array('question'=>'estasdeacuerdo')));
 	    $this->assertTrue(empty($question));
-	    //$this->assertTrue(isset($question['Answer'][0]['Weight'][0]['id']));
 	}
 }
 ?>

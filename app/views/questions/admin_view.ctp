@@ -71,7 +71,6 @@
 		<th><?php __('Id'); ?></th>
 		<th><?php __('Answer'); ?></th>
 		<th><?php __('Question Id'); ?></th>
-		<th><?php __('Public'); ?></th>
 		<th class="actions"><?php __('Actions');?></th>
 	</tr>
 	<?php
@@ -86,7 +85,6 @@
 			<td><?php echo $answer['id'];?></td>
 			<td><?php echo $answer['answer'];?></td>
 			<td><?php echo $answer['question_id'];?></td>
-			<td><?php echo $answer['public'];?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('View', true), array('controller' => 'answers', 'action' => 'view', $answer['id'])); ?>
 				<?php echo $this->Html->link(__('Edit', true), array('controller' => 'answers', 'action' => 'edit', $answer['id'])); ?>

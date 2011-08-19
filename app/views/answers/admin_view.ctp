@@ -16,11 +16,6 @@
 			<?php echo $this->Html->link($answer['Question']['question'], array('controller' => 'questions', 'action' => 'view', $answer['Question']['id'])); ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Public'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $this->Admin->booleanValue($answer['Answer']['public']); ?>
-			&nbsp;
-		</dd>
 	</dl>
 </div>
 <div class="actions">

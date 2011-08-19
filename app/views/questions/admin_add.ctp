@@ -23,14 +23,12 @@
 		<?php
 
 		    echo $this->Form->input('Answers.0.Answer.answer');
-		    echo $this->Form->input('Answers.0.Answer.public',array('type'=>'hidden','value'=>true));
 		    ?>
 		<div class="input">
 		<?php
 		    $candidateCounter = 0;
 		    foreach ($candidates as $idCandidate => $candidate) {
 			$fieldName = 'Answers.0.Weight.'.$candidateCounter.'.candidate_id';
-
 			echo $this->Form->checkbox($fieldName,array('value'=>$idCandidate,'hiddenField' => false));
 			echo $this->Form->label($fieldName,$candidate);
 			$candidateCounter++;

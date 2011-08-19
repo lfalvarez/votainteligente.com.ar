@@ -5,7 +5,6 @@
 			<th><?php echo $this->Paginator->sort('id');?></th>
 			<th><?php echo $this->Paginator->sort('answer');?></th>
 			<th><?php echo $this->Paginator->sort('question_id');?></th>
-			<th><?php echo $this->Paginator->sort('public',array('default'=>true));?></th>
 			<th class="actions"><?php __('Actions');?></th>
 	</tr>
 	<?php
@@ -22,7 +21,6 @@
 		<td>
 			<?php echo $this->Html->link($answer['Question']['question'], array('controller' => 'questions', 'action' => 'view', $answer['Question']['id'])); ?>
 		</td>
-		<td><?php echo $this->Admin->booleanValue($answer['Answer']['public']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $answer['Answer']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $answer['Answer']['id'])); ?>
