@@ -6,6 +6,12 @@ class Question extends AppModel {
 		'question' => array(
 			'notempty' => array('rule' => array('notempty')),
 		),
+		'category_id'=>array(
+		    'notempty' => array('rule' => array('notempty')),
+		    ),
+		'order'=>array(
+		    'numeric' => array('rule' => array('numeric')),
+		    )
 	);
         var $order = "Question.order ASC";
 	var $actAs = array('Containable');
@@ -77,23 +83,27 @@ class Question extends AppModel {
 		return false;
 	    }
 	    unset($data['Question']);
-	    foreach ($data['Answers'] as $counterAnswer=>$answer) {
-		$data['Answers'][$counterAnswer]['Answer']['question_id'] = $this->id;
-		foreach ($data['Answers'][$counterAnswer]['Weight'] as $counterWeight=>$weight) {
-		    $data['Answers'][$counterAnswer]['Weight'][$counterWeight]['question_id'] = $this->id;
-		    $data['Answers'][$counterAnswer]['Weight'][$counterWeight]['weighting'] = 1;
+	    $this->Behaviors->attach('RelatedModelCleaner');
+	    $data['Answers'] = $this->removeEmptyDataFromArray($data['Answers']);
+	    if (isset ($data['Answers'])) {
+		foreach ($data['Answers'] as $counterAnswer=>$answer) {
+		    $data['Answers'][$counterAnswer]['Answer']['question_id'] = $this->id;
+		    foreach ($data['Answers'][$counterAnswer]['Weight'] as $counterWeight=>$weight) {
+			$data['Answers'][$counterAnswer]['Weight'][$counterWeight]['question_id'] = $this->id;
+			$data['Answers'][$counterAnswer]['Weight'][$counterWeight]['weighting'] = 1;
+		    }
 		}
-	    }
-	    foreach ($data['Answers'] as $answer) {
-		$savedCorrectly = $this->Answer->saveAll($answer);
-		if (!$savedCorrectly) {
-		    break;
+		foreach ($data['Answers'] as $answer) {
+		    $savedCorrectly = $this->Answer->saveAll($answer);
+		    if (!$savedCorrectly) {
+			break;
+		    }
 		}
-	    }
 
-	    if (!$savedCorrectly) {
-		$this->delete($this->id);
-		return false;
+		if (!$savedCorrectly) {
+		    $this->delete($this->id);
+		    return false;
+		}
 	    }
 	    return true;
 	}

@@ -153,5 +153,21 @@ class CandidateTestCase extends CakeTestCase {
 	    $result = $this->Candidate->removeEmptyDataFromArray($testArray);
 	    $this->assertEqual($expected,$result);
 	}
+	function testRemovesEmptyArrays(){
+	    $data = array(
+		'Answers'=>array(
+		    0=>array(
+			'Answer'=>array(
+			    'answer'=>null
+			)
+		    )
+		)
+
+	    );
+	    $this->Candidate->Behaviors->attach('RelatedModelCleaner');
+	    $result = $this->Candidate->removeEmptyDataFromArray($data);
+	    $this->assertTrue(empty($result));
+
+	}
 }
 ?>

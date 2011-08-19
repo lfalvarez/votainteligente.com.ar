@@ -5,15 +5,18 @@
  * and open the template in the editor.
  */
 class RelatedModelCleanerBehavior extends ModelBehavior {
-    function removeEmptyDataFromArray(&$model,$profile){
+    function removeEmptyDataFromArray(&$model,&$profile){
 	foreach($profile as $key=>$dataInside){
 	    if (is_array($dataInside)) {
-		if ((!$this->hasArrayInside($dataInside))) {
+		if (!$this->hasArrayInside($dataInside)) {
 		    if ($this->shouldThisElementBeRemoved($dataInside)) {
 			unset($profile[$key]);
 		    }
 		} else {
 		    $profile[$key] = $this->removeEmptyDataFromArray($model,$dataInside);
+		}
+		if (empty($dataInside)) {
+		    unset($profile[$key]);
 		}
 	    }
 	}

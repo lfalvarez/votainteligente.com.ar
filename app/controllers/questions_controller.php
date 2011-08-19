@@ -64,19 +64,46 @@ class QuestionsController extends AppController {
 			$this->redirect(array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
-			if ($this->Question->saveAll($this->data)) {
+			if ($this->Question->saveAllQuestionAnswersAndWeights($this->data)) {
 				$this->Session->setFlash(__('The question has been saved', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The question could not be saved. Please, try again.', true));
 			}
 		}
+		$candidates = $this->Question->Weight->Candidate->find('list');
 		if (empty($this->data)) {
 			$this->Question->Behaviors->attach('Containable');
-			$this->Question->contain(array('Answer'=>array('Weight')));
+			$this->Question->contain(array('Answer'));
 			$this->data = $this->Question->read(null, $id);
+			foreach ($this->data['Answer'] as $answerCounter => $answer) {
+			    $weights = $this->Question->Weight->find('list',array('fields'=>array('candidate_id'),'conditions'=>array('question_id'=>$id,'answer_id'=>$answer['id'])));
+			    $weightsForDisplay = array();
+			    foreach ($candidates as $idCandidate => $candidate) {
+				$checked = false;
+				if (in_array($idCandidate,$weights)) {
+				    $idWeight = key($weights);
+				    $checked = true;
+				}
+				else {
+				    $idWeight = 0;
+				}
+				 $currentWeight = array(
+				    'candidate_id'  => $idCandidate,
+				    'candidate'	    => $candidate,
+				    'checked'	    => $checked
+				);
+				if ($idWeight>0) {
+				    $currentWeight['id'] = $idWeight;
+				}
+				$weightsForDisplay[] = $currentWeight;
+			    }
+			    $this->data['Answer'][$answerCounter]['Weight'] = $weightsForDisplay;
+			}
 		}
+
 		$categories = $this->Question->Category->find('list');
+		$this->set(compact('candidates'));
 		$this->set(compact('categories'));
 	}
 
