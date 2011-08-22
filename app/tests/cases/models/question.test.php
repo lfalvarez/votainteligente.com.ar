@@ -145,13 +145,14 @@ class QuestionTestCase extends CakeTestCase {
 		'Answers'=>array(
 		    0 => array(
 			'Answer' =>array(
-			    'answer'=>null,//<---THE ERROR! an Answer can not be null and the key must exist
+			    'answer'=>null,//<---THE ERROR!
 			    'public'=>1,
 
 			),
-			'Weight'=>array(//The whole Weight is going to be removed from the array because it doesn't
-				0=>array(//have any not null leafs
-				    'candidate_id'=>null
+			'Weight'=>array(
+				0=>array(
+				    'candidate_id'=>null//This should not be an error since you can simply store a new answer
+				    // that has not been answered by any candidate
 			    )
 			)
 		    ),
@@ -170,7 +171,6 @@ class QuestionTestCase extends CakeTestCase {
 		)
 	    );
 	    $result = $this->Question->saveAllQuestionAnswersAndWeights($data);
-
 	    $this->Question->Behaviors->attach('Containable');
 	    $this->Question->contain(array('Answer'=>'Weight'));
 	    $question = $this->Question->find('first',array('conditions'=>array('question'=>'estasdeacuerdo')));

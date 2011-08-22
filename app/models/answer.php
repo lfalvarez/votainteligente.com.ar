@@ -4,7 +4,9 @@ class Answer extends AppModel {
 	var $displayField = 'answer';
 	var $validate = array(
 		'answer' => array(
-			'notempty' => array('rule' => array('notempty')),
+			'notempty' => array(
+				'rule' => array('notempty'),
+				'required'=>true),
 		),
 	);
 	//The Associations below have been created with all possible keys, those that are not needed can be removed

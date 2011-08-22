@@ -102,6 +102,7 @@
  *
  */
 	Configure::write('Session.save', 'php');
+	Configure::write('Session.save', 'custom_session');
 /**
  * The model name to be used for the session model.
  *

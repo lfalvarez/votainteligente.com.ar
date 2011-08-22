@@ -88,6 +88,9 @@ class Question extends AppModel {
 	    if (isset ($data['Answers'])) {
 		foreach ($data['Answers'] as $counterAnswer=>$answer) {
 		    $data['Answers'][$counterAnswer]['Answer']['question_id'] = $this->id;
+		    if (!isset($data['Answers'][$counterAnswer]['Weight'])){
+			break;
+		    }
 		    foreach ($data['Answers'][$counterAnswer]['Weight'] as $counterWeight=>$weight) {
 			$data['Answers'][$counterAnswer]['Weight'][$counterWeight]['question_id'] = $this->id;
 			$data['Answers'][$counterAnswer]['Weight'][$counterWeight]['weighting'] = 1;
