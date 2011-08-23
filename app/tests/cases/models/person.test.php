@@ -53,7 +53,7 @@ class PersonTestCase extends CakeTestCase {
                                 'afinity'=>array(
 				    'importancesTimesWeights'=>1,//(1*0.5)+(1*0.5)
 				    'importances'=>1,//(0.5+0.5)
-				    'afinity'=>100
+				    'percentage'=>100
 				)
                             )
                         )
