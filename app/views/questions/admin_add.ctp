@@ -1,5 +1,6 @@
 <?php echo $this->Html->script('replicator'); ?>
 <?php echo $this->Html->script('category-in-a-dialog'); ?>
+<?php echo $this->Html->script('consistency-checker'); ?>
 <div class="questions form">
 <?php echo $this->Form->create('Question');?>
 	<fieldset>
@@ -29,7 +30,7 @@
 		    $candidateCounter = 0;
 		    foreach ($candidates as $idCandidate => $candidate) {
 			$fieldName = 'Answers.0.Weight.'.$candidateCounter.'.candidate_id';
-			echo $this->Form->checkbox($fieldName,array('value'=>$idCandidate,'hiddenField' => false));
+			echo $this->Form->checkbox($fieldName,array('value'=>$idCandidate,'hiddenField' => false,'onClick'=>'ensureConsistency(this)'));
 			echo $this->Form->label($fieldName,$candidate);
 			$candidateCounter++;
 		    }

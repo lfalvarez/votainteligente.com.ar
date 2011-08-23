@@ -16,6 +16,9 @@ function addAnother(idFieldset, newLabel){
     });
     newElement.filter('fieldset').attr(idFieldset,newId);
     newElement.find('legend').html(newLabel);
+    if(typeof ensureConsistencyForANewElement == "function"){
+	ensureConsistencyForANewElement(newElement);
+    }
     newElement.insertAfter(lastFieldSet).hide().toggle(2000);
 }
 function resetValue(input) {
