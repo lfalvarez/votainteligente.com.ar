@@ -100,7 +100,6 @@ class QuestionTestCase extends CakeTestCase {
 		    0 => array(
 			'Answer' =>array(
 			    'answer'=>'Si',
-			    'public'=>1,
 
 			),
 			'Weight'=>array(
@@ -145,14 +144,12 @@ class QuestionTestCase extends CakeTestCase {
 		'Answers'=>array(
 		    0 => array(
 			'Answer' =>array(
-			    'answer'=>null,//<---THE ERROR!
-			    'public'=>1,
-
+			    'answer'=>'',//<---THE ERROR! an Answer can not be empty and the key must exist
+			    'public'=>1//We keep this element so it doesn't desappear when removin empty arrays
 			),
-			'Weight'=>array(
-				0=>array(
-				    'candidate_id'=>null//This should not be an error since you can simply store a new answer
-				    // that has not been answered by any candidate
+			'Weight'=>array(//The whole Weight is going to be removed from the array because it doesn't
+				0=>array(//have any not null leafs
+				    'candidate_id'=>null
 			    )
 			)
 		    ),
@@ -175,6 +172,103 @@ class QuestionTestCase extends CakeTestCase {
 	    $this->Question->contain(array('Answer'=>'Weight'));
 	    $question = $this->Question->find('first',array('conditions'=>array('question'=>'estasdeacuerdo')));
 	    $this->assertTrue(empty($question));
+	}
+	function testIfACandidatesAnswerIsMoreThanOneItShouldThrowAnError() {
+	    $data = array(
+		'Question'=>array(
+		    'question'=>'¿¿¿estasdeacuerdo???',
+		    'explanation'=>'estasdeacuerdo',
+		    'short_description'=>'estasdeacuerdo',
+		    'category_id'=>1,
+		    'sour'=>0,
+		    'public'=>1,
+		    'included_in_media_naranja'=>1,
+		    'order'=>1
+		),
+		'Answers'=>array(
+		    0 => array(
+			'Answer' =>array(
+			    'answer'=>'Si',
+
+			),
+			'Weight'=>array(
+				0=>array(
+				    'candidate_id'=>1//This Candidate's option is 'Si'
+			    )
+			)
+		    ),
+		    1=>array(
+			'Answer' =>array(
+			    'answer'=>'No',
+
+			),
+			'Weight'=>array(
+				0=>array(
+				    'candidate_id'=>1//This Candidate's option is also 'No'
+			    )
+			)
+		    )
+		)
+	    );
+	    //Since to this question a candidate voted 'Si' and 'No' it should return false
+	    $result = $this->Question->saveAllQuestionAnswersAndWeights($data);
+	    $this->assertFalse($result);
+	}
+	function testCheckCandidatesConsistencyFalse(){
+	    $answers = array(
+		0 => array(
+		    'Answer' =>array(
+			'answer'=>'Si',
+
+		    ),
+		    'Weight'=>array(
+			    0=>array(
+				'candidate_id'=>1//This Candidate's option is 'Si'
+			)
+		    )
+		),
+		1=>array(
+		    'Answer' =>array(
+			'answer'=>'No',
+
+		    ),
+		    'Weight'=>array(
+			    0=>array(
+				'candidate_id'=>1//This Candidate's option is also 'No'
+			)
+		    )
+		)
+	    );
+	    $result = $this->Question->checkCandidatesConsistencyInThisAnswer($answers);
+	    $this->assertFalse($result);
+	}
+	function testCheckCandidatesConsistencyTrue(){
+	    $answers = array(
+		0 => array(
+		    'Answer' =>array(
+			'answer'=>'Si',
+
+		    ),
+		    'Weight'=>array(
+			    0=>array(
+				'candidate_id'=>1//This Candidate's option is 'Si'
+			)
+		    )
+		),
+		1=>array(
+		    'Answer' =>array(
+			'answer'=>'No',
+
+		    ),
+		    'Weight'=>array(
+			    0=>array(
+				'candidate_id'=>2//The candidate saying 'No' is a different one
+			)
+		    )
+		)
+	    );
+	    $result = $this->Question->checkCandidatesConsistencyInThisAnswer($answers);
+	    $this->assertTrue($result);
 	}
 }
 ?>

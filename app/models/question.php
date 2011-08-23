@@ -85,27 +85,50 @@ class Question extends AppModel {
 	    unset($data['Question']);
 	    $this->Behaviors->attach('RelatedModelCleaner');
 	    $data['Answers'] = $this->removeEmptyDataFromArray($data['Answers']);
+	    $areTheAnswersConsistent = $this->checkCandidatesConsistencyInThisAnswer($data['Answers']);
+	    if (!$areTheAnswersConsistent) {
+		$this->delete($this->id);
+		return false;
+	    }
 	    if (isset ($data['Answers'])) {
-		foreach ($data['Answers'] as $counterAnswer=>$answer) {
-		    $data['Answers'][$counterAnswer]['Answer']['question_id'] = $this->id;
-		    if (!isset($data['Answers'][$counterAnswer]['Weight'])){
-			break;
-		    }
-		    foreach ($data['Answers'][$counterAnswer]['Weight'] as $counterWeight=>$weight) {
-			$data['Answers'][$counterAnswer]['Weight'][$counterWeight]['question_id'] = $this->id;
-			$data['Answers'][$counterAnswer]['Weight'][$counterWeight]['weighting'] = 1;
-		    }
-		}
+		$data = $this->assignQuestionToAnswerAndWeights($data, $this->id);
 		foreach ($data['Answers'] as $answer) {
 		    $savedCorrectly = $this->Answer->saveAll($answer);
 		    if (!$savedCorrectly) {
 			break;
 		    }
 		}
-
 		if (!$savedCorrectly) {
 		    $this->delete($this->id);
 		    return false;
+		}
+	    }
+	    return true;
+	}
+	function assignQuestionToAnswerAndWeights($answersAndWeights,$idQuestion){
+	    foreach ($answersAndWeights['Answers'] as $counterAnswer=>$answer) {
+		$answersAndWeights['Answers'][$counterAnswer]['Answer']['question_id'] = $idQuestion;
+		if (!isset($answersAndWeights['Answers'][$counterAnswer]['Weight'])){
+		    break;
+		}
+		foreach ($answersAndWeights['Answers'][$counterAnswer]['Weight'] as $counterWeight=>$weight) {
+		    $answersAndWeights['Answers'][$counterAnswer]['Weight'][$counterWeight]['question_id'] = $idQuestion;
+		    $answersAndWeights['Answers'][$counterAnswer]['Weight'][$counterWeight]['weighting'] = 1;
+		}
+	    }
+	    return $answersAndWeights;
+	}
+	function checkCandidatesConsistencyInThisAnswer($answers){
+	    $candidatesAnsweringThisQuestion = array();
+	    foreach($answers as $answer){
+		if (isset($answer['Weight'])) {
+		    foreach($answer['Weight'] as $weight) {
+			$idCandidate = $weight['candidate_id'];
+			if (in_array($idCandidate, $candidatesAnsweringThisQuestion)) {
+			    return false;
+			}
+			$candidatesAnsweringThisQuestion[] = $idCandidate;
+		    }
 		}
 	    }
 	    return true;
