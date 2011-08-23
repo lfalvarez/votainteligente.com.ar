@@ -1,4 +1,4 @@
 app/.settings/
 app/tmp/cache/models/
-app/nbproject/
+app/nbproject/**/*
 app/tmp/cache/persistent/
