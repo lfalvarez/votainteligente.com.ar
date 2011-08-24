@@ -1,5 +1,6 @@
 <?php echo $this->Html->script('category-in-a-dialog'); ?>
 <?php echo $this->Html->script('replicator'); ?>
+<?php echo $this->Html->script('consistency-checker'); ?>
 <div class="questions form">
 <?php echo $this->Form->create('Question');?>
 	<fieldset>
@@ -50,10 +51,19 @@
 				    echo $this->Form->input('Answers.'.$answer['id'].'.Answer.answer',array('value'=>$answer['answer']));
 				    foreach ($answer['Weight'] as $weightCounter => $weight) {
 					$fieldName = 'Answers.'.$answer['id'].'.Weight.'.$weightCounter;
+					$optionsForCheckbox = array(
+					    'value'=>$weight['candidate_id'],
+					    'hiddenField' => false,
+					    'checked'=>$weight['checked'],
+					    'onClick'=>'ensureConsistency(this)'
+					    );
+					if ($weight['disabled']) {
+					    $optionsForCheckbox['disabled'] = 'disabled';
+					}
+					echo $this->Form->checkbox($fieldName.'.candidate_id',$optionsForCheckbox);
 					if (isset($weight['id'])) {
 					    echo $this->Form->input($fieldName.'.id',array('type'=>'hidden','value'=>$weight['id']));
 					}
-					echo $this->Form->checkbox($fieldName.'.candidate_id',array('value'=>$weight['candidate_id'],'hiddenField' => false,'checked'=>$weight['checked']));
 					echo $this->Form->label($fieldName.'.candidate_id',$weight['candidate']);
 				    }
 				?>

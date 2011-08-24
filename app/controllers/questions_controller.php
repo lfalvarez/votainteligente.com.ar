@@ -72,6 +72,7 @@ class QuestionsController extends AppController {
 			}
 		}
 		$candidates = $this->Question->Weight->Candidate->find('list');
+		$candidatesIds = $this->Question->Weight->find('list',array('fields'=>array('candidate_id'),'conditions'=>array('question_id'=>$id)));
 		if (empty($this->data)) {
 			$this->Question->Behaviors->attach('Containable');
 			$this->Question->contain(array('Answer'));
@@ -81,17 +82,22 @@ class QuestionsController extends AppController {
 			    $weightsForDisplay = array();
 			    foreach ($candidates as $idCandidate => $candidate) {
 				$checked = false;
+				$disabled = false;
 				if (in_array($idCandidate,$weights)) {
 				    $idWeight = key($weights);
 				    $checked = true;
 				}
 				else {
 				    $idWeight = 0;
+				    if (in_array($idCandidate,$candidatesIds)) {
+					$disabled = true;
+				    }
 				}
 				 $currentWeight = array(
 				    'candidate_id'  => $idCandidate,
 				    'candidate'	    => $candidate,
-				    'checked'	    => $checked
+				    'checked'	    => $checked,
+				    'disabled'	    => $disabled
 				);
 				if ($idWeight>0) {
 				    $currentWeight['id'] = $idWeight;
