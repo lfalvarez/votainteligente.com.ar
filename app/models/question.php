@@ -85,6 +85,7 @@ class Question extends AppModel {
 	    unset($data['Question']);
 	    $this->Behaviors->attach('RelatedModelCleaner');
 	    $data['Answers'] = $this->removeEmptyDataFromArray($data['Answers']);
+	    $this->Weight->deleteAll(array('Weight.question_id'=>$this->id));
 	    $areTheAnswersConsistent = $this->checkCandidatesConsistencyInThisAnswer($data['Answers']);
 	    if (!$areTheAnswersConsistent) {
 		$this->delete($this->id);
