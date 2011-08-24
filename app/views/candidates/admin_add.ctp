@@ -10,7 +10,7 @@
 		<fieldset>
 		    <legend>Perfil del candidato</legend>
 		    <?php
-		    echo $this->Form->input('CandidateProfile.birth');
+		    echo $this->Form->input('CandidateProfile.birth',array('minYear'=>1900));
 		    echo $this->Form->input('CandidateProfile.profession');
 		    echo $this->Form->input('CandidateProfile.sons');
 		    echo $this->Form->input('CandidateProfile.civil_status');
