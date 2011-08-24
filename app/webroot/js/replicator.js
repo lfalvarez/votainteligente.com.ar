@@ -10,6 +10,8 @@ function addAnother(idFieldset, newLabel){
     var newId = parseInt(maxId)+1;
     var lastFieldSet = $('['+idFieldset+'="'+currentId+'"]');
     var newElement = lastFieldSet.clone();
+    var remainingIdsOfThePrevious = 'input[type="hidden"][name^="data['+idFieldset+']"][name$="[id]"]';
+    $(remainingIdsOfThePrevious,newElement).remove();
     $(":input, label",newElement).each(function(index,element){
 	prepareInput(element,currentId,newId,idFieldset);
 	resetValue(element);
