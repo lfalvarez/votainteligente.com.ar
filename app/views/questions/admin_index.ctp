@@ -6,13 +6,11 @@
     <?php echo $this->Html->link('Elimina la categoria '.$category['name'], array('controller'=>'categories','action' => 'delete', $categoryId), null, sprintf(__('Estas seguro de querer eliminar la categoria %s y todas sus preguntas', true), $category['name'])); ?>
     <table cellpadding="0" cellspacing="0">
     <tr>
-		    <th><?php echo $this->Paginator->sort('id');?></th>
 		    <th><?php echo $this->Paginator->sort('question');?></th>
-		    <th><?php echo $this->Paginator->sort('explanation');?></th>
 		    <th><?php echo $this->Paginator->sort('short_description');?></th>
 		    <th><?php echo $this->Paginator->sort('sour');?></th>
-		    <th><?php echo $this->Paginator->sort('public',array('checked'=>true));?></th>
-		    <th><?php echo $this->Paginator->sort('included_in_media_naranja',array('checked'=>true));?></th>
+		    <th><?php echo $this->Paginator->sort('public');?></th>
+		    <th><?php echo $this->Paginator->sort('included_in_media_naranja');?></th>
 		    <th><?php echo $this->Paginator->sort('order');?></th>
 		    <th class="actions"><?php __('Actions');?></th>
     </tr>
@@ -25,9 +23,7 @@
 		    }
 	    ?>
 	    <tr<?php echo $class;?>>
-		    <td><?php echo $question['Question']['id']; ?>&nbsp;</td>
 		    <td><?php echo $question['Question']['question']; ?>&nbsp;</td>
-		    <td><?php echo $question['Question']['explanation']; ?>&nbsp;</td>
 		    <td><?php echo $question['Question']['short_description']; ?>&nbsp;</td>
 		    <td><?php echo $this->Admin->booleanValue($question['Question']['sour']); ?>&nbsp;</td>
 		    <td><?php echo $this->Admin->booleanValue($question['Question']['public']); ?>&nbsp;</td>
@@ -59,12 +55,8 @@
 <div class="actions">
 	<h3><?php __('Actions'); ?></h3>
 	<ul>
+		<li><?php echo $this->Html->link(__('List Candidates', true), array('action' => 'index','controller'=>'candidates'));?></li>
 		<li><?php echo $this->Html->link(__('New Question', true), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Categories', true), array('controller' => 'categories', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Category', true), array('controller' => 'categories', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Answers', true), array('controller' => 'answers', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Answer', true), array('controller' => 'answers', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Weights', true), array('controller' => 'weights', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Weight', true), array('controller' => 'weights', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Source Of Answers', true), array('action' => 'index','controller'=>'source_of_answers'));?></li>
 	</ul>
 </div>

@@ -40,7 +40,5 @@
 		<li><?php echo $this->Html->link(__('Delete Source Of Answer', true), array('action' => 'delete', $sourceOfAnswer['SourceOfAnswer']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $sourceOfAnswer['SourceOfAnswer']['id'])); ?> </li>
 		<li><?php echo $this->Html->link(__('List Source Of Answers', true), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Source Of Answer', true), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Weights', true), array('controller' => 'weights', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Weight', true), array('controller' => 'weights', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

@@ -2,10 +2,10 @@
 	<h2><?php __('Source Of Answers');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id');?></th>
-			<th><?php echo $this->Paginator->sort('weight_id');?></th>
-			<th><?php echo $this->Paginator->sort('sentence');?></th>
-			<th><?php echo $this->Paginator->sort('media_name');?></th>
+
+			<th>Pregunta</th>
+			<th>Respuesta</th>
+			<th>Descripción</th>
 			<th><?php echo $this->Paginator->sort('link');?></th>
 			<th><?php echo $this->Paginator->sort('date');?></th>
 			<th class="actions"><?php __('Actions');?></th>
@@ -19,13 +19,11 @@
 		}
 	?>
 	<tr<?php echo $class;?>>
-		<td><?php echo $sourceOfAnswer['SourceOfAnswer']['id']; ?>&nbsp;</td>
-		<td>
-			<?php echo $this->Html->link($sourceOfAnswer['Weight']['weighting'], array('controller' => 'weights', 'action' => 'view', $sourceOfAnswer['Weight']['id'])); ?>
-		</td>
-		<td><?php echo $sourceOfAnswer['SourceOfAnswer']['sentence']; ?>&nbsp;</td>
-		<td><?php echo $sourceOfAnswer['SourceOfAnswer']['media_name']; ?>&nbsp;</td>
-		<td><?php echo $sourceOfAnswer['SourceOfAnswer']['link']; ?>&nbsp;</td>
+
+		<td><?php echo $sourceOfAnswer['Weight']['Question']['question'];?></td>
+		<td><?php echo $sourceOfAnswer['Weight']['Answer']['answer'];?></td>
+		<td><?php echo $sourceOfAnswer['Weight']['Candidate']['name'].' dijo "'.$sourceOfAnswer['SourceOfAnswer']['sentence'].'" en '.$sourceOfAnswer['SourceOfAnswer']['media_name'];?></td>
+		<td><?php echo $this->Html->link('Ir',$sourceOfAnswer['SourceOfAnswer']['link'],array('target'=>'_blank')); ?>&nbsp;</td>
 		<td><?php echo $sourceOfAnswer['SourceOfAnswer']['date']; ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $sourceOfAnswer['SourceOfAnswer']['id'])); ?>
@@ -52,8 +50,8 @@
 <div class="actions">
 	<h3><?php __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Source Of Answer', true), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Weights', true), array('controller' => 'weights', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Weight', true), array('controller' => 'weights', 'action' => 'add')); ?> </li>
+	    <li><?php echo $this->Html->link(__('List Candidates', true), array('action' => 'index','controller'=>'candidates'));?></li>
+	    <li><?php echo $this->Html->link(__('List Questions', true), array('controller' => 'questions', 'action' => 'index')); ?></li>
+	    <li><?php echo $this->Html->link(__('New Source Of Answer', true), array('action' => 'add')); ?></li>
 	</ul>
 </div>

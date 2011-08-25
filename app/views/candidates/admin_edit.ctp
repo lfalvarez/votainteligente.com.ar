@@ -1,8 +1,3 @@
-<script>
-$(document).ready(function(){
-
-});
-</script>
 <?php echo $this->Html->script('replicator'); ?>
 <div class="candidates form">
 <?php echo $this->Form->create('Candidate');?>
@@ -210,10 +205,8 @@ $(document).ready(function(){
 	<ul>
 
 		<li><?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $this->Form->value('Candidate.id')), null, sprintf(__('Are you sure you want to delete # %s?', true), $this->Form->value('Candidate.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('List Candidates', true), array('action' => 'index'));?></li>
-		<li><?php echo $this->Html->link(__('List Candidate Profiles', true), array('controller' => 'candidate_profiles', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Candidate Profile', true), array('controller' => 'candidate_profiles', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Weights', true), array('controller' => 'weights', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Weight', true), array('controller' => 'weights', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Candidates', true), array('action' => 'index','controller'=>'candidates'));?></li>
+		<li><?php echo $this->Html->link(__('List Questions', true), array('action' => 'index','controller'=>'questions'));?></li>
+		<li><?php echo $this->Html->link(__('List Source Of Answers', true), array('action' => 'index','controller'=>'source_of_answers'));?></li>
 	</ul>
 </div>
