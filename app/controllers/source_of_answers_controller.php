@@ -4,8 +4,14 @@ class SourceOfAnswersController extends AppController {
 	var $name = 'SourceOfAnswers';
 	var $layout = 'admin';
 	function admin_index() {
-		$this->SourceOfAnswer->recursive = 0;
-		$this->set('sourceOfAnswers', $this->paginate());
+		$this->SourceOfAnswer->recursive = -1;
+		$this->SourceOfAnswer->Behaviors->attach('Containable');
+		$this->paginate = array(
+			    'contain'=>array(
+				'Weight' => array('Candidate','Question','Answer')
+			    ));
+		$sources = $this->paginate();
+		$this->set('sourceOfAnswers', $sources);
 	}
 
 	function admin_view($id = null) {
