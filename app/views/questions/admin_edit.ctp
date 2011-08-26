@@ -7,13 +7,13 @@
 		<legend><?php __('Admin Edit Question'); ?></legend>
 	<?php
 		echo $this->Form->input('id');
-		echo $this->Form->input('question');
-		echo $this->Form->input('explanation');
-		echo $this->Form->input('short_description');
-		echo $this->Form->input('category_id',array('id'=>'idCategoryForNewQuestion','empty'=>'Selecciona una categoria'));
+		echo $this->Form->input('question',array('label'=>'Pregunta'));
+		echo $this->Form->input('explanation',array('label'=>'Explicación'));
+		echo $this->Form->input('short_description',array('label'=>'Descripción corta'));
+		echo $this->Form->input('category_id',array('id'=>'idCategoryForNewQuestion','empty'=>'Selecciona una categoria','label'=>'Categoría'));
 		echo $this->Html->link('Agregar otra categoria', '/admin/categories/add_ajax/', array('id' => 'addAnotherCategory'));
-		echo $this->Form->input('public',array('checked'=>true));
-		echo $this->Form->input('included_in_media_naranja',array('type'=>'checkbox','checked'=>true));
+		echo $this->Form->input('public',array('checked'=>true,'label'=>'¿pública?'));
+		echo $this->Form->input('included_in_media_naranja',array('type'=>'checkbox','label'=>'¿Incluida en la media naranja?','checked'=>true));
 		echo $this->Form->input('order');
 	?>
 	</fieldset>
@@ -25,7 +25,7 @@
 			<fieldset Answers="0">
 			    <legend>Nueva Respuesta</legend>
 			    <?php
-				echo $this->Form->input('Answers.0.Answer.answer');
+				echo $this->Form->input('Answers.0.Answer.answer',array('label'=>'Respuesta'));
 			    ?>
 			    <div class="input">
 			    <?php
@@ -47,7 +47,7 @@
 				<legend><?php echo $answer['answer'];?></legend>
 				<?php
 				    echo $this->Form->input('Answers.'.$answer['id'].'.Answer.id',array('type'=>'hidden','value'=>$answer['id']));
-				    echo $this->Form->input('Answers.'.$answer['id'].'.Answer.answer',array('value'=>$answer['answer']));
+				    echo $this->Form->input('Answers.'.$answer['id'].'.Answer.answer',array('value'=>$answer['answer'],'label'=>'Respuesta'));
 				    foreach ($answer['Weight'] as $weightCounter => $weight) {
 					$fieldName = 'Answers.'.$answer['id'].'.Weight.'.$weightCounter;
 					$optionsForCheckbox = array(

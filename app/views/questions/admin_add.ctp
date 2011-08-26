@@ -6,14 +6,14 @@
 	<fieldset>
 		<legend><?php __('Admin Add Question'); ?></legend>
 	<?php
-		echo $this->Form->input('question');
-		echo $this->Form->input('explanation');
-		echo $this->Form->input('short_description');
-		echo $this->Form->input('category_id',array('id'=>'idCategoryForNewQuestion','empty'=>'Selecciona una categoria','value'=>$selectedCategoryId));
+		echo $this->Form->input('question',array('label'=>'Pregunta'));
+		echo $this->Form->input('explanation',array('label'=>'Explicación'));
+		echo $this->Form->input('short_description',array('label'=>'Descripción corta'));
+		echo $this->Form->input('category_id',array('id'=>'idCategoryForNewQuestion','empty'=>'Selecciona una categoria','value'=>$selectedCategoryId,'label'=>'Categoría'));
 		echo $this->Html->link('Agregar otra categoria', '/admin/categories/add_ajax/', array('id' => 'addAnotherCategory'));
-		echo $this->Form->input('public',array('checked'=>true));
-		echo $this->Form->input('included_in_media_naranja',array('type'=>'checkbox','checked'=>true));
-		echo $this->Form->input('order');
+		echo $this->Form->input('public',array('checked'=>true,'label'=>'¿pública?'));
+		echo $this->Form->input('included_in_media_naranja',array('type'=>'checkbox','label'=>'¿Incluida en la media naranja?','checked'=>true));
+		echo $this->Form->input('order',array('label'=>'Orden'));
 	?>
 	</fieldset>
 	<fieldset>
@@ -22,7 +22,7 @@
 		<legend>Nueva Respuesta</legend>
 		<?php
 
-		    echo $this->Form->input('Answers.0.Answer.answer');
+		    echo $this->Form->input('Answers.0.Answer.answer',array('label'=>'Respuesta'));
 		    ?>
 		<div class="input">
 		<?php
