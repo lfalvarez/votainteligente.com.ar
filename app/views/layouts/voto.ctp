@@ -144,6 +144,10 @@ table{
     $(':radio[name$="\\[Answer\\]"]').click(function(){
 	var questionId = $(this).attr('question_id');
 	$('#section_question_'+questionId).removeClass('not-answered-yet');
+	var nonAnsweredQuestions = $('.not-answered-yet');
+	if (nonAnsweredQuestions.length === 0) {
+	    $('#media-naranja-form-errors').text('');
+	}
     });
     $('#CategoryIndexForm').submit(function(){
 	var allAnswered = true;
@@ -159,6 +163,7 @@ table{
 	    return true;
 	}
 	$('#media-naranja-form-errors').text('Existen preguntas que no respondiste');
+	FB.Canvas.scrollTo(0,$('.not-answered-yet').offset().top);
 	return false;
     });
   };
