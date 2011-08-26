@@ -47,10 +47,10 @@
 		    'id'=>'answersForQuestion',
 		    'label'=>'Respuesta'
 		));
-		echo $this->Form->input('sentence');
-		echo $this->Form->input('media_name');
+		echo $this->Form->input('sentence',array('label'=>'Frase'));
+		echo $this->Form->input('media_name',array('label'=>'Nombre del medio'));
 		echo $this->Form->input('link',array('label'=>'Link (recuerda anteponer http://)'));
-		echo $this->Form->input('date');
+		echo $this->Form->input('date',array('label'=>'Fecha'));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>
