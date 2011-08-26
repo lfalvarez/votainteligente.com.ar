@@ -34,7 +34,6 @@
 		<th><?php __('Id'); ?></th>
 		<th><?php __('Question'); ?></th>
 		<th><?php __('Category Id'); ?></th>
-		<th><?php __('Sour'); ?></th>
 		<th><?php __('Public'); ?></th>
 		<th class="actions"><?php __('Actions');?></th>
 	</tr>
@@ -50,7 +49,6 @@
 			<td><?php echo $question['id'];?></td>
 			<td><?php echo $question['question'];?></td>
 			<td><?php echo $question['category_id'];?></td>
-			<td><?php echo $question['sour'];?></td>
 			<td><?php echo $question['public'];?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('View', true), array('controller' => 'questions', 'action' => 'view', $question['id'])); ?>

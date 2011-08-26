@@ -25,7 +25,6 @@ class QuestionTestCase extends CakeTestCase {
 							'id' => 1,
 							'question' => '¿que piensas de los numeros imaginarios dibujados en un plano cartesiano?',
 							'category_id' => 1,
-							'sour' => 0,
 							'explanation'=>'blah',
 							'short_description'=>'blah',
                                                         'order'=>1,
@@ -50,7 +49,6 @@ class QuestionTestCase extends CakeTestCase {
                                 'id' => 2,
                                 'question' => '¿un numero imaginario es par o impar??',
                                 'category_id' => 1,
-                                'sour' => 0,
 				'explanation'=>'blah',
 				'short_description'=>'blah',
                                 'order'=>2,
@@ -85,7 +83,6 @@ class QuestionTestCase extends CakeTestCase {
 		    'explanation'=>'estasdeacuerdo',
 		    'short_description'=>'estasdeacuerdo',
 		    'category_id'=>1,
-		    'sour'=>0,
 		    'public'=>1,
 		    'included_in_media_naranja'=>1,
 		    'order'=>1
@@ -130,7 +127,6 @@ class QuestionTestCase extends CakeTestCase {
 		    'explanation'=>'estasdeacuerdo',
 		    'short_description'=>'estasdeacuerdo',
 		    'category_id'=>1,
-		    'sour'=>0,
 		    'public'=>1,
 		    'included_in_media_naranja'=>1,
 		    'order'=>1
@@ -174,7 +170,6 @@ class QuestionTestCase extends CakeTestCase {
 		    'explanation'=>'estasdeacuerdo',
 		    'short_description'=>'estasdeacuerdo',
 		    'category_id'=>1,
-		    'sour'=>0,
 		    'public'=>1,
 		    'included_in_media_naranja'=>1,
 		    'order'=>1

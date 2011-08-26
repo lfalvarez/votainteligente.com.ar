@@ -8,7 +8,6 @@
     <tr>
 		    <th><?php echo $this->Paginator->sort('question');?></th>
 		    <th><?php echo $this->Paginator->sort('short_description');?></th>
-		    <th><?php echo $this->Paginator->sort('sour');?></th>
 		    <th><?php echo $this->Paginator->sort('public');?></th>
 		    <th><?php echo $this->Paginator->sort('included_in_media_naranja');?></th>
 		    <th><?php echo $this->Paginator->sort('order');?></th>
@@ -25,7 +24,6 @@
 	    <tr<?php echo $class;?>>
 		    <td><?php echo $question['Question']['question']; ?>&nbsp;</td>
 		    <td><?php echo $question['Question']['short_description']; ?>&nbsp;</td>
-		    <td><?php echo $this->Admin->booleanValue($question['Question']['sour']); ?>&nbsp;</td>
 		    <td><?php echo $this->Admin->booleanValue($question['Question']['public']); ?>&nbsp;</td>
 		    <td><?php echo $this->Admin->booleanValue($question['Question']['included_in_media_naranja']); ?>&nbsp;</td>
 		    <td><?php echo $question['Question']['order']; ?>&nbsp;</td>
