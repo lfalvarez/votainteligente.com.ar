@@ -167,6 +167,32 @@ class CategoryTestCase extends CakeTestCase {
 	    $category = $this->Category->findBySlug('name-of-the-new-category-with-na');
 	    $this->assertEqual(count($category),1);
 	}
+	function testShowsOnlyPublicQuestionsInMediaNaranja(){
+	    $categoriesAndQuestions = $this->Category->findAllForMediaNaranja();
+	    $nonPublicQuestions = 0;
+	    foreach($categoriesAndQuestions as $category) {
+		foreach($category['Questions'] as $question) {
+		    $isThisQuestionNonPublic = !$question['Question']['public'];
+		    if ($isThisQuestionNonPublic) {
+			$nonPublicQuestions++;
+		    }
+		}
+	    }
+	    $this->assertEqual(0,$nonPublicQuestions);
+	}
+	function testShowsOnlyPublicQuestionsInProfile(){
+	    $categoriesAndQuestions = $this->Category->getAllCategoriesAndQuestionsForCandidate(1);
+	    $nonPublicQuestions = 0;
+	    foreach($categoriesAndQuestions as $category) {
+		foreach($category['Question'] as $question) {
+		    $isThisQuestionNonPublic = !$question['public'];
+		    if ($isThisQuestionNonPublic) {
+			$nonPublicQuestions++;
+		    }
+		}
+	    }
+	    $this->assertEqual(0,$nonPublicQuestions);
+	}
 
 }
 ?>

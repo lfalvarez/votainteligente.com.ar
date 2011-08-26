@@ -16,12 +16,6 @@ class QuestionTestCase extends CakeTestCase {
 		unset($this->Question);
 		ClassRegistry::flush();
 	}
-	function testShowsOnlyPublicQuestions(){
-		$this->Question->recursive = -1;
-		$result = $this->Question->find('all');
-		$expected = 4;
-		$this->assertEqual(count($result),$expected);
-	}
 	function testFindAllQuestionsAndAswers(){
 		$this->Question->recursive = 1;
 		$result = $this->Question->findAllForIndex(1);
@@ -269,6 +263,10 @@ class QuestionTestCase extends CakeTestCase {
 	    );
 	    $result = $this->Question->checkCandidatesConsistencyInThisAnswer($answers);
 	    $this->assertTrue($result);
+	}
+	function testShowsOnlyPublicQuestionsInComparison() {
+	    $questions = $this->Question->findAllForCompare(2);//Category id = 2 contains one non public question
+	    $this->assertEqual(2,count($questions));
 	}
 }
 ?>

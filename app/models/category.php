@@ -112,7 +112,8 @@ class Category extends AppModel {
 				'Weight.candidate_id ='=>$candidateId
 				),
 			    )
-			)
+			),
+		    'conditions'=>array('public'=>1)
 		    )
 		);
 	    $categories = $this->find('all',array('contain'=>$contain));

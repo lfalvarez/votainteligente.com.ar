@@ -62,6 +62,16 @@ class QuestionFixture extends CakeTestFixture {
 			'public' => 1,
 			'included_in_media_naranja' => 1,
 		),
+                array(
+			'id' => 5,
+			'question' => 'Esta es una pregunta no publica',
+			'category_id' => 2,
+			'explanation'=>'blah',
+			'short_description'=>'blah',
+                        'order'=>5,
+			'public' => 0,
+			'included_in_media_naranja' => 1,
+		),
 
 	);
 }

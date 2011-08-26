@@ -74,7 +74,9 @@ class Question extends AppModel {
         function findAllForCompare($idCategory){
             $this->Behaviors->attach('Containable');
             $this->contain('Answer');
-            $questions = $this->find('all',array('conditions'=>array('category_id'=>$idCategory)));
+            $questions = $this->find('all',array('conditions'=>array(
+		'category_id'=>$idCategory,
+		'public'=>1)));
             return $questions;
         }
 	function saveAllQuestionAnswersAndWeights($data) {
