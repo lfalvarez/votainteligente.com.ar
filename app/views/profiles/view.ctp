@@ -11,11 +11,13 @@ App::import('Sanitize');
 	<span class="profile-description">Estado Civil: </span><?php echo $profile['CandidateProfile']['civil_status'];?><br />
 	<span class="profile-description">Hijos: </span><?php echo $profile['CandidateProfile']['sons'];?><br />
 	<span class="profile-description">Religión: </span><?php echo $profile['CandidateProfile']['religion'];?><br />
-
+	<span class="profile-description">Ingresos: </span><?php echo $profile['CandidateProfile']['assets'];?><br />
 	</p>
 	<p>
 	<h3>Enlaces personales:</h3>
 	    <ul>
+		<li><a href="<?php echo $profile['CandidateProfile']['twitter'];?>" target="_blank">Twitter</a></li>
+		<li><a href="<?php echo $profile['CandidateProfile']['facebook'];?>" target="_blank">Facebook</a></li>
 		<?php
 		foreach($profile['CandidateLink'] as $link) {
 		?>
