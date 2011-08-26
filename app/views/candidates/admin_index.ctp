@@ -2,7 +2,6 @@
 	<h2><?php __('Candidates');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id');?></th>
 			<th><?php echo $this->Paginator->sort('name');?></th>
 			<th>Imagen</th>
 			<th class="actions"><?php __('Actions');?></th>
@@ -16,7 +15,6 @@
 		}
 	?>
 	<tr<?php echo $class;?>>
-		<td><?php echo $candidate['Candidate']['id']; ?>&nbsp;</td>
 		<td><?php echo $candidate['Candidate']['name']; ?>&nbsp;</td>
 		<td><?php echo $this->Html->image($candidate['Candidate']['imagepath'],array('width'=>100)); ?>&nbsp;</td>
 		<td class="actions">
