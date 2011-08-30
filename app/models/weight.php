@@ -38,7 +38,7 @@ class Weight extends AppModel {
 		'SourceOfAnswer' => array(
 			'className' => 'SourceOfAnswer',
 			'foreignKey' => 'weight_id',
-			'dependent' => false,
+			'dependent' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',

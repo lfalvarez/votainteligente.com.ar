@@ -25,7 +25,7 @@ class Answer extends AppModel {
 		'Weight' => array(
 			'className' => 'Weight',
 			'foreignKey' => 'answer_id',
-			'dependent' => false,
+			'dependent' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',
