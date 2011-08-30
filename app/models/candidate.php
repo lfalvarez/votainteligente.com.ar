@@ -11,7 +11,7 @@ class Candidate extends AppModel {
 		'MeioUpload' => array(
 		    'imagepath' => array(
 			'dir' => 'img{DS}{model}{DS}{field}',
-			//'create_directory' => true,
+			'create_directory' => true,
 			'allowed_mime' => array('image/jpeg', 'image/pjpeg', 'image/png'),
 			'allowed_ext' => array('.jpg', '.jpeg', '.png')
 		    )
@@ -122,8 +122,10 @@ class Candidate extends AppModel {
 		$isAddingNew = false;
 	    }
 	    $savedCorrectly = $this->save($data);
-	    if (!$savedCorrectly && $isAddingNew) {
-		$this->delete($this->id);
+	    if (!$savedCorrectly) {
+		if ($isAddingNew) {
+		    $this->delete($this->id);
+		}
 		return false;
 	    }
 	    unset($data['Candidate']);
@@ -136,8 +138,10 @@ class Candidate extends AppModel {
 		}
 	    }
 	    $savedCorrectly = $this->CandidateProfile->saveAll($data);
-	    if (!$savedCorrectly && $isAddingNew) {
-		$this->delete($this->id);
+	    if (!$savedCorrectly) {
+		if ($isAddingNew) {
+		    $this->delete($this->id);
+		}
 		return false;
 	    }
 	    return true;

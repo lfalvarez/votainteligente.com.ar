@@ -1,6 +1,6 @@
 <?php echo $this->Html->script('replicator'); ?>
 <div class="candidates form">
-<?php echo $this->Form->create('Candidate');?>
+<?php echo $this->Form->create('Candidate',array('type' => 'file'));?>
 	<fieldset>
 		<legend><?php __('Admin Edit Candidate'); ?></legend>
 	<?php
