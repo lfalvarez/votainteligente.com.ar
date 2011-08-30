@@ -259,6 +259,60 @@ class QuestionTestCase extends CakeTestCase {
 	    $result = $this->Question->checkCandidatesConsistencyInThisAnswer($answers);
 	    $this->assertTrue($result);
 	}
+	function testSaveAllAnswersEvenIfTheyDontHaveACandidate() {
+	    $question = array(
+		'Question'=>array(
+		    'question'=>'¿¿¿estasdeacuerdo???',
+		    'explanation'=>'estasdeacuerdo',
+		    'short_description'=>'estasdeacuerdo',
+		    'category_id'=>1,
+		    'public'=>1,
+		    'included_in_media_naranja'=>1,
+		    'order'=>1
+		),
+		'Answers'=>array(
+		    0 => array(
+			'Answer' =>array(
+			    'answer'=>'Si'
+			)
+		    ),
+		    1=>array(
+			'Answer' =>array(
+			    'answer'=>'No'
+			)
+		    )
+		)
+	    );
+	    $result = $this->Question->saveAllQuestionAnswersAndWeights($question);
+	    $this->Question->Behaviors->attach('Containable');
+	    $this->Question->contain(array('Answer'=>array('Weight')));
+
+	    $questionSaved = $this->Question->find('first',array('conditions'=>array('explanation'=>'estasdeacuerdo')));
+	    $expectedAnswers = array(
+		0=>array
+                (
+                    'id' => 9,
+                    'answer' => 'Si',
+                    'question_id' => 6,
+                    'Weight' => Array
+                        (
+                        )
+
+                ),
+		1=>array
+                (
+                    'id' => 10,
+                    'answer' => 'No',
+                    'question_id' => 6,
+                    'Weight' => Array
+                        (
+                        )
+
+                )
+	    );
+	    $this->assertEqual($expectedAnswers,$questionSaved['Answer']);
+
+	}
 	function testShowsOnlyPublicQuestionsInComparison() {
 	    $questions = $this->Question->findAllForCompare(2);//Category id = 2 contains one non public question
 	    $this->assertEqual(2,count($questions));

@@ -112,7 +112,7 @@ class Question extends AppModel {
 	    foreach ($answersAndWeights['Answers'] as $counterAnswer=>$answer) {
 		$answersAndWeights['Answers'][$counterAnswer]['Answer']['question_id'] = $idQuestion;
 		if (!isset($answersAndWeights['Answers'][$counterAnswer]['Weight'])){
-		    break;
+		    continue;
 		}
 		foreach ($answersAndWeights['Answers'][$counterAnswer]['Weight'] as $counterWeight=>$weight) {
 		    $answersAndWeights['Answers'][$counterAnswer]['Weight'][$counterWeight]['question_id'] = $idQuestion;
