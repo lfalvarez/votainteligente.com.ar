@@ -117,8 +117,12 @@ class Candidate extends AppModel {
 	    return true;
 	}
 	function saveAllData($data){
+	    $isAddingNew = true;
+	    if (isset($data['Candidate']['id'])) {
+		$isAddingNew = false;
+	    }
 	    $savedCorrectly = $this->save($data);
-	    if (!$savedCorrectly) {
+	    if (!$savedCorrectly && $isAddingNew) {
 		$this->delete($this->id);
 		return false;
 	    }
@@ -132,7 +136,7 @@ class Candidate extends AppModel {
 		}
 	    }
 	    $savedCorrectly = $this->CandidateProfile->saveAll($data);
-	    if (!$savedCorrectly) {
+	    if (!$savedCorrectly && $isAddingNew) {
 		$this->delete($this->id);
 		return false;
 	    }

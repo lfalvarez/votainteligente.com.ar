@@ -113,6 +113,37 @@ class CandidateTestCase extends CakeTestCase {
 	    $profile = $this->Candidate->getProfile(1);
 	    $this->assertTrue(isset($profile['CandidatePoliticalExperience'][1]['description']));
 	}
+	function testSaveCandidateWithAnError(){
+	    $data = array(
+		'Candidate'=>array(
+		    'name'=>'',//The Error is an empty name
+		    'imagepath'=>''
+		)
+	    );
+	    $result = $this->Candidate->saveAllData($data);
+	    $this->assertFalse($result);
+	}
+	function testUpdateCandidateWithAnError(){
+	    $data = array(
+		'Candidate'=>array(
+		    'id'=>2,
+		    'name'=>'',//The Error is an empty name
+		    'imagepath'=>''
+		)
+	    );
+	    $this->Candidate->saveAllData($data);
+	    $candidateNotEdited = $this->Candidate->find('first',array('conditions'=>array('id'=>2)));
+
+	    $expected = array(
+		'Candidate' => array(
+		    'id'=>2,
+		    'slug'=>'sebastian-pinera',
+		    'name'=>'Numeros pares',
+		    'imagepath'=>'candidate/imagepath/Lorem ipsum dolor sit amet'
+		)
+		);
+	    $this->assertEqual($expected,$candidateNotEdited);
+	}
 	function testRemoveEmptyDataFromArray(){
 	    $testArray = array(
 		'a'=>'a',
