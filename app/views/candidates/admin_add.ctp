@@ -1,11 +1,11 @@
 <?php echo $this->Html->script('replicator'); ?>
 <div class="candidates form">
-<?php echo $this->Form->create('Candidate');?>
+<?php echo $this->Form->create('Candidate',array('type' => 'file'));?>
 	<fieldset>
 		<legend><?php __('Admin Add Candidate'); ?></legend>
 	<?php
 		echo $this->Form->input('name',array('label'=>'Nombre'));
-		echo $this->Form->input('imagepath',array('label'=>'Dirección a su imagen'));
+		echo $this->Form->input('imagepath',array('label'=>'Selecciona una imagen','type' => 'file'));
 	?>
 		<fieldset>
 		    <legend>Perfil del candidato</legend>

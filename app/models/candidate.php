@@ -5,11 +5,19 @@ class Candidate extends AppModel {
 	var $validate = array(
 		'name' => array(
 			'notempty' => array('rule' => array('notempty')),
-		),
-		'imagepath' => array(
-			'notempty' => array('rule' => array('notempty')),
-		),
+		)
 	);
+	var $actsAs = array(
+		'MeioUpload' => array(
+		    'imagepath' => array(
+			'dir' => 'img{DS}{model}{DS}{field}',
+			//'create_directory' => true,
+			'allowed_mime' => array('image/jpeg', 'image/pjpeg', 'image/png'),
+			'allowed_ext' => array('.jpg', '.jpeg', '.png')
+		    )
+		)
+	    );
+
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 	var $hasMany = array(
@@ -129,6 +137,23 @@ class Candidate extends AppModel {
 		return false;
 	    }
 	    return true;
+	}
+	function afterFind($results) {
+	    foreach ($results as $key => $val) {
+		    if (isset($val['Candidate']) && isset($val['Candidate']['imagepath'])) {
+			if (!$this->isUrl($results[$key]['Candidate']['imagepath'])) {
+			    $results[$key]['Candidate']['imagepath'] = 'candidate/imagepath/'.$results[$key]['Candidate']['imagepath'];
+			}
+
+		    }
+	    }
+	    return $results;
+	}
+	function isUrl($url)
+	{
+	    $info = parse_url($url);
+
+	    return (isset($info['scheme'])&& isset($info['host']))&&($info['scheme']=='http'||$info['scheme']=='https')&&$info['host']!="";
 	}
 }
 ?>

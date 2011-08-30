@@ -6,7 +6,8 @@
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('name',array('label'=>'Nombre'));
-		echo $this->Form->input('imagepath',array('label'=>'Dirección a su imagen'));
+		echo $this->Html->image($this->data['Candidate']['imagepath']);
+		echo $this->Form->input('imagepath',array('label'=>'Selecciona una imagen','type' => 'file'));
 
 	?>
 		<fieldset>
@@ -39,7 +40,8 @@
 			</fieldset>
 		    <?php
 			}
-			foreach ($this->data['CandidateLink'] as $link) {
+			if (isset($this->data['CandidateLink'])) {
+			    foreach ($this->data['CandidateLink'] as $link) {
 			    ?>
 			    <fieldset CandidateLink="<?php echo $link['id'];?>">
 				<legend><?php echo $link['description'];?></legend>
@@ -50,6 +52,7 @@
 				?>
 			    </fieldset>
 			    <?php
+			    }
 			}
 		    ?>
 		    <a onclick="addAnother('CandidateLink','Link');">+Añadir otro</a>
@@ -69,18 +72,20 @@
 			</fieldset>
 		    <?php
 			}
-			foreach ($this->data['CandidateParty'] as $party) {
-		    ?>
-		    <fieldset CandidateParty="<?php echo $party['id'];?>">
-			<legend><?php echo $party['party'];?></legend>
-			<?php
-			echo $this->Form->input('CandidateParty.'.$party['id'].'.id',array('value'=>$party['id']));
-			echo $this->Form->input('CandidateParty.'.$party['id'].'.starting_year',array('value'=>$party['starting_year'],'label'=>'Año de inicio'));
-			echo $this->Form->input('CandidateParty.'.$party['id'].'.ending_year',array('value'=>$party['ending_year'],'label'=>'Año de termino'));
-			echo $this->Form->input('CandidateParty.'.$party['id'].'.party',array('value'=>$party['party'],'label'=>'Partido político'));
+			if (isset($this->data['CandidateParty'])) {
+			    foreach ($this->data['CandidateParty'] as $party) {
 			?>
-		    </fieldset>
+			<fieldset CandidateParty="<?php echo $party['id'];?>">
+			    <legend><?php echo $party['party'];?></legend>
+			    <?php
+			    echo $this->Form->input('CandidateParty.'.$party['id'].'.id',array('value'=>$party['id']));
+			    echo $this->Form->input('CandidateParty.'.$party['id'].'.starting_year',array('value'=>$party['starting_year'],'label'=>'Año de inicio'));
+			    echo $this->Form->input('CandidateParty.'.$party['id'].'.ending_year',array('value'=>$party['ending_year'],'label'=>'Año de termino'));
+			    echo $this->Form->input('CandidateParty.'.$party['id'].'.party',array('value'=>$party['party'],'label'=>'Partido político'));
+			    ?>
+			</fieldset>
 		    <?php
+			}
 		    }
 		    ?>
 		    <a onclick="addAnother('CandidateParty','Partido');">+Añadir otro</a>

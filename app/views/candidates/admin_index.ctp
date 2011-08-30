@@ -16,7 +16,15 @@
 	?>
 	<tr<?php echo $class;?>>
 		<td><?php echo $candidate['Candidate']['name']; ?>&nbsp;</td>
-		<td><?php echo $this->Html->image($candidate['Candidate']['imagepath'],array('width'=>100)); ?>&nbsp;</td>
+		<td><?php
+		if (!is_null($candidate['Candidate']['imageurl']) && $candidate['Candidate']['imageurl']!='') {
+		    $image = $candidate['Candidate']['imageurl'];
+		}
+		else {
+		    $image = $candidate['Candidate']['imagepath'];
+		}
+
+		echo $this->Html->image($image,array('width'=>100)); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $candidate['Candidate']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $candidate['Candidate']['id'])); ?>

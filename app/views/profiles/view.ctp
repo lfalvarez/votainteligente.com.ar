@@ -3,7 +3,14 @@ App::import('Sanitize');
 ?>
 <section>
     <div style="column-count:3;column-gap:22px;">
-	<img src="<?php echo $profile['Candidate']['imagepath'];?>" alt="<?php echo $profile['Candidate']['name'];?>"/>
+	<?php
+	if (!is_null($profile['Candidate']['imageurl']) && $profile['Candidate']['imageurl']!='') {
+	    $image = $profile['Candidate']['imageurl'];
+	}
+	else {
+	    $image = $profile['Candidate']['imagepath'];
+	}
+	echo $this->Html->image($image,array('alt'=>$profile['Candidate']['name'])); ?>
 	<p>
 	<h2><?php echo $profile['Candidate']['name'];?></h2>
 	<span class="profile-description">Nacimiento: </span><?php echo $profile['CandidateProfile']['birth'];?><br />
@@ -106,7 +113,13 @@ App::import('Sanitize');
 		    if (!empty($answer['Weight'][0]['SourceOfAnswer'])) {
 		    	foreach ($answer['Weight'][0]['SourceOfAnswer'] as $source) {
 			    echo '&#8226;<span class=\'sentence\'>&quot;'.Sanitize::html($source['sentence']).'&quot;</span> el '.$source['date'].' ';
-			    echo '<a class=\'media-name\' href=\''.$source['link'].'\' target=\'_blank\'>'.Sanitize::html($source['media_name']).'</a><br />';
+			    if (!is_null($source['link']) && $source['link']!='') {
+				echo '<a class=\'media-name\' href=\''.$source['link'].'\' target=\'_blank\'>'.Sanitize::html($source['media_name']).'</a><br />';
+			    }
+			    else {
+				echo Sanitize::html($source['media_name']);
+			    }
+
 			}
 		    }
 		    ?>"> · <?php echo $answer['answer'];?></span>
