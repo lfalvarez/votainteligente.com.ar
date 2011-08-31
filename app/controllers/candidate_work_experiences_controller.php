@@ -66,4 +66,24 @@ class CandidateWorkExperiencesController extends AppController {
 		$this->Session->setFlash(__('Candidate work experience was not deleted', true));
 		$this->redirect(array('action' => 'index'));
 	}
+	function admin_delete_ajax($id = null) {
+		$this->layout = 'script';
+		$success = null;
+		if (!$id) {
+			$this->Session->setFlash(__('Invalid id for candidate work experience', true));
+			$success = false;
+		}
+		else {
+		    if ($this->CandidateWorkExperience->delete($id)) {
+			$this->Session->setFlash(__('Candidate work experience deleted', true));
+			$success = true;
+		    }
+		    else {
+			$success = false;
+			$this->Session->setFlash(__('Candidate work experience was not deleted', true));
+		    }
+		}
+		$this->set('success',$success);
+		$this->render('/elements/admin_delete_ajax');
+	}
 }

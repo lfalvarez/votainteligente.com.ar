@@ -66,6 +66,10 @@
 					echo $this->Form->label($fieldName.'.candidate_id',$weight['candidate']);
 				    }
 				?>
+				<a href="javascript:deleteARemoteElement('<?php echo Router::url(array(
+				    'controller'=>'answers',
+				    'action'=>'admin_delete_ajax',$answer['id']));
+				?>', 'Answers', <?php echo $answer['id'];?>)">Eliminar</a>
 			    </fieldset>
 			    <?php
 			}

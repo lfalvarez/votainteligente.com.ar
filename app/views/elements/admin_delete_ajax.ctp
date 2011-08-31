@@ -1,0 +1,1 @@
+<?php App::import('Sanitize');?>{"success":"<?php if ($success){echo 'true';}else{echo 'false';}?>","message":"<?php echo Sanitize::html($this->Session->flash());?>"}

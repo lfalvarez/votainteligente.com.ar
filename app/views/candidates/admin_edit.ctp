@@ -50,6 +50,10 @@
 				    echo $this->Form->input('CandidateLink.'.$link['id'].'.description',array('value'=>$link['description'],'label'=>'Descripción'));
 				    echo $this->Form->input('CandidateLink.'.$link['id'].'.link',array('value'=>$link['link'],'label'=>'Link (recuerda anteponer http://)'));
 				?>
+				<a href="javascript:deleteARemoteElement('<?php echo Router::url(array(
+				    'controller'=>'candidate_links',
+				    'action'=>'admin_delete_ajax',$link['id']));
+				?>', 'CandidateLink', <?php echo $link['id'];?>)">Eliminar</a>
 			    </fieldset>
 			    <?php
 			    }
@@ -83,6 +87,10 @@
 			    echo $this->Form->input('CandidateParty.'.$party['id'].'.ending_year',array('value'=>$party['ending_year'],'label'=>'Año de termino'));
 			    echo $this->Form->input('CandidateParty.'.$party['id'].'.party',array('value'=>$party['party'],'label'=>'Partido político'));
 			    ?>
+			    <a href="javascript:deleteARemoteElement('<?php echo Router::url(array(
+				    'controller'=>'candidate_parties',
+				    'action'=>'admin_delete_ajax',$party['id']));
+				?>', 'CandidateParty', <?php echo $party['id'];?>)">Eliminar</a>
 			</fieldset>
 		    <?php
 			}
@@ -132,6 +140,10 @@
 					'label'=>'Tipo'
 				    ));
 			?>
+			<a href="javascript:deleteARemoteElement('<?php echo Router::url(array(
+				    'controller'=>'candidate_political_exeriences',
+				    'action'=>'admin_delete_ajax',$experience['id']));
+				?>', 'CandidatePoliticalExperience', <?php echo $experience['id'];?>)">Eliminar</a>
 		    </fieldset>
 		    <?php
 			}
@@ -163,6 +175,10 @@
 				echo $this->Form->input('CandidateUniversityStudy.'.$study['id'].'.university',array('value'=>$study['university'],'label'=>'Universidad'));
 				echo $this->Form->input('CandidateUniversityStudy.'.$study['id'].'.ending_year',array('value'=>$study['ending_year'],'label'=>'Año de finalización'));
 			    ?>
+			    <a href="javascript:deleteARemoteElement('<?php echo Router::url(array(
+				    'controller'=>'candidate_university_studies',
+				    'action'=>'admin_delete_ajax',$study['id']));
+				?>', 'CandidateUniversityStudy', <?php echo $study['id'];?>)">Eliminar</a>
 			</fieldset>
 		    <?php
 			}
@@ -196,6 +212,10 @@
 				echo $this->Form->input('CandidateWorkExperience.'.$experience['id'].'.position',array('value'=>$experience['position'],'label'=>'Posición'));
 				echo $this->Form->input('CandidateWorkExperience.'.$experience['id'].'.company',array('value'=>$experience['company'],'label'=>'Organización'));
 			    ?>
+			    <a href="javascript:deleteARemoteElement('<?php echo Router::url(array(
+				    'controller'=>'candidate_work_experiences',
+				    'action'=>'admin_delete_ajax',$experience['id']));
+				?>', 'CandidateWorkExperience', <?php echo $experience['id'];?>)">Eliminar</a>
 			</fieldset>
 		    <?php
 			}

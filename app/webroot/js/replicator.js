@@ -17,11 +17,31 @@ function addAnother(idFieldset, newLabel){
 	resetValue(element);
     });
     newElement.filter('fieldset').attr(idFieldset,newId);
+    appendDeleter(newElement,idFieldset,newId);
     newElement.find('legend').html(newLabel);
     if(typeof ensureConsistencyForANewElement == "function"){
 	ensureConsistencyForANewElement(newElement);
     }
     newElement.insertAfter(lastFieldSet).hide().toggle(2000);
+}
+function appendDeleter(newElement,idFieldset,newId){
+    $('a[href^="javascript:deleteFieldset(\''+idFieldset+'\',"]',newElement).remove();
+    $('a[href^="javascript:deleteARemoteElement(\'"]',newElement).remove();
+    newElement.append('<a href="javascript:deleteFieldset(\''+idFieldset+'\','+newId+')">Eliminar</a>');
+}
+function deleteFieldset(attr,value){
+    $('fieldset['+attr+'="'+value+'"]').toggle(2000,function(){
+	$(this).remove();
+    });
+}
+function deleteARemoteElement(url,fielsetName,idFieldset){
+    $.post(url,{},function(data,textStatus) {
+      if(data.success){
+	  deleteFieldset(fielsetName,idFieldset);
+      }
+    },
+    'json'
+);
 }
 function resetValue(input) {
     if (!$(input).is('input')) {

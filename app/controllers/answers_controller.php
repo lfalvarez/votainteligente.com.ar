@@ -69,4 +69,24 @@ class AnswersController extends AppController {
 	    $answers = $this->Answer->find('all',array('conditions'=>array('question_id'=>$questionId)));
 	    $this->set('answers',$answers);
 	}
+	function admin_delete_ajax($id = null) {
+		$this->layout = 'script';
+		$success = null;
+		if (!$id) {
+			$this->Session->setFlash(__('Invalid id for answer', true));
+			$success = false;
+		}
+		else {
+		    if ($this->Answer->delete($id)) {
+			$this->Session->setFlash(__('Answer deleted', true));
+			$success = true;
+		    }
+		    else {
+			$success = false;
+			$this->Session->setFlash(__('Answer was not deleted', true));
+		    }
+		}
+		$this->set('success',$success);
+		$this->render('/elements/admin_delete_ajax');
+	}
 }

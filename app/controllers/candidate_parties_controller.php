@@ -66,4 +66,24 @@ class CandidatePartiesController extends AppController {
 		$this->Session->setFlash(__('Candidate party was not deleted', true));
 		$this->redirect(array('action' => 'index'));
 	}
+	function admin_delete_ajax($id = null) {
+		$this->layout = 'script';
+		$success = null;
+		if (!$id) {
+			$this->Session->setFlash(__('Candidate party deleted', true));
+			$success = false;
+		}
+		else {
+		    if ($this->CandidateParty->delete($id)) {
+			$this->Session->setFlash(__('Candidate party deleted', true));
+			$success = true;
+		    }
+		    else {
+			$success = false;
+			$this->Session->setFlash(__('Candidate party was not deleted', true));
+		    }
+		}
+		$this->set('success',$success);
+		$this->render('/elements/admin_delete_ajax');
+	}
 }
