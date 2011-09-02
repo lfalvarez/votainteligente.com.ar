@@ -1,0 +1,36 @@
+.candidatesLists {
+    float: left;
+}
+.firstCandidate {
+    width: 250px;
+    float: left;
+}
+.secondCandidate {
+    width: 250px;
+    float: left;
+}
+.categories {
+    width: 250px;
+    float: left;
+    margin-top: 50px;
+}
+.comparisonResult {
+    width: 500px;
+    margin-top: 30px;
+}
+.questionInComparison {
+    width: 100%;
+    border: 1px solid;
+}
+.answerInComparison {
+
+}
+.answered {
+    font-weight: bold;
+}
+.notAnswered {
+    font-weight: normal;
+}
+.candidatesSpace {
+    width:240px;
+}

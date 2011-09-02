@@ -1,45 +1,39 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-?>
-
-<?php
 foreach($questions as $question) {
     $firstCandidateDidntAnswerThisQuestion = true;
     $secondCandidateDidntAnswerThisQuestion = true;
 ?>
-<div style="width: 100%;border: 1px solid;"><?php echo $question['Question']['question']; ?></div>
+<div class="questionInComparison"><?php echo $question['Question']['question']; ?></div>
+
     <table>
     <?php foreach ($question['Answer'] as $answer) {
         $answerAndQuestionAreSet = isset($weights[$question['Question']['id']]) && isset($weights[$question['Question']['id']][$answer['id']]);
 
         ?>
         <tr>
-            <td style="width:240px;font-weight:<?php
+            <td class="candidatesSpace answerInComparison <?php
 
             $firstCandidateAnsweredThis = $answerAndQuestionAreSet && in_array($idFirstCandidate,$weights[$question['Question']['id']][$answer['id']]);
             if ($firstCandidateAnsweredThis) {
                 $firstCandidateDidntAnswerThisQuestion = false;
-                echo 'bold';
+                echo 'answered';
             }
             else {
-                echo 'normal';
-            } ?>;">
+                echo 'notAnswered';
+            } ?>">
             ·<?php echo $answer['answer'];?>
             </td>
-            <td style="width:240px;font-weight:<?php
+            <td class="candidatesSpace answerInComparison <?php
 
             $secondCandidateAnsweredThis = $answerAndQuestionAreSet && in_array($idSecondCandidate,$weights[$question['Question']['id']][$answer['id']]);
             if ($secondCandidateAnsweredThis) {
                 $secondCandidateDidntAnswerThisQuestion = false;
-                echo 'bold';
+                echo 'answered';
             }
             else{
-                echo 'normal';
-            } ?>;">·<?php echo $answer['answer'];?>
+                echo 'notAnswered';
+            } ?>">·<?php echo $answer['answer'];?>
             </td>
         </tr>
     <?php
@@ -47,14 +41,14 @@ foreach($questions as $question) {
     if ($firstCandidateDidntAnswerThisQuestion||$secondCandidateDidntAnswerThisQuestion) {
         ?>
         <tr>
-            <td style="width:240px;font-weight:<?php
-                if ($firstCandidateDidntAnswerThisQuestion) { echo 'bold';} else { echo 'normal'; }
-            ?>;">
+            <td class="candidatesSpace answerInComparison <?php
+                if ($firstCandidateDidntAnswerThisQuestion) { echo 'answered';} else { echo 'notAnswered'; }
+            ?>">
                 ·Sin información
             </td>
-            <td style="width:240px;font-weight:<?php
-                if ($secondCandidateDidntAnswerThisQuestion) { echo 'bold';} else { echo 'normal'; }
-            ?>;">
+            <td class="candidatesSpace answerInComparison <?php
+                if ($secondCandidateDidntAnswerThisQuestion) { echo 'answered';} else { echo 'notAnswered'; }
+            ?>">
                 ·Sin información
             </td>
         </tr>
@@ -63,4 +57,4 @@ foreach($questions as $question) {
     ?>
     </table>
 <?php } ?>
-
+</div>

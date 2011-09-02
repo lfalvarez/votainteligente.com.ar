@@ -11,6 +11,7 @@ class ProfilesController extends AppController {
 	}
 	function view($slug){
 	    $candidate = $this->Candidate->findBySlug($slug);
+	    $this->set("title_for_layout",'Perfil de '.$candidate['Candidate']['name']);
 	    if(empty($candidate)){
 		$this->render('error');
 	    }

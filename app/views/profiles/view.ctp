@@ -2,7 +2,7 @@
 App::import('Sanitize');
 ?>
 <section>
-    <div style="column-count:3;column-gap:22px;">
+    <div class="candidatesBasicInformation">
 	<?php
 	if (!is_null($profile['Candidate']['imageurl']) && $profile['Candidate']['imageurl']!='') {
 	    $image = $profile['Candidate']['imageurl'];

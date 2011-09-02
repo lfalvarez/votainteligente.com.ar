@@ -15,13 +15,17 @@ class CompareController extends AppController {
 	    if (!is_null($data)) {
 		$elements = $this->_decodeData($data);
 		if (!is_null($elements)){
-		    $this->set('firstCandidateId',$elements['firstCandidateId']);
-		    $this->set('secondCandidateId',$elements['secondCandidateId']);
+		    $firstCandidate = $elements['firstCandidate']['Candidate'];
+		    $secondCandidate = $elements['secondCandidate']['Candidate'];
+		    $this->set('firstCandidate',$firstCandidate);
+		    $this->set('secondCandidate',$secondCandidate);
 		    $this->set('categoryId',$elements['categoryId']);
 		    $this->set('redirectAgain',false);
-		    $this->_compare($elements['firstCandidateId'],$elements['secondCandidateId'],$elements['categoryId']);
+		    $this->set("title_for_layout",'Comparar candidatos');
+		    $this->_compare($firstCandidate['id'],$secondCandidate['id'],$elements['categoryId']);
 		}
 	    }
+	    $this->set("title_for_layout",'Comparar candidatos');
         }
         function _compare($firstCandidateId,$secondCandidateId,$categoryId){
             $questions         = $this->Category->Question->findAllForCompare($categoryId);
@@ -62,8 +66,8 @@ class CompareController extends AppController {
 		return null;
 	    }
 	    return array(
-		'firstCandidateId'=>$firstCandidate['Candidate']['id'],
-		'secondCandidateId'=>$secondCandidate['Candidate']['id'],
+		'firstCandidate'=>$firstCandidate,
+		'secondCandidate'=>$secondCandidate,
 		'categoryId'=>$category['Category']['id']
 	    );
 	}

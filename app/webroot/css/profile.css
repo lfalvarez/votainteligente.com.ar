@@ -16,3 +16,7 @@
 h3 {
     word-wrap: break-word;
 }
+.candidatesBasicInformation {
+    column-count:3;
+    column-gap:22px;
+}
