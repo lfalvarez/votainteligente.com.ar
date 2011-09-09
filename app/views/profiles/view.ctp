@@ -1,14 +1,15 @@
 <?php
 App::import('Sanitize');
+echo $this->Html->script('accordionForProfiles');
 ?>
 <article>
     <div class="candidatesBasicInformation wrapW">
-    
+
         <header>
             <h2><?php echo $profile['Candidate']['name'];?></h2>
         </header>
-        
-         <section>        
+
+         <section>
                 <div class="profileImg">
                     <?php
                     if (!is_null($profile['Candidate']['imageurl']) && $profile['Candidate']['imageurl']!='') {
@@ -20,14 +21,14 @@ App::import('Sanitize');
                     echo $this->Html->image($image,array('alt'=>$profile['Candidate']['name'])); ?>
                 </div>
                 <div class="personalInfo">
-                    
+
                     <span class="profile-description">Nacimiento: </span><?php echo $profile['CandidateProfile']['birth'];?><br />
                     <span class="profile-description">Profesión: </span><?php echo $profile['CandidateProfile']['profession'];?><br />
                     <span class="profile-description">Estado Civil: </span><?php echo $profile['CandidateProfile']['civil_status'];?><br />
                     <span class="profile-description">Hijos: </span><?php echo $profile['CandidateProfile']['sons'];?><br />
                     <span class="profile-description">Religión: </span><?php echo $profile['CandidateProfile']['religion'];?><br />
                     <span class="profile-description">Ingresos: </span><?php echo $profile['CandidateProfile']['assets'];?><br />
-               
+
                     <h3>Enlaces personales:</h3>
                     <ul class="enlacesPersonales">
                     <li class="twitter"><a href="<?php echo $profile['CandidateProfile']['twitter'];?>" target="_blank">Twitter</a></li>
@@ -38,17 +39,17 @@ App::import('Sanitize');
                     <li><a href="<?php echo $link['link'];?>" target="_blank"><?php echo $link['description'];?></a></li>
                     <?php
                     }
-            
+
                     ?>
                     </ul>
-                    
+
                 </div>
 		</section>
-	</div>  <!--ends candidate basic information--> 
-       
+	</div>  <!--ends candidate basic information-->
+
          <section class="trayectoriaYPosiciones">
-             <section class="trayectoria"> 
-             	<h2>Trayectoria: </h2>  
+             <section class="trayectoria">
+             	<h2>Trayectoria: </h2>
                  <div class="brdotted">
                  	<div class="accordion">
                         <h3>Tendencia política: </h3>
@@ -63,7 +64,7 @@ App::import('Sanitize');
                             ?>
                             </ul>
                         </div>
-                        
+
                         <h3>Experiencia política: </h3>
                         <div class="accordionContent">
                             <ul>
@@ -79,8 +80,8 @@ App::import('Sanitize');
                             }
                             ?>
                             </ul>
-                        </div>    
-                        
+                        </div>
+
                         <h3>Educación:</h3>
                         <div class="accordionContent">
                             <span class="profile-description">Educación secundaria: </span><?php echo $profile['CandidateProfile']['highschool'];?><br />
@@ -95,7 +96,7 @@ App::import('Sanitize');
                                 ?>
                             </ul>
                         </div>
-                        
+
                         <h3>Antecedentes laborales: </h3>
                         <div class="accordionContent">
                             <ul>
@@ -108,12 +109,12 @@ App::import('Sanitize');
                                 ?>
                             </ul>
                          </div>
-                    </div><!--ends accordion--> 
-                </div>  <!--ends brdotted-->   
+                    </div><!--ends accordion-->
+                </div>  <!--ends brdotted-->
            	</section><!--ends trayectoria-->
-            
+
             <section class="posiciones">
-            
+
                     <h2>Posicion política en: </h2>
                     <div class="accordion">
 						<?php foreach ($categories as $category) { ?>
@@ -149,7 +150,7 @@ App::import('Sanitize');
                                             else {
                                             echo Sanitize::html($source['media_name']);
                                             }
-                            
+
                                         }
                                         }
                                         ?>"> · <?php echo $answer['answer'];?></span>
@@ -169,13 +170,13 @@ App::import('Sanitize');
                             </div><!--ends accordionContent-->
                         </div><!--ends category-->
                         <?php } ?>
-                  </div>  <!-- ends accordion-->    
+                  </div>  <!-- ends accordion-->
             </section><!--ends posiciones-->
-            
+
         </section><!--ends trayectoriaYPosiciones-->
-        
+
 </article>
-        
+
 
 <script>
 $(document).ready(function(){
