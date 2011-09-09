@@ -20,3 +20,28 @@ h3 {
     column-count:3;
     column-gap:22px;
 }
+
+
+
+header h2{}
+
+.profileImg{
+	float: left;
+    height: 200px;
+    overflow: hidden;
+    width: 160px;
+}
+.personalInfo{}
+span.profile-description{}
+.enlacesPersonales{}
+.twitter{}
+.facebook{}
+
+
+.trayectoriaYPosiciones{}
+
+.trayectoria{}
+
+.brdotted{}
+
+.trayectoriaYPosiciones span.profile-description{}

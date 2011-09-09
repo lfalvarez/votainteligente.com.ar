@@ -1,0 +1,107 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body{ font-family: 'AllerRegular', Helvetica, Arial, sans-serif; color: #2D2D2D; background-color: #F2F2F2;}
+ul{margin: 0; padding: 0;}
+a{text-decoration: none;}
+a:hover{text-decoration: underline;}
+
+/* @FONT-FACE*/
+
+@font-face {
+    font-family: 'AllerItalic';
+    src: url('../fonts/aller_it-webfont.eot');
+    src: url('../fonts/aller_it-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/aller_it-webfont.woff') format('woff'),
+         url('../fonts/aller_it-webfont.ttf') format('truetype'),
+         url('../fonts/aller_it-webfont.svg#AllerItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'AllerBoldItalic';
+    src: url('../fonts/aller_bdit-webfont.eot');
+    src: url('../fonts/aller_bdit-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/aller_bdit-webfont.woff') format('woff'),
+         url('../fonts/aller_bdit-webfont.ttf') format('truetype'),
+         url('../fonts/aller_bdit-webfont.svg#AllerBoldItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'AllerBold';
+    src: url('../fonts/aller_bd-webfont.eot');
+    src: url('../fonts/aller_bd-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/aller_bd-webfont.woff') format('woff'),
+         url('../fonts/aller_bd-webfont.ttf') format('truetype'),
+         url('../fonts/aller_bd-webfont.svg#AllerBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'AllerRegular';
+    src: url('../fonts/aller_rg-webfont.eot');
+    src: url('../fonts/aller_rg-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/aller_rg-webfont.woff') format('woff'),
+         url('../fonts/aller_rg-webfont.ttf') format('truetype'),
+         url('../fonts/aller_rg-webfont.svg#AllerRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/*LAYOUT*/
+
+.wrapper{width: 892px; margin: auto;}
+.wrapW{ 
+	background-color: #FFFFFF;
+    border: 1px solid #BCBEC0;
+    float: none;
+    overflow: hidden;
+    padding: 10px;
+}
+
+
+
+
+
+/*SIDEBAR LEFT*/
+
+#sidebarLeft {
+    background-color: #D6DCE0;
+    border-right: 2px solid white;
+    box-shadow: 1px 1px 1px #DDDDDD;
+    display: block;
+    left: 0;
+    max-width: 300px;
+    padding: 10px;
+    position: absolute;
+    width: 250px;
+}
+.sidebarMenu{ list-style: none;}
+
+.sidebarMenu li{
+    background-color: #FFFFFF;
+    height: 28px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    padding: 0;
+}
+.sidebarMenu li a img{width: 28px; height: 28px; float: left;}
+.sidebarMenu li a {
+	font-size: 12px;
+	color: #2D2D2D;
+}
+.sidebarMenu li a span {
+	float: left;
+    padding: 6px 7px;
+}
+
+.sidebarMenu li a:hover span {
+	text-decoration: underline;
+}
