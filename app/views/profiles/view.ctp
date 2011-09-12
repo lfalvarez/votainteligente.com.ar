@@ -31,8 +31,8 @@ echo $this->Html->script('accordionForProfiles');
 
                     <h3>Enlaces personales:</h3>
                     <ul class="enlacesPersonales">
-                    <li class="twitter"><a href="<?php echo $profile['CandidateProfile']['twitter'];?>" target="_blank">Twitter</a></li>
-                    <li class="facebook"><a href="<?php echo $profile['CandidateProfile']['facebook'];?>" target="_blank">Facebook</a></li>
+                    <li class="twitter"><a href="http://www.twitter.com/<?php echo $profile['CandidateProfile']['twitter'];?>" target="_blank">@<?php echo $profile['CandidateProfile']['twitter'];?></a></li>
+                    <li class="facebook"><a href="<?php echo $profile['CandidateProfile']['facebook'];?>" target="_blank"><?php echo $profile['CandidateProfile']['facebook_description'];?></a></li>
                     <?php
                     foreach($profile['CandidateLink'] as $link) {
                     ?>

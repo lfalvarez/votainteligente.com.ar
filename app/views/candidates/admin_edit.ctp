@@ -20,7 +20,15 @@
 		    echo $this->Form->input('CandidateProfile.civil_status',array('label'=>'Estado civil'));
 		    echo $this->Form->input('CandidateProfile.religion',array('label'=>'Religión'));
 		    echo $this->Form->input('CandidateProfile.twitter',array('label'=>'Link a su twitter'));
-		    echo $this->Form->input('CandidateProfile.facebook',array('label'=>'Link a su facebook'));
+		    ?>
+		    <fieldset>
+			<label>Facebook</label>
+		    <?php
+		    echo $this->Form->input('CandidateProfile.facebook_description',array('label'=>'Descripción del link a Facebook'));
+		    echo $this->Form->input('CandidateProfile.facebook',array('label'=>'Link a su facebook (no olvides anteponer http://)'));
+		    ?>
+		    </fieldset>
+		    <?php
 		    echo $this->Form->input('CandidateProfile.highschool',array('label'=>'Escuela secundaria'));
 		    echo $this->Form->input('CandidateProfile.current_party',array('label'=>'Partido político actual'));
 		    echo $this->Form->input('CandidateProfile.assets',array('label'=>'Bienes'));
