@@ -4,6 +4,7 @@
 }
 .category {
 }
+
 .sentence {
     font-style: italic;
 }
@@ -16,14 +17,27 @@
 h3 {
     word-wrap: break-word;
 }
+
 .candidatesBasicInformation {
-    column-count:3;
-    column-gap:22px;
+	position: relative;
+	line-height: 21px;
+	 margin-bottom: 30px;
 }
 
+.candidatesBasicInformation header{ 
+	left: 180px;
+    position: absolute;
+    top: 10px;
+	width: 622px;
+}
 
-
-header h2{}
+header h2{
+	background: none repeat scroll 0 0 #A2B2BD;
+    border: 1px solid #99AAB1;
+    color: white;
+    display: block;
+    padding: 4px 9px;
+}
 
 .profileImg{
 	float: left;
@@ -31,17 +45,99 @@ header h2{}
     overflow: hidden;
     width: 160px;
 }
-.personalInfo{}
-span.profile-description{}
-.enlacesPersonales{}
+.personalInfo {
+    float: left;
+    font-size: 13px;
+    margin-left: 18px;
+	width: 330px;
+	margin-top: 35px;
+}
+
+span.profile-description{
+	font-family: 'AllerBold';
+	
+}
+.enlacesPersonales{
+	float: right;
+    font-family: 'AllerItalic';
+    font-size: 12px;
+    letter-spacing: 0;
+    margin-top: 35px;
+    padding-right: 10px;
+    text-align: right;
+    width: 266px;
+}
+
+.enlacesPersonales a{ color: #99aab1;}
+.ulEnlacesPersonales{}
 .twitter{}
 .facebook{}
 
+.profileAside{
+	border-left: 1px dotted #99AAB1;
+    display: block;
+    float: right;
+    height: 200px;
+    padding: 0 0 0 10px;
+    position: relative;
+    width: 60px;
+}
+.sideButton{
+	height: 60px;
+    width: 60px;
+}
 
-.trayectoriaYPosiciones{}
+.trayectoriaYPosiciones{
+	background: url("../img/bg_Section2.png") repeat-x scroll 0 2px,
+	url("../img/dotline.gif") repeat-y scroll 300px 50px #FFFFFF;
+    overflow: hidden;
+    padding: 10px;
+	margin-bottom: 30px;
+}
+.trayectoriaYPosiciones .wrapW{}
 
-.trayectoria{}
+.trayectoria{
+    margin-right: 20px;
+    width: 277px;
+}
+.trayectoria, .posiciones{
+	float: left;
+}
+
+.trayectoria h2, .posiciones h2{
+	background: none repeat scroll 0 0 #A2B2BD;
+    color: white;
+    display: block;
+    font-size: 14px;
+    margin: -10px -10px 22px;
+    padding: 6px 9px;
+	border: 1px solid #99AAB1;
+}
+
+.trayectoria h2{border-right: none;}
+
+ .posiciones h2{
+	 border-left: medium none;
+    margin-left: -20px;
+    padding-left: 20px; 
+	 }
+
+.posiciones{
+	margin-left: 10px;
+    width: 563px;
+}
 
 .brdotted{}
 
 .trayectoriaYPosiciones span.profile-description{}
+
+/*==== Accordions ====*/
+.trayectoria  .accordion h3{
+	background-color: #B0D0ED;
+	color: #fff;
+}
+.answer{}
+
+
+.answerContainer{ padding-bottom: 15px;
+}
