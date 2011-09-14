@@ -188,7 +188,7 @@ blockquote {
 
 /*==== Accordions ====*/
 .accordion h3{
-	 background: url("../img/arrow_sprite.png") no-repeat scroll right 8px #EDEFF0;
+	 background: url("../img/arrow_sprite.png") no-repeat scroll right 6px #EDEFF0;
     color: #747A7E;
     cursor: pointer;
     display: block;

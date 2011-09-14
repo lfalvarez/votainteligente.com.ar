@@ -33,7 +33,9 @@ echo $this->Html->script('accordionForProfiles');
    
                 </section>
                  <aside class="profileAside"> 
-                	<div class="sideButton"></div>
+                	<div class="sideButton compare"><a>Compara</a></div>
+                    <div class="sideButton medianaranja"><a>Media<wbr /> Naranja</a></div>
+                    <div class="sideButton share"><a>Comparte</a></div>
                 </aside>
                 <section class="enlacesPersonales">
                 	<h3 style="display:none;">Enlaces personales:</h3>

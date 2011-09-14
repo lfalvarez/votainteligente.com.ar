@@ -18,6 +18,9 @@ h3 {
     word-wrap: break-word;
 }
 
+
+/*-----------candidatesBasicInformation---------*/
+
 .candidatesBasicInformation {
 	position: relative;
 	line-height: 21px;
@@ -68,10 +71,26 @@ span.profile-description{
     width: 266px;
 }
 
-.enlacesPersonales a{ color: #99aab1;}
+.enlacesPersonales a{ 
+	background: url("../img/ic_arrow_right.png") no-repeat scroll 3px -3px transparent;
+    color: #99AAB1;
+    padding-left: 26px;
+}
 .ulEnlacesPersonales{}
+
+.enlacesPersonales .twitter a{ 
+	background: url("../img/ic_tweet.png") no-repeat scroll 1px -3px transparent;
+}
+
+.enlacesPersonales .facebook a{ 
+	background: url("../img/ic_fb.png") no-repeat scroll 6px -3px transparent;
+}
+
 .twitter{}
 .facebook{}
+
+
+/*==== aside buttons ====*/
 
 .profileAside{
 	border-left: 1px dotted #99AAB1;
@@ -82,17 +101,68 @@ span.profile-description{
     position: relative;
     width: 60px;
 }
+
 .sideButton{
-	height: 60px;
-    width: 60px;
+	border: 1px solid #E2E3E4;
+    border-radius: 10px 10px 10px 10px;
+    display: block;
+    font-family: 'AllerBold',Helvetica,Arial,sans-serif;
+    font-size: 11px;
+    font-variant: small-caps;
+    height: 50px;
+    line-height: 10px;
+    margin-bottom: 7px;
+    padding: 5px;
+    position: relative;
+    text-align: center;
+    text-transform: lowercase;
+    vertical-align: bottom;
+    width: 50px;
+}
+.sideButton a{
+	 bottom: 1px;
+    cursor: pointer;
+    display: block;
+    height: 15px;
+    left: 1px;
+    padding: 35px 5px 0;
+    position: absolute;
+    text-align: center;
+    width: 50px;
+	color: #747B7E;
 }
 
+.sideButton a:hover{text-decoration: none;}
+
+.sideButton.medianaranja a{
+	bottom: 7px;
+}
+
+.compare{background: url("../img/bt_compare.gif") no-repeat scroll 0 -0 transparent;}
+.medianaranja{background: url("../img/bt_orange.gif") no-repeat scroll -3px -3px transparent;}
+.share{background:url("../img/bt_share.gif") no-repeat scroll -4px -1px transparent;}
+
+.compare:active{background-position: 0 -63px;}
+.medianaranja:active{background-position: -3px -66px;}
+.share:active{background-position: -4px -69px;}
+
+
+
+.sideButton:hover{ border-bottom: 2px solid #CED4DA; border-right: 1px solid #D7DADD; border-left: 1px solid #D7DADD; border-top:1px solid #D7DADD; margin-bottom: 6px;} /*99AAB1*/
+
+
+
+/*==== TRAYECTORIA Y POSICIONES===*/
+
 .trayectoriaYPosiciones{
-	background: url("../img/bg_Section2.png") repeat-x scroll 0 2px,
-	url("../img/dotline.gif") repeat-y scroll 300px 50px #FFFFFF;
+	background: url("../img/bg_Section2.png") repeat-x scroll 0 2px, 
+				url("../img/line_v.gif") repeat-y scroll 0 0pt,
+				url("../img/line_v.gif") repeat-y scroll right 0pt, 
+				url("../img/dotline.gif") repeat-y scroll 300px 50px #FFFFFF;
+    border-bottom: 1px solid #BCBEC0;
+    margin-bottom: 30px;
     overflow: hidden;
     padding: 10px;
-	margin-bottom: 30px;
 }
 .trayectoriaYPosiciones .wrapW{}
 
@@ -141,3 +211,5 @@ span.profile-description{
 
 .answerContainer{ padding-bottom: 15px;
 }
+
+
