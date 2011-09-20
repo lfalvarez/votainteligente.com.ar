@@ -1,36 +1,88 @@
-.candidatesLists {
+.leftContent{
+	border-right: 1px dotted;
     float: left;
+    margin-right: 10px;
+    width: 578px;
+
 }
+.comparisonBox {
+    display: block;
+    height: 235px;
+}
+.candidatesLists {
+
+}
+
 .firstCandidate {
-    width: 250px;
+    width: 275px;
     float: left;
+	margin-right: 22px;
 }
 .secondCandidate {
     width: 250px;
     float: left;
 }
 .categories {
-    width: 250px;
-    float: left;
+  float: left;
     margin-top: 50px;
+    width: 275px;
 }
 .comparisonResult {
-    width: 500px;
     margin-top: 30px;
 }
 .questionInComparison {
-    width: 100%;
-    border: 1px solid;
+    background: none repeat scroll 0 0 #A2B2BD;
+    border: 1px solid #99AAB1;
+    color: white;
+    margin-bottom: 4px;
+    padding: 3px 6px;
+    width: 557px;
+	clear: both;
 }
+.answerSpace{
+	margin-bottom: 20px;
+    overflow: hidden;
+    width: 570px;
+}
+
+.answerSpace ul{
+	clear: none;
+    width: 274px;
+	display: block;
+	float:left;
+}
+
+.answerSpace li{
+    padding: 2px 10px;
+	display: block;
+	
+}
+
 .answerInComparison {
 
 }
+
 .answered {
     font-weight: bold;
+	background-color: #DFEAF7;
 }
-.notAnswered {
-    font-weight: normal;
+
+.notAnswered {}
+
+
+.firstCandidatesAnswer {
+	 padding-right: 10px;
+	  border-right: 1px dotted;
+    
 }
-.candidatesSpace {
-    width:240px;
+.secondCandidatesAnswer {
+	 padding-left: 10px;
+
+
+}
+.candidateBasicComparisonQuestion {
+    font-weight: bold;
+}
+.candidateBasicComparisonAnswer {
+
 }
