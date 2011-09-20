@@ -15,14 +15,14 @@ class CompareController extends AppController {
 	    if (!is_null($data)) {
 		$elements = $this->_decodeData($data);
 		if (!is_null($elements)){
-		    $firstCandidate = $elements['firstCandidate']['Candidate'];
-		    $secondCandidate = $elements['secondCandidate']['Candidate'];
+		    $firstCandidate = $elements['firstCandidate'];
+		    $secondCandidate = $elements['secondCandidate'];
 		    $this->set('firstCandidate',$firstCandidate);
 		    $this->set('secondCandidate',$secondCandidate);
 		    $this->set('categoryId',$elements['categoryId']);
 		    $this->set('redirectAgain',false);
 		    $this->set("title_for_layout",'Comparar candidatos');
-		    $this->_compare($firstCandidate['id'],$secondCandidate['id'],$elements['categoryId']);
+		    $this->_compare($firstCandidate['Candidate']['id'],$secondCandidate['Candidate']['id'],$elements['categoryId']);
 		}
 	    }
 	    $this->set("title_for_layout",'Comparar candidatos');
@@ -59,7 +59,10 @@ class CompareController extends AppController {
 	    $candidates = $elements[0];
 	    $categorySlug = $elements[1];
 	    $candidates = explode('_vs_',$candidates,2);
+	    $this->Candidate->Behaviors->attach('Containable');
+	    $this->Candidate->contain('CandidateProfile');
 	    $firstCandidate = $this->Candidate->findBySlug($candidates[0]);
+	    $this->Candidate->contain('CandidateProfile');
 	    $secondCandidate = $this->Candidate->findBySlug($candidates[1]);
 	    $category = $this->Category->findBySlug($categorySlug);
 	    if ( empty($firstCandidate) || empty($secondCandidate) || empty($category)) {

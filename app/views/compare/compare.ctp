@@ -5,56 +5,67 @@ foreach($questions as $question) {
     $secondCandidateDidntAnswerThisQuestion = true;
 ?>
 <div class="questionInComparison"><?php echo $question['Question']['question']; ?></div>
-
-    <table>
-    <?php foreach ($question['Answer'] as $answer) {
-        $answerAndQuestionAreSet = isset($weights[$question['Question']['id']]) && isset($weights[$question['Question']['id']][$answer['id']]);
-
-        ?>
-        <tr>
-            <td class="candidatesSpace answerInComparison <?php
-
-            $firstCandidateAnsweredThis = $answerAndQuestionAreSet && in_array($idFirstCandidate,$weights[$question['Question']['id']][$answer['id']]);
-            if ($firstCandidateAnsweredThis) {
-                $firstCandidateDidntAnswerThisQuestion = false;
-                echo 'answered';
+    <div class="answerSpace">
+        <ul class="firstCandidatesAnswer">
+            <?php foreach ($question['Answer'] as $answer) {
+                $answerAndQuestionAreSet = isset($weights[$question['Question']['id']]) && isset($weights[$question['Question']['id']][$answer['id']]);
+        
+                ?>
+                    <li class=" answerInComparison <?php
+        
+                    $firstCandidateAnsweredThis = $answerAndQuestionAreSet && in_array($idFirstCandidate,$weights[$question['Question']['id']][$answer['id']]);
+                    if ($firstCandidateAnsweredThis) {
+                        $firstCandidateDidntAnswerThisQuestion = false;
+                        echo 'answered';
+                    }
+                    else {
+                        echo 'notAnswered';
+                    } ?>"><?php echo $answer['answer'];?></li>
+        
+        
+            <?php
             }
-            else {
-                echo 'notAnswered';
-            } ?>">
-            ·<?php echo $answer['answer'];?>
-            </td>
-            <td class="candidatesSpace answerInComparison <?php
-
-            $secondCandidateAnsweredThis = $answerAndQuestionAreSet && in_array($idSecondCandidate,$weights[$question['Question']['id']][$answer['id']]);
-            if ($secondCandidateAnsweredThis) {
-                $secondCandidateDidntAnswerThisQuestion = false;
-                echo 'answered';
+            ?>
+            <?php
+            if ($firstCandidateDidntAnswerThisQuestion) {
+                ?>
+                <li class="candidatesSpace answerInComparison answered">
+                Sin información
+                </li>
+            <?php
             }
-            else{
-                echo 'notAnswered';
-            } ?>">·<?php echo $answer['answer'];?>
-            </td>
-        </tr>
-    <?php
-    }
-    if ($firstCandidateDidntAnswerThisQuestion||$secondCandidateDidntAnswerThisQuestion) {
-        ?>
-        <tr>
-            <td class="candidatesSpace answerInComparison <?php
-                if ($firstCandidateDidntAnswerThisQuestion) { echo 'answered';} else { echo 'notAnswered'; }
-            ?>">
-                ·Sin información
-            </td>
-            <td class="candidatesSpace answerInComparison <?php
-                if ($secondCandidateDidntAnswerThisQuestion) { echo 'answered';} else { echo 'notAnswered'; }
-            ?>">
-                ·Sin información
-            </td>
-        </tr>
-        <?php
-    }
-    ?>
-    </table>
+            ?>
+        </ul>
+        <ul class="secondCandidatesAnswer">
+            <?php foreach ($question['Answer'] as $answer) {
+                $answerAndQuestionAreSet = isset($weights[$question['Question']['id']]) && isset($weights[$question['Question']['id']][$answer['id']]);
+        
+                ?>
+        
+                    <li class="answerInComparison <?php
+        
+                    $secondCandidateAnsweredThis = $answerAndQuestionAreSet && in_array($idSecondCandidate,$weights[$question['Question']['id']][$answer['id']]);
+                    if ($secondCandidateAnsweredThis) {
+                        $secondCandidateDidntAnswerThisQuestion = false;
+                        echo 'answered';
+                    }
+                    else{
+                        echo 'notAnswered';
+                    } ?>"><?php echo $answer['answer'];?>
+                    </li>
+            <?php
+            }
+            ?>
+            <?php
+            if ($secondCandidateDidntAnswerThisQuestion) {
+            ?>
+                <li class="candidatesSpace answerInComparison answered">
+                Sin información
+                </li>
+            <?php
+            }
+            ?>
+        </ul>
+    </div>
 <?php } ?>
 </div>
