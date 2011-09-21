@@ -17,12 +17,8 @@
 	<tr<?php echo $class;?>>
 		<td><?php echo $candidate['Candidate']['name']; ?>&nbsp;</td>
 		<td><?php
-		if (!is_null($candidate['Candidate']['imageurl']) && $candidate['Candidate']['imageurl']!='') {
-		    $image = $candidate['Candidate']['imageurl'];
-		}
-		else {
+
 		    $image = $candidate['Candidate']['imagepath'];
-		}
 
 		echo $this->Html->image($image,array('width'=>100)); ?>&nbsp;</td>
 		<td class="actions">

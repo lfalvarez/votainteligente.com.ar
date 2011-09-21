@@ -150,7 +150,7 @@ class Candidate extends AppModel {
 	    foreach ($results as $key => $val) {
 		    if (isset($val['Candidate']) && isset($val['Candidate']['imagepath'])) {
 			if (!$this->isUrl($results[$key]['Candidate']['imagepath'])) {
-			    $results[$key]['Candidate']['imagepath'] = 'candidate/imagepath/'.$results[$key]['Candidate']['imagepath'];
+			    $results[$key]['Candidate']['imagepath'] = '/img/candidate/imagepath/'.$results[$key]['Candidate']['imagepath'];
 			}
 
 		    }
