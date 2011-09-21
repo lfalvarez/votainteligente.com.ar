@@ -29,7 +29,7 @@ class CompareController extends AppController {
         }
         function _compare($firstCandidateId,$secondCandidateId,$categoryId){
             $questions         = $this->Category->Question->findAllForCompare($categoryId);
-            $category          = $this->Category->find('first',array('fields'=>array('id'),'conditions'=>array('id'=>$categoryId)));
+            $category          = $this->Category->find('first',array('fields'=>array('id','name'),'conditions'=>array('id'=>$categoryId)));
             $idsQuestion       = array();
             foreach ($questions as $question) {
                 $idsQuestion[] = $question['Question']['id'];
