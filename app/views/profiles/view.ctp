@@ -28,9 +28,18 @@ echo $this->Html->script('accordionForProfiles');
 
                 </section>
                  <aside class="profileAside">
-                	<div class="sideButton compare"><a>Compara</a></div>
-                    <div class="sideButton medianaranja"><a>Media<wbr /> Naranja</a></div>
-                    <div class="sideButton share"><a>Comparte</a></div>
+                	<div class="sideButton compare"><a href="<?php echo Router::url(array('controller'=>'compare','action'=>'/',$profile['Candidate']['slug']));?>">Compara</a></div>
+                    <div class="sideButton medianaranja"><a href="<?php Configure::load('facebook');echo Router::url(Configure::read('Facebook.APP_URL'));?>">Media<wbr /> Naranja</a></div>
+
+		    <!-- AddThis Button BEGIN -->
+		    <div class="addthis_toolbox sideButton share">
+		    <!-- AddThis Button BEGIN -->
+		    <a class="addthis_button" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=ra-4e7a236a4a5434b2">Comparte</a>
+
+		    <!-- AddThis Button END -->
+		    </div>
+		    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4e7a236a4a5434b2"></script>
+		    <!-- AddThis Button END -->
                 </aside>
                 <section class="enlacesPersonales">
                 	<h3 style="display:none;">Enlaces personales:</h3>

@@ -16,13 +16,17 @@ class CompareController extends AppController {
 		$elements = $this->_decodeData($data);
 		if (!is_null($elements)){
 		    $firstCandidate = $elements['firstCandidate'];
-		    $secondCandidate = $elements['secondCandidate'];
 		    $this->set('firstCandidate',$firstCandidate);
-		    $this->set('secondCandidate',$secondCandidate);
-		    $this->set('categoryId',$elements['categoryId']);
-		    $this->set('redirectAgain',false);
+		    $this->set('idFirstCandidate',$firstCandidate['Candidate']['id']);
 		    $this->set("title_for_layout",'Comparar candidatos');
-		    $this->_compare($firstCandidate['Candidate']['id'],$secondCandidate['Candidate']['id'],$elements['categoryId']);
+		    if(isset($elements['secondCandidate'])) {
+			$secondCandidate = $elements['secondCandidate'];
+			$this->set('secondCandidate',$secondCandidate);
+			$this->set('idSecondCandidate',$secondCandidate['Candidate']['id']);
+			$this->set('categoryId',$elements['categoryId']);
+			$this->set('redirectAgain',false);
+			$this->_compare($firstCandidate['Candidate']['id'],$secondCandidate['Candidate']['id'],$elements['categoryId']);
+		    }
 		}
 	    }
 	    $this->set("title_for_layout",'Comparar candidatos');
@@ -37,8 +41,6 @@ class CompareController extends AppController {
             $weightsOfBothCandidates    = array();
             $this->Category->Question->Weight->getWeightsForQuestionsForACandidate($weightsOfBothCandidates,$idsQuestion,$firstCandidateId);
             $this->Category->Question->Weight->getWeightsForQuestionsForACandidate($weightsOfBothCandidates,$idsQuestion,$secondCandidateId);
-            $this->set('idFirstCandidate',$firstCandidateId);
-            $this->set('idSecondCandidate',$secondCandidateId);
             $this->set('weights',$weightsOfBothCandidates);
             $this->set('category',$category);
             $this->set('questions',$questions);
@@ -51,7 +53,17 @@ class CompareController extends AppController {
 	    }
 	    return true;
 	}
+
 	function _decodeData($data){
+	    $this->Candidate->Behaviors->attach('Containable');
+	    $this->Candidate->contain('CandidateProfile');
+	    $firstCandidate = $this->Candidate->findBySlug($data);
+	    $isOnlyOneCandidate = !empty($firstCandidate);
+	    if($isOnlyOneCandidate){
+		return array(
+		    'firstCandidate' => $firstCandidate
+		);
+	    }
 	    if(!$this->_comparisonDataChecker($data)){
 		return Null;
 	    }
