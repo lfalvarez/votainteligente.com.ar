@@ -1,10 +1,11 @@
+<h3><?php echo $category['Category']['name'];?></h3>
+
 <?php
 
 foreach($questions as $question) {
     $firstCandidateDidntAnswerThisQuestion = true;
     $secondCandidateDidntAnswerThisQuestion = true;
 ?>
-<h3><?php echo $category['Category']['name'];?></h3>
 <div class="questionInComparison"><?php echo $question['Question']['question']; ?></div>
     <div class="answerSpace">
         <ul class="firstCandidatesAnswer">
