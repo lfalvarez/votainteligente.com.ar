@@ -5,12 +5,12 @@
  * and open the template in the editor.
  */
 ?>
-<img width="50px" src="<?php
+<img src="<?php
 if(isset($candidate['Candidate']['imagepath'])){
-    echo $candidate['Candidate']['imagepath'];
+    echo Router::url($candidate['Candidate']['imagepath']);
 }
 else {
-    echo Router::url('/img/degault-user.gif');
+    echo Router::url('/img/candidate/imagepath/default-user.gif');
 }
 ?>"></img>
 <div>

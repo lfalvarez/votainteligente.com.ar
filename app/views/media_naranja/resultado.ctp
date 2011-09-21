@@ -22,7 +22,7 @@
 	                              		<table style="width:360px">
                                             <tr>
                                                 <td style="background-color:#FFF; width: 150px; padding:5px;" rowspan="7">
-	                   		                    	<img src="<?php echo $winner['Candidate']['imagepath'];?>" width="150" height="200" />
+	                   		                    	<img src="<?php echo Router::url($winner['Candidate']['imagepath']);?>" width="150" height="200" />
                                                 </td>
                                                 <td style="background-color:#FFF; width:210px; text-align:center" colspan="2">
                                                   	Indices de Compatibilidad
@@ -100,7 +100,7 @@
                             <tr>
 
                             <td style="width:75px" align="center" rowspan="3">
-                                    <img src="<?php echo $other['Candidate']['imagepath'];?>" width="75" height="100" />
+                                    <img src="<?php echo Router::url($other['Candidate']['imagepath']);?>" width="75" height="100" />
                                     </td>
 
                             </tr>

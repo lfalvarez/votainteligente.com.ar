@@ -9,16 +9,11 @@ echo $this->Html->script('accordionForProfiles');
             <h2><?php echo $profile['Candidate']['name'];?></h2>
         </header>
 
-        
+
          <div>
                 <div class="profileImg">
                     <?php
-                    if (!is_null($profile['Candidate']['imageurl']) && $profile['Candidate']['imageurl']!='') {
-                        $image = $profile['Candidate']['imageurl'];
-                    }
-                    else {
-                        $image = $profile['Candidate']['imagepath'];
-                    }
+                    $image = $profile['Candidate']['imagepath'];
                     echo $this->Html->image($image,array('alt'=>$profile['Candidate']['name'])); ?>
                 </div>
 
@@ -29,10 +24,10 @@ echo $this->Html->script('accordionForProfiles');
                     <span class="profile-description">Estado Civil: </span><?php echo $profile['CandidateProfile']['civil_status'];?><br />
                     <span class="profile-description">Hijos: </span><?php echo $profile['CandidateProfile']['sons'];?><br />
                     <span class="profile-description">Religión: </span><?php echo $profile['CandidateProfile']['religion'];?><br />
-                    
-   
+
+
                 </section>
-                 <aside class="profileAside"> 
+                 <aside class="profileAside">
                 	<div class="sideButton compare"><a>Compara</a></div>
                     <div class="sideButton medianaranja"><a>Media<wbr /> Naranja</a></div>
                     <div class="sideButton share"><a>Comparte</a></div>
@@ -51,10 +46,10 @@ echo $this->Html->script('accordionForProfiles');
                    		?>
                     </ul>
                 </section>
-              
-                
+
+
 		</div>
-	</div>  <!--ends candidate basic information--> 
+	</div>  <!--ends candidate basic information-->
          <section class="trayectoriaYPosiciones">
                  <section class="trayectoria">
                     <h2>Antecedentes: </h2>
@@ -72,7 +67,7 @@ echo $this->Html->script('accordionForProfiles');
                                 ?>
                                 </ul>
                             </div>
-    
+
                             <h3>Experiencia política: </h3>
                             <div class="accordionContent">
                                 <ul>
@@ -87,10 +82,10 @@ echo $this->Html->script('accordionForProfiles');
                                     }
                                 }
                                 ?>
-                                </ul>   
-                                
+                                </ul>
+
                             </div>
-    
+
                             <h3>Educación:</h3>
                             <div class="accordionContent">
                                 <span class="profile-description">Educación secundaria: </span><?php echo $profile['CandidateProfile']['highschool'];?><br />
@@ -105,7 +100,7 @@ echo $this->Html->script('accordionForProfiles');
                                     ?>
                                 </ul>
                             </div>
-    
+
                             <h3>Antecedentes laborales: </h3>
                             <div class="accordionContent">
                                 <ul>
@@ -118,7 +113,7 @@ echo $this->Html->script('accordionForProfiles');
                                     ?>
                                 </ul>
                              </div>
-                             
+
                              <h3> Ingresos</h3>
                              <div class="accordionContent">
                                  <span class="profile-description">Ingresos: </span><?php echo $profile['CandidateProfile']['assets'];?><br />
@@ -126,9 +121,9 @@ echo $this->Html->script('accordionForProfiles');
                         </div><!--ends accordion-->
                     </div>  <!--ends brdotted-->
                 </section><!--ends trayectoria-->
-    
+
                 <section class="posiciones">
-    
+
                         <h2>Posicion política en: </h2>
                         <div class="accordion">
                             <?php foreach ($categories as $category) { ?>
@@ -138,7 +133,7 @@ echo $this->Html->script('accordionForProfiles');
                                     <?php
                                     foreach ($category['Question'] as $question) {
                                         $questionDescription = $question['question'];
-                                    
+
                                     ?>
                                    <h4><?php echo $questionDescription;?><?php
 									if ($question['explanation']) {
@@ -159,7 +154,7 @@ echo $this->Html->script('accordionForProfiles');
 											if (!empty($answer['Weight'][0]['SourceOfAnswer'])) {
 											?>
                                             <span class="has-an-explanation answer answerTip" tooltip_message="<?php
-                                            
+
                                                 foreach ($answer['Weight'][0]['SourceOfAnswer'] as $source) {
                                                 echo '&#8226;<span class=\'sentence\'>&quot;'.Sanitize::html($source['sentence']).'&quot;</span> el '.$source['date'].' ';
                                                 if (!is_null($source['link']) && $source['link']!='') {
@@ -168,7 +163,7 @@ echo $this->Html->script('accordionForProfiles');
                                                 else {
                                                 echo Sanitize::html($source['media_name']);
                                                 }
-    
+
                                             }
                                             ?>">&nbsp;</span>
                                             <?php
