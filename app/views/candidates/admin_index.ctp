@@ -26,7 +26,7 @@
 
 		echo $this->Html->image($image,array('width'=>100)); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $candidate['Candidate']['id'])); ?>
+			<?php echo $this->Html->link(__('View', true), array('controller'=>'profiles','action' => 'view','admin'=>false, $candidate['Candidate']['slug'])); ?>
 			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $candidate['Candidate']['id'])); ?>
 			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $candidate['Candidate']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $candidate['Candidate']['id'])); ?>
 		</td>

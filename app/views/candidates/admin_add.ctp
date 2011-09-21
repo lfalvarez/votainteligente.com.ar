@@ -15,7 +15,20 @@
 		    echo $this->Form->input('CandidateProfile.sons',array('label'=>'Cantidad de hijos'));
 		    echo $this->Form->input('CandidateProfile.civil_status',array('label'=>'Estado Civil'));
 		    echo $this->Form->input('CandidateProfile.religion',array('label'=>'Religión'));
-		    echo '@'.$this->Form->input('CandidateProfile.twitter',array('label'=>'Link a Twitter'));
+		    echo '<div class="input text">';
+		    echo $this->Form->label('CandidateProfile.twitter','Twitter (por ej: votainteligente)');
+		    echo '<table>';
+		    echo '<tr>';
+		    echo '<td width="5px;">';
+		    echo '@';
+		    echo '</td>';
+		    echo '<td>';
+		    echo $this->Form->input('CandidateProfile.twitter',array('label'=>false,'div'=>false));
+		    echo '</td>';
+		    echo '</tr>';
+		    echo '</table>';
+		    echo '</div>';
+
 		    ?>
 		    <fieldset>
 			<label>Facebook</label>
