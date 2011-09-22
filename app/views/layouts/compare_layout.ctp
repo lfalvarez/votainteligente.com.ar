@@ -1,4 +1,4 @@
-<?php echo $this->element('header',array('js'=>array(),'css'=>array('compare', 'style', 'nav')));?>
+<?php echo $this->element('header',array('js'=>array('dropDownLists'),'css'=>array('compare', 'style', 'nav','dropDownList')));?>
 <?php echo $this->element('comparator-js');?>
    <article class="wrapper wrapW">
                 <ul id="errors">
@@ -9,13 +9,13 @@
                             <div class="candidatesLists">
                                 <div class="firstCandidate">
                                     <select name="firstCandidate">
-                                    <option value="0">Seleciona un candidato</option>
+                                    <option value="0" data-skip="1">Seleciona un candidato</option>
                                     <?php foreach($candidates as $candidate) {
                                     $isThisCandidateSelected = isset($idFirstCandidate) && $idFirstCandidate==$candidate['Candidate']['id'];
                                     ?>
-                                    <option value="<?php echo $candidate['Candidate']['id'];?>" <?php
+                                    <option data-html-text="<?php echo $candidate['Candidate']['name'];?>" data-icon="<?php echo Router::url($candidate['Candidate']['imagepath'],true);?>" value="<?php echo $candidate['Candidate']['id'];?>" <?php
                                     if($isThisCandidateSelected) {
-                                        echo 'Selected';
+                                        echo 'SELECTED';
                                     }
                                     ?> ><?php echo $candidate['Candidate']['name'] ;?></option>
                                     <?php } ?>
@@ -23,21 +23,21 @@
 				    <div>
 				    <?php
 				    if(isset($firstCandidate)) {
-					echo $this->element('basic_profile_left',array('candidate'=>$firstCandidate));
+					echo $this->element('basic_profile',array('candidate'=>$firstCandidate));
 				    }
 				    else {
-					echo $this->element('basic_profile_left');
+					echo $this->element('basic_profile');
 				    }
 				    ?>
 				    </div>
                                 </div>
                                 <div class="secondCandidate">
                                     <select name="secondCandidate">
-                                    <option value="0">Seleciona un candidato</option>
+                                    <option value="0" data-skip="1">Seleciona un candidato</option>
                                     <?php foreach($candidates as $candidate) {
                                     $isThisCandidateSelected = isset($idSecondCandidate) && $idSecondCandidate==$candidate['Candidate']['id'];
                                     ?>
-                                    <option value="<?php echo $candidate['Candidate']['id'];?>" <?php
+                                    <option data-html-text="<?php echo $candidate['Candidate']['name'];?>" data-icon="<?php echo Router::url($candidate['Candidate']['imagepath'],true);?>" value="<?php echo $candidate['Candidate']['id'];?>" <?php
                                     if($isThisCandidateSelected) {
                                         echo 'Selected';
                                     }
@@ -47,10 +47,10 @@
 				    <div>
 				    <?php
 					if(isset($secondCandidate)) {
-					    echo $this->element('basic_profile_right',array('candidate'=>$secondCandidate));
+					    echo $this->element('basic_profile',array('candidate'=>$secondCandidate));
 					}
 					else {
-					    echo $this->element('basic_profile_right');
+					    echo $this->element('basic_profile');
 					}
 
 				    ?>
@@ -63,15 +63,20 @@
                             </section>
                         </div>
                         <aside class="categories">
+                        	<ul class="categoriesList">
+
                             <?php foreach ($categories as $category) {?>
-                            <?php
-                            $selected = false;
-                            if(isset($categoryId) && $categoryId == $category['Category']['id']) {
-                                $selected = true;
-                            }
-                            echo $this->Form->radio(null,array($category['Category']['id']=>$category['Category']['name']),array('checked'=>$selected,'id'=>'category_'.$category['Category']['id'],'name'=>'category'));
-                            ?><br />
+                                <li>
+                                <?php
+                                $selected = false;
+                                if(isset($categoryId) && $categoryId == $category['Category']['id']) {
+                                    $selected = true;
+                                }
+                                echo $this->Form->radio(null,array($category['Category']['id']=>$category['Category']['name']),array('checked'=>$selected,'id'=>'category_'.$category['Category']['id'],'name'=>'category'));
+                                ?>
+                                </li>
                             <?php } ?>
+                            <ul>
                         </aside>
 
 
