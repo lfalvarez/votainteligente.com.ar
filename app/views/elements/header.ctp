@@ -3,12 +3,16 @@
 <head>
     <meta charset="utf-8">
     <?php echo $this->Html->charset(); ?>
-    <title>Vota Inteligente <?php
+    <?php
+    $title = 'Vota Inteligente ';
+    $description = '';
     if ($this->getVar('title_for_layout')) {
-	echo ' - ';
-	echo $this->getVar('title_for_layout');
+	$title .= ' - ';
+	$title .= $this->getVar('title_for_layout');
+	$description = $this->getVar('title_for_layout');
     }
-    ?></title>
+    ?>
+    <title><?php $title; ?></title>
     <?php echo $this->Html->script('jquery'); ?>
     <?php
     foreach ($js as $javascript) {
@@ -24,6 +28,8 @@
     <!--[if IE]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <meta property="og:title" content="<?php echo $title; ?>" />
+    <meta property="og:description" content="<?php echo $description;?>" />
 
 </head>
 <body class="no-js">
