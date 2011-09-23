@@ -5,42 +5,61 @@
 	height:34px;
 	display:inline-block;
 	min-width:200px;
-	position:relative;
+	position:absolute;
 
 	/* Preloading the background image for the dropdown */
 	background:url("http://demo.tutorialzine.com/2010/11/better-select-jquery-css3/img/dropdown_slice.png") no-repeat -99999px;
 }
 
 .tzSelect .selectBox{
-	position:absolute;
-
-	height:100%;
-	width:100%;
-
-	/* Font settings */
-
-	font:13px/34px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	text-align:center;
-	text-shadow:1px 1px 0 #EEEEEE;
-	color:#666666;
-
-	/* Using CSS3 multiple backgrounds and a fallback */
-
-	background:url('http://demo.tutorialzine.com/2010/11/better-select-jquery-css3/img/select_slice.png') repeat-x #ddd;
-	background-image:url('http://demo.tutorialzine.com/2010/11/better-select-jquery-css3/img/select_slice.png'),url('http://demo.tutorialzine.com/2010/11/better-select-jquery-css3/img/select_slice.png'),url('http://demo.tutorialzine.com/2010/11/better-select-jquery-css3/img/select_slice.png'),url('http://demo.tutorialzine.com/2010/11/better-select-jquery-css3/img/select_slice.png');
-	background-position:0 -136px, right -204px, 50% -68px, 0 0;
-	background-repeat: no-repeat, no-repeat, no-repeat, repeat-x;
-
-	cursor:pointer;
-
-	-moz-border-radius:3px;
-	-webkit-border-radius:3px;
-	border-radius:3px;
+	background: url("../img/arrow_sprite.png") no-repeat scroll right 10px #B0D0ED;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: 'AllerBold';
+    font-size: 14px;
+    height: 100%;
+    line-height: 34px;
+    overflow: hidden;
+    padding: 0 24px;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .tzSelect .selectBox:hover,
 .tzSelect .selectBox.expanded{
-	background-position:0 -170px, right -238px, 50% -102px, 0 -34px;
-	color:#2c5667;
-	text-shadow:1px 1px 0 #9bc2d0;
+	color:#4D7799;
+}
+
+.dropDown{
+	background-color: #F3F3F3;
+    box-shadow: 0 2px 4px #6C6C6C;
+	-moz- box-shadow: 0 2px 4px #6C6C6C;
+	-webkit- box-shadow: 0 2px 4px #6C6C6C;
+    padding: 10px;
+    position: relative;
+    z-index: 30000;
+	margin: 0 1px;
+}
+	
+
+.dropDown li{
+	 background-color: #FFFFFF;
+    height: 40px;
+    margin-bottom: 10px;
+	cursor: pointer;
+    overflow: hidden;
+}
+
+.dropDown li:hover{
+	background-color: #E0E5E9;
+}
+
+.dropDown li span{
+	bottom: 15px;
+    display: inline-block;
+    margin-left: 11px;
+    position: relative;
+}
+.tzSelect .dropDown img{
+	height: 40px;
 }

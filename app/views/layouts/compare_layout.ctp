@@ -20,16 +20,16 @@
                                     ?> ><?php echo $candidate['Candidate']['name'] ;?></option>
                                     <?php } ?>
                                     </select>
-				    <div>
-				    <?php
-				    if(isset($firstCandidate)) {
-					echo $this->element('basic_profile',array('candidate'=>$firstCandidate));
-				    }
-				    else {
-					echo $this->element('basic_profile');
-				    }
-				    ?>
-				    </div>
+                                    <div class="basicProfileContainer">
+										<?php
+                                        if(isset($firstCandidate)) {
+                                        echo $this->element('basic_profile',array('candidate'=>$firstCandidate));
+                                        }
+                                        else {
+                                        echo $this->element('basic_profile');
+                                        }
+                                        ?>
+                                    </div>
                                 </div>
                                 <div class="secondCandidate">
                                     <select name="secondCandidate">
@@ -44,17 +44,17 @@
                                     ?>><?php echo $candidate['Candidate']['name'] ;?></option>
                                     <?php } ?>
                                     </select>
-				    <div>
-				    <?php
-					if(isset($secondCandidate)) {
-					    echo $this->element('basic_profile',array('candidate'=>$secondCandidate));
-					}
-					else {
-					    echo $this->element('basic_profile');
-					}
-
-				    ?>
-				    </div>
+                                    <div class="basicProfileContainer">
+                                        <?php
+                                        if(isset($secondCandidate)) {
+                                            echo $this->element('basic_profile',array('candidate'=>$secondCandidate));
+                                        }
+                                        else {
+                                            echo $this->element('basic_profile');
+                                        }
+                    
+                                        ?>
+                                     </div>
                                 </div>
                              </div><!-- /candidatesLists-->
                            </header>
