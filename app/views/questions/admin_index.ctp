@@ -1,6 +1,27 @@
+<?php echo $this->Html->script('jquery.editinplace'); ?>
+<script>
+    $(document).ready(function(){
+	$(".editInPlace").editInPlace({
+		saving_animation_color: "#ECF2F8",
+		callback: function(idOfEditor, enteredText, orinalHTMLContent, settingsParams, animationCallbacks) {
+			/*animationCallbacks.didStartSaving();
+			setTimeout(animationCallbacks.didEndSaving, 2000);
+			return enteredText;*/
+
+			var categoryId = $(this).attr('categoryId');
+			var data = {
+			    'data[name]':enteredText
+			};
+			$.post('<?php echo Router::url(array('prefix' => 'admin', 'controller'=>'categories','action'=>'editName'));?>/'+categoryId,data);
+
+			return enteredText;
+		}
+	});
+    });
+</script>
 <div class="questions index">
     <?php foreach ($orderedQuestions as $categoryId=>$category) {?>
-    <h2><?php echo $category['name']; ?></h2>
+    <h2 class="editInPlace" categoryId="<?php echo $categoryId; ?>"><?php echo $category['name']; ?></h2>
     <?php echo $this->Html->link('Agregar otra pregunta', '/admin/questions/add/'.$categoryId); ?>
     -
     <?php echo $this->Html->link('Elimina la categoria '.$category['name'], array('controller'=>'categories','action' => 'delete', $categoryId), null, sprintf(__('Estas seguro de querer eliminar la categoria %s y todas sus preguntas', true), $category['name'])); ?>

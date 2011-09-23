@@ -86,4 +86,14 @@ class CategoriesController extends AppController {
 		$this->Session->setFlash(__('Category was not deleted', true));
 		$this->redirect(array('action' => 'index','controller'=>'questions'));
 	}
+	function admin_editName($id){
+	    $this->layout = 'script';
+	    $newName = $this->data['name'];
+	    $this->Category->read(null,$id);
+	    $this->Category->set('name',$newName);
+	    $this->Category->save();
+	    $category = $this->Category->read('name',$id);
+	    $this->set('newName',$category['Category']['name']);
+
+	}
 }
