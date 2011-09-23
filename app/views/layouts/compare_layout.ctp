@@ -63,6 +63,7 @@
                             </section>
                         </div>
                         <aside class="categories">
+                        	<h3 class="categoriesTitle"> Temas</h3>
                         	<ul class="categoriesList">
 
                             <?php foreach ($categories as $category) {?>

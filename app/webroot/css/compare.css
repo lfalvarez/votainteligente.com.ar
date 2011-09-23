@@ -1,3 +1,13 @@
+#errors{
+	background-color: #FCDBDB;
+    color: #EF3C39;
+    margin-bottom: 10px;
+}
+#errors li{ 
+	padding:10px 30px 10px 42px;
+	background: url("../img/error.png") no-repeat scroll 6px 6px transparent;
+}
+
 .leftContent{
 	border-right: 1px dotted;
     float: left;
@@ -54,13 +64,14 @@
 }
 .categories {
 	float: left;
-    margin-top: 50px;
-    width: 275px;
-	margin-right: 7px;
+    margin-right: 7px;
+    width: 285px;
 }
 .categoriesList li{
 	margin-top: 10px;
 }
+
+.categoriesList input{margin-right: 10px;}
 
 
 
@@ -132,4 +143,8 @@ h3 {
     text-align: center;
     text-transform: uppercase;
     width: 557px;
+}
+h3.categoriesTitle{
+	background-color: #A2B3BD;
+	width: 100%;
 }
