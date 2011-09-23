@@ -114,7 +114,7 @@
 	background-color: #DFEAF7;
 }
 
-.notAnswered {}
+.notAnswered { display: none;}
 
 
 .firstCandidatesAnswer {
