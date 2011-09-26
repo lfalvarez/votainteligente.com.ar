@@ -33,4 +33,21 @@
 
 </head>
 <body class="no-js">
-    <h1>Vota inteligente</h1>
+	<div>
+        <header id="mainHeader" class="wrapBasic">
+            <a href="<?php echo Router::url('/');?>"><img class="isotipo" src="<?php echo Router::url('/img/isotipo_vi.png');?>" />
+            <img class="logotipo" src="<?php echo Router::url('/img/logotipo_vi.png');?>" />
+            </a>
+            
+            <h1 style="display: none;">Vota inteligente</h1>
+        </header>
+        <nav id="mainNavigation">
+        	<div class="wrapBasic">
+                <ul >
+                    <li> <a href="#">MEDIA NARANJA</a></li>
+                    <li> <a href="#">PERFILES</a></li>
+                    <li> <a href="#">COMPARAR</a></li>
+                </ul>
+            </div>
+        </nav>
+      </div>
