@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* CSS Document */
 
-body{ font-family: 'AllerRegular', Helvetica, Arial, sans-serif; font-size: 13px; color: #2D2D2D; background-color: #F2F2F2; line-height:19px;}
+body{ font-family: 'AllerRegular', Helvetica, Arial, sans-serif; font-size: 13px; color: #2D2D2D; background-color: #FFF; line-height:19px;}
 
 
 /*
@@ -14,6 +14,8 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 	margin: 0; 
 	padding: 0;
 }
+
+pre .cake-debug{ display: block; position:absolute; }
 
 fieldset, img { border: 0; }
 
@@ -137,7 +139,17 @@ blockquote {
 }
 /*LAYOUT*/
 
-.wrapper{width: 892px; margin: auto;}
+.wrapper{
+	background-color: #F2F2F2;
+    margin: 20px auto;
+    padding: 20px;
+    width: 890px;
+}
+.wrapBasic{
+	margin: auto;
+    width: 930px;
+}
+
 .wrapW{ 
 	background-color: #FFFFFF;
     border: 1px solid #BCBEC0;
@@ -146,6 +158,21 @@ blockquote {
     padding: 10px;
 }
 
+/*HEADER*/
+
+#mainHeader{
+	margin-top: -20px;
+	background: url(../img/bg_head.jpg) repeat-y 0 0 #fff;
+}
+
+.isotipo{
+	display: inline;
+    left: 10px;
+    margin-right: 6px;
+    position: relative;
+    top: 27px;
+    z-index: 4;
+}
 
 
 
@@ -153,15 +180,17 @@ blockquote {
 /*SIDEBAR LEFT*/
 
 #sidebarLeft {
-    background-color: #D6DCE0;
+	 background-color: rgba(227, 227, 227, 0.9);
     border-right: 2px solid white;
     box-shadow: 1px 1px 1px #DDDDDD;
     display: block;
+    height: 100%;
     left: 0;
     max-width: 300px;
     padding: 10px;
     position: absolute;
     width: 250px;
+    z-index: 100;
 }
 .sidebarMenu{ list-style: none;}
 
