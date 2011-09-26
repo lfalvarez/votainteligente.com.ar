@@ -9,6 +9,7 @@
 		if (firstCandidate<1){
 		    $('#errors').append('<li>Debes seleccionar el primer candidato</li>');
 		} else {
+		    displayFirstCandidatesDescription();
 		    obtainCandidatesAndCategory();
 		}
 	});
@@ -18,11 +19,25 @@
 	    if (secondCandidate<1){
 		$('#errors').append('<li>Debes seleccionar el segundo candidato</li>');
 	    } else {
+		displaySecondCandidatesDescription();
 		obtainCandidatesAndCategory();
 	    }
 
 	});
     });
+    function displayFirstCandidatesDescription(){
+	var candidate_id = $('select[name=firstCandidate] option:selected').val();
+	var where = $('.firstCandidate .basicProfileContainer');
+	displayShortDescription(where,candidate_id);
+    }
+    function displaySecondCandidatesDescription(){
+	var candidate_id = $('select[name=secondCandidate] option:selected').val();
+	var where = $('.secondCandidate .basicProfileContainer');
+	displayShortDescription(where,candidate_id);
+    }
+    function displayShortDescription(where,candidate_id){
+	$.post('<?php echo Router::url(array('controller'=>'compare','action'=>'showCandidateBasicProfile'));?>/'+candidate_id,function(data){where.html(data);});
+    }
     function obtainCandidatesAndCategory(){
 	var category            = $('input[name=category]:checked').val();
 	var firstCandidate      = $('select[name=firstCandidate] option:selected').val();

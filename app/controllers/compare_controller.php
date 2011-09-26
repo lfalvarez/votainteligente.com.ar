@@ -31,6 +31,13 @@ class CompareController extends AppController {
 	    }
 	    $this->set("title_for_layout",'Comparar candidatos');
         }
+	function showCandidateBasicProfile($candidateId){
+	    $this->layout = 'script';
+	    $this->Candidate->Behaviors->attach('Containable');
+	    $this->Candidate->contain('CandidateProfile');
+	    $candidate = $this->Candidate->findById($candidateId);
+	    $this->set('candidate',$candidate);
+	}
         function _compare($firstCandidateId,$secondCandidateId,$categoryId){
             $questions         = $this->Category->Question->findAllForCompare($categoryId);
             $category          = $this->Category->find('first',array('fields'=>array('id','name'),'conditions'=>array('id'=>$categoryId)));
