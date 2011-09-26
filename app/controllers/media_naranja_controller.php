@@ -87,8 +87,8 @@ class MediaNaranjaController extends AppController {
 	    $facebookWallPublication = array(
 		'title'=>$title,
 		'caption'=>Configure::read('Facebook.MEDIANARANJA.wall.caption'),
-		'image'=>$winner['Candidate']['imagepath'],
-		'image_link'=>$winner['Candidate']['imagepath'],//it should link to the candidates profile
+		'image'=>Router::url($winner['Candidate']['imagepath'],true),
+		'image_link'=>Router::url('/profiles/view/'.$winner['Candidate']['slug'],true),//it should link to the candidates profile
 		'text'=>Configure::read('Facebook.MEDIANARANJA.wall.action_link.text'),
 		'href'=>Configure::read('Facebook.MEDIANARANJA.wall.action_link.href'),
 	    );
