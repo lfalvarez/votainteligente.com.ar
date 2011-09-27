@@ -45,7 +45,7 @@
         	<div class="wrapBasic">
                 <ul >
                     <li> <a href="<?php Configure::load('facebook');echo Router::url(Configure::read('Facebook.APP_URL'));?>">MEDIA NARANJA</a></li>
-                    <li> <a href="<?php echo Router::url("/");?>">PERFILES</a></li>
+                    <li> <a href="<?php echo Router::url("/profiles/");?>">PERFILES</a></li>
                     <li> <a href="<?php echo Router::url(array('controller'=>'compare','action'=>'/'));?>">COMPARAR</a></li>
                 </ul>
             </div>
