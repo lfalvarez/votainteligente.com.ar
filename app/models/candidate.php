@@ -7,6 +7,7 @@ class Candidate extends AppModel {
 			'notempty' => array('rule' => array('notempty')),
 		)
 	);
+	var $order = "Candidate.name ASC";
 	var $actsAs = array(
 		'MeioUpload' => array(
 		    'imagepath' => array(
