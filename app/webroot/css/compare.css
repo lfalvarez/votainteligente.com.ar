@@ -39,9 +39,9 @@
     width: 275px;
     float: left;
 }
+
 .basicProfileContainer{
 	margin-top: 40px;
-	
 }
 
 .firstCandidate img.candidateComparedImage, .secondCandidate img.candidateComparedImage{ 
@@ -65,7 +65,7 @@
 .categories {
 	float: left;
     margin-right: 7px;
-    width: 285px;
+    width: 265px;
 }
 .categoriesList li{
 	margin-top: 10px;
