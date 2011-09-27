@@ -1,11 +1,11 @@
 #errors{
 	background-color: #FCDBDB;
     color: #EF3C39;
-    margin-bottom: 10px;
 }
 #errors li{ 
 	padding:10px 30px 10px 42px;
 	background: url("../img/error.png") no-repeat scroll 6px 6px transparent;
+	margin-bottom: 10px;
 }
 
 .leftContent{
@@ -27,12 +27,18 @@
 	 width: 275px;
 }
 
-
+.instruction {
+    background-color: #DFEAF7;
+    font-weight: bold;
+    margin-right: 10px;
+    padding: 20px;
+    text-align: center;
+}
 
 .firstCandidate {
     width: 275px;
     float: left;
-	margin-right: 22px;
+	margin-right: 17px;
 }
 
 .secondCandidate {
@@ -109,6 +115,7 @@
 
 }
 
+
 .answered {
     font-weight: bold;
 	background-color: #DFEAF7;
@@ -147,4 +154,5 @@ h3 {
 h3.categoriesTitle{
 	background-color: #A2B3BD;
 	width: 100%;
+	line-height: 24px;
 }
