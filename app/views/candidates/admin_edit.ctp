@@ -5,7 +5,8 @@
 		<legend><?php __('Admin Edit Candidate'); ?></legend>
 	<?php
 		echo $this->Form->input('id');
-		echo $this->Form->input('name',array('label'=>'Nombre'));
+		echo $this->Form->input('first_name',array('label'=>'Nombre'));
+		echo $this->Form->input('last_name',array('label'=>'Apellido'));
 		echo $this->Html->image($this->data['Candidate']['imagepath']);
 		echo $this->Form->input('imagepath',array('label'=>'Selecciona una imagen','type' => 'file'));
 

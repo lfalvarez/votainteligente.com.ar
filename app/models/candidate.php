@@ -3,11 +3,14 @@ class Candidate extends AppModel {
 	var $name = 'Candidate';
 	var $displayField = 'name';
 	var $validate = array(
-		'name' => array(
+		'first_name' => array(
+			'notempty' => array('rule' => array('notempty')),
+		),
+		'last_name' => array(
 			'notempty' => array('rule' => array('notempty')),
 		)
 	);
-	var $order = "Candidate.name ASC";
+	var $order = "Candidate.last_name ASC";
 	var $actsAs = array(
 		'MeioUpload' => array(
 		    'imagepath' => array(
@@ -114,6 +117,7 @@ class Candidate extends AppModel {
 	    return $profile;
 	}
 	function beforeSave($options = array()) {
+	    $this->data['Candidate']['name'] = $this->data['Candidate']['first_name'].' '.$this->data['Candidate']['last_name'];
 	    $this->data['Candidate']['slug']=$this->slugifyName($this->data['Candidate']['name']);
 	    return true;
 	}
