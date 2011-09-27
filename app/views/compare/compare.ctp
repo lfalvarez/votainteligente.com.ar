@@ -70,4 +70,3 @@ foreach($questions as $question) {
         </ul>
     </div>
 <?php } ?>
-</div>
