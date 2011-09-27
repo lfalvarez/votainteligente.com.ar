@@ -31,7 +31,7 @@
  * its action called 'display', and we pass a param to select the view file
  * to use (in this case, /app/views/pages/home.ctp)...
  */
-	Router::connect('/', array('controller' => 'profiles', 'action' => 'index', 'index'));
+	Router::connect('/', array('controller' => 'index', 'action' => 'index', 'index'));
 	Router::connect('/profiles/:slug', array('controller' => 'profiles', 'action' => 'view'), array(
 	    'pass'=>array('slug'),
 	    'slug'=>'[a-z0-9\-]+'
