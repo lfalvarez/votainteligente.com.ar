@@ -6,7 +6,7 @@ class QuestionsController extends AppController {
         var $helpers = array('Admin');
 	function admin_index() {
 		$this->paginate = array(
-		    'order'=>'category_id'
+		    'order'=>array('Question.category_id','Question.order')
 		);
 		$this->Question->recursive = 0;
 		$questions = $this->paginate();
@@ -124,5 +124,13 @@ class QuestionsController extends AppController {
 		}
 		$this->Session->setFlash(__('Question was not deleted', true));
 		$this->redirect(array('action' => 'index'));
+	}
+	function admin_moveUp($id) {
+	    $this->Question->moveUp($id);
+	    $this->redirect(array('controller'=>'questions','action'=>'index'));
+	}
+	function admin_moveDown($id) {
+	    $this->Question->moveDown($id);
+	    $this->redirect(array('controller'=>'questions','action'=>'index'));
 	}
 }

@@ -9,12 +9,13 @@ class Question extends AppModel {
 		'category_id'=>array(
 		    'notempty' => array('rule' => array('notempty')),
 		    ),
-		'order'=>array(
-		    'numeric' => array('rule' => array('numeric')),
-		    )
 	);
         var $order = "Question.order ASC";
-	var $actAs = array('Containable');
+	var $actsAs = array(
+		'List' => array(
+		    'positionColumn'=>'order'
+		)
+	    );
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 	var $belongsTo = array(

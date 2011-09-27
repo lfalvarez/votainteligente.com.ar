@@ -51,7 +51,10 @@
 		    <td><?php echo $question['Question']['short_description']; ?>&nbsp;</td>
 		    <td><?php echo $this->Admin->booleanValue($question['Question']['public']); ?>&nbsp;</td>
 		    <td><?php echo $this->Admin->booleanValue($question['Question']['included_in_media_naranja']); ?>&nbsp;</td>
-		    <td><?php echo $question['Question']['order']; ?>&nbsp;</td>
+		    <td><?php echo $this->Html->link('&uarr;', '/admin/questions/moveUp/'.$question['Question']['id'],array('escape'=>false)); ?>
+			-
+			<?php echo $this->Html->link('&darr;', '/admin/questions/moveDown/'.$question['Question']['id'],array('escape'=>false)); ?>
+		    </td>
 		    <td class="actions">
 			    <?php echo $this->Html->link(__('View', true), array('action' => 'view', $question['Question']['id'])); ?>
 			    <?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $question['Question']['id'])); ?>

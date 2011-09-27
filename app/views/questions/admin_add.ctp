@@ -13,7 +13,6 @@
 		echo $this->Html->link('Agregar otra categoria', '/admin/categories/add_ajax/', array('id' => 'addAnotherCategory'));
 		echo $this->Form->input('public',array('checked'=>true,'label'=>'¿pública?'));
 		echo $this->Form->input('included_in_media_naranja',array('type'=>'checkbox','label'=>'¿Incluida en la media naranja?','checked'=>true));
-		echo $this->Form->input('order',array('label'=>'Orden'));
 	?>
 	</fieldset>
 	<fieldset>
