@@ -8,6 +8,7 @@ class ProfilesController extends AppController {
 	    $this->_getAllCandidates();
 	}
 	function index(){
+		$this->layout = 'default';
 	}
 	function view($slug){
 	    $candidate = $this->Candidate->findBySlug($slug);

@@ -144,6 +144,7 @@ blockquote {
     margin: 20px auto;
     padding: 20px;
     width: 890px;
+	overflow: hidden;
 }
 .wrapBasic{
 	margin: auto;
@@ -217,7 +218,7 @@ blockquote {
 
 /*==== Accordions ====*/
 .accordion h3{
-	 background: url("../img/arrow_sprite.png") no-repeat scroll right 6px #EDEFF0;
+	background: url("../img/arrow_sprite.png") no-repeat scroll right 6px #EDEFF0;
     color: #747A7E;
     cursor: pointer;
     display: block;
