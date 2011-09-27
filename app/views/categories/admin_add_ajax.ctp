@@ -15,7 +15,6 @@
 		<legend><?php __('Admin Add Category'); ?></legend>
 	<?php
 		echo $this->Form->input('name');
-		echo $this->Form->input('sort',array('value'=>$maxOrder));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>

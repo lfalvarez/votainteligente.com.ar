@@ -96,4 +96,12 @@ class CategoriesController extends AppController {
 	    $this->set('newName',$category['Category']['name']);
 
 	}
+	function admin_moveUp($id){
+	    $this->Category->moveUp($id);
+	    $this->redirect(array('controller'=>'questions','action'=>'index','prefix'=>'admin'));
+	}
+	function admin_moveDown($id){
+	    $this->Category->moveDown($id);
+	    $this->redirect(array('controller'=>'questions','action'=>'index','prefix'=>'admin'));
+	}
 }

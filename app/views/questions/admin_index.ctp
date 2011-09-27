@@ -25,6 +25,10 @@
     <?php echo $this->Html->link('Agregar otra pregunta', '/admin/questions/add/'.$categoryId); ?>
     -
     <?php echo $this->Html->link('Elimina la categoria '.$category['name'], array('controller'=>'categories','action' => 'delete', $categoryId), null, sprintf(__('Estas seguro de querer eliminar la categoria %s y todas sus preguntas', true), $category['name'])); ?>
+    -
+    <?php echo $this->Html->link('&uarr;', '/admin/categories/moveUp/'.$categoryId,array('escape'=>false)); ?>
+    -
+    <?php echo $this->Html->link('&darr;', '/admin/categories/moveDown/'.$categoryId,array('escape'=>false)); ?>
     <table cellpadding="0" cellspacing="0">
     <tr>
 		    <th><?php echo $this->Paginator->sort('question');?></th>
