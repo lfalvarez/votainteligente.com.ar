@@ -54,7 +54,7 @@ class CompareController extends AppController {
 	    $this->render('compare');
         }
 	function _comparisonDataChecker($data){
-	    $dataRight = preg_match('/[a-z\-]+_vs_[a-z\-]+_en_[a-z\-]+/', $data,$matches);
+	    $dataRight = preg_match('/[a-z\-\0-9]+_vs_[a-z\-\0-9]+_en_[a-z\-\0-9]+/', $data,$matches);
 	    if (!$dataRight || count($matches)>1) {
 		return false;
 	    }
