@@ -13,7 +13,8 @@ class Question extends AppModel {
         var $order = "Question.order ASC";
 	var $actsAs = array(
 		'List' => array(
-		    'positionColumn'=>'order'
+		    'positionColumn'=>'order',
+		    'scope'=>'category_id'
 		)
 	    );
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
