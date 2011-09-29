@@ -30,6 +30,13 @@
     <![endif]-->
     <meta property="og:title" content="<?php echo $title; ?>" />
     <meta property="og:description" content="<?php echo $description;?>" />
+    <?php
+    if (isset($facebookShareImage)) {
+    ?>
+    <meta property="og:image" content="<?php echo $facebookShareImage; ?>" />
+    <?php
+    }
+    ?>
 
 </head>
 <body class="no-js">

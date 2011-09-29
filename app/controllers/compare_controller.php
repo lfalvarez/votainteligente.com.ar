@@ -26,7 +26,7 @@ class CompareController extends AppController {
 			$this->set('idSecondCandidate',$secondCandidate['Candidate']['id']);
 			$this->set('categoryId',$elements['categoryId']);
 			$this->set('redirectAgain',false);
-			$this->set("title_for_layout",$firstCandidate['Candidate']['name'].' v/s '.
+			$this->set("title_for_layout",$firstCandidate['Candidate']['name'].' vs '.
 				$secondCandidate['Candidate']['name'].' en '.$elements['category']['name']);
 			$this->_compare($firstCandidate['Candidate']['id'],$secondCandidate['Candidate']['id'],$elements['categoryId']);
 		    }
