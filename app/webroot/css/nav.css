@@ -10,7 +10,6 @@ nav ul { padding:0; margin:0; }
 nav li { position:relative; float:left; list-style-type:none; }
 nav ul:after { content:"."; display:block; height:0; clear:both; visibility:hidden; }
 nav a span { display:block; float:rightright; margin-left:5px; }
-nav ul ul { display:none; width:100%; position:absolute; left:0;  }
 nav ul ul li { float:none; }
 
 /* CSS3 */

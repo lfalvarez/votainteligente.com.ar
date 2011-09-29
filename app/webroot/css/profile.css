@@ -142,7 +142,8 @@ span.profile-description{
 .medianaranja{background: url("../img/bt_orange.gif") no-repeat scroll -3px -3px transparent;}
 .share{background:url("../img/bt_share.gif") no-repeat scroll -4px -1px transparent;}
 
-.compare:active{background-position: 0 -63px;}
+.compare:active{background-position: 0 -63
+/**/px;}
 .medianaranja:active{background-position: -3px -66px;}
 .share:active{background-position: -4px -69px;}
 
@@ -213,3 +214,5 @@ span.profile-description{
 }
 
 
+/*TOOLTIPS*/
+.explanationAnswer .sentence{}
