@@ -8,10 +8,10 @@ body{ font-family: 'AllerRegular', Helvetica, Arial, sans-serif; font-size: 13px
  * Browser Reset
  */
 
- 
- 
+
+
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
-	margin: 0; 
+	margin: 0;
 	padding: 0;
 }
 
@@ -19,11 +19,11 @@ pre .cake-debug{ display: block; position:absolute; }
 
 fieldset, img { border: 0; }
 
- 
+
 a:focus { outline: none; }
 
- 
- 
+
+
 html {
 	height: 100%;
 	margin-bottom: 1px;
@@ -151,7 +151,7 @@ blockquote {
     width: 930px;
 }
 
-.wrapW{ 
+.wrapW{
 	background-color: #FFFFFF;
     border: 1px solid #BCBEC0;
     float: none;
@@ -227,7 +227,7 @@ blockquote {
     text-transform: uppercase;
 }
 
-.accordionContent{ 
+.accordionContent{
 	margin-bottom: 5px;
     padding: 4px 3px 15px;
 }
@@ -268,7 +268,7 @@ ul.homeNav{}
 .homeLi:hover{
 	box-shadow: 0px 0px 10px #8EA3AE inset;
 	background-color: #C4D4D9;
-	
+
 }
 
 .homeLi h2{
@@ -284,17 +284,17 @@ ul.homeNav{}
 	margin-right: 0px;
 }
 
-.homeListMedianaranja{ 
-	background-image: url("../img/ic_media_Home.png");
-    
+.homeListMedianaranja{
+	background-image: url("../img/ic_media_home.png");
+
 }
 
 .homeListPerfiles {
-	background-image: url("../img/ic_profile_Home.png");
+	background-image: url("../img/ic_profile_home.png");
 }
 
 .homeListComparar{
-	background-image: url("../img/ic_compara_Home.png");
+	background-image: url("../img/ic_compara_home.png");
 }
 
 ul.homeNav ul.sidebarMenu{
@@ -317,22 +317,22 @@ ul.homeNav ul.sidebarMenu{
     width: 890px;
 	height: 56px;
 }
-	
-.wrapFoot .proyectoDe{ 
+
+.wrapFoot .proyectoDe{
  	float: left;
 	display: block
-	
+
  }
- 
-.wrapFoot .FCI{ 
+
+.wrapFoot .FCI{
  	float: right;
 	display: block;
-	width: 300px; 
+	width: 300px;
 	text-align: right;
  }
  .wrapFoot .FCI h3{ float: right; right: 20px; text-align: right;}
- 
- 
+
+
  .wrapFoot h3{
 	background: none repeat scroll 0 0 transparent;
     color: white;
@@ -342,7 +342,7 @@ ul.homeNav ul.sidebarMenu{
     text-transform: uppercase;
     top: -20px;
  }
- 
+
  .logos li{
 	border-right: 2px dotted #6CADDF;
     float: left;

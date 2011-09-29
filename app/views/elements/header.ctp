@@ -12,7 +12,7 @@
 	$description = $this->getVar('title_for_layout');
     }
     ?>
-    <title><?php $title; ?></title>
+    <title><?php echo $title; ?></title>
     <?php echo $this->Html->script('jquery'); ?>
     <?php
     foreach ($js as $javascript) {
@@ -38,13 +38,13 @@
             <a href="<?php echo Router::url('/');?>"><img class="isotipo" src="<?php echo Router::url('/img/isotipo_vi.png');?>" />
             <img class="logotipo" src="<?php echo Router::url('/img/logotipo_vi.png');?>" />
             </a>
-            
+
             <h1 style="display: none;">Vota inteligente</h1>
         </header>
         <nav id="mainNavigation">
         	<div class="wrapBasic">
                 <ul >
-                    <li> <a href="<?php Configure::load('facebook');echo Router::url(Configure::read('Facebook.APP_URL'));?>">MEDIA NARANJA</a></li>
+                    <li> <a href="<?php Configure::load('facebook');echo Router::url(Configure::read('Facebook.APP_URL'));?>" target="_blank">MEDIA NARANJA</a></li>
                     <li> <a href="<?php echo Router::url("/profiles/");?>">PERFILES</a></li>
                     <li> <a href="<?php echo Router::url(array('controller'=>'compare','action'=>'/'));?>">COMPARAR</a></li>
                 </ul>
