@@ -233,3 +233,71 @@ blockquote {
 }
 .questionTip{background: url("../img/question_icon_grey.gif") no-repeat scroll 0 0 transparent; height: 14px; width: 20px; cursor: pointer;}
 .answerTip{background:url("../img/source_icon_grey.gif") no-repeat scroll 2px 4px transparent; height: 14px; width: 20px; cursor: pointer;}
+
+
+
+/*======= HOME ========*/
+
+#homeNavigation{}
+ul.homeNav{}
+.homeLi{
+	 background-color: #DAE2E5;
+    background-position: center top;
+    background-repeat: no-repeat;
+    border: 1px solid #C4D4D9;
+    border-radius: 22px 22px 22px 22px;
+    float: left;
+    height: 237px;
+    margin-right: 29px;
+    overflow: hidden;
+    padding: 15px;
+    position: relative;
+    text-align: center;
+    width: 245px;
+	cursor: pointer;
+}
+
+.homeLi a{
+	display: block;
+    height: 100%;
+    margin: -10px;
+    padding: 10px;
+    width: 100%;
+}
+
+.homeLi:hover{
+	box-shadow: 0px 0px 10px #8EA3AE inset;
+	background-color: #C4D4D9;
+	
+}
+
+.homeLi h2{
+	bottom: 10px;
+    color: #92A0A9;
+    font-size: 28px;
+    margin: 10px -15px;
+    position: absolute;
+    text-align: center;
+    width: 100%;}
+
+.homeLi:last-child{
+	margin-right: 0px;
+}
+
+.homeListMedianaranja{ 
+	background-image: url("../img/ic_media_Home.png");
+    
+}
+
+.homeListPerfiles {
+	background-image: url("../img/ic_profile_Home.png");
+}
+
+.homeListComparar{
+	background-image: url("../img/ic_compara_Home.png");
+}
+
+ul.homeNav ul.sidebarMenu{
+	 margin-bottom: 43px;
+}
+
