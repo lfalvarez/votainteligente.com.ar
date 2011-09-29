@@ -246,6 +246,8 @@ ul.homeNav{}
     background-repeat: no-repeat;
     border: 1px solid #C4D4D9;
     border-radius: 22px 22px 22px 22px;
+	-moz-border-radius: 22px 22px 22px 22px;
+	-webkit-border-radius: 22px 22px 22px 22px;
     float: left;
     height: 237px;
     margin-right: 29px;
@@ -267,6 +269,8 @@ ul.homeNav{}
 
 .homeLi:hover{
 	box-shadow: 0px 0px 10px #8EA3AE inset;
+	-moz-box-shadow: 0px 0px 10px #8EA3AE inset;
+	-webkit-box-shadow: 0px 0px 10px #8EA3AE inset;
 	background-color: #C4D4D9;
 
 }
@@ -300,6 +304,9 @@ ul.homeNav{}
 ul.homeNav ul.sidebarMenu{
 	 margin-bottom: 43px;
 }
+
+
+/*===== FOOTER ======*/
 
 #footer{
 	background-color: #6CADDF;
