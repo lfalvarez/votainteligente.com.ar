@@ -11,6 +11,7 @@ class CompareController extends AppController {
 	    if (isset($categories[0]['Category']['id'])) {
 		$this->set('categoryId',$categories[0]['Category']['id']);
 	    }
+	    $this->set("title_for_layout",'Comparar candidatos');
             $this->set('candidates',$candidates);
 	    if (!is_null($data)) {
 		$elements = $this->_decodeData($data);
@@ -25,11 +26,13 @@ class CompareController extends AppController {
 			$this->set('idSecondCandidate',$secondCandidate['Candidate']['id']);
 			$this->set('categoryId',$elements['categoryId']);
 			$this->set('redirectAgain',false);
+			$this->set("title_for_layout",$firstCandidate['Candidate']['name'].' v/s '.
+				$secondCandidate['Candidate']['name'].' en '.$elements['category']['name']);
 			$this->_compare($firstCandidate['Candidate']['id'],$secondCandidate['Candidate']['id'],$elements['categoryId']);
 		    }
 		}
 	    }
-	    $this->set("title_for_layout",'Comparar candidatos');
+
         }
 	function showCandidateBasicProfile($candidateId){
 	    $this->layout = 'script';
@@ -90,7 +93,8 @@ class CompareController extends AppController {
 	    return array(
 		'firstCandidate'=>$firstCandidate,
 		'secondCandidate'=>$secondCandidate,
-		'categoryId'=>$category['Category']['id']
+		'categoryId'=>$category['Category']['id'],
+		'category' => $category['Category']
 	    );
 	}
 	function _encodeData($firstCandidateId,$secondCandidateId,$categoryId){
