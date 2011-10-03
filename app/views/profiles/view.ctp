@@ -196,7 +196,7 @@ echo $this->Html->script('accordionForProfiles');
                       </div>  <!-- ends accordion-->
                 </section><!--ends posiciones-->
         </section><!--ends trayectoriaYPosiciones-->
-
+	<?php echo $this->element('facebook_comment',array('width'=>890));?>
 </article>
 
 

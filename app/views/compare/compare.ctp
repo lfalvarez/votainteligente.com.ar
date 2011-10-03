@@ -70,3 +70,4 @@ foreach($questions as $question) {
         </ul>
     </div>
 <?php } ?>
+<?php echo $this->element('facebook_comment',array('width'=>570));?>
