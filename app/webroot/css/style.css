@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* CSS Document */
 
-body{ font-family: 'AllerRegular', Helvetica, Arial, sans-serif; font-size: 13px; color: #2D2D2D; background-color: #FFF; line-height:19px; overflow: hidden;
+body{ font-family: 'AllerRegular', Helvetica, Arial, sans-serif; font-size: 13px; color: #2D2D2D; background-color: #FFF; line-height:19px; overflow-x: hidden;
     width: 100%;}
 
 

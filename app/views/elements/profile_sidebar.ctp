@@ -1,12 +1,12 @@
-<div id="sidebarLeftContainer">    
+<div id="sidebarLeftContainer">
     <div id="sidebarTrigger">
     trigger
     </div>
     <div id="sidebarLeft">
-    
+
         <ul class="sidebarMenu">
         <?php
-    
+
         foreach( $candidates as $candidate ){
             echo '<li>'.$this->Html->link($this->Html->image($candidate['Candidate']['imagepath']).'<span>'.$candidate['Candidate']['name'].'</span>',array(
             'controller'=>'profiles',
@@ -18,17 +18,21 @@
         }
         ?>
         </ul>
-    
+
     </div>
 </div>
 
 <script>
     $('#sidebarTrigger').click(
     function(){
-	$('#sidebarLeft').animate({
-	    width: ['toggle', 'swing'],
-	    opacity: 1
-	  }, 'slow', 'linear', null);
+	$('#sidebarLeft').toggle(0,function(){
+	    if ($(this).is(":visible")) {
+		$('#sidebarTrigger').css('left',280);
+	    }
+	    else {
+		$('#sidebarTrigger').css('left',0);
+	    }
+	});
     }
 
     );
