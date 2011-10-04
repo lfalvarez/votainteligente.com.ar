@@ -50,7 +50,7 @@ foreach($categories as $category){
 
                                             </td>
                                             <td colspan="5">
-                                                    <img src="http://www.votainteligente.cl/medianaranja/images/importancia_eq.png" width="126" height="24" />
+                                                    <img src="<?php echo Router::url('/img/importancia_eq.png'); ?>" width="126" height="24" />
                                             </td>
                                             <td>
 

@@ -60,10 +60,10 @@
             <table align="left" style="width:760px;" cellpadding="0" cellspacing="0" border="0">
                 <td style="text-align:left; width:500px">
 
-                    <img src="http://www.votainteligente.cl/medianaranja/images/fb_header_1.png" width="500" height="113" border="0" />
+                   <img src="<?php echo Router::url('/img/fb_header_1.png'); ?>" width="500" height="113" border="0" />
                 </td>
                 <td style="text-align:left; width:260px">
-                    <a href="http://www.votainteligente.cl/" target="_blank"><img src="http://www.votainteligente.cl/medianaranja/images/fb_header_2.png" width="260" height="113" border="0" /></a>
+                    <a href="http://www.ciudadanointeligente.org/" target="_blank"> <img src="<?php echo Router::url('/img/fb_header_2.png'); ?>" width="260" height="113" border="0" /></a>
                 </td>
             </table>
      	</td>

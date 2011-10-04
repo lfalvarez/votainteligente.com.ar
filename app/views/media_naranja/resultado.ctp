@@ -50,7 +50,7 @@
                                            	</tr>
 						</table>
                                     </td>
-                                    <td style="background-color:#cce599; width:15px">&nbsp;
+                                    <td style=" width:15px">&nbsp;
 
                                     </td>
                                     <td style="background-color:#FFF; width:260px; padding:10px">
@@ -67,7 +67,7 @@
                                            <h2> Y {sino} estas de Acuerdo con el Resultado.</h2>
                                         <block end="blockConfirmado"/-->
                                     </td>
-                                    <td style="width:60px; background-color:#cce599">&nbsp;
+                                    <td style="width:60px;  ">&nbsp;
 
                                     </td>
                                 </tr>
