@@ -4,6 +4,7 @@ class ProfilesController extends AppController {
 	var $name = 'Profiles';
 	var $uses = array('Candidate');
 	var $layout = 'profile_layout';
+	var $helpers = array('Time');
 	function beforeFilter() {
 	    $this->_getAllCandidates();
 	}

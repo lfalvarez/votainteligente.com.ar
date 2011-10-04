@@ -19,7 +19,7 @@ echo $this->Html->script('accordionForProfiles');
 
                 <section class="personalInfo">
                     <h3 style="display:none;"> Información personal</h3>
-                    <span class="profile-description">Nacimiento: </span><?php echo $profile['CandidateProfile']['birth'];?><br />
+                    <span class="profile-description">Nacimiento: </span><?php echo $this->Time->format('d/m/Y',$profile['CandidateProfile']['birth']);?><br />
                     <span class="profile-description">Profesión: </span><?php echo $profile['CandidateProfile']['profession'];?><br />
                     <span class="profile-description">Estado Civil: </span><?php echo $profile['CandidateProfile']['civil_status'];?><br />
                     <span class="profile-description">Hijos: </span><?php echo $profile['CandidateProfile']['sons'];?><br />
@@ -165,7 +165,7 @@ echo $this->Html->script('accordionForProfiles');
                                             <span class="has-an-explanation answer answerTip" tooltip_message="<?php
 
                                                 foreach ($answer['Weight'][0]['SourceOfAnswer'] as $source) {
-                                                echo '&#8226;<span class=\'sentence\'>&quot;'.Sanitize::html($source['sentence']).'&quot;</span> el '.$source['date'].' ';
+                                                echo '&#8226;<span class=\'sentence\'>&quot;'.Sanitize::html($source['sentence']).'&quot;</span> el '.$this->Time->format('d/m/Y',$source['date']).' ';
                                                 if (!is_null($source['link']) && $source['link']!='') {
                                                 echo '<a class=\'media-name\' href=\''.$source['link'].'\' target=\'_blank\'>'.Sanitize::html($source['media_name']).'</a><br />';
                                                 }
