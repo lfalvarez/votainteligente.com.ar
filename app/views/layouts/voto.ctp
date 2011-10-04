@@ -73,7 +73,7 @@
   	<table class="tablaEncuesta">
         <tr>
             <td class="titulo" style="font-weight:normal" colspan="2">
-            	La media naranja es una aplicación en la que podrás conocer tu cercanía con los candidatos a las presidencia. Esto NO es un juego. Los datos los hemos recopilado de diferentes fuentes periodísticas y por ello los temas y opciones que ponemos a disposición son sólo aquellas que los candidatos han declarado. Son las posiciones REALES de los candidatos que aspiran a ocupar la presidencia de nuestro país. El proceso de búsqueda, los criterios de selección y la forma de procesamiento de los datos que utilizamos en la media naranja política los puedes conocer en www.votainteligente.com.ar.
+            	La media naranja es una aplicación en la que podrás conocer tu cercanía con los candidatos a las presidencia. Esto NO es un juego. Los datos los hemos recopilado de diferentes fuentes periodísticas y por ello los temas y opciones que ponemos a disposición son sólo aquellas que los candidatos han declarado. Son las posiciones REALES de los candidatos que aspiran a ocupar la presidencia de nuestro país.
             </td>
         </tr>
         <tr>
