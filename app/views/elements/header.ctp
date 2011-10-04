@@ -30,6 +30,8 @@
     <![endif]-->
     <meta property="og:title" content="<?php echo $title; ?>" />
     <meta property="og:description" content="<?php echo $description;?>" />
+    <meta property="og:type" content="non_profit" />
+    <meta property="og:url" content="<?php echo Router::url($this->here, true);?>" />
     <?php
     if (isset($facebookShareImage)) {
     ?>
