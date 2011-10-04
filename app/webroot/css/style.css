@@ -1,7 +1,8 @@
 @charset "UTF-8";
 /* CSS Document */
 
-body{ font-family: 'AllerRegular', Helvetica, Arial, sans-serif; font-size: 13px; color: #2D2D2D; background-color: #FFF; line-height:19px;}
+body{ font-family: 'AllerRegular', Helvetica, Arial, sans-serif; font-size: 13px; color: #2D2D2D; background-color: #FFF; line-height:19px; overflow: hidden;
+    width: 100%;}
 
 
 /*
@@ -180,20 +181,47 @@ blockquote {
 
 /*SIDEBAR LEFT*/
 
+#sidebarLeftContainer {
+	position: absolute;
+    width: 280px;
+    z-index: 100;
+	height: 100%;
+}
+
+#sidebarTrigger {
+    background: url("../img/trigger.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    float: right;
+    height: 110px;
+    left: 279px;
+    position: absolute;
+    text-indent: 10000px;
+    top: 20px;
+    width: 32px;
+    z-index: 3;
+}
+
 #sidebarLeft {
-	 background-color: rgba(227, 227, 227, 0.9);
+	 background-color: rgba(214, 220, 224, 0.9);
     border-right: 2px solid white;
     box-shadow: 1px 1px 1px #DDDDDD;
     display: block;
+    float: left;
     height: 100%;
     left: 0;
-    max-width: 300px;
+    overflow: hidden;
     padding: 10px;
-    position: absolute;
-    width: 250px;
-    z-index: 100;
+    position: relative;
+    width: 260px;
 }
-.sidebarMenu{ list-style: none;}
+.sidebarMenu{
+	left: 5px;
+    list-style: none outside none;
+    overflow: hidden;
+    position: relative;
+    top: 20px;
+    width: 248px;
+}
 
 .sidebarMenu li{
     background-color: #FFFFFF;
