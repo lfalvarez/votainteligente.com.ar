@@ -4,6 +4,7 @@ class CompareController extends AppController {
 	var $name = 'Compare';
         var $uses = array('Candidate','Category');
 	var $layout = 'compare_layout';
+	var $helpers = array('Time');
         function index($data = null){
 	    $candidates = $this->Candidate->find('all');
             $categories = $this->Category->findAllForIndex();

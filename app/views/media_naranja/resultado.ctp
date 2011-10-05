@@ -7,7 +7,7 @@
 
                        	</td>
                     	<td class="titulo">
-                        	Tu Media Naranja Política es...
+                        	<?=__('Tu Media Naranja Política es...');?>
                             <h1><?php echo $winner['Candidate']['name'];?></h1>
                        	</td>
                     </tr>
@@ -61,7 +61,7 @@
                                                 <input type="radio" name="confirmaCandidato" value="yes"> Si<br />
                                                 <input type="radio" name="confirmaCandidato" value="no"> No<br /><br />
 						<div id="confirm"></div>
-                                                <input type="button" onclick="publishCandidate();" value="Publicar">
+                                                <input type="button" onclick="publishCandidate();" value="<?=__('Publicar');?>">
                                             </form>
                                         <!--block start="blockConfirmado"/>
                                            <h2> Y {sino} estas de Acuerdo con el Resultado.</h2>
@@ -83,7 +83,7 @@
        	</tr>
         <tr>
             <td class="titulo2" colspan="2">
-            	Compatibilidad con otros Candidatos
+            	<?=__('Compatibilidad con otros Candidatos');?>
             </td>
         </tr>
 
@@ -106,7 +106,7 @@
                             </tr>
                             <tr>
                                     <td align="center">
-                                    <strong>Indices de Compatibilidad</strong>
+                                    <strong><?=__('Indices de Compatibilidad');?></strong>
                                     </td>
                             </tr>
                             <tr>
@@ -147,7 +147,7 @@
         </tr>
         <tr>
             <td colspan="2" class="titulo">
-            	Invita a tus amigos a participar
+            	<?=__('Invita a tus amigos a participar');?>
             </td>
         </tr>
         <tr>
@@ -159,8 +159,8 @@
 			    action='<?php echo $facebookAppUrl; ?>'
 			    method='POST'
 			    type='Vota inteligente'
-			    content="Revisa quien es tu media naranja<fb:req-choice url='<?php echo $facebookAppUrl; ?>' label='Register'/>"
-			<fb:multi-friend-selector actiontext="Invita a tus amigos a participar"></fb:multi-friend-selector>
+			    content="<?=__('Revisa quien es tu media naranja');?><fb:req-choice url='<?php echo $facebookAppUrl; ?>' label='Register'/>"
+			<fb:multi-friend-selector actiontext="<?=__('Invita a tus amigos a participar');?>"></fb:multi-friend-selector>
 		     </fb:request-form>
 		   </fb:fbml>
 		  </script>

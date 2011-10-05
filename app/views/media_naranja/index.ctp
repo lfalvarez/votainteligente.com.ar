@@ -39,7 +39,7 @@ foreach($categories as $category){
 				   value="0"
 				   id="Answer_0_<?php echo $question['Question']['id']; ?>"
 				   question_id="<?php echo $question['Question']['id']; ?>">
-			    <label for="Answer_0_<?php echo $question['Question']['id']; ?>">Ninguna de las anteriores representa mi posici&oacute;n</label><br /><br />
+			    <label for="Answer_0_<?php echo $question['Question']['id']; ?>"><?=__('Ninguna de las anteriores representa mi posici&oacute;n');?></label><br /><br />
                     </td>
                     <td>
                     </td>
@@ -58,7 +58,7 @@ foreach($categories as $category){
                                     </tr>
                                     <tr>
                                             <td style="font-size:10px;">
-                                                    Muy baja
+                                                    <?=__('Muy baja');?>
                                             </td>
                                             <td>
                                                     <input type="radio" name="data[Category][<?php echo $category['Category']['id'];?>][Question][<?php echo $question['Question']['id']; ?>][Percentage]" value="0.01">
@@ -75,7 +75,7 @@ foreach($categories as $category){
                                             <td>
                                                     <input type="radio" name="data[Category][<?php echo $category['Category']['id'];?>][Question][<?php echo $question['Question']['id']; ?>][Percentage]" value="0.20">
                                             </td>
-                                            <td style="font-size:10px;">Muy alta</td>
+                                            <td style="font-size:10px;"><?=__('Muy alta');?></td>
                                     </tr>
 
                             </table>

@@ -73,12 +73,12 @@
   	<table class="tablaEncuesta">
         <tr>
             <td class="titulo" style="font-weight:normal" colspan="2">
-            	La media naranja es una aplicación en la que podrás conocer tu cercanía con los candidatos a las presidencia. Esto NO es un juego. Los datos los hemos recopilado de diferentes fuentes periodísticas y por ello los temas y opciones que ponemos a disposición son sólo aquellas que los candidatos han declarado. Son las posiciones REALES de los candidatos que aspiran a ocupar la presidencia de nuestro país.
+            	<?= __('La media naranja es una aplicación en la que podrás conocer tu cercanía con los candidatos a las presidencia. Esto NO es un juego. Los datos los hemos recopilado de diferentes fuentes periodísticas y por ello los temas y opciones que ponemos a disposición son sólo aquellas que los candidatos han declarado. Son las posiciones REALES de los candidatos que aspiran a ocupar la presidencia de nuestro país.');?>
             </td>
         </tr>
         <tr>
             <td class="titulo" style="width:415px">
-            	Responde la encuesta y encuentra tu 1/2 naranja política
+            	<?= __('Responde la encuesta y encuentra tu 1/2 naranja política');?>
             </td>
 			<td class="titulo" style="width:305px; vertical-align:bottom">
 				<img src="http://www.votainteligente.cl/medianaranja/images/importancia.png" width="316" height="46" border="0" />
@@ -89,7 +89,7 @@
         <tr>
             <td class="titulo" colspan="2">
 		<div id="media-naranja-form-errors">&nbsp;</div>
-                <input type="submit" value="Buscar Media Naranja">
+                <input type="submit" value="<?= __('Buscar Media Naranja');?>">
             </td>
         </tr>
 

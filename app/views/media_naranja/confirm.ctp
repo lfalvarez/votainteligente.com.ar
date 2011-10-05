@@ -1,1 +1,1 @@
-$('#confirm').text('Confirmado!');
+$('#confirm').text('<?=__('Confirmado!');?>');

@@ -4,13 +4,13 @@
        <article class="wrapW">
                     <ul id="errors">
                     </ul>
-    
+
                         <div class="leftContent">
                             <header class="comparisonBox">
                                 <div class="candidatesLists">
                                     <div class="firstCandidate">
                                         <select name="firstCandidate">
-                                        <option value="0" data-skip="1">Seleciona un candidato</option>
+                                        <option value="0" data-skip="1"><?= __('Seleciona un candidato');?></option>
                                         <?php foreach($candidates as $candidate) {
                                         $isThisCandidateSelected = isset($idFirstCandidate) && $idFirstCandidate==$candidate['Candidate']['id'];
                                         ?>
@@ -34,7 +34,7 @@
                                     </div>
                                     <div class="secondCandidate">
                                         <select name="secondCandidate">
-                                        <option value="0" data-skip="1">Seleciona un candidato</option>
+                                        <option value="0" data-skip="1"><?= __('Seleciona un candidato');?></option>
                                         <?php foreach($candidates as $candidate) {
                                         $isThisCandidateSelected = isset($idSecondCandidate) && $idSecondCandidate==$candidate['Candidate']['id'];
                                         ?>
@@ -53,7 +53,7 @@
                                             else {
                                                 echo $this->element('basic_profile');
                                             }
-                        
+
                                             ?>
                                          </div>
                                     </div>
@@ -64,9 +64,9 @@
                                 </section>
                             </div>
                             <aside class="categories">
-                                <h3 class="categoriesTitle"> Temas</h3>
+                                <h3 class="categoriesTitle"><?= __('Temas');?></h3>
                                 <ul class="categoriesList">
-    
+
                                 <?php foreach ($categories as $category) {?>
                                     <li>
                                     <?php
@@ -80,8 +80,8 @@
                                 <?php } ?>
                                 </ul>
                             </aside>
-    
-    
+
+
        </article>
     </div>
 <?php echo $this->element('footer');?>

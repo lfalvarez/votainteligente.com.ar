@@ -84,8 +84,12 @@ class QuestionsController extends AppController {
 				$checked = false;
 				$disabled = false;
 				if (in_array($idCandidate,$weights)) {
-				    $idWeight = key($weights);
-				    $checked = true;
+				    foreach($weights as $weightId => $weight){
+					if ($weight == $idCandidate) {
+					    $idWeight = $weightId;
+					    $checked = true;
+					}
+				    }
 				}
 				else {
 				    $idWeight = 0;

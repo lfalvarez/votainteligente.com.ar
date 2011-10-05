@@ -32,7 +32,7 @@ foreach($questions as $question) {
             if ($firstCandidateDidntAnswerThisQuestion) {
                 ?>
                 <li class="candidatesSpace answerInComparison answered">
-                Sin información
+                <?=__('Sin información');?>
                 </li>
             <?php
             }
@@ -62,7 +62,7 @@ foreach($questions as $question) {
             if ($secondCandidateDidntAnswerThisQuestion) {
             ?>
                 <li class="candidatesSpace answerInComparison answered">
-                Sin información
+                <?=__('Sin información');?>
                 </li>
             <?php
             }

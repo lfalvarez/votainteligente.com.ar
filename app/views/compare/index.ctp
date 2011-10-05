@@ -1,1 +1,1 @@
-<div class="instruction">Debes seleccionar los dos candidatos y la categoria</div>
+<div class="instruction"><?=__('Debes seleccionar los dos candidatos y la categoria');?></div>

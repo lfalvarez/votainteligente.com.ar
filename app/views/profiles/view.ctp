@@ -18,12 +18,12 @@ echo $this->Html->script('accordionForProfiles');
                 </div>
 
                 <section class="personalInfo">
-                    <h3 style="display:none;"> Información personal</h3>
-                    <span class="profile-description">Nacimiento: </span><?php echo $this->Time->format('d/m/Y',$profile['CandidateProfile']['birth']);?><br />
-                    <span class="profile-description">Profesión: </span><?php echo $profile['CandidateProfile']['profession'];?><br />
-                    <span class="profile-description">Estado Civil: </span><?php echo $profile['CandidateProfile']['civil_status'];?><br />
-                    <span class="profile-description">Hijos: </span><?php echo $profile['CandidateProfile']['sons'];?><br />
-                    <span class="profile-description">Religión: </span><?php echo $profile['CandidateProfile']['religion'];?><br />
+                    <h3 style="display:none;"><?= __('Información personal');?></h3>
+                    <span class="profile-description"><?= __('Nacimiento');?>: </span><?php echo $this->Time->format('d/m/Y',$profile['CandidateProfile']['birth']);?><br />
+                    <span class="profile-description"><?= __('Profesión');?>: </span><?php echo $profile['CandidateProfile']['profession'];?><br />
+                    <span class="profile-description"><?= __('Estado Civil');?>: </span><?php echo $profile['CandidateProfile']['civil_status'];?><br />
+                    <span class="profile-description"><?= __('Hijos');?>: </span><?php echo $profile['CandidateProfile']['sons'];?><br />
+                    <span class="profile-description"><?= __('Religión');?>: </span><?php echo $profile['CandidateProfile']['religion'];?><br />
 
 
                 </section>
@@ -42,7 +42,7 @@ echo $this->Html->script('accordionForProfiles');
 		    <!-- AddThis Button END -->
                 </aside>
                 <section class="enlacesPersonales">
-                	<h3 style="display:none;">Enlaces personales:</h3>
+                	<h3 style="display:none;"><?= __('Enlaces personales');?>:</h3>
                     <ul class="ulEnlacesPersonales">
                         <li class="twitter"><a href="http://www.twitter.com/<?php echo $profile['CandidateProfile']['twitter'];?>" target="_blank">@<?php echo $profile['CandidateProfile']['twitter'];?></a></li>
                     	<li class="facebook"><a href="<?php echo $profile['CandidateProfile']['facebook'];?>" target="_blank"><?php echo $profile['CandidateProfile']['facebook_description'];?></a></li>
@@ -61,10 +61,10 @@ echo $this->Html->script('accordionForProfiles');
 	</div>  <!--ends candidate basic information-->
          <section class="trayectoriaYPosiciones">
                  <section class="trayectoria">
-                    <h2>Antecedentes: </h2>
+                    <h2><?= __('Antecedentes');?>: </h2>
                      <div class="brdotted">
                         <div class="accordion">
-                            <h3>Tendencia política: </h3>
+                            <h3><?= __('Tendencia política');?>: </h3>
                             <div class="accordionContent">
                                 <span class="profile-description">Partido político actual: </span><?php echo $profile['CandidateProfile']['current_party'];?><br />
                                 <ul>
@@ -77,7 +77,7 @@ echo $this->Html->script('accordionForProfiles');
                                 </ul>
                             </div>
 
-                            <h3>Experiencia política: </h3>
+                            <h3><?= __('Experiencia política');?>: </h3>
                             <div class="accordionContent">
                                 <ul>
                                 <?php
@@ -95,7 +95,7 @@ echo $this->Html->script('accordionForProfiles');
 
                             </div>
 
-                            <h3>Educación:</h3>
+                            <h3><?= __('Educación');?>:</h3>
                             <div class="accordionContent">
                                 <span class="profile-description">Educación secundaria: </span><?php echo $profile['CandidateProfile']['highschool'];?><br />
                                 <span class="profile-description">Educación universitaria: </span>
@@ -110,7 +110,7 @@ echo $this->Html->script('accordionForProfiles');
                                 </ul>
                             </div>
 
-                            <h3>Antecedentes laborales: </h3>
+                            <h3><?= __('Antecedentes laborales');?>: </h3>
                             <div class="accordionContent">
                                 <ul>
                                     <?php
@@ -123,7 +123,7 @@ echo $this->Html->script('accordionForProfiles');
                                 </ul>
                              </div>
 
-                             <h3> Ingresos</h3>
+                             <h3><?= __('Ingresos');?></h3>
                              <div class="accordionContent">
                                  <span class="profile-description">Ingresos: </span><?php echo $profile['CandidateProfile']['assets'];?><br />
                              </div>
@@ -133,7 +133,7 @@ echo $this->Html->script('accordionForProfiles');
 
                 <section class="posiciones">
 
-                        <h2>Posicion política en: </h2>
+                        <h2><?= __('Posicion política en');?>: </h2>
                         <div class="accordion">
                             <?php foreach ($categories as $category) { ?>
                             <div class="category">
@@ -184,7 +184,7 @@ echo $this->Html->script('accordionForProfiles');
                                         }
                                         if ($amountOfAnswers == 0) {
                                         ?>
-                                        <span class="has-an-explanation">Sin información</span><br />
+                                        <span class="has-an-explanation"><?= __('Sin información');?></span><br />
                                         <?php
                                         }
                                         ?>

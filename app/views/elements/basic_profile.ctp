@@ -15,37 +15,37 @@ else {
 ?>"></img>
 <ul class="candidateBasicProfileInfo">
     <li>
-    <span class="candidateBasicComparisonQuestion">Nacimiento:</span>
+    <span class="candidateBasicComparisonQuestion"><?= __('Nacimiento');?>:</span>
     <span class="candidateBasicComparisonAnswer"><?php
         if(isset($candidate['CandidateProfile']['birth'])){
-        echo $candidate['CandidateProfile']['birth'];
+        echo $this->Time->format('d/m/Y',$candidate['CandidateProfile']['birth']);
         }
     ?></span>
     </li>
-    
+
     <li>
-    <span class="candidateBasicComparisonQuestion">Profesión:</span>
+    <span class="candidateBasicComparisonQuestion"><?= __('Profesión');?>:</span>
     <span class="candidateBasicComparisonAnswer"><?php
         if(isset($candidate['CandidateProfile']['profession'])){
         echo $candidate['CandidateProfile']['profession'];
         }
     ?></span></li>
     <li>
-    <span class="candidateBasicComparisonQuestion">Estado Civil:</span>
+    <span class="candidateBasicComparisonQuestion"><?= __('Estado Civil');?>:</span>
     <span class="candidateBasicComparisonAnswer"><?php
         if(isset($candidate['CandidateProfile']['civil_status'])){
         echo $candidate['CandidateProfile']['civil_status'];
         }
     ?></span></li>
     <li>
-    <span class="candidateBasicComparisonQuestion">Hijos:</span>
+    <span class="candidateBasicComparisonQuestion"><?= __('Hijos');?>:</span>
     <span class="candidateBasicComparisonAnswer"><?php
         if(isset($candidate['CandidateProfile']['sons'])){
         echo $candidate['CandidateProfile']['sons'];
         }
     ?></span></li>
     <li>
-    <span class="candidateBasicComparisonQuestion">Religión:</span>
+    <span class="candidateBasicComparisonQuestion"><?= __('Religión');?>:</span>
     <span class="candidateBasicComparisonAnswer"><?php
         if(isset($candidate['CandidateProfile']['religion'])){
         echo $candidate['CandidateProfile']['religion'];

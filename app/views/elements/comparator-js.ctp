@@ -7,7 +7,7 @@
 		$('#errors li').remove();
 		var firstCandidate      = $('select[name=firstCandidate] option:checked').val();
 		if (firstCandidate<1){
-		    $('#errors').append('<li>Debes seleccionar el primer candidato</li>');
+		    $('#errors').append('<li><?= __('Debes seleccionar el primer candidato');?></li>');
 		} else {
 		    displayFirstCandidatesDescription();
 		    obtainCandidatesAndCategory();
@@ -17,7 +17,7 @@
 	    $('#errors li').remove();
 	    var secondCandidate     = $('select[name=secondCandidate] option:checked').val();
 	    if (secondCandidate<1){
-		$('#errors').append('<li>Debes seleccionar el segundo candidato</li>');
+		$('#errors').append('<li><?= __('Debes seleccionar el segundo candidato');?></li>');
 	    } else {
 		displaySecondCandidatesDescription();
 		obtainCandidatesAndCategory();
@@ -55,7 +55,7 @@
 	var errors = [];
 	var candidatesAreEqual = secondCandidate>0 && firstCandidate>0 && secondCandidate==firstCandidate;
 	if (candidatesAreEqual){
-	    errors.push('Los dos candidatos son iguales');
+	    errors.push('<?= __('Los dos candidatos son iguales');?>');
 	}
 	$('#errors li').remove();
 	for(var i=0;i<errors.length;i++){

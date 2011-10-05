@@ -1,0 +1,1704 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2011-10-05 12:05-0300\n"
+"PO-Revision-Date: 2011-10-05 12:08-0300\n"
+"Last-Translator: feli <luisfelipealvarez@gmail.com>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: /controllers/answers_controller.php:14;37
+msgid "Invalid answer"
+msgstr ""
+
+#: /controllers/answers_controller.php:25;42
+msgid "The answer has been saved"
+msgstr ""
+
+#: /controllers/answers_controller.php:28;45
+msgid "The answer could not be saved. Please, try again."
+msgstr ""
+
+#: /controllers/answers_controller.php:57;76
+msgid "Invalid id for answer"
+msgstr ""
+
+#: /controllers/answers_controller.php:61;81
+msgid "Answer deleted"
+msgstr ""
+
+#: /controllers/answers_controller.php:64;86
+msgid "Answer was not deleted"
+msgstr ""
+
+#: /controllers/candidate_links_controller.php:13;35
+msgid "Invalid candidate link"
+msgstr ""
+
+#: /controllers/candidate_links_controller.php:23;40
+msgid "The candidate link has been saved"
+msgstr ""
+
+#: /controllers/candidate_links_controller.php:26;43
+msgid "The candidate link could not be saved. Please, try again."
+msgstr ""
+
+#: /controllers/candidate_links_controller.php:55;69
+msgid "Invalid id for candidate link"
+msgstr ""
+
+#: /controllers/candidate_links_controller.php:59;74
+msgid "Candidate link deleted"
+msgstr ""
+
+#: /controllers/candidate_links_controller.php:62;79
+msgid "Candidate link was not deleted"
+msgstr ""
+
+#: /controllers/candidate_parties_controller.php:17;39
+msgid "Invalid candidate party"
+msgstr ""
+
+#: /controllers/candidate_parties_controller.php:27;44
+msgid "The candidate party has been saved"
+msgstr ""
+
+#: /controllers/candidate_parties_controller.php:30;47
+msgid "The candidate party could not be saved. Please, try again."
+msgstr ""
+
+#: /controllers/candidate_parties_controller.php:59
+msgid "Invalid id for candidate party"
+msgstr ""
+
+#: /controllers/candidate_parties_controller.php:63;73;78
+#: /controllers/candidate_political_experiences_controller.php:73;78
+msgid "Candidate party deleted"
+msgstr ""
+
+#: /controllers/candidate_parties_controller.php:66;83
+#: /controllers/candidate_political_experiences_controller.php:83
+msgid "Candidate party was not deleted"
+msgstr ""
+
+#: /controllers/candidate_political_experiences_controller.php:17;39
+msgid "Invalid candidate political experience"
+msgstr ""
+
+#: /controllers/candidate_political_experiences_controller.php:27;44
+msgid "The candidate political experience has been saved"
+msgstr ""
+
+#: /controllers/candidate_political_experiences_controller.php:30;47
+msgid "The candidate political experience could not be saved. Please, try again."
+msgstr ""
+
+#: /controllers/candidate_political_experiences_controller.php:59
+msgid "Invalid id for candidate political experience"
+msgstr ""
+
+#: /controllers/candidate_political_experiences_controller.php:63
+msgid "Candidate political experience deleted"
+msgstr ""
+
+#: /controllers/candidate_political_experiences_controller.php:66
+msgid "Candidate political experience was not deleted"
+msgstr ""
+
+#: /controllers/candidate_profiles_controller.php:16;38
+msgid "Invalid candidate profile"
+msgstr ""
+
+#: /controllers/candidate_profiles_controller.php:26;43
+msgid "The candidate profile has been saved"
+msgstr ""
+
+#: /controllers/candidate_profiles_controller.php:29;46
+msgid "The candidate profile could not be saved. Please, try again."
+msgstr ""
+
+#: /controllers/candidate_profiles_controller.php:58
+msgid "Invalid id for candidate profile"
+msgstr ""
+
+#: /controllers/candidate_profiles_controller.php:62
+msgid "Candidate profile deleted"
+msgstr ""
+
+#: /controllers/candidate_profiles_controller.php:65
+msgid "Candidate profile was not deleted"
+msgstr ""
+
+#: /controllers/candidate_university_studies_controller.php:17;39
+msgid "Invalid candidate university study"
+msgstr ""
+
+#: /controllers/candidate_university_studies_controller.php:27;44
+msgid "The candidate university study has been saved"
+msgstr ""
+
+#: /controllers/candidate_university_studies_controller.php:30;47
+msgid "The candidate university study could not be saved. Please, try again."
+msgstr ""
+
+#: /controllers/candidate_university_studies_controller.php:59;73
+msgid "Invalid id for candidate university study"
+msgstr ""
+
+#: /controllers/candidate_university_studies_controller.php:63;78
+msgid "Candidate university study deleted"
+msgstr ""
+
+#: /controllers/candidate_university_studies_controller.php:66;83
+msgid "Candidate university study was not deleted"
+msgstr ""
+
+#: /controllers/candidate_work_experiences_controller.php:17;39
+msgid "Invalid candidate work experience"
+msgstr ""
+
+#: /controllers/candidate_work_experiences_controller.php:27;44
+msgid "The candidate work experience has been saved"
+msgstr ""
+
+#: /controllers/candidate_work_experiences_controller.php:30;47
+msgid "The candidate work experience could not be saved. Please, try again."
+msgstr ""
+
+#: /controllers/candidate_work_experiences_controller.php:59;73
+msgid "Invalid id for candidate work experience"
+msgstr ""
+
+#: /controllers/candidate_work_experiences_controller.php:63;78
+msgid "Candidate work experience deleted"
+msgstr ""
+
+#: /controllers/candidate_work_experiences_controller.php:66;83
+msgid "Candidate work experience was not deleted"
+msgstr ""
+
+#: /controllers/candidates_controller.php:14;37
+msgid "Invalid candidate"
+msgstr ""
+
+#: /controllers/candidates_controller.php:24;42
+msgid "The candidate has been saved"
+msgstr ""
+
+#: /controllers/candidates_controller.php:27;45
+msgid "The candidate could not be saved. Please, try again."
+msgstr ""
+
+#: /controllers/candidates_controller.php:63
+msgid "Invalid id for candidate"
+msgstr ""
+
+#: /controllers/candidates_controller.php:67
+msgid "Candidate deleted"
+msgstr ""
+
+#: /controllers/candidates_controller.php:70
+msgid "Candidate was not deleted"
+msgstr ""
+
+#: /controllers/categories_controller.php:16;59
+msgid "Invalid category"
+msgstr ""
+
+#: /controllers/categories_controller.php:26;40;64
+msgid "The category has been saved"
+msgstr ""
+
+#: /controllers/categories_controller.php:29;46;67
+msgid "The category could not be saved. Please, try again."
+msgstr ""
+
+#: /controllers/categories_controller.php:79
+msgid "Invalid id for category"
+msgstr ""
+
+#: /controllers/categories_controller.php:83
+msgid "Category deleted"
+msgstr ""
+
+#: /controllers/categories_controller.php:86
+msgid "Category was not deleted"
+msgstr ""
+
+#: /controllers/questions_controller.php:37;63
+msgid "Invalid question"
+msgstr ""
+
+#: /controllers/questions_controller.php:48;68
+msgid "The question has been saved"
+msgstr ""
+
+#: /controllers/questions_controller.php:51;71
+msgid "The question could not be saved. Please, try again."
+msgstr ""
+
+#: /controllers/questions_controller.php:122
+msgid "Invalid id for question"
+msgstr ""
+
+#: /controllers/questions_controller.php:126
+msgid "Question deleted"
+msgstr ""
+
+#: /controllers/questions_controller.php:129
+msgid "Question was not deleted"
+msgstr ""
+
+#: /controllers/source_of_answers_controller.php:20;41
+msgid "Invalid source of answer"
+msgstr ""
+
+#: /controllers/source_of_answers_controller.php:30;46
+msgid "The source of answer has been saved"
+msgstr ""
+
+#: /controllers/source_of_answers_controller.php:33;49
+msgid "The source of answer could not be saved. Please, try again."
+msgstr ""
+
+#: /controllers/source_of_answers_controller.php:66
+msgid "Invalid id for source of answer"
+msgstr ""
+
+#: /controllers/source_of_answers_controller.php:70
+msgid "Source of answer deleted"
+msgstr ""
+
+#: /controllers/source_of_answers_controller.php:73
+msgid "Source of answer was not deleted"
+msgstr ""
+
+#: /controllers/weights_controller.php:13;37
+msgid "Invalid weight"
+msgstr ""
+
+#: /controllers/weights_controller.php:24;42
+msgid "The weight has been saved"
+msgstr ""
+
+#: /controllers/weights_controller.php:27;45
+msgid "The weight could not be saved. Please, try again."
+msgstr ""
+
+#: /controllers/weights_controller.php:59
+msgid "Invalid id for weight"
+msgstr ""
+
+#: /controllers/weights_controller.php:63
+msgid "Weight deleted"
+msgstr ""
+
+#: /controllers/weights_controller.php:66
+msgid "Weight was not deleted"
+msgstr ""
+
+#: /views/admin/index.ctp:4
+#: /views/users/admin_add.ctp:18
+#: /views/users/admin_edit.ctp:20
+#: /views/users/admin_view.ctp:46
+msgid "List Users"
+msgstr ""
+
+#: /views/admin/index.ctp:5
+#: /views/candidate_profiles/admin_add.ctp:25
+#: /views/candidate_profiles/admin_edit.ctp:28
+#: /views/candidate_profiles/admin_index.ctp:72
+#: /views/candidate_profiles/admin_view.ctp:83
+#: /views/candidates/admin_add.ctp:122
+#: /views/candidates/admin_edit.ctp:254
+#: /views/candidates/admin_view.ctp:31
+#: /views/questions/admin_add.ctp:45
+#: /views/questions/admin_edit.ctp:85
+#: /views/questions/admin_index.ctp:84
+#: /views/source_of_answers/admin_add.ctp:62
+#: /views/source_of_answers/admin_edit.ctp:66
+#: /views/source_of_answers/admin_index.ctp:53
+#: /views/weights/admin_add.ctp:34
+#: /views/weights/admin_edit.ctp:22
+#: /views/weights/admin_index.ctp:60
+#: /views/weights/admin_view.ctp:40
+msgid "List Candidates"
+msgstr ""
+
+#: /views/admin/index.ctp:6
+#: /views/answers/admin_add.ctp:17
+#: /views/answers/admin_edit.ctp:19
+#: /views/answers/admin_index.ctp:50
+#: /views/answers/admin_view.ctp:28
+#: /views/candidates/admin_add.ctp:123
+#: /views/candidates/admin_edit.ctp:255
+#: /views/candidates/admin_index.ctp:50
+#: /views/categories/admin_add.ctp:16
+#: /views/categories/admin_edit.ctp:19
+#: /views/categories/admin_index.ctp:48
+#: /views/categories/admin_view.ctp:23
+#: /views/questions/admin_add.ctp:46
+#: /views/questions/admin_edit.ctp:86
+#: /views/questions/admin_view.ctp:51
+#: /views/source_of_answers/admin_add.ctp:63
+#: /views/source_of_answers/admin_edit.ctp:67
+#: /views/source_of_answers/admin_index.ctp:54
+#: /views/weights/admin_add.ctp:32
+#: /views/weights/admin_edit.ctp:20
+#: /views/weights/admin_index.ctp:58
+#: /views/weights/admin_view.ctp:38
+msgid "List Questions"
+msgstr ""
+
+#: /views/admin/index.ctp:7
+#: /views/candidates/admin_add.ctp:124
+#: /views/candidates/admin_edit.ctp:256
+#: /views/candidates/admin_index.ctp:51
+#: /views/questions/admin_add.ctp:47
+#: /views/questions/admin_edit.ctp:87
+#: /views/questions/admin_index.ctp:86
+#: /views/source_of_answers/admin_add.ctp:64
+#: /views/source_of_answers/admin_edit.ctp:68
+#: /views/source_of_answers/admin_view.ctp:41
+msgid "List Source Of Answers"
+msgstr ""
+
+#: /views/answers/admin_add.ctp:4
+msgid "Admin Add Answer"
+msgstr ""
+
+#: /views/answers/admin_add.ctp:10
+#: /views/answers/admin_edit.ctp:11
+#: /views/candidate_links/admin_add.ctp:11
+#: /views/candidate_links/admin_edit.ctp:12
+#: /views/candidate_parties/admin_add.ctp:12
+#: /views/candidate_parties/admin_edit.ctp:13
+#: /views/candidate_political_experiences/admin_add.ctp:13
+#: /views/candidate_political_experiences/admin_edit.ctp:14
+#: /views/candidate_profiles/admin_add.ctp:18
+#: /views/candidate_profiles/admin_edit.ctp:20
+#: /views/candidate_university_studies/admin_add.ctp:12
+#: /views/candidate_university_studies/admin_edit.ctp:13
+#: /views/candidate_work_experiences/add.ctp:12
+#: /views/candidate_work_experiences/admin_add.ctp:13
+#: /views/candidate_work_experiences/admin_edit.ctp:14
+#: /views/candidate_work_experiences/edit.ctp:13
+#: /views/candidates/admin_add.ctp:116
+#: /views/candidates/admin_edit.ctp:247
+#: /views/categories/admin_add.ctp:9
+#: /views/categories/admin_add_ajax.ctp:20
+#: /views/categories/admin_edit.ctp:11
+#: /views/questions/admin_add.ctp:40
+#: /views/questions/admin_edit.ctp:78
+#: /views/source_of_answers/admin_add.ctp:56
+#: /views/source_of_answers/admin_edit.ctp:59
+#: /views/users/admin_add.ctp:12
+#: /views/users/admin_edit.ctp:13
+#: /views/users/login.ctp:10
+#: /views/users/register.ctp:10
+#: /views/weights/admin_add.ctp:25
+#: /views/weights/admin_edit.ctp:13
+msgid "Submit"
+msgstr ""
+
+#: /views/answers/admin_add.ctp:13
+#: /views/answers/admin_edit.ctp:14
+#: /views/answers/admin_index.ctp:8;47
+#: /views/answers/admin_view.ctp:22;44
+#: /views/candidate_links/admin_add.ctp:14
+#: /views/candidate_links/admin_edit.ctp:15
+#: /views/candidate_links/admin_index.ctp:9;49
+#: /views/candidate_links/admin_view.ctp:27
+#: /views/candidate_parties/admin_add.ctp:15
+#: /views/candidate_parties/admin_edit.ctp:16
+#: /views/candidate_parties/admin_index.ctp:10;51
+#: /views/candidate_parties/admin_view.ctp:32
+#: /views/candidate_political_experiences/admin_add.ctp:16
+#: /views/candidate_political_experiences/admin_edit.ctp:17
+#: /views/candidate_political_experiences/admin_index.ctp:11;53
+#: /views/candidate_political_experiences/admin_view.ctp:37
+#: /views/candidate_profiles/admin_add.ctp:21
+#: /views/candidate_profiles/admin_edit.ctp:23
+#: /views/candidate_profiles/admin_index.ctp:19;69
+#: /views/candidate_profiles/admin_view.ctp:77;106;147;190;233;276
+#: /views/candidate_university_studies/admin_add.ctp:15
+#: /views/candidate_university_studies/admin_edit.ctp:16
+#: /views/candidate_university_studies/admin_index.ctp:10;51
+#: /views/candidate_university_studies/admin_view.ctp:32
+#: /views/candidate_work_experiences/add.ctp:15
+#: /views/candidate_work_experiences/admin_add.ctp:16
+#: /views/candidate_work_experiences/admin_edit.ctp:17
+#: /views/candidate_work_experiences/admin_index.ctp:11;53
+#: /views/candidate_work_experiences/admin_view.ctp:37
+#: /views/candidate_work_experiences/edit.ctp:16
+#: /views/candidate_work_experiences/index.ctp:10;51
+#: /views/candidate_work_experiences/view.ctp:32
+#: /views/candidates/admin_add.ctp:119
+#: /views/candidates/admin_edit.ctp:250
+#: /views/candidates/admin_index.ctp:7;47
+#: /views/candidates/admin_view.ctp:27;113
+#: /views/categories/admin_add.ctp:12
+#: /views/categories/admin_edit.ctp:14
+#: /views/categories/admin_index.ctp:8;45
+#: /views/categories/admin_view.ctp:17;38;78
+#: /views/questions/admin_add.ctp:43
+#: /views/questions/admin_edit.ctp:81
+#: /views/questions/admin_index.ctp:39;82
+#: /views/questions/admin_view.ctp:47;69;109
+#: /views/source_of_answers/admin_add.ctp:59
+#: /views/source_of_answers/admin_edit.ctp:62
+#: /views/source_of_answers/admin_index.ctp:11;51
+#: /views/source_of_answers/admin_view.ctp:37
+#: /views/users/admin_add.ctp:15
+#: /views/users/admin_edit.ctp:16
+#: /views/users/admin_index.ctp:12;53
+#: /views/users/admin_view.ctp:42
+#: /views/weights/admin_add.ctp:28
+#: /views/weights/admin_edit.ctp:16
+#: /views/weights/admin_index.ctp:10;55
+#: /views/weights/admin_view.ctp:32
+msgid "Actions"
+msgstr ""
+
+#: /views/answers/admin_add.ctp:16
+#: /views/answers/admin_edit.ctp:18
+#: /views/answers/admin_view.ctp:26
+#: /views/questions/admin_view.ctp:55
+#: /views/weights/admin_index.ctp:62
+#: /views/weights/admin_view.ctp:42
+msgid "List Answers"
+msgstr ""
+
+#: /views/answers/admin_add.ctp:18
+#: /views/answers/admin_edit.ctp:20
+#: /views/answers/admin_index.ctp:51
+#: /views/answers/admin_view.ctp:29
+#: /views/categories/admin_add.ctp:17
+#: /views/categories/admin_edit.ctp:20
+#: /views/categories/admin_index.ctp:49
+#: /views/categories/admin_view.ctp:24;65
+#: /views/questions/admin_index.ctp:85
+#: /views/questions/admin_view.ctp:52
+#: /views/weights/admin_add.ctp:33
+#: /views/weights/admin_edit.ctp:21
+#: /views/weights/admin_index.ctp:59
+#: /views/weights/admin_view.ctp:39
+msgid "New Question"
+msgstr ""
+
+#: /views/answers/admin_add.ctp:19
+#: /views/answers/admin_edit.ctp:21
+#: /views/answers/admin_index.ctp:52
+#: /views/answers/admin_view.ctp:30
+#: /views/candidates/admin_view.ctp:35
+#: /views/questions/admin_view.ctp:57
+#: /views/weights/admin_add.ctp:31
+#: /views/weights/admin_view.ctp:36
+msgid "List Weights"
+msgstr ""
+
+#: /views/answers/admin_add.ctp:20
+#: /views/answers/admin_edit.ctp:22
+#: /views/answers/admin_index.ctp:53
+#: /views/answers/admin_view.ctp:31;72
+#: /views/candidates/admin_view.ctp:36;141
+#: /views/questions/admin_view.ctp:58;137
+#: /views/weights/admin_index.ctp:57
+#: /views/weights/admin_view.ctp:37
+msgid "New Weight"
+msgstr ""
+
+#: /views/answers/admin_edit.ctp:4
+msgid "Admin Edit Answer"
+msgstr ""
+
+#: /views/answers/admin_edit.ctp:17
+#: /views/answers/admin_index.ctp:27
+#: /views/answers/admin_view.ctp:63
+#: /views/candidate_links/admin_edit.ctp:18
+#: /views/candidate_links/admin_index.ctp:29
+#: /views/candidate_parties/admin_edit.ctp:19
+#: /views/candidate_parties/admin_index.ctp:31
+#: /views/candidate_political_experiences/admin_edit.ctp:20
+#: /views/candidate_political_experiences/admin_index.ctp:33
+#: /views/candidate_profiles/admin_edit.ctp:26
+#: /views/candidate_profiles/admin_index.ctp:49
+#: /views/candidate_profiles/admin_view.ctp:124;166;210;252;296
+#: /views/candidate_university_studies/admin_edit.ctp:19
+#: /views/candidate_university_studies/admin_index.ctp:31
+#: /views/candidate_work_experiences/admin_edit.ctp:20
+#: /views/candidate_work_experiences/admin_index.ctp:33
+#: /views/candidate_work_experiences/edit.ctp:19
+#: /views/candidate_work_experiences/index.ctp:31
+#: /views/candidates/admin_edit.ctp:253
+#: /views/candidates/admin_index.ctp:27
+#: /views/candidates/admin_view.ctp:132
+#: /views/categories/admin_edit.ctp:17
+#: /views/categories/admin_index.ctp:25
+#: /views/categories/admin_view.ctp:56;96
+#: /views/questions/admin_edit.ctp:84
+#: /views/questions/admin_index.ctp:61
+#: /views/questions/admin_view.ctp:86;128
+#: /views/source_of_answers/admin_edit.ctp:65
+#: /views/source_of_answers/admin_index.ctp:31
+#: /views/users/admin_edit.ctp:19
+#: /views/users/admin_index.ctp:33
+#: /views/weights/admin_edit.ctp:19
+#: /views/weights/admin_index.ctp:35
+msgid "Delete"
+msgstr ""
+
+#: /views/answers/admin_edit.ctp:17
+#: /views/answers/admin_index.ctp:27
+#: /views/answers/admin_view.ctp:25;63
+#: /views/candidate_links/admin_edit.ctp:18
+#: /views/candidate_links/admin_index.ctp:29
+#: /views/candidate_links/admin_view.ctp:30
+#: /views/candidate_parties/admin_edit.ctp:19
+#: /views/candidate_parties/admin_index.ctp:31
+#: /views/candidate_parties/admin_view.ctp:35
+#: /views/candidate_political_experiences/admin_edit.ctp:20
+#: /views/candidate_political_experiences/admin_index.ctp:33
+#: /views/candidate_political_experiences/admin_view.ctp:40
+#: /views/candidate_profiles/admin_edit.ctp:26
+#: /views/candidate_profiles/admin_index.ctp:49
+#: /views/candidate_profiles/admin_view.ctp:80;124;166;210;252;296
+#: /views/candidate_university_studies/admin_edit.ctp:19
+#: /views/candidate_university_studies/admin_index.ctp:31
+#: /views/candidate_university_studies/admin_view.ctp:35
+#: /views/candidate_work_experiences/admin_edit.ctp:20
+#: /views/candidate_work_experiences/admin_index.ctp:33
+#: /views/candidate_work_experiences/admin_view.ctp:40
+#: /views/candidate_work_experiences/edit.ctp:19
+#: /views/candidate_work_experiences/index.ctp:31
+#: /views/candidate_work_experiences/view.ctp:35
+#: /views/candidates/admin_edit.ctp:253
+#: /views/candidates/admin_index.ctp:27
+#: /views/candidates/admin_view.ctp:30;132
+#: /views/categories/admin_edit.ctp:17
+#: /views/categories/admin_index.ctp:25
+#: /views/categories/admin_view.ctp:20;56;96
+#: /views/questions/admin_edit.ctp:84
+#: /views/questions/admin_view.ctp:50;86;128
+#: /views/source_of_answers/admin_edit.ctp:65
+#: /views/source_of_answers/admin_index.ctp:31
+#: /views/source_of_answers/admin_view.ctp:40
+#: /views/users/admin_edit.ctp:19
+#: /views/users/admin_index.ctp:33
+#: /views/users/admin_view.ctp:45
+#: /views/weights/admin_edit.ctp:19
+#: /views/weights/admin_index.ctp:35
+#: /views/weights/admin_view.ctp:35
+msgid "Are you sure you want to delete # %s?"
+msgstr ""
+
+#: /views/answers/admin_index.ctp:2
+msgid "Answers"
+msgstr ""
+
+#: /views/answers/admin_index.ctp:25
+#: /views/answers/admin_view.ctp:61
+#: /views/candidate_links/admin_index.ctp:27
+#: /views/candidate_parties/admin_index.ctp:29
+#: /views/candidate_political_experiences/admin_index.ctp:31
+#: /views/candidate_profiles/admin_index.ctp:47
+#: /views/candidate_profiles/admin_view.ctp:122;164;208;250;294
+#: /views/candidate_university_studies/admin_index.ctp:29
+#: /views/candidate_work_experiences/admin_index.ctp:31
+#: /views/candidate_work_experiences/index.ctp:29
+#: /views/candidates/admin_index.ctp:25
+#: /views/candidates/admin_view.ctp:130
+#: /views/categories/admin_index.ctp:23
+#: /views/categories/admin_view.ctp:54;94
+#: /views/questions/admin_index.ctp:59
+#: /views/questions/admin_view.ctp:84;126
+#: /views/source_of_answers/admin_index.ctp:29
+#: /views/users/admin_index.ctp:31
+#: /views/weights/admin_index.ctp:33
+msgid "View"
+msgstr ""
+
+#: /views/answers/admin_index.ctp:26
+#: /views/answers/admin_view.ctp:62
+#: /views/candidate_links/admin_index.ctp:28
+#: /views/candidate_parties/admin_index.ctp:30
+#: /views/candidate_political_experiences/admin_index.ctp:32
+#: /views/candidate_profiles/admin_index.ctp:48
+#: /views/candidate_profiles/admin_view.ctp:123;165;209;251;295
+#: /views/candidate_university_studies/admin_index.ctp:30
+#: /views/candidate_work_experiences/admin_index.ctp:32
+#: /views/candidate_work_experiences/index.ctp:30
+#: /views/candidates/admin_index.ctp:26
+#: /views/candidates/admin_view.ctp:131
+#: /views/categories/admin_index.ctp:24
+#: /views/categories/admin_view.ctp:55;95
+#: /views/questions/admin_index.ctp:60
+#: /views/questions/admin_view.ctp:85;127
+#: /views/source_of_answers/admin_index.ctp:30
+#: /views/users/admin_index.ctp:32
+#: /views/weights/admin_index.ctp:34
+msgid "Edit"
+msgstr ""
+
+#: /views/answers/admin_index.ctp:35
+#: /views/candidate_links/admin_index.ctp:37
+#: /views/candidate_parties/admin_index.ctp:39
+#: /views/candidate_political_experiences/admin_index.ctp:41
+#: /views/candidate_profiles/admin_index.ctp:57
+#: /views/candidate_university_studies/admin_index.ctp:39
+#: /views/candidate_work_experiences/admin_index.ctp:41
+#: /views/candidate_work_experiences/index.ctp:39
+#: /views/candidates/admin_index.ctp:35
+#: /views/categories/admin_index.ctp:33
+#: /views/questions/admin_index.ctp:70
+#: /views/source_of_answers/admin_index.ctp:39
+#: /views/users/admin_index.ctp:41
+#: /views/weights/admin_index.ctp:43
+msgid "Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%"
+msgstr ""
+
+#: /views/answers/admin_index.ctp:40
+#: /views/candidate_links/admin_index.ctp:42
+#: /views/candidate_parties/admin_index.ctp:44
+#: /views/candidate_political_experiences/admin_index.ctp:46
+#: /views/candidate_profiles/admin_index.ctp:62
+#: /views/candidate_university_studies/admin_index.ctp:44
+#: /views/candidate_work_experiences/admin_index.ctp:46
+#: /views/candidate_work_experiences/index.ctp:44
+#: /views/candidates/admin_index.ctp:40
+#: /views/categories/admin_index.ctp:38
+#: /views/questions/admin_index.ctp:75
+#: /views/source_of_answers/admin_index.ctp:44
+#: /views/users/admin_index.ctp:46
+#: /views/weights/admin_index.ctp:48
+msgid "previous"
+msgstr ""
+
+#: /views/answers/admin_index.ctp:43
+#: /views/candidate_links/admin_index.ctp:45
+#: /views/candidate_parties/admin_index.ctp:47
+#: /views/candidate_political_experiences/admin_index.ctp:49
+#: /views/candidate_profiles/admin_index.ctp:65
+#: /views/candidate_university_studies/admin_index.ctp:47
+#: /views/candidate_work_experiences/admin_index.ctp:49
+#: /views/candidate_work_experiences/index.ctp:47
+#: /views/candidates/admin_index.ctp:43
+#: /views/categories/admin_index.ctp:41
+#: /views/questions/admin_index.ctp:78
+#: /views/source_of_answers/admin_index.ctp:47
+#: /views/users/admin_index.ctp:49
+#: /views/weights/admin_index.ctp:51
+msgid "next"
+msgstr ""
+
+#: /views/answers/admin_index.ctp:49
+#: /views/answers/admin_view.ctp:27
+#: /views/questions/admin_view.ctp:56;95
+#: /views/weights/admin_index.ctp:63
+#: /views/weights/admin_view.ctp:43
+msgid "New Answer"
+msgstr ""
+
+#: /views/answers/admin_view.ctp:2;9
+#: /views/questions/admin_view.ctp:67
+#: /views/weights/admin_view.ctp:19
+msgid "Answer"
+msgstr ""
+
+#: /views/answers/admin_view.ctp:4;39
+#: /views/candidate_links/admin_view.ctp:4
+#: /views/candidate_parties/admin_view.ctp:4
+#: /views/candidate_political_experiences/admin_view.ctp:4
+#: /views/candidate_profiles/admin_view.ctp:4;102;142;184;228;270
+#: /views/candidate_university_studies/admin_view.ctp:4
+#: /views/candidate_work_experiences/admin_view.ctp:4
+#: /views/candidate_work_experiences/view.ctp:4
+#: /views/candidates/admin_view.ctp:4;43;108
+#: /views/categories/admin_view.ctp:4;34;74
+#: /views/questions/admin_view.ctp:4;66;104
+#: /views/source_of_answers/admin_view.ctp:4
+#: /views/users/admin_view.ctp:4
+#: /views/weights/admin_view.ctp:4
+msgid "Id"
+msgstr ""
+
+#: /views/answers/admin_view.ctp:14
+#: /views/categories/admin_view.ctp:35
+#: /views/questions/admin_view.ctp:2;9
+#: /views/weights/admin_view.ctp:9
+msgid "Question"
+msgstr ""
+
+#: /views/answers/admin_view.ctp:24
+msgid "Edit Answer"
+msgstr ""
+
+#: /views/answers/admin_view.ctp:25
+msgid "Delete Answer"
+msgstr ""
+
+#: /views/answers/admin_view.ctp:35
+#: /views/candidates/admin_view.ctp:104
+#: /views/questions/admin_view.ctp:100
+msgid "Related Weights"
+msgstr ""
+
+#: /views/answers/admin_view.ctp:40
+#: /views/candidates/admin_view.ctp:109
+#: /views/questions/admin_view.ctp:68;105
+msgid "Question Id"
+msgstr ""
+
+#: /views/answers/admin_view.ctp:41
+#: /views/candidates/admin_view.ctp:47;110
+#: /views/questions/admin_view.ctp:106
+msgid "Candidate Id"
+msgstr ""
+
+#: /views/answers/admin_view.ctp:42
+#: /views/candidates/admin_view.ctp:111
+#: /views/questions/admin_view.ctp:107
+msgid "Answer Id"
+msgstr ""
+
+#: /views/answers/admin_view.ctp:43
+#: /views/candidates/admin_view.ctp:112
+#: /views/questions/admin_view.ctp:108
+#: /views/weights/admin_view.ctp:24
+msgid "Weighting"
+msgstr ""
+
+#: /views/candidate_links/admin_add.ctp:4
+msgid "Admin Add Candidate Link"
+msgstr ""
+
+#: /views/candidate_links/admin_add.ctp:17
+#: /views/candidate_links/admin_edit.ctp:19
+#: /views/candidate_links/admin_view.ctp:31
+#: /views/candidate_profiles/admin_add.ctp:27
+#: /views/candidate_profiles/admin_edit.ctp:30
+#: /views/candidate_profiles/admin_index.ctp:74
+#: /views/candidate_profiles/admin_view.ctp:85
+msgid "List Candidate Links"
+msgstr ""
+
+#: /views/candidate_links/admin_add.ctp:18
+#: /views/candidate_links/admin_edit.ctp:20
+#: /views/candidate_links/admin_index.ctp:52
+#: /views/candidate_links/admin_view.ctp:33
+#: /views/candidate_parties/admin_add.ctp:19
+#: /views/candidate_parties/admin_edit.ctp:21
+#: /views/candidate_parties/admin_index.ctp:54
+#: /views/candidate_parties/admin_view.ctp:38
+#: /views/candidate_political_experiences/admin_add.ctp:20
+#: /views/candidate_political_experiences/admin_edit.ctp:22
+#: /views/candidate_political_experiences/admin_index.ctp:56
+#: /views/candidate_political_experiences/admin_view.ctp:43
+#: /views/candidate_profiles/admin_add.ctp:24
+#: /views/candidate_profiles/admin_edit.ctp:27
+#: /views/candidate_profiles/admin_view.ctp:81
+#: /views/candidate_university_studies/admin_add.ctp:19
+#: /views/candidate_university_studies/admin_edit.ctp:21
+#: /views/candidate_university_studies/admin_index.ctp:54
+#: /views/candidate_university_studies/admin_view.ctp:38
+#: /views/candidate_work_experiences/add.ctp:19
+#: /views/candidate_work_experiences/admin_add.ctp:20
+#: /views/candidate_work_experiences/admin_edit.ctp:22
+#: /views/candidate_work_experiences/admin_index.ctp:56
+#: /views/candidate_work_experiences/admin_view.ctp:43
+#: /views/candidate_work_experiences/edit.ctp:21
+#: /views/candidate_work_experiences/index.ctp:54
+#: /views/candidate_work_experiences/view.ctp:38
+#: /views/candidates/admin_view.ctp:33
+msgid "List Candidate Profiles"
+msgstr ""
+
+#: /views/candidate_links/admin_add.ctp:19
+#: /views/candidate_links/admin_edit.ctp:21
+#: /views/candidate_links/admin_index.ctp:53
+#: /views/candidate_links/admin_view.ctp:34
+#: /views/candidate_parties/admin_add.ctp:20
+#: /views/candidate_parties/admin_edit.ctp:22
+#: /views/candidate_parties/admin_index.ctp:55
+#: /views/candidate_parties/admin_view.ctp:39
+#: /views/candidate_political_experiences/admin_add.ctp:21
+#: /views/candidate_political_experiences/admin_edit.ctp:23
+#: /views/candidate_political_experiences/admin_index.ctp:57
+#: /views/candidate_political_experiences/admin_view.ctp:44
+#: /views/candidate_profiles/admin_index.ctp:71
+#: /views/candidate_profiles/admin_view.ctp:82
+#: /views/candidate_university_studies/admin_add.ctp:20
+#: /views/candidate_university_studies/admin_edit.ctp:22
+#: /views/candidate_university_studies/admin_index.ctp:55
+#: /views/candidate_university_studies/admin_view.ctp:39
+#: /views/candidate_work_experiences/add.ctp:20
+#: /views/candidate_work_experiences/admin_add.ctp:21
+#: /views/candidate_work_experiences/admin_edit.ctp:23
+#: /views/candidate_work_experiences/admin_index.ctp:57
+#: /views/candidate_work_experiences/admin_view.ctp:44
+#: /views/candidate_work_experiences/edit.ctp:22
+#: /views/candidate_work_experiences/index.ctp:55
+#: /views/candidate_work_experiences/view.ctp:39
+#: /views/candidates/admin_view.ctp:34
+msgid "New Candidate Profile"
+msgstr ""
+
+#: /views/candidate_links/admin_edit.ctp:4
+msgid "Admin Edit Candidate Link"
+msgstr ""
+
+#: /views/candidate_links/admin_index.ctp:2
+msgid "Candidate Links"
+msgstr ""
+
+#: /views/candidate_links/admin_index.ctp:51
+#: /views/candidate_links/admin_view.ctp:32
+#: /views/candidate_profiles/admin_add.ctp:28
+#: /views/candidate_profiles/admin_edit.ctp:31
+#: /views/candidate_profiles/admin_index.ctp:75
+#: /views/candidate_profiles/admin_view.ctp:86;133
+msgid "New Candidate Link"
+msgstr ""
+
+#: /views/candidate_links/admin_view.ctp:2
+msgid "Candidate Link"
+msgstr ""
+
+#: /views/candidate_links/admin_view.ctp:9
+#: /views/candidate_parties/admin_view.ctp:9
+#: /views/candidate_political_experiences/admin_view.ctp:9
+#: /views/candidate_profiles/admin_view.ctp:2
+#: /views/candidate_university_studies/admin_view.ctp:9
+#: /views/candidate_work_experiences/admin_view.ctp:9
+#: /views/candidate_work_experiences/view.ctp:9
+msgid "Candidate Profile"
+msgstr ""
+
+#: /views/candidate_links/admin_view.ctp:14
+#: /views/candidate_profiles/admin_view.ctp:104
+msgid "Description"
+msgstr ""
+
+#: /views/candidate_links/admin_view.ctp:19
+#: /views/candidate_profiles/admin_view.ctp:105
+#: /views/source_of_answers/admin_view.ctp:24
+msgid "Link"
+msgstr ""
+
+#: /views/candidate_links/admin_view.ctp:29
+msgid "Edit Candidate Link"
+msgstr ""
+
+#: /views/candidate_links/admin_view.ctp:30
+msgid "Delete Candidate Link"
+msgstr ""
+
+#: /views/candidate_parties/admin_add.ctp:4
+msgid "Admin Add Candidate Party"
+msgstr ""
+
+#: /views/candidate_parties/admin_add.ctp:18
+#: /views/candidate_parties/admin_edit.ctp:20
+#: /views/candidate_parties/admin_view.ctp:36
+#: /views/candidate_profiles/admin_add.ctp:29
+#: /views/candidate_profiles/admin_edit.ctp:32
+#: /views/candidate_profiles/admin_index.ctp:76
+#: /views/candidate_profiles/admin_view.ctp:87
+msgid "List Candidate Parties"
+msgstr ""
+
+#: /views/candidate_parties/admin_edit.ctp:4
+msgid "Admin Edit Candidate Party"
+msgstr ""
+
+#: /views/candidate_parties/admin_index.ctp:2
+msgid "Candidate Parties"
+msgstr ""
+
+#: /views/candidate_parties/admin_index.ctp:53
+#: /views/candidate_parties/admin_view.ctp:37
+#: /views/candidate_profiles/admin_add.ctp:30
+#: /views/candidate_profiles/admin_edit.ctp:33
+#: /views/candidate_profiles/admin_index.ctp:77
+#: /views/candidate_profiles/admin_view.ctp:88;175
+msgid "New Candidate Party"
+msgstr ""
+
+#: /views/candidate_parties/admin_view.ctp:2
+msgid "Candidate Party"
+msgstr ""
+
+#: /views/candidate_parties/admin_view.ctp:14
+#: /views/candidate_political_experiences/admin_view.ctp:14
+#: /views/candidate_profiles/admin_view.ctp:144;186;272
+#: /views/candidate_work_experiences/admin_view.ctp:14
+msgid "Starting Year"
+msgstr ""
+
+#: /views/candidate_parties/admin_view.ctp:19
+#: /views/candidate_political_experiences/admin_view.ctp:19
+#: /views/candidate_profiles/admin_view.ctp:145;187;232;273
+#: /views/candidate_university_studies/admin_view.ctp:24
+#: /views/candidate_work_experiences/admin_view.ctp:19
+msgid "Ending Year"
+msgstr ""
+
+#: /views/candidate_parties/admin_view.ctp:24
+#: /views/candidate_profiles/admin_view.ctp:146
+msgid "Party"
+msgstr ""
+
+#: /views/candidate_parties/admin_view.ctp:34
+msgid "Edit Candidate Party"
+msgstr ""
+
+#: /views/candidate_parties/admin_view.ctp:35
+msgid "Delete Candidate Party"
+msgstr ""
+
+#: /views/candidate_political_experiences/admin_add.ctp:4
+msgid "Admin Add Candidate Political Experience"
+msgstr ""
+
+#: /views/candidate_political_experiences/admin_add.ctp:19
+#: /views/candidate_political_experiences/admin_edit.ctp:21
+#: /views/candidate_political_experiences/admin_view.ctp:41
+#: /views/candidate_profiles/admin_add.ctp:31
+#: /views/candidate_profiles/admin_edit.ctp:34
+#: /views/candidate_profiles/admin_index.ctp:78
+#: /views/candidate_profiles/admin_view.ctp:89
+msgid "List Candidate Political Experiences"
+msgstr ""
+
+#: /views/candidate_political_experiences/admin_edit.ctp:4
+msgid "Admin Edit Candidate Political Experience"
+msgstr ""
+
+#: /views/candidate_political_experiences/admin_index.ctp:2
+msgid "Candidate Political Experiences"
+msgstr ""
+
+#: /views/candidate_political_experiences/admin_index.ctp:55
+#: /views/candidate_political_experiences/admin_view.ctp:42
+#: /views/candidate_profiles/admin_add.ctp:32
+#: /views/candidate_profiles/admin_edit.ctp:35
+#: /views/candidate_profiles/admin_index.ctp:79
+#: /views/candidate_profiles/admin_view.ctp:90;219
+msgid "New Candidate Political Experience"
+msgstr ""
+
+#: /views/candidate_political_experiences/admin_view.ctp:2
+msgid "Candidate Political Experience"
+msgstr ""
+
+#: /views/candidate_political_experiences/admin_view.ctp:24
+#: /views/candidate_profiles/admin_view.ctp:188;274
+#: /views/candidate_work_experiences/admin_view.ctp:24
+#: /views/candidate_work_experiences/view.ctp:19
+msgid "Position"
+msgstr ""
+
+#: /views/candidate_political_experiences/admin_view.ctp:29
+#: /views/candidate_profiles/admin_view.ctp:189
+msgid "Type"
+msgstr ""
+
+#: /views/candidate_political_experiences/admin_view.ctp:39
+msgid "Edit Candidate Political Experience"
+msgstr ""
+
+#: /views/candidate_political_experiences/admin_view.ctp:40
+msgid "Delete Candidate Political Experience"
+msgstr ""
+
+#: /views/candidate_profiles/admin_add.ctp:4
+msgid "Admin Add Candidate Profile"
+msgstr ""
+
+#: /views/candidate_profiles/admin_add.ctp:26
+#: /views/candidate_profiles/admin_edit.ctp:29
+#: /views/candidate_profiles/admin_index.ctp:73
+#: /views/candidate_profiles/admin_view.ctp:84
+#: /views/candidates/admin_index.ctp:49
+#: /views/candidates/admin_view.ctp:32
+#: /views/weights/admin_add.ctp:35
+#: /views/weights/admin_edit.ctp:23
+#: /views/weights/admin_index.ctp:61
+#: /views/weights/admin_view.ctp:41
+msgid "New Candidate"
+msgstr ""
+
+#: /views/candidate_profiles/admin_add.ctp:33
+#: /views/candidate_profiles/admin_edit.ctp:36
+#: /views/candidate_profiles/admin_index.ctp:80
+#: /views/candidate_profiles/admin_view.ctp:91
+#: /views/candidate_university_studies/admin_add.ctp:18
+#: /views/candidate_university_studies/admin_edit.ctp:20
+#: /views/candidate_university_studies/admin_view.ctp:36
+msgid "List Candidate University Studies"
+msgstr ""
+
+#: /views/candidate_profiles/admin_add.ctp:34
+#: /views/candidate_profiles/admin_edit.ctp:37
+#: /views/candidate_profiles/admin_index.ctp:81
+#: /views/candidate_profiles/admin_view.ctp:92;261
+#: /views/candidate_university_studies/admin_index.ctp:53
+#: /views/candidate_university_studies/admin_view.ctp:37
+msgid "New Candidate University Study"
+msgstr ""
+
+#: /views/candidate_profiles/admin_add.ctp:35
+#: /views/candidate_profiles/admin_edit.ctp:38
+#: /views/candidate_profiles/admin_index.ctp:82
+#: /views/candidate_profiles/admin_view.ctp:93
+#: /views/candidate_work_experiences/add.ctp:18
+#: /views/candidate_work_experiences/admin_add.ctp:19
+#: /views/candidate_work_experiences/admin_edit.ctp:21
+#: /views/candidate_work_experiences/admin_view.ctp:41
+#: /views/candidate_work_experiences/edit.ctp:20
+#: /views/candidate_work_experiences/view.ctp:36
+msgid "List Candidate Work Experiences"
+msgstr ""
+
+#: /views/candidate_profiles/admin_add.ctp:36
+#: /views/candidate_profiles/admin_edit.ctp:39
+#: /views/candidate_profiles/admin_index.ctp:83
+#: /views/candidate_profiles/admin_view.ctp:94;305
+#: /views/candidate_work_experiences/admin_index.ctp:55
+#: /views/candidate_work_experiences/admin_view.ctp:42
+#: /views/candidate_work_experiences/index.ctp:53
+#: /views/candidate_work_experiences/view.ctp:37
+msgid "New Candidate Work Experience"
+msgstr ""
+
+#: /views/candidate_profiles/admin_edit.ctp:4
+msgid "Admin Edit Candidate Profile"
+msgstr ""
+
+#: /views/candidate_profiles/admin_index.ctp:2
+msgid "Candidate Profiles"
+msgstr ""
+
+#: /views/candidate_profiles/admin_view.ctp:9
+#: /views/candidates/admin_view.ctp:2
+#: /views/weights/admin_view.ctp:14
+msgid "Candidate"
+msgstr ""
+
+#: /views/candidate_profiles/admin_view.ctp:14
+#: /views/candidates/admin_view.ctp:14
+#: /views/categories/admin_view.ctp:9
+msgid "Name"
+msgstr ""
+
+#: /views/candidate_profiles/admin_view.ctp:19
+#: /views/candidates/admin_view.ctp:51
+msgid "Birth"
+msgstr ""
+
+#: /views/candidate_profiles/admin_view.ctp:24
+#: /views/candidates/admin_view.ctp:55
+msgid "Profession"
+msgstr ""
+
+#: /views/candidate_profiles/admin_view.ctp:29
+#: /views/candidates/admin_view.ctp:59
+msgid "Sons"
+msgstr ""
+
+#: /views/candidate_profiles/admin_view.ctp:34
+msgid "Civil Status"
+msgstr ""
+
+#: /views/candidate_profiles/admin_view.ctp:39
+#: /views/candidates/admin_view.ctp:67
+msgid "Religion"
+msgstr ""
+
+#: /views/candidate_profiles/admin_view.ctp:44
+#: /views/candidates/admin_view.ctp:71
+msgid "Twitter"
+msgstr ""
+
+#: /views/candidate_profiles/admin_view.ctp:49
+#: /views/candidates/admin_view.ctp:75
+msgid "Facebook"
+msgstr ""
+
+#: /views/candidate_profiles/admin_view.ctp:54
+#: /views/candidates/admin_view.ctp:79
+msgid "Highschool"
+msgstr ""
+
+#: /views/candidate_profiles/admin_view.ctp:59
+#: /views/candidates/admin_view.ctp:83
+msgid "Assets"
+msgstr ""
+
+#: /views/candidate_profiles/admin_view.ctp:64
+#: /views/candidates/admin_view.ctp:87
+#: /views/users/admin_view.ctp:29
+msgid "Created"
+msgstr ""
+
+#: /views/candidate_profiles/admin_view.ctp:69
+#: /views/candidates/admin_view.ctp:91
+#: /views/users/admin_view.ctp:34
+msgid "Modified"
+msgstr ""
+
+#: /views/candidate_profiles/admin_view.ctp:79
+#: /views/candidates/admin_view.ctp:99
+msgid "Edit Candidate Profile"
+msgstr ""
+
+#: /views/candidate_profiles/admin_view.ctp:80
+msgid "Delete Candidate Profile"
+msgstr ""
+
+#: /views/candidate_profiles/admin_view.ctp:98
+msgid "Related Candidate Links"
+msgstr ""
+
+#: /views/candidate_profiles/admin_view.ctp:103;143;185;229;271
+msgid "Candidate Profile Id"
+msgstr ""
+
+#: /views/candidate_profiles/admin_view.ctp:138
+msgid "Related Candidate Parties"
+msgstr ""
+
+#: /views/candidate_profiles/admin_view.ctp:180
+msgid "Related Candidate Political Experiences"
+msgstr ""
+
+#: /views/candidate_profiles/admin_view.ctp:224
+msgid "Related Candidate University Studies"
+msgstr ""
+
+#: /views/candidate_profiles/admin_view.ctp:230
+#: /views/candidate_university_studies/admin_view.ctp:14
+msgid "Career"
+msgstr ""
+
+#: /views/candidate_profiles/admin_view.ctp:231
+#: /views/candidate_university_studies/admin_view.ctp:19
+msgid "University"
+msgstr ""
+
+#: /views/candidate_profiles/admin_view.ctp:266
+msgid "Related Candidate Work Experiences"
+msgstr ""
+
+#: /views/candidate_profiles/admin_view.ctp:275
+#: /views/candidate_work_experiences/admin_view.ctp:29
+#: /views/candidate_work_experiences/view.ctp:24
+msgid "Company"
+msgstr ""
+
+#: /views/candidate_university_studies/admin_add.ctp:4
+msgid "Admin Add Candidate University Study"
+msgstr ""
+
+#: /views/candidate_university_studies/admin_edit.ctp:4
+msgid "Admin Edit Candidate University Study"
+msgstr ""
+
+#: /views/candidate_university_studies/admin_index.ctp:2
+msgid "Candidate University Studies"
+msgstr ""
+
+#: /views/candidate_university_studies/admin_view.ctp:2
+msgid "Candidate University Study"
+msgstr ""
+
+#: /views/candidate_university_studies/admin_view.ctp:34
+msgid "Edit Candidate University Study"
+msgstr ""
+
+#: /views/candidate_university_studies/admin_view.ctp:35
+msgid "Delete Candidate University Study"
+msgstr ""
+
+#: /views/candidate_work_experiences/add.ctp:4
+msgid "Add Candidate Work Experience"
+msgstr ""
+
+#: /views/candidate_work_experiences/admin_add.ctp:4
+msgid "Admin Add Candidate Work Experience"
+msgstr ""
+
+#: /views/candidate_work_experiences/admin_edit.ctp:4
+msgid "Admin Edit Candidate Work Experience"
+msgstr ""
+
+#: /views/candidate_work_experiences/admin_index.ctp:2
+#: /views/candidate_work_experiences/index.ctp:2
+msgid "Candidate Work Experiences"
+msgstr ""
+
+#: /views/candidate_work_experiences/admin_view.ctp:2
+#: /views/candidate_work_experiences/view.ctp:2
+msgid "Candidate Work Experience"
+msgstr ""
+
+#: /views/candidate_work_experiences/admin_view.ctp:39
+#: /views/candidate_work_experiences/edit.ctp:4
+#: /views/candidate_work_experiences/view.ctp:34
+msgid "Edit Candidate Work Experience"
+msgstr ""
+
+#: /views/candidate_work_experiences/admin_view.ctp:40
+#: /views/candidate_work_experiences/view.ctp:35
+msgid "Delete Candidate Work Experience"
+msgstr ""
+
+#: /views/candidate_work_experiences/view.ctp:14
+msgid "Year"
+msgstr ""
+
+#: /views/candidates/admin_add.ctp:5
+msgid "Admin Add Candidate"
+msgstr ""
+
+#: /views/candidates/admin_edit.ctp:5
+msgid "Admin Edit Candidate"
+msgstr ""
+
+#: /views/candidates/admin_index.ctp:2
+msgid "Candidates"
+msgstr ""
+
+#: /views/candidates/admin_view.ctp:9
+msgid "Slug"
+msgstr ""
+
+#: /views/candidates/admin_view.ctp:19
+msgid "Imagepath"
+msgstr ""
+
+#: /views/candidates/admin_view.ctp:29
+msgid "Edit Candidate"
+msgstr ""
+
+#: /views/candidates/admin_view.ctp:30
+msgid "Delete Candidate"
+msgstr ""
+
+#: /views/candidates/admin_view.ctp:40
+msgid "Related Candidate Profiles"
+msgstr ""
+
+#: /views/candidates/admin_view.ctp:63
+msgid "State"
+msgstr ""
+
+#: /views/categories/admin_add.ctp:4
+#: /views/categories/admin_add_ajax.ctp:15
+msgid "Admin Add Category"
+msgstr ""
+
+#: /views/categories/admin_add.ctp:15
+#: /views/categories/admin_edit.ctp:18
+#: /views/categories/admin_view.ctp:21
+#: /views/questions/admin_view.ctp:53
+msgid "List Categories"
+msgstr ""
+
+#: /views/categories/admin_add.ctp:18
+#: /views/categories/admin_edit.ctp:21
+#: /views/categories/admin_index.ctp:50
+#: /views/categories/admin_view.ctp:25
+msgid "List Result Details"
+msgstr ""
+
+#: /views/categories/admin_add.ctp:19
+#: /views/categories/admin_edit.ctp:22
+#: /views/categories/admin_index.ctp:51
+#: /views/categories/admin_view.ctp:26;105
+msgid "New Result Detail"
+msgstr ""
+
+#: /views/categories/admin_edit.ctp:4
+msgid "Admin Edit Category"
+msgstr ""
+
+#: /views/categories/admin_index.ctp:2
+msgid "Categories"
+msgstr ""
+
+#: /views/categories/admin_index.ctp:47
+#: /views/categories/admin_view.ctp:22
+#: /views/questions/admin_view.ctp:54
+msgid "New Category"
+msgstr ""
+
+#: /views/categories/admin_view.ctp:2
+#: /views/questions/admin_view.ctp:24
+msgid "Category"
+msgstr ""
+
+#: /views/categories/admin_view.ctp:19
+msgid "Edit Category"
+msgstr ""
+
+#: /views/categories/admin_view.ctp:20
+msgid "Delete Category"
+msgstr ""
+
+#: /views/categories/admin_view.ctp:30
+msgid "Related Questions"
+msgstr ""
+
+#: /views/categories/admin_view.ctp:36;76
+msgid "Category Id"
+msgstr ""
+
+#: /views/categories/admin_view.ctp:37
+#: /views/questions/admin_view.ctp:29
+msgid "Public"
+msgstr ""
+
+#: /views/categories/admin_view.ctp:70
+msgid "Related Result Details"
+msgstr ""
+
+#: /views/categories/admin_view.ctp:75
+msgid "Result Id"
+msgstr ""
+
+#: /views/categories/admin_view.ctp:77
+msgid "Result"
+msgstr ""
+
+#: /views/compare/compare.ctp:35;65
+#: /views/profiles/view.ctp:187
+msgid "Sin información"
+msgstr ""
+
+#: /views/compare/get_comparison_address.ctp:1
+msgid "Redireccionando"
+msgstr ""
+
+#: /views/compare/index.ctp:1
+msgid "Debes seleccionar los dos candidatos y la categoria"
+msgstr ""
+
+#: /views/elements/basic_profile.ctp:18
+#: /views/profiles/view.ctp:22
+msgid "Nacimiento"
+msgstr ""
+
+#: /views/elements/basic_profile.ctp:27
+#: /views/profiles/view.ctp:23
+msgid "Profesión"
+msgstr ""
+
+#: /views/elements/basic_profile.ctp:34
+#: /views/profiles/view.ctp:24
+msgid "Estado Civil"
+msgstr ""
+
+#: /views/elements/basic_profile.ctp:41
+#: /views/profiles/view.ctp:25
+msgid "Hijos"
+msgstr ""
+
+#: /views/elements/basic_profile.ctp:48
+#: /views/profiles/view.ctp:26
+msgid "Religión"
+msgstr ""
+
+#: /views/elements/comparator-js.ctp:10
+msgid "Debes seleccionar el primer candidato"
+msgstr "Seleccioná el primer candidato"
+
+#: /views/elements/comparator-js.ctp:20
+msgid "Debes seleccionar el segundo candidato"
+msgstr "Seleccioná el segundo candidato"
+
+#: /views/elements/comparator-js.ctp:58
+msgid "Los dos candidatos son iguales"
+msgstr ""
+
+#: /views/index/index.ctp:15
+msgid "Perfiles"
+msgstr ""
+
+#: /views/index/index.ctp:20
+msgid "Comparar"
+msgstr "Compará"
+
+#: /views/index/index.ctp:20
+msgid "candidatos"
+msgstr ""
+
+#: /views/layouts/admin.ctp:25;43
+msgid "Administración Media Naranja"
+msgstr ""
+
+#: /views/layouts/compare_layout.ctp:13;37
+msgid "Seleciona un candidato"
+msgstr "Selecioná un candidato"
+
+#: /views/layouts/compare_layout.ctp:67
+msgid "Temas"
+msgstr ""
+
+#: /views/layouts/voto.ctp:76
+msgid "La media naranja es una aplicación en la que podrás conocer tu cercanía con los candidatos a las presidencia. Esto NO es un juego. Los datos los hemos recopilado de diferentes fuentes periodísticas y por ello los temas y opciones que ponemos a disposición son sólo aquellas que los candidatos han declarado. Son las posiciones REALES de los candidatos que aspiran a ocupar la presidencia de nuestro país."
+msgstr ""
+
+#: /views/layouts/voto.ctp:81
+msgid "Responde la encuesta y encuentra tu 1/2 naranja política"
+msgstr ""
+
+#: /views/layouts/voto.ctp:92
+msgid "Buscar Media Naranja"
+msgstr "Encontrá Media Naranja"
+
+#: /views/media_naranja/confirm.ctp:1
+msgid "Confirmado!"
+msgstr ""
+
+#: /views/media_naranja/index.ctp:42
+msgid "Ninguna de las anteriores representa mi posici&oacute;n"
+msgstr ""
+
+#: /views/media_naranja/index.ctp:61
+msgid "Muy baja"
+msgstr ""
+
+#: /views/media_naranja/index.ctp:78
+msgid "Muy alta"
+msgstr ""
+
+#: /views/media_naranja/resultado.ctp:10
+msgid "Tu Media Naranja Política es..."
+msgstr ""
+
+#: /views/media_naranja/resultado.ctp:64
+msgid "Publicar"
+msgstr ""
+
+#: /views/media_naranja/resultado.ctp:86
+msgid "Compatibilidad con otros Candidatos"
+msgstr ""
+
+#: /views/media_naranja/resultado.ctp:109
+msgid "Indices de Compatibilidad"
+msgstr ""
+
+#: /views/media_naranja/resultado.ctp:150;163
+msgid "Invita a tus amigos a participar"
+msgstr ""
+
+#: /views/media_naranja/resultado.ctp:162
+msgid "Revisa quien es tu media naranja"
+msgstr ""
+
+#: /views/profiles/error.ctp:8
+msgid "No hemos podido encontrar este candidato"
+msgstr ""
+
+#: /views/profiles/view.ctp:21
+msgid "Información personal"
+msgstr ""
+
+#: /views/profiles/view.ctp:45
+msgid "Enlaces personales"
+msgstr ""
+
+#: /views/profiles/view.ctp:64
+msgid "Antecedentes"
+msgstr ""
+
+#: /views/profiles/view.ctp:67
+msgid "Tendencia política"
+msgstr ""
+
+#: /views/profiles/view.ctp:80
+msgid "Experiencia política"
+msgstr ""
+
+#: /views/profiles/view.ctp:98
+msgid "Educación"
+msgstr ""
+
+#: /views/profiles/view.ctp:113
+msgid "Antecedentes laborales"
+msgstr ""
+
+#: /views/profiles/view.ctp:126
+msgid "Ingresos"
+msgstr ""
+
+#: /views/profiles/view.ctp:136
+msgid "Posicion política en"
+msgstr "Posición política en"
+
+#: /views/questions/admin_add.ctp:7
+msgid "Admin Add Question"
+msgstr ""
+
+#: /views/questions/admin_edit.ctp:7
+msgid "Admin Edit Question"
+msgstr ""
+
+#: /views/questions/admin_index.ctp:27
+msgid "Estas seguro de querer eliminar la categoria %s y todas sus preguntas"
+msgstr ""
+
+#: /views/questions/admin_index.ctp:61
+msgid "¿Estas seguro de querer eliminar la pregunta '%s' y sus respuesta?"
+msgstr ""
+
+#: /views/questions/admin_view.ctp:14
+msgid "Explanation"
+msgstr ""
+
+#: /views/questions/admin_view.ctp:19
+msgid "Short Description"
+msgstr ""
+
+#: /views/questions/admin_view.ctp:34
+msgid "Included In Media Naranja"
+msgstr ""
+
+#: /views/questions/admin_view.ctp:39
+msgid "Order"
+msgstr ""
+
+#: /views/questions/admin_view.ctp:49
+msgid "Edit Question"
+msgstr ""
+
+#: /views/questions/admin_view.ctp:50
+msgid "Delete Question"
+msgstr ""
+
+#: /views/questions/admin_view.ctp:62
+msgid "Related Answers"
+msgstr ""
+
+#: /views/source_of_answers/admin_add.ctp:27
+msgid "Admin Add Source Of Answer"
+msgstr ""
+
+#: /views/source_of_answers/admin_edit.ctp:27
+msgid "Admin Edit Source Of Answer"
+msgstr ""
+
+#: /views/source_of_answers/admin_index.ctp:2
+msgid "Source Of Answers"
+msgstr ""
+
+#: /views/source_of_answers/admin_index.ctp:55
+#: /views/source_of_answers/admin_view.ctp:42
+msgid "New Source Of Answer"
+msgstr ""
+
+#: /views/source_of_answers/admin_view.ctp:2
+msgid "Source Of Answer"
+msgstr ""
+
+#: /views/source_of_answers/admin_view.ctp:9
+#: /views/weights/admin_view.ctp:2
+msgid "Weight"
+msgstr ""
+
+#: /views/source_of_answers/admin_view.ctp:14
+msgid "Sentence"
+msgstr ""
+
+#: /views/source_of_answers/admin_view.ctp:19
+msgid "Media Name"
+msgstr ""
+
+#: /views/source_of_answers/admin_view.ctp:29
+msgid "Date"
+msgstr ""
+
+#: /views/source_of_answers/admin_view.ctp:39
+msgid "Edit Source Of Answer"
+msgstr ""
+
+#: /views/source_of_answers/admin_view.ctp:40
+msgid "Delete Source Of Answer"
+msgstr ""
+
+#: /views/users/admin_add.ctp:4
+msgid "Admin Add User"
+msgstr ""
+
+#: /views/users/admin_edit.ctp:4
+msgid "Admin Edit User"
+msgstr ""
+
+#: /views/users/admin_index.ctp:2
+msgid "Users"
+msgstr ""
+
+#: /views/users/admin_index.ctp:55
+#: /views/users/admin_view.ctp:47
+msgid "New User"
+msgstr ""
+
+#: /views/users/admin_view.ctp:2
+msgid "User"
+msgstr ""
+
+#: /views/users/admin_view.ctp:9
+msgid "Username"
+msgstr ""
+
+#: /views/users/admin_view.ctp:14
+msgid "Password"
+msgstr ""
+
+#: /views/users/admin_view.ctp:19
+msgid "Admin"
+msgstr ""
+
+#: /views/users/admin_view.ctp:24
+msgid "Last Login"
+msgstr ""
+
+#: /views/users/admin_view.ctp:44
+msgid "Edit User"
+msgstr ""
+
+#: /views/users/admin_view.ctp:45
+msgid "Delete User"
+msgstr ""
+
+#: /views/weights/admin_add.ctp:4
+msgid "Admin Add Weight"
+msgstr ""
+
+#: /views/weights/admin_edit.ctp:4
+msgid "Admin Edit Weight"
+msgstr ""
+
+#: /views/weights/admin_index.ctp:2
+msgid "Weights"
+msgstr ""
+
+#: /views/weights/admin_view.ctp:34
+msgid "Edit Weight"
+msgstr ""
+
+#: /views/weights/admin_view.ctp:35
+msgid "Delete Weight"
+msgstr ""
+
+#: /webroot/test.php:88
+msgid "Debug setting does not allow access to this url."
+msgstr ""
+

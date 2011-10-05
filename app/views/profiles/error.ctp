@@ -5,4 +5,4 @@
  * and open the template in the editor.
  */
 ?>
-No hemos podido encontrar este candidato
+<?= __('No hemos podido encontrar este candidato');?>
