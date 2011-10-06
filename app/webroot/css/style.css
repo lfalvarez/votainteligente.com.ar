@@ -193,19 +193,20 @@ blockquote {
     display: block;
     float: right;
     height: 110px;
-    left: 279px;
+    left: 0px;
     position: absolute;
     text-indent: 10000px;
     top: 20px;
     width: 32px;
     z-index: 3;
+    cursor: pointer;
 }
 
 #sidebarLeft {
 	 background-color: rgba(214, 220, 224, 0.9);
     border-right: 2px solid white;
     box-shadow: 1px 1px 1px #DDDDDD;
-    display: block;
+    display: none;
     float: left;
     height: 100%;
     left: 0;

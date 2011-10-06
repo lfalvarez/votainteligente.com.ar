@@ -27,7 +27,7 @@
     function(){
 	$('#sidebarLeft').toggle(0,function(){
 	    if ($(this).is(":visible")) {
-		$('#sidebarTrigger').css('left',280);
+		$('#sidebarTrigger').css('left',279);
 	    }
 	    else {
 		$('#sidebarTrigger').css('left',0);
