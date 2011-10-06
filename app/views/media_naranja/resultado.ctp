@@ -40,7 +40,7 @@
                                                         <img src="http://www.votainteligente.cl/medianaranja/images/barra_<?php echo $this->Percentage->imageForPercentage($category['Category']['afinity']['percentage']);?>.png" width="120" height="12" />
                                                     </td>
                                                     <td style="background-color:#FFF; vertical-align:bottom; font-size:18px;">
-                                                            <a><?php echo $this->Number->precision($category['Category']['afinity']['percentage'],2);?> %</a>
+                                                            <a><?php echo $this->Number->precision($category['Category']['afinity']['percentage'],0);?> %</a>
                                                     </td>
 						</tr>
                                             <?php } ?>
@@ -112,7 +112,7 @@
                             <tr>
                                 <td align="center">
                                 <?php foreach($other['afinity'] as $category) {?>
-                                    <strong><?php echo $category['Category']['name']; ?>:</strong> <a><?php echo $this->Number->precision($category['Category']['afinity']['percentage'],2); ?> %</a><br />
+                                    <strong><?php echo $category['Category']['name']; ?>:</strong> <a><?php echo $this->Number->precision($category['Category']['afinity']['percentage'],0); ?> %</a><br />
                                 <?php } ?>
                                     </td>
                             </tr>
