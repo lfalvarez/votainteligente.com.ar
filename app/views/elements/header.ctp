@@ -33,6 +33,7 @@
     <meta property="og:type" content="non_profit" />
     <meta property="og:url" content="<?php echo Router::url($this->here, true);?>" />
     <?php
+    echo $this->Html->meta('favicon.ico','/img/favicon.ico',array('type' => 'icon'));
     if (isset($facebookShareImage)) {
     ?>
     <meta property="og:image" content="<?php echo $facebookShareImage; ?>" />
