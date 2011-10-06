@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2011-10-05 12:05-0300\n"
-"PO-Revision-Date: 2011-10-05 12:08-0300\n"
+"POT-Creation-Date: 2011-10-06 12:39-0300\n"
+"PO-Revision-Date: 2011-10-06 13:27-0300\n"
 "Last-Translator: feli <luisfelipealvarez@gmail.com>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -1388,7 +1388,7 @@ msgstr ""
 
 #: /views/compare/index.ctp:1
 msgid "Debes seleccionar los dos candidatos y la categoria"
-msgstr ""
+msgstr "Seleccioná los dos candidatos y la categoria"
 
 #: /views/elements/basic_profile.ctp:18
 #: /views/profiles/view.ctp:22
@@ -1427,9 +1427,17 @@ msgstr "Seleccioná el segundo candidato"
 msgid "Los dos candidatos son iguales"
 msgstr ""
 
+#: /views/elements/header.ctp:57
+msgid "PERFILES"
+msgstr "PERFIL DE CANDIDATOS"
+
+#: /views/elements/header.ctp:58
+msgid "COMPARAR"
+msgstr "COMPARÁ"
+
 #: /views/index/index.ctp:15
 msgid "Perfiles"
-msgstr ""
+msgstr "Perfil de Candidatos"
 
 #: /views/index/index.ctp:20
 msgid "Comparar"
@@ -1445,7 +1453,7 @@ msgstr ""
 
 #: /views/layouts/compare_layout.ctp:13;37
 msgid "Seleciona un candidato"
-msgstr "Selecioná un candidato"
+msgstr "Seleccioná un candidato"
 
 #: /views/layouts/compare_layout.ctp:67
 msgid "Temas"
@@ -1461,7 +1469,7 @@ msgstr ""
 
 #: /views/layouts/voto.ctp:92
 msgid "Buscar Media Naranja"
-msgstr "Encontrá Media Naranja"
+msgstr "Encontrá tu media naranja"
 
 #: /views/media_naranja/confirm.ctp:1
 msgid "Confirmado!"
