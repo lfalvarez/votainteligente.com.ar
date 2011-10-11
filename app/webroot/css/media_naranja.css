@@ -162,6 +162,8 @@ table{
 	font-size:12px;
 	border-collapse: collapse;
 	width:758px;
+	float: left;
+	clear: both;
 }
 .tablaResultados .titulo{
 	font-weight:normal;
@@ -183,6 +185,7 @@ table{
 }
 .bodyOfMediaNaranja{
 	height:100%;
+	width: 760px;
 }
 .not-answered-yet{
     background-color: red;
@@ -195,7 +198,5 @@ table{
 }
 
 .tablaEncuesta label {
- 
     display: block;
-
 }

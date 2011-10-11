@@ -1,4 +1,4 @@
-<?php echo $this->element('header',array('js'=>array('dropDownLists'),'css'=>array('compare', 'style', 'nav','dropDownList')));?>
+<?php echo $this->element('header',array('js'=>array('dropDownLists'),'css'=>array('compare', 'style','footer', 'nav','dropDownList')));?>
 <?php echo $this->element('comparator-js');?>
 	<div class="wrapper">
        <article class="wrapW">

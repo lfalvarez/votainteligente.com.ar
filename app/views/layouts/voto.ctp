@@ -11,6 +11,7 @@
 <body>
 <?php echo $this->Html->script('jquery'); ?>
 <?php echo $this->Html->css('media_naranja'); ?>
+<?php echo $this->Html->css('footer'); ?>
 <div id="fb-root"></div>
 <script>
     window.fbAsyncInit = function() {
@@ -53,51 +54,54 @@
     document.getElementById('fb-root').appendChild(e);
   }());
 </script>
-<div id="bodyOfMediaNaranja" class="bodyOfMediaNaranja">
-<table align="left" style="width:760px;" cellpadding="0" cellspacing="0" border="0">
-    <tr>
-		<td align="left">
-            <table align="left" style="width:760px;" cellpadding="0" cellspacing="0" border="0">
-                <td style="text-align:left; width:500px">
-
-                   <img src="<?php echo Router::url('/img/fb_header_1.png'); ?>" width="500" height="113" border="0" />
-                </td>
-                <td style="text-align:left; width:260px">
-                    <a href="http://www.ciudadanointeligente.org/" target="_blank"> <img src="<?php echo Router::url('/img/fb_header_2.png'); ?>" width="260" height="113" border="0" /></a>
-                </td>
-            </table>
-     	</td>
-    </tr>
-    <tr>
-        <td bgcolor="#FFFFFF" style="width:760px; text-align:left; padding:0px; border:0px;">
-  	<table class="tablaEncuesta">
+    <div id="bodyOfMediaNaranja" class="bodyOfMediaNaranja">
+    <table align="left" style="width:760px;" cellpadding="0" cellspacing="0" border="0">
         <tr>
-            <td class="titulo" style="font-weight:normal" colspan="2">
-            	<?= __('La media naranja es una aplicación en la que podrás conocer tu cercanía con los candidatos a las presidencia. Esto NO es un juego. Los datos los hemos recopilado de diferentes fuentes periodísticas y por ello los temas y opciones que ponemos a disposición son sólo aquellas que los candidatos han declarado. Son las posiciones REALES de los candidatos que aspiran a ocupar la presidencia de nuestro país.');?>
+            <td align="left">
+                <table align="left" style="width:760px;" cellpadding="0" cellspacing="0" border="0">
+                    <td style="text-align:left; width:500px">
+    
+                       <img src="<?php echo Router::url('/img/fb_header_1.png'); ?>" width="500" height="113" border="0" />
+                    </td>
+                    <td style="text-align:left; width:260px">
+                        <a href="http://www.ciudadanointeligente.org/" target="_blank"> <img src="<?php echo Router::url('/img/fb_header_2.png'); ?>" width="260" height="113" border="0" /></a>
+                    </td>
+                </table>
             </td>
         </tr>
         <tr>
-            <td class="titulo" style="width:415px">
-            	<?= __('Responde la encuesta y encuentra tu 1/2 naranja política');?>
-            </td>
-			<td class="titulo" style="width:305px; vertical-align:bottom">
-				<img src="http://www.votainteligente.cl/medianaranja/images/importancia.png" width="316" height="46" border="0" />
-            </td>
-        </tr>
-        <?php echo $this->Form->create(null, array('url' => array('controller' => 'media_naranja', 'action' => 'vota'))); ?>
-        <?php echo $content_for_layout ?>
-        <tr>
-            <td class="titulo" colspan="2">
-		<div id="media-naranja-form-errors">&nbsp;</div>
-                <input type="submit" value="<?= __('Buscar Media Naranja');?>">
-            </td>
-        </tr>
-
-   	<?php echo $this->Form->end(); ?>
-   	</table>
-   	        </td>
-    </tr>
-</table>
-<div>
+            <td bgcolor="#FFFFFF" style="width:760px; text-align:left; padding:0px; border:0px;">
+                <table class="tablaEncuesta">
+                    <tr>
+                        <td class="titulo" style="font-weight:normal" colspan="2">
+                            <?= __('La media naranja es una aplicación en la que podrás conocer tu cercanía con los candidatos a las presidencia. Esto NO es un juego. Los datos los hemos recopilado de diferentes fuentes periodísticas y por ello los temas y opciones que ponemos a disposición son sólo aquellas que los candidatos han declarado. Son las posiciones REALES de los candidatos que aspiran a ocupar la presidencia de nuestro país.');?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="titulo" style="width:415px">
+                            <?= __('Responde la encuesta y encuentra tu 1/2 naranja política');?>
+                        </td>
+                        <td class="titulo" style="width:305px; vertical-align:bottom">
+                            <img src="http://www.votainteligente.cl/medianaranja/images/importancia.png" width="316" height="46" border="0" />
+                        </td>
+                    </tr>
+                    <?php echo $this->Form->create(null, array('url' => array('controller' => 'media_naranja', 'action' => 'vota'))); ?>
+                    <?php echo $content_for_layout ?>
+                    <tr>
+                        <td class="titulo" colspan="2">
+                    <div id="media-naranja-form-errors">&nbsp;</div>
+                            <input type="submit" value="<?= __('Buscar Media Naranja');?>">
+                        </td>
+                    </tr>
+            
+               		 <?php echo $this->Form->end(); ?>
+                </table>
+         	</td>
+    	</tr>
+    </table>
+    <div id="medianaranjaFooter">
+        <?php echo $this->element('footer');//the file views/elements/footer.ctp?>
+    </div>
+</div>
 </body>
 </html>
